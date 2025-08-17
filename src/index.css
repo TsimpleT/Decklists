@@ -1,13 +1,29 @@
+:root {
+    --bg-default: #3D3143;
+    --text-default: #E0E0CD;
+    --bg-gold: #bb9a42; /* rgb(187,154,66) */
+    --bg-silver: #646464; /* rgb(100,100,100) */
+    --bg-bronze: #b45f06; /* rgb(180,95,6) */
+
+    --bg-fury: #AD322F;
+    --bg-calm: #62A067;
+    --bg-mind: #5A77A1;
+    --bg-body: #DF9D62;
+    --bg-chaos: #977CA7;
+    --bg-order: #F9D95E;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: var(--bg-default);
+    color: var(--text-default);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

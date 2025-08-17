@@ -1,0 +1,134 @@
+.wrapperForImg {
+    position: relative;
+    /* display: flex; */
+}
+
+.container {
+    position: relative;
+    display: flex;
+    font-weight: 500;
+    /* border: 1px solid var(--text-default); */
+    border-radius: 8px;
+    padding: 0 4px 4px 8px;
+    margin: 1px 0;
+    height: 21px;
+    justify-content: space-between;
+    background-color: #967925;
+    /* background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs-KBOf_RmT-AHqt0KlXwiiY62d9dOEpMbpQ&s") no-repeat top 25% right 20% / 40%; */
+}
+
+.leftContainer {
+    margin-top: 1px;
+    color: #FFFFFFF0;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.leftContainerOrder {
+    margin-top: 1px;
+    color: #000000F0;
+    text-shadow: -1px -1px 0 #FFFFFFB0, 1px -1px 0 #FFFFFFB0, -1px 1px 0 #FFFFFFB0, 1px 1px 0 #FFFFFFB0;
+}
+
+.cardName {
+    position: relative;
+    text-wrap: nowrap;
+    text-overflow: ellipsis;
+    z-index: 10;
+}
+
+.cardType {
+    /* margin: 3px 3px 0 0; */
+    position: relative;
+    z-index: 10;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.rightContainer {
+    display: flex;
+    height: 100%;
+    margin-top: 2.8px;
+    z-index: 10;
+}
+
+.cost {
+    border: 1px solid #000;
+    background-color: #ffffffd8;
+    border-radius: 8px;
+    padding: 0 4px;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+
+.energyCost {
+    font-size: 0.9em;
+    padding: 0 3px;
+}
+
+.cardImageFullContainer {
+    position: absolute;
+    left: 110px;
+    top: 0px;
+    width: 160px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardImageSmallContainer {
+    position: relative;
+    height: 25px;
+    overflow: hidden;
+}
+
+.cardSmallImage {
+    width: 100px;
+    margin-top: -24px;
+}
+
+.cardSmallImageBF {
+    rotate: 90deg;
+    width: 100px;
+    margin-top: -45px;
+}
+
+.leftImageFade {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 30%;
+    height: calc(100%);
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), #967925);
+}
+
+.rightImageFade {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 30%;
+    height: calc(100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #967925);
+}
+
+.cardHoverImage {
+    position: absolute;
+    top: 0px;
+    right: -304px;
+    width: 300px;
+    border-radius: 16px;
+    z-index: 100;
+}
+
+.cardHoverImageRotated {
+    position: absolute;
+    rotate: 90deg;
+    top: -60px;
+    right: -364px;
+    width: 300px;
+    border-radius: 16px;
+    z-index: 100;
+}

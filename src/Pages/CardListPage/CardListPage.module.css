@@ -1,0 +1,8 @@
+.container {
+    margin: 2px 6px 390px;
+    width: 303px;
+}
+
+.container > * {
+    margin-bottom: 4px;
+}

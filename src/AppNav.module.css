@@ -1,0 +1,77 @@
+.container {
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+    background-color: #251D28;
+    min-height: 26px;
+    max-height: 26px;
+    padding: 4px 0 4px 8px;
+    width: 100%;
+    /* align-items: center; */
+}
+
+.container > * {
+    color: var(--text-default);
+    margin-right: 8px;
+}
+
+.title {
+    float: left;
+    font-weight: 600;
+    font-size: large;
+    margin-top: 1px;
+    margin-right: 6px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.homeButton {
+    float: left;
+    padding: 2px;
+    border: 1px #E0E0CD solid;
+    background-color: #5E446A;
+    margin-right: 6px;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.homeButton:hover {
+    background-color: #7E648A;
+}
+
+.version {
+    float: left;
+    font-weight: lighter;
+    margin-top: 2px;
+    margin-right: 8px;
+}
+
+.imageButton {
+    float: left;
+    padding: 2px;
+    border: 1px #E0E0CD solid;
+    background-color: #5E446A;
+    margin-top: 2px;
+    margin-right: 6px;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.linkImageButton {
+    position: absolute;
+    padding: 0 3px 0px 3px;
+    border: 1px #E0E0CD solid;
+    background-color: #5E446A;
+    margin-top: 2px;
+    margin-right: 8px;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.imageButton:hover, .linkImageButton:hover {
+    background-color: #7E648A;
+}
