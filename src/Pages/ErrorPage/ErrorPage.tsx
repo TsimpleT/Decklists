@@ -1,10 +1,12 @@
 import React from 'react';
 import styles from "./ErrorPage.module.css";
 
+import { DEV_STRING_PRE } from '../../Data';
+
 export class ErrorPage extends React.Component {
     public override componentDidMount(): void {
         console.log(`ErrorPage MOUNT`);
-        // document.title = `${DEV_STRING_PRE}Best Girl Tierlist 404`;
+        document.title = `${DEV_STRING_PRE}404`;
     }
 
     public render(): React.ReactNode {

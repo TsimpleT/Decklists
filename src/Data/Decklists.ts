@@ -1,36 +1,52 @@
+import { AEGIS_20250817 } from "./decklists/Aegis";
 import { SFC_20250803 } from "./decklists/China";
 import { RFC_20250809 } from "./decklists/France";
 import { MCW_20250807 } from "./decklists/Italy";
+import { LRCS_20250816 } from "./decklists/Luxury Riftbound Champion Series";
 import { RMW_20250809, RMW_20250802, RMW_20250726 } from "./decklists/RiftboundMetaWeekly";
 import { RLT_20250808 } from "./decklists/Riftlab";
-import { TNF_20250807, TNF_20250731 } from "./decklists/ThursdayNightFights";
+import { TNF_20250807, TNF_20250731, TNF_20250814 } from "./decklists/ThursdayNightFights";
 import { Decklist, TournamentResults } from "./Interfaces";
 
 export const TOURNAMENT_DECKLISTS: TournamentResults[] = [
-    RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
+    AEGIS_20250817, LRCS_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
 ];
 
-let decklistMap: {[archetype: string]: Decklist[]} = {};
+let decklistMap: {[archetypeLower: string]: Decklist[]} = {};
+let archetypeCasedNames: {[archetypeLower: string]: string} = {};
 
 for(let tournamentResult of TOURNAMENT_DECKLISTS) {
     for(let placing of tournamentResult.placings) {
         for(let decklist of placing.decklists) {
-            if(!(decklist.archetype in decklistMap)) {
-                decklistMap[decklist.archetype] = [];
+            if(decklist.archetype && decklist.mainDeck.length > 0) {
+                const archetypeLower = decklist.archetype.toLowerCase();
+                if(!(archetypeLower in decklistMap)) {
+                    decklistMap[archetypeLower] = [];
+                    archetypeCasedNames[archetypeLower] = decklist.archetype;
+                }
+                decklistMap[archetypeLower].push(decklist);
             }
-            decklistMap[decklist.archetype].push(decklist);
         }
     }
 }
 
 export function GET_ARCHETYPE_DECKLISTS(archetype: string): Decklist[] {
-    if(!(archetype in decklistMap)) {
-        throw Error(`archetype ${archetype} doesn't exist.`);
+    const archetypeLower = archetype.toLowerCase();
+    if(!(archetypeLower in decklistMap)) {
+        throw Error(`archetype ${archetypeLower} doesn't exist.`);
     }
-    return decklistMap[archetype];
+    return decklistMap[archetypeLower];
 }
 
-export const ALL_ARCHETYPES: string[] = Object.keys(decklistMap).sort();
+export function GET_CASED_ARCHETYPE(archetype: string): string {
+    const archetypeLower = archetype.toLowerCase();
+    if(!(archetypeLower in decklistMap)) {
+        throw Error(`archetype ${archetypeLower} doesn't exist.`);
+    }
+    return archetypeCasedNames[archetypeLower];
+}
+
+export const ALL_ARCHETYPES: string[] = Object.values(archetypeCasedNames).sort();
 
 // {
 //     "Viktor Swarm Control": [

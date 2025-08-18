@@ -2,8 +2,8 @@ import { PATCH } from "../Enums";
 import { TournamentResults } from "../Interfaces";
 
 export const RLT_20250808: TournamentResults = {
-    name: "Riftlab Trials I", abbrName: "RLT", date: "2025/08/08", meta: PATCH.OGN, host: "Piltover Archive",
-    link: "",
+    tournamentName: "Riftlab Trials I", abbrName: "RLT", date: "2025/08/08", meta: PATCH.OGN, host: "Piltover Archive",
+    links: [],
     placings: [
         {placing: "1st", decklists: [
             {"username":"Vendorty","date":"2025/08/08","archetype":"Sett Midrange","legend":"OGN-269-1","chosenChampion":"OGN-164-1","mainDeck":[{"id":"OGN-164-1","count":3},{"id":"OGN-270-1","count":3},{"id":"OGN-156-1","count":3},{"id":"OGN-136-1","count":3},{"id":"OGN-139-1","count":3},{"id":"OGN-210-1","count":3},{"id":"OGN-128-1","count":3},{"id":"OGN-217-1","count":3},{"id":"OGN-132-1","count":3},{"id":"OGN-124-1","count":1},{"id":"OGN-207-1","count":3},{"id":"OGN-141-1","count":3},{"id":"OGN-155-1","count":3},{"id":"OGN-232-1","count":3}],"battlefields":[{"id":"OGN-286-1","count":1},{"id":"OGN-295-1","count":1},{"id":"OGN-282-1","count":1}],"runeDeck":[{"id":"OGN-214-2","count":2},{"id":"OGN-126-2","count":10}],"sideboard":[{"id":"OGN-127-1","count":2},{"id":"OGN-222-1","count":3},{"id":"OGN-148-1","count":3}]},

@@ -1,18 +1,25 @@
 import { FACTION, PATCH, TYPE } from "./Enums";
 
 export interface TournamentResults {
-    name: string;
-    abbrName: "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC";
+    tournamentName: string;
+    abbrName: "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LRCS" | "AEGIS";
     date: string;
     meta: PATCH;
     host: string;
-    link: string;
+    // size: number;
+    links: string[];
     placings: TournamentPlacing[];
 }
 
 export interface TournamentPlacing {
     placing: string;
     decklists: Decklist[];
+}
+
+export interface PlayerPlacing {
+    placing: string;
+    tournament: string;
+    date: string;
 }
 
 export interface Decklist {

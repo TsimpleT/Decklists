@@ -1,6 +1,6 @@
 {
   "name": "decklists",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://tsimplet.github.io/decklists",
   "private": false,
   "dependencies": {
@@ -13,6 +13,7 @@
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "copy-to-clipboard": "^3.3.3",
+    "eslint-config-react-app": "^7.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-router-dom": "^7.8.0",
@@ -21,6 +22,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

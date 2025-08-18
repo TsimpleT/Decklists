@@ -1,34 +1,29 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { ALL_ARCHETYPES, GET_ARCHETYPE_DECKLISTS } from './Data';
+import { DEV_STRING_PRE } from './Data';
 
 import { AppNav } from './AppNav';
-import { CardListPage, DecklistTablePage, ErrorPage, GenerateDecklistPage, TournamentResultsPage } from './Pages';
+import { AllArchetypesPage, CardListPage, DecklistTablePage, ErrorPage, GenerateDecklistPage, PlayerResultsPage, TournamentResultsPage } from './Pages';
 
 export class AppMainRouter extends React.Component {
+    public override componentDidMount(): void {
+        document.title = `${DEV_STRING_PRE}Decklist Comparisons`;
+    }
+    
     public render(): React.ReactNode {
         return (
             <BrowserRouter>
                 <AppNav />
                 <Routes>
-                    <Route path="" element={ <Link to={`/Riftbound/`} style={{color: "var(--text-default)", marginLeft: "8px"}}></Link>} />
-                    <Route path="/Riftbound" element={ <span style={{color: "var(--text-default)", marginLeft: "8px"}}> click something above </span>} />
-                    <Route path="/Riftbound/TournamentResults" element={<TournamentResultsPage />} />
-                    <Route path="/Riftbound/AllArchetypes" element={
-                        <div style={{marginLeft: "4px"}}>
-                            {ALL_ARCHETYPES.map((archetype) => 
-                                <div onClick={() => {this.setState({archetype: archetype})}} key={archetype}>
-                                    <Link to={`/Riftbound/Archetype/${archetype}`} style={{color: "var(--text-default)"}}>
-                                        {`${archetype}: ${GET_ARCHETYPE_DECKLISTS(archetype).length} decklist${GET_ARCHETYPE_DECKLISTS(archetype).length === 1 ? "" : "s"}`}
-                                    </Link>
-                                </div>
-                            )}
-                        </div>
-                    }/>
-                    <Route path="/Riftbound/Archetype/:archetype?" element={<DecklistTablePage />} />
-                    {(process.env.NODE_ENV === "development") && <Route path="/Riftbound/GenerateDecklist" element={<GenerateDecklistPage />} />}
-                    <Route path="/Riftbound/AllCards" element={<CardListPage />} />
+                    <Route path="/decklists/" element={ <span style={{color: "var(--text-default)", marginLeft: "8px"}}> click something above </span> } />
+                    <Route path="/decklists/riftbound" element={ <span style={{color: "var(--text-default)", marginLeft: "8px"}}> click something above </span>} />
+                    <Route path="/decklists/riftbound/all-archetypes" element={<AllArchetypesPage />} />
+                    <Route path="/decklists/riftbound/archetype/:archetype?" element={<DecklistTablePage />} />
+                    <Route path="/decklists/riftbound/tournament-results" element={<TournamentResultsPage />} />
+                    <Route path="/decklists/riftbound/player-results" element={<PlayerResultsPage />} />
+                    <Route path="/decklists/riftbound/generate-decklist" element={<GenerateDecklistPage />} />
+                    <Route path="/decklists/riftbound/all-cards" element={<CardListPage />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </BrowserRouter>

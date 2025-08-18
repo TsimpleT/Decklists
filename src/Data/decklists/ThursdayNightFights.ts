@@ -1,32 +1,52 @@
 import { PATCH } from "../Enums";
 import { TournamentResults } from "../Interfaces";
 
+export const TNF_20250814: TournamentResults = {
+    tournamentName: "Thursday Night Fights", abbrName: "TNF", date: "2025/08/14", meta: PATCH.OGN, host: "DrRickMarshall",
+    links: ["https://challonge.com/q6a6rit9"],
+    placings: [
+        {placing: "5-0", decklists: [
+            {"username":"AsuiKitsune","date":"2025/08/14","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+        ]},
+        {placing: "4-1", decklists: [
+            {"username":"Kuvi","date":"2025/08/14","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+            {"username":"Nashun","date":"2025/08/14","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+        ]},
+        {placing: "3-2", decklists: [
+            {"username":"SamaBR","date":"2025/08/14","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+            {"username":"Prismaticism","date":"2025/08/14","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+            {"username":"ConnectedTwig","date":"2025/08/14","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+            {"username":"NAT14","date":"2025/08/14","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+        ]}
+    ]
+};
+
 export const TNF_20250807: TournamentResults = {
-    name: "Thursday Night Fights", abbrName: "TNF", date: "2025/08/07", meta: PATCH.OGN, host: "DrRickMarshall",
-    link: "",
+    tournamentName: "Thursday Night Fights", abbrName: "TNF", date: "2025/08/07", meta: PATCH.OGN, host: "DrRickMarshall",
+    links: [],
     placings: [
         {placing: "1st", decklists: [
-            // Alanzq
+            {"username":"Alanzq","date":"2025/08/07","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
         ]},
         {placing: "2nd", decklists: [
-            // Kuvi
+            {"username":"Kuvi","date":"2025/08/07","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
         ]},
         {placing: "Top 4", decklists: [
             {"username":"Caio0Caio","date":"2025/08/07","archetype":"Kai'Sa Tempo","legend":"OGN-247-1","chosenChampion":"OGN-039-2","mainDeck":[{"id":"OGN-039-2","count":3},{"id":"OGN-095-1","count":3},{"id":"OGN-004-1","count":2},{"id":"OGN-009-1","count":3},{"id":"OGN-103-1","count":3},{"id":"OGN-029-1","count":3},{"id":"OGN-010-1","count":2},{"id":"OGN-093-1","count":3},{"id":"OGN-096-1","count":3},{"id":"OGN-087-1","count":3},{"id":"OGN-024-1","count":3},{"id":"OGN-106-1","count":3},{"id":"OGN-027-2","count":2},{"id":"OGN-116-1","count":2},{"id":"OGN-248-1","count":2}],"battlefields":[{"id":"OGN-297-1","count":1},{"id":"OGN-296-1","count":1},{"id":"OGN-285-1","count":1}],"runeDeck":[{"id":"OGN-007-2","count":7},{"id":"OGN-089-1","count":5}],"sideboard":[{"id":"OGN-104-1","count":3},{"id":"OGN-036-1","count":2},{"id":"OGN-022-1","count":2},{"id":"OGN-028-1","count":1}]},
-            // B1GB3N
+            {"username":"B1GB3N","date":"2025/08/07","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
         ]},
         {placing: "Top 8", decklists: [
             {"username":"rexkater","date":"2025/08/07","archetype":"Kai'Sa Tempo","legend":"OGN-247-2","chosenChampion":"OGN-039-1","mainDeck":[{"id":"OGN-039-1","count":3},{"id":"OGN-095-1","count":3},{"id":"OGN-004-1","count":2},{"id":"OGN-009-1","count":3},{"id":"OGN-104-1","count":1},{"id":"OGN-103-1","count":3},{"id":"OGN-029-1","count":3},{"id":"OGN-010-1","count":1},{"id":"OGN-093-1","count":2},{"id":"OGN-096-1","count":3},{"id":"OGN-087-1","count":3},{"id":"OGN-024-1","count":3},{"id":"OGN-106-1","count":3},{"id":"OGN-027-1","count":3},{"id":"OGN-092-1","count":2},{"id":"OGN-116-1","count":2}],"battlefields":[{"id":"OGN-289-1","count":1},{"id":"OGN-286-1","count":1},{"id":"OGN-296-1","count":1}],"runeDeck":[{"id":"OGN-007-2","count":6},{"id":"OGN-089-2","count":6}],"sideboard":[{"id":"OGN-104-1","count":2},{"id":"OGN-108-1","count":2},{"id":"OGN-010-1","count":1},{"id":"OGN-116-1","count":1},{"id":"OGN-248-1","count":2}]},
-            // nylelol
+            {"username":"nylelol","date":"2025/08/07","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
             {"username":"DollarObama","date":"2025/08/07","archetype":"Kai'Sa Tempo","legend":"OGN-247-1","chosenChampion":"OGN-039-2","mainDeck":[{"id":"OGN-039-2","count":3},{"id":"OGN-095-1","count":3},{"id":"OGN-004-1","count":2},{"id":"OGN-009-1","count":3},{"id":"OGN-013-1","count":3},{"id":"OGN-103-1","count":2},{"id":"OGN-029-1","count":3},{"id":"OGN-093-1","count":3},{"id":"OGN-096-1","count":3},{"id":"OGN-087-1","count":3},{"id":"OGN-024-1","count":3},{"id":"OGN-106-1","count":2},{"id":"OGN-027-2","count":2},{"id":"OGN-105-1","count":2},{"id":"OGN-116-1","count":2},{"id":"OGN-248-1","count":1}],"battlefields":[{"id":"OGN-289-1","count":1},{"id":"OGN-296-1","count":1},{"id":"OGN-291-1","count":1}],"runeDeck":[{"id":"OGN-007-2","count":7},{"id":"OGN-089-2","count":5}],"sideboard":[{"id":"OGN-104-1","count":2},{"id":"OGN-036-1","count":1},{"id":"OGN-026-1","count":2},{"id":"OGN-116-1","count":1},{"id":"OGN-248-1","count":2}]},
-            // Bratchedkata
+            {"username":"Bratchedkata","date":"2025/08/07","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
         ]}
     ]
 };
 
 export const TNF_20250731: TournamentResults = {
-    name: "Thursday Night Fights", abbrName: "TNF", date: "2025/07/31", meta: PATCH.OGN, host: "DrRickMarshall",
-    link: "",
+    tournamentName: "Thursday Night Fights", abbrName: "TNF", date: "2025/07/31", meta: PATCH.OGN, host: "DrRickMarshall",
+    links: [],
     placings: [
         {placing: "1st", decklists: [
             {"username":"Kuvi","date":"2025/07/31","archetype":"Kai'Sa Tempo","legend":"OGN-247-1","chosenChampion":"OGN-039-2","mainDeck":[{"id":"OGN-039-2","count":3},{"id":"OGN-095-1","count":3},{"id":"OGN-004-1","count":2},{"id":"OGN-009-1","count":3},{"id":"OGN-013-1","count":1},{"id":"OGN-103-1","count":3},{"id":"OGN-029-1","count":3},{"id":"OGN-093-1","count":3},{"id":"OGN-096-1","count":3},{"id":"OGN-087-1","count":3},{"id":"OGN-024-1","count":3},{"id":"OGN-012-1","count":2},{"id":"OGN-106-1","count":3},{"id":"OGN-027-2","count":3},{"id":"OGN-116-1","count":2}],"battlefields":[{"id":"OGN-289-1","count":1},{"id":"OGN-296-1","count":1},{"id":"OGN-285-1","count":1}],"runeDeck":[{"id":"OGN-007-2","count":7},{"id":"OGN-089-2","count":5}],"sideboard":[{"id":"OGN-104-1","count":1},{"id":"OGN-036-1","count":1},{"id":"OGN-022-1","count":1},{"id":"OGN-026-1","count":2},{"id":"OGN-248-1","count":2},{"id":"OGN-109-1","count":1}]},

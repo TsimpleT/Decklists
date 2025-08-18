@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from "./AppNav.module.css";
+import { VERSION_STRING } from './Data';
 
 // enum Game { NONE, RIFTBOUND }
 // interface IState { game: Game }
@@ -28,18 +29,21 @@ export class AppNav extends React.Component/*<{}, IState>*/ {
     public renderRiftbound(): React.ReactNode {
         return (<>
             <nav className={styles.container}>
-                <Link to={"/Riftbound/TournamentResults"}>
-                    Tournament Results
-                </Link>
-                <Link to={"/Riftbound/AllArchetypes"}>
+                <span className={styles.title}>Decklists</span>
+                <span className={styles.version}>{VERSION_STRING}</span>
+                <Link to={"/decklists/riftbound/all-archetypes"}>
                     All Archetypes
                 </Link>
-                {(process.env.NODE_ENV === "development") && 
-                    <Link to={"/Riftbound/GenerateDecklist"}>
-                        Generate Decklist
-                    </Link>
-                }
-                <Link to={"/Riftbound/AllCards"}>
+                <Link to={"/decklists/riftbound/tournament-results"}>
+                    Tournament Results
+                </Link>
+                <Link to={"/decklists/riftbound/player-results"}>
+                    Player Results
+                </Link>
+                <Link to={"/decklists/riftbound/generate-decklist"}>
+                    Generate Decklist
+                </Link>
+                <Link to={"/decklists/riftbound/all-cards"}>
                     All Cards
                 </Link>
             </nav>

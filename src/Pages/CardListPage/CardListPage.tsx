@@ -1,10 +1,14 @@
 import React from 'react';
 import styles from './CardListPage.module.css';
 
-import { ALL_CARD_IDS } from '../../Data';
+import { ALL_CARD_IDS, DEV_STRING_PRE } from '../../Data';
 import { VDecklistCard } from '../../Views';
 
 export class CardListPage extends React.Component {
+    public override componentDidMount(): void {
+        document.title = `${DEV_STRING_PRE}All Cards`;
+    }
+    
     public render(): React.ReactNode {
         return (
             <div className={styles.container}>

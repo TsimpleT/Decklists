@@ -1,2 +1,3 @@
 - VERSION \[0.1.X\]
+    - \[0.1.1\] Player Results + Cleaning
     - \[0.1.0\] (25Aug16) DecklistTable + All Cards

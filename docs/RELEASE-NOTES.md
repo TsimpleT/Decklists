@@ -1,2 +1,6 @@
-[0.1.0] DecklistTable + All Cards
-- initial commit
+[0.1.1] Player Results + Cleaning
+- gh-pages; url /decklists
+- Player Results Page
+- document.title
+- more tournament results
+- lowercase hyphen case archetype

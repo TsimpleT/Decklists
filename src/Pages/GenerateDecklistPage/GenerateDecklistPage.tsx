@@ -2,9 +2,13 @@ import React from 'react';
 import copy from 'copy-to-clipboard';
 import styles from './GenerateDecklistPage.module.css';
 
-import { Decklist, DecklistCardAmount, GET_CARD, TYPE } from '../../Data';
+import { Decklist, DecklistCardAmount, DEV_STRING_PRE, GET_CARD, TYPE } from '../../Data';
 
 export class GenerateDecklistPage extends React.Component {
+    public override componentDidMount(): void {
+        document.title = `${DEV_STRING_PRE}Generate Decklist JSON`;
+    }
+    
     private generateAndCopy: React.FormEventHandler<HTMLFormElement> = async (e: React.SyntheticEvent): Promise<void> => {
         e.preventDefault();
         const data = (e.currentTarget as any).elements;
