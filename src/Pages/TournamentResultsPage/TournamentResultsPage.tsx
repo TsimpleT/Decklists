@@ -21,11 +21,12 @@ export class TournamentResultsPage extends React.Component {
                                     {placing.decklists.map((decklist) => 
                                         <div className={styles.row}>
                                             <span>{`[${placing.placing}] ${decklist.username}`}</span>
-                                            {(decklist.archetype.length > 0) &&
+                                            {(decklist.legend.length > 0) &&
                                                 <span>
                                                     {" ("}
-                                                    <Link to={`/decklists/riftbound/tournament/${TOURNAMENT_RESULT_TO_ID(tournament)}/decklist/${decklist.username}`} style={{color: "var(--text-default)"}}>
-                                                        {decklist.archetype}
+                                                    <Link to={`/decklists/riftbound/tournament/${TOURNAMENT_RESULT_TO_ID(tournament)}/decklist/${decklist.username}`}
+                                                        style={{color: "var(--text-default)"}}>
+                                                            {decklist.archetype}
                                                     </Link>
                                                     {")"}
                                                 </span>

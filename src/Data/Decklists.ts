@@ -2,26 +2,42 @@ import { AEGIS_20250817 } from "./decklists/Aegis";
 import { SFC_20250803 } from "./decklists/China";
 import { RFC_20250809 } from "./decklists/France";
 import { MCW_20250807 } from "./decklists/Italy";
-import { LRCS_20250816 } from "./decklists/Luxury Riftbound Champion Series";
+import { LRCS_20250816 } from "./decklists/LuxuryRiftboundChampionSeries";
 import { RMW_20250809, RMW_20250802, RMW_20250726 } from "./decklists/RiftboundMetaWeekly";
 import { RLT_20250808 } from "./decklists/Riftlab";
 import { TNF_20250807, TNF_20250731, TNF_20250814 } from "./decklists/ThursdayNightFights";
-import { Decklist, TOURNAMENT_RESULT_TO_ID, TournamentResults } from "./Interfaces";
+import { Decklist, RawTournamentResults, TOURNAMENT_RESULT_TO_ID, TournamentResults } from "./Interfaces";
 
-export const TOURNAMENT_DECKLISTS: TournamentResults[] = [
+const RAW_TOURNAMENT_DECKLISTS: RawTournamentResults[] = [
     AEGIS_20250817, LRCS_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
 ];
+
+export let TOURNAMENT_DECKLISTS: TournamentResults[] = [];
+for(let raw of RAW_TOURNAMENT_DECKLISTS) {
+    let tournamentResults: TournamentResults = {...raw} as TournamentResults;
+    for(let placing of tournamentResults.placings) {
+        for(let decklist of placing.decklists) {
+            decklist.tournamentName = tournamentResults.tournamentName;
+            decklist.date = tournamentResults.date;
+            decklist.placing = placing.placing;
+            decklist.tournId = TOURNAMENT_RESULT_TO_ID(tournamentResults);
+        }
+    }
+    TOURNAMENT_DECKLISTS.push(tournamentResults);
+}
 
 let archetypeDecklists: {[archetypeLower: string]: Decklist[]} = {};
 let archetypeCasedNames: {[archetypeLower: string]: string} = {};
 let tournamentDict: {[id: string]: TournamentResults} = {};
 let tournamentNames: {[id: string]: string} = {};
+let tournamentNameToIdDict: {[name: string]: string} = {};
 
-for(let tournamentResult of TOURNAMENT_DECKLISTS) {
-    const tournId = TOURNAMENT_RESULT_TO_ID(tournamentResult);
-    tournamentDict[tournId] = tournamentResult;
-    tournamentNames[tournId] = tournamentResult.tournamentName;
-    for(let placing of tournamentResult.placings) {
+for(let tournamentResults of TOURNAMENT_DECKLISTS) {
+    const tournId = TOURNAMENT_RESULT_TO_ID(tournamentResults);
+    tournamentDict[tournId] = tournamentResults;
+    tournamentNameToIdDict[tournamentResults.tournamentName] = tournId;
+    tournamentNames[tournId] = tournamentResults.tournamentName;
+    for(let placing of tournamentResults.placings) {
         for(let decklist of placing.decklists) {
             if(decklist.archetype && decklist.mainDeck.length > 0) {
                 const archetypeLower = decklist.archetype.toLowerCase();
@@ -79,6 +95,10 @@ export function GET_PLACING(tournId: string, username: string): string|undefined
 
 export function GET_TOURNAMENT_NAME(tournId: string): string {
     return (tournId in tournamentNames) ? tournamentNames[tournId] : "Unknown Tournament Name";
+}
+
+export function GET_TOURNAMENT_ID(tournamentName: string): string {
+    return (tournamentName in tournamentNameToIdDict) ? tournamentNameToIdDict[tournamentName] : "";
 }
 
 // {

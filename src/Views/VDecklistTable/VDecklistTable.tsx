@@ -1,14 +1,13 @@
 import React from 'react';
 import styles from './VDecklistTable.module.css';
 
-import { ALL_CCATEGORIES, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CCATEGORY } from '../../Data';
+import { ALL_CCATEGORIES, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CCATEGORY, ImageUtil } from '../../Data';
 
 import { VDecklistCard } from '../VDecklistCard';
+import { Link } from 'react-router-dom';
 
 interface IProps {
     archetype: string;
-    // username?: string;
-    // link?: string;
 }
 
 export function GET_COLOR_STYLE(cc: CCATEGORY, count: number, sideCount: number): string {
@@ -180,14 +179,19 @@ export class VDecklistTable extends React.Component<IProps> {
                                     md += this.cardAmounts[cardId][deckIdx];
                                     sb += this.sideboardAmounts[cardId][deckIdx];
                                 }
-                                let info: string[] = [];
-                                if(decklist.date) info.push(decklist.date);
-                                if(decklist.username) info.push(decklist.username);
                                 return (
-                                    <th className={styles.cell} key={deckIdx} title={info.join(" ")}>
-                                        <span className={styles.mainDeck}>{md}</span>
-                                        {(sb > 0) &&
-                                            <span className={styles.sideboard}>{sb}</span>
+                                    <th className={styles.linkCell} key={deckIdx} title={`${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}`}>
+                                        {((md === 56) && (sb === 0 || sb === 8)) ? 
+                                            <Link to={`/decklists/riftbound/tournament/${decklist.tournId}/decklist/${decklist.username}`} style={{color: "var(--text-default)"}}>
+                                                <img src={ImageUtil.getImage("Info")} height={17}
+                                                    title={`${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}`}
+                                                    alt={`${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}`} />
+                                            </Link>
+                                        : <>
+                                            <span className={styles.mainDeck}>{md}</span>
+                                            {(sb > 0) &&
+                                                <span className={styles.sideboard}>{sb}</span>
+                                            }</>
                                         }
                                     </th>
                                 );

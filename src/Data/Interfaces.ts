@@ -12,9 +12,25 @@ export interface TournamentResults {
     placings: TournamentPlacing[];
 }
 
+export interface RawTournamentResults {
+    tournamentName: string;
+    abbrName: "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LRCS" | "AEGIS";
+    date: string;
+    meta: PATCH;
+    host: string;
+    // size: number;
+    links: string[];
+    placings: RawTournamentPlacing[];
+}
+
 export interface TournamentPlacing {
     placing: string;
     decklists: Decklist[];
+}
+
+export interface RawTournamentPlacing {
+    placing: string;
+    decklists: RawDecklist[];
 }
 
 export interface PlayerPlacing {
@@ -23,9 +39,15 @@ export interface PlayerPlacing {
     date: string;
 }
 
-export interface Decklist {
-    username: string;
+export interface Decklist extends RawDecklist {
+    tournId: string;
+    tournamentName: string;
     date: string;
+    placing: string;
+}
+
+export interface RawDecklist {
+    username: string;
     archetype: string;
     legend: string;
     chosenChampion: string;
@@ -108,7 +130,7 @@ export function TOURNAMENT_RESULT_TO_ID(result: TournamentResults): string {
     return `${result.abbrName}${result.date.replaceAll("/","")}`;
 }
 
-export function PARSE_DECKLIST(text: string): Decklist {
+export function PARSE_DECKLIST(text: string): RawDecklist {
     const rawCardList: string[] = text.split(" ");
     let cardDict: {[cardId: string]: number} = {};
     for(let cardId of rawCardList) {
@@ -119,8 +141,9 @@ export function PARSE_DECKLIST(text: string): Decklist {
         }
     }
 
-    let decklist: Decklist = {
-        username: "", date: "", archetype: "", legend: rawCardList[0], chosenChampion: rawCardList[1],
+    let decklist: RawDecklist = {
+        username: "", archetype: "", 
+        legend: rawCardList[0], chosenChampion: rawCardList[1],
         mainDeck: [], battlefields: [], runeDeck: [], sideboard: []
     };
     let mode: "MD" | "BF" | "RU" | "SB" = "MD";
@@ -146,4 +169,19 @@ export function PARSE_DECKLIST(text: string): Decklist {
     }
 
     return decklist;
+}
+
+export function DECKLIST_TTS_EXPORT(decklist: RawDecklist): string {
+    return [{id: decklist.legend, count: 1}].concat(decklist.mainDeck).concat(decklist.battlefields).concat(decklist.runeDeck).concat(decklist.sideboard)
+        .map((cardAmount: DecklistCardAmount) => {
+            let arr = [];
+            for(let i = 0; i < cardAmount.count; i++) {
+                arr.push(cardAmount.id);
+            }
+            return arr.join(" ");
+        }).join(" ");
+}
+
+export function MOCK_DECKLIST_FROM_RAW(raw: RawDecklist): Decklist {
+    return {...raw, tournId: "", tournamentName: "", date: "", placing: "string"};
 }

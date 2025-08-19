@@ -1,5 +1,8 @@
 # Important
-overnumbered/identical cards
+different host for urls
+
+# Future
+overnumbered/identical/reprinted cards
 
 # Aesthetic
-DecklistTablePage remove empty bottom; make img hover for bottom rows higher
+decklists remove empty bottom; make img hover for bottom rows higher
