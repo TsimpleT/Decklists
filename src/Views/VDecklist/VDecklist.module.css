@@ -1,7 +1,27 @@
 .container {
-    margin: 2px 6px;
+    margin: 2px 6px 400px 0;
+}
+
+.title {
+    margin: 0 0 8px 4px;
 }
 
 .decklistContainer {
-    width: 275px;
+    width: 308px;
+}
+
+.row {
+    margin-bottom: 3px;
+}
+
+.count {
+    width: 20px;
+    float: left;
+    background-color: #000;
+    border-radius: 8px;
+    text-align: center;
+    padding: 2px 6px;
+    margin-right: 4px;
+    font-weight: 600;
+    color: white;
 }

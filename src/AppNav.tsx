@@ -34,20 +34,20 @@ export class AppNav extends React.Component/*<{}, IState>*/ {
                 <Link to={"/decklists/riftbound/all-archetypes"}>
                     All Archetypes
                 </Link>
-                <Link to={"/decklists/riftbound/tournament-results"}>
+                <Link to={"/decklists/riftbound/tournaments"}>
                     Tournament Results
                 </Link>
                 <Link to={"/decklists/riftbound/player-results"}>
                     Player Results
                 </Link>
-                <Link to={"/decklists/riftbound/generate-decklist"}>
-                    Generate Decklist
+                <Link to={"/decklists/riftbound/enter-decklist"}>
+                    Enter Decklist
                 </Link>
                 <Link to={"/decklists/riftbound/all-cards"}>
                     All Cards
                 </Link>
             </nav>
-            <div style={{marginBottom: "40px"}}/>
+            <div style={{marginBottom: "43px"}}/>
         </>);
     }
 }

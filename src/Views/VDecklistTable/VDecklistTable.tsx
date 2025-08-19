@@ -11,7 +11,7 @@ interface IProps {
     // link?: string;
 }
 
-function getColorStyle(cc: CCATEGORY, count: number, sideCount: number): string {
+export function GET_COLOR_STYLE(cc: CCATEGORY, count: number, sideCount: number): string {
     return ((cc === CCATEGORY.BATTLEFIELD && count === 1) || cc === CCATEGORY.RUNE || cc === CCATEGORY.LEGEND) ? ""
         : (count === 3) ? styles.gold : (count === 2) ? styles.silver : (count === 1) ? styles.bronze : (count === 0 && sideCount === 0) ? styles.blank : "";
 }
@@ -231,7 +231,7 @@ export class VDecklistTable extends React.Component<IProps> {
                                 const stats = this.cardStats[cardId];
                                 return (
                                     <tr key={cardIdx}>
-                                        <VDecklistCard id={cardId} />
+                                        <VDecklistCard cardId={cardId} options={{type: "table"}}/>
                                         <td className={styles.statsCell} style={getColorScale(cc, stats.mdApp)}>
                                             <span className={styles.mainDeck}>
                                                 { stats.mdApp.toLocaleString(undefined,{style:'percent'}) }
@@ -251,7 +251,7 @@ export class VDecklistTable extends React.Component<IProps> {
                                             </span>
                                         </td>
                                         {this.cardAmounts[cardId].map((count, deckIdx) => (
-                                            <td className={`${styles.cell} ${getColorStyle(cc, count, this.sideboardAmounts[cardId][deckIdx])}`} key={deckIdx}>
+                                            <td className={`${styles.cell} ${GET_COLOR_STYLE(cc, count, this.sideboardAmounts[cardId][deckIdx])}`} key={deckIdx}>
                                                 <span className={styles.mainDeck}>{count}</span>
                                                 {(this.sideboardAmounts[cardId][deckIdx] > 0) &&
                                                     <span className={styles.sideboard} title={"sideboard"}>

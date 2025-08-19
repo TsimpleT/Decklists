@@ -6,25 +6,30 @@ import { LRCS_20250816 } from "./decklists/Luxury Riftbound Champion Series";
 import { RMW_20250809, RMW_20250802, RMW_20250726 } from "./decklists/RiftboundMetaWeekly";
 import { RLT_20250808 } from "./decklists/Riftlab";
 import { TNF_20250807, TNF_20250731, TNF_20250814 } from "./decklists/ThursdayNightFights";
-import { Decklist, TournamentResults } from "./Interfaces";
+import { Decklist, TOURNAMENT_RESULT_TO_ID, TournamentResults } from "./Interfaces";
 
 export const TOURNAMENT_DECKLISTS: TournamentResults[] = [
     AEGIS_20250817, LRCS_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
 ];
 
-let decklistMap: {[archetypeLower: string]: Decklist[]} = {};
+let archetypeDecklists: {[archetypeLower: string]: Decklist[]} = {};
 let archetypeCasedNames: {[archetypeLower: string]: string} = {};
+let tournamentDict: {[id: string]: TournamentResults} = {};
+let tournamentNames: {[id: string]: string} = {};
 
 for(let tournamentResult of TOURNAMENT_DECKLISTS) {
+    const tournId = TOURNAMENT_RESULT_TO_ID(tournamentResult);
+    tournamentDict[tournId] = tournamentResult;
+    tournamentNames[tournId] = tournamentResult.tournamentName;
     for(let placing of tournamentResult.placings) {
         for(let decklist of placing.decklists) {
             if(decklist.archetype && decklist.mainDeck.length > 0) {
                 const archetypeLower = decklist.archetype.toLowerCase();
-                if(!(archetypeLower in decklistMap)) {
-                    decklistMap[archetypeLower] = [];
+                if(!(archetypeLower in archetypeDecklists)) {
+                    archetypeDecklists[archetypeLower] = [];
                     archetypeCasedNames[archetypeLower] = decklist.archetype;
                 }
-                decklistMap[archetypeLower].push(decklist);
+                archetypeDecklists[archetypeLower].push(decklist);
             }
         }
     }
@@ -32,21 +37,49 @@ for(let tournamentResult of TOURNAMENT_DECKLISTS) {
 
 export function GET_ARCHETYPE_DECKLISTS(archetype: string): Decklist[] {
     const archetypeLower = archetype.toLowerCase();
-    if(!(archetypeLower in decklistMap)) {
+    if(!(archetypeLower in archetypeDecklists)) {
         throw Error(`archetype ${archetypeLower} doesn't exist.`);
     }
-    return decklistMap[archetypeLower];
+    return archetypeDecklists[archetypeLower];
 }
 
 export function GET_CASED_ARCHETYPE(archetype: string): string {
     const archetypeLower = archetype.toLowerCase();
-    if(!(archetypeLower in decklistMap)) {
+    if(!(archetypeLower in archetypeDecklists)) {
         throw Error(`archetype ${archetypeLower} doesn't exist.`);
     }
     return archetypeCasedNames[archetypeLower];
 }
 
 export const ALL_ARCHETYPES: string[] = Object.values(archetypeCasedNames).sort();
+
+export function GET_DECKLIST(tournId: string, username: string): Decklist|undefined {
+    if(!(tournId in tournamentDict)) { return undefined; }
+    const tournamentResult = tournamentDict[tournId];
+    for(let placing of tournamentResult.placings) {
+        for(let decklist of placing.decklists) {
+            if(decklist.username === username) {
+                return decklist;
+            }
+        }
+    }
+}
+
+export function GET_PLACING(tournId: string, username: string): string|undefined {
+    if(!(tournId in tournamentDict)) { return undefined; }
+    const tournamentResult = tournamentDict[tournId];
+    for(let placing of tournamentResult.placings) {
+        for(let decklist of placing.decklists) {
+            if(decklist.username === username) {
+                return placing.placing;
+            }
+        }
+    }
+}
+
+export function GET_TOURNAMENT_NAME(tournId: string): string {
+    return (tournId in tournamentNames) ? tournamentNames[tournId] : "Unknown Tournament Name";
+}
 
 // {
 //     "Viktor Swarm Control": [

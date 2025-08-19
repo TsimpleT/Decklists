@@ -1,3 +1,4 @@
+import { GET_CARD } from "./CardData";
 import { FACTION, PATCH, TYPE } from "./Enums";
 
 export interface TournamentResults {
@@ -101,4 +102,48 @@ export interface CC_CARD_STATS {
 export interface DL_CC_CARD_STATS {
     total: number;
     sbTotal: number;
+}
+
+export function TOURNAMENT_RESULT_TO_ID(result: TournamentResults): string {
+    return `${result.abbrName}${result.date.replaceAll("/","")}`;
+}
+
+export function PARSE_DECKLIST(text: string): Decklist {
+    const rawCardList: string[] = text.split(" ");
+    let cardDict: {[cardId: string]: number} = {};
+    for(let cardId of rawCardList) {
+        if(cardId in cardDict) {
+            cardDict[cardId] += 1;
+        } else {
+            cardDict[cardId] = 1;
+        }
+    }
+
+    let decklist: Decklist = {
+        username: "", date: "", archetype: "", legend: rawCardList[0], chosenChampion: rawCardList[1],
+        mainDeck: [], battlefields: [], runeDeck: [], sideboard: []
+    };
+    let mode: "MD" | "BF" | "RU" | "SB" = "MD";
+    function getDecklistPortion(): DecklistCardAmount[] {
+        return (mode === "MD") ? decklist.mainDeck : (mode === "BF") ? decklist.battlefields : (mode === "RU") ? decklist.runeDeck : decklist.sideboard;
+    }
+    
+    let count = 0;
+    for(let i = 1; i < rawCardList.length; i++) {
+        count++;
+        if(i === cardDict.length-1 || rawCardList[i] !== rawCardList[i+1]) {
+            const cardType = GET_CARD(rawCardList[i]).type;
+            if(cardType === TYPE.BATTLEFIELD) {
+                mode = "BF";
+            } else if(cardType === TYPE.RUNE) {
+                mode = "RU";
+            } else if(mode === "RU") { // cardType is already guaranteed not to be RUNE bc else
+                mode = "SB";
+            }
+            getDecklistPortion().push({id: rawCardList[i], count: count});
+            count = 0;
+        }
+    }
+
+    return decklist;
 }

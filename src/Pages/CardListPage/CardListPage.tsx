@@ -16,7 +16,7 @@ export class CardListPage extends React.Component {
                     const diff = (i === 0 || ALL_CARD_IDS[i].substring(0,3) !== ALL_CARD_IDS[i-1].substring(0,3)) ? 1 : parseInt(ALL_CARD_IDS[i].substring(4))-parseInt(ALL_CARD_IDS[i-1].substring(4));
                     return (<>
                         {(diff !== 1) && <div>{`${diff-1} missing card(s)`}</div>}
-                        <VDecklistCard id={id} notTable={true} key={id} />
+                        <VDecklistCard cardId={id} options={{type: "all-cards"}} key={id} />
                     </>);
                 })}
             </div>

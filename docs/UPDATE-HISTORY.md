@@ -1,3 +1,5 @@
+- VERSION \[0.2.X\]
+    - \[0.2.0\] (25Aug18) Decklist View
 - VERSION \[0.1.X\]
-    - \[0.1.1\] Player Results + Cleaning
+    - \[0.1.1\] (25Aug17) Player Results + Cleaning
     - \[0.1.0\] (25Aug16) DecklistTable + All Cards

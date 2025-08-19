@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './TournamentResultsPage.module.css';
 
-import { DEV_STRING_PRE, TOURNAMENT_DECKLISTS } from '../../Data';
+import { DEV_STRING_PRE, TOURNAMENT_DECKLISTS, TOURNAMENT_RESULT_TO_ID } from '../../Data';
 
 export class TournamentResultsPage extends React.Component {
     public override componentDidMount(): void {
@@ -16,13 +17,22 @@ export class TournamentResultsPage extends React.Component {
                         <div className={styles.tournamentHeader}>{`${tournament.tournamentName} ${tournament.date}`}</div>
                         <div>
                             {tournament.placings.map((placing) => 
-                                <div>
+                                <>
                                     {placing.decklists.map((decklist) => 
-                                        <div>
-                                            <div>{`[${placing.placing}] ${decklist.username} (${decklist.archetype})`}</div>
+                                        <div className={styles.row}>
+                                            <span>{`[${placing.placing}] ${decklist.username}`}</span>
+                                            {(decklist.archetype.length > 0) &&
+                                                <span>
+                                                    {" ("}
+                                                    <Link to={`/decklists/riftbound/tournament/${TOURNAMENT_RESULT_TO_ID(tournament)}/decklist/${decklist.username}`} style={{color: "var(--text-default)"}}>
+                                                        {decklist.archetype}
+                                                    </Link>
+                                                    {")"}
+                                                </span>
+                                            }
                                         </div>
                                     )}
-                                </div>
+                                </>
                             )}
                         </div>
                     </div>

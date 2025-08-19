@@ -1,0 +1,21 @@
+.container {
+    margin-left: 8px;
+}
+
+.container > * {
+    float: left;
+    margin-right: 8px;
+}
+
+.decklistOnlyContainer {
+    margin-left: 4px;
+}
+
+.restyleButton {
+    all: unset;
+    color: var(--text-default);
+    border: 1px solid var(--text-default);
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin: 12px 0;
+}

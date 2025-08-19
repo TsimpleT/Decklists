@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { DEV_STRING_PRE } from './Data';
 
 import { AppNav } from './AppNav';
-import { AllArchetypesPage, CardListPage, DecklistTablePage, ErrorPage, GenerateDecklistPage, PlayerResultsPage, TournamentResultsPage } from './Pages';
+import { AllArchetypesPage, CardListPage, DecklistTablePage, ErrorPage, EnterDecklistPage, PlayerResultsPage, TournamentResultsPage, DecklistPage } from './Pages';
 
 export class AppMainRouter extends React.Component {
     public override componentDidMount(): void {
@@ -20,10 +20,11 @@ export class AppMainRouter extends React.Component {
                     <Route path="/decklists/riftbound" element={ <span style={{color: "var(--text-default)", marginLeft: "8px"}}> click something above </span>} />
                     <Route path="/decklists/riftbound/all-archetypes" element={<AllArchetypesPage />} />
                     <Route path="/decklists/riftbound/archetype/:archetype?" element={<DecklistTablePage />} />
-                    <Route path="/decklists/riftbound/tournament-results" element={<TournamentResultsPage />} />
                     <Route path="/decklists/riftbound/player-results" element={<PlayerResultsPage />} />
-                    <Route path="/decklists/riftbound/generate-decklist" element={<GenerateDecklistPage />} />
+                    <Route path="/decklists/riftbound/enter-decklist" element={<EnterDecklistPage />} />
                     <Route path="/decklists/riftbound/all-cards" element={<CardListPage />} />
+                    <Route path="/decklists/riftbound/tournaments" element={<TournamentResultsPage />} />
+                    <Route path="/decklists/riftbound/tournament/:tourneyName/decklist/:username" element={<DecklistPage />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </BrowserRouter>

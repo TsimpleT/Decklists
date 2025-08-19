@@ -4,7 +4,9 @@ import posStyles from './ImagePositioning.module.css';
 
 import { GET_CARD, CardDTO, ImageUtil, FACTION, TYPE } from '../../Data';
 
-interface IProps { id: string; notTable?: boolean; }
+type PropsOptions = {type: "table"|"all-cards"};
+
+interface IProps { cardId: string; options: PropsOptions; }
 interface IState { hover: boolean; }
 
 export class VDecklistCard extends React.Component<IProps, IState> {
@@ -22,7 +24,7 @@ export class VDecklistCard extends React.Component<IProps, IState> {
     }
 
     public render(): React.ReactNode {
-        const card: CardDTO = GET_CARD(this.props.id);
+        const card: CardDTO = GET_CARD(this.props.cardId);
         let powerIcons = [];
         let containerStyle: React.CSSProperties = {};
         let fadeLStyle: React.CSSProperties = {};
@@ -56,30 +58,18 @@ export class VDecklistCard extends React.Component<IProps, IState> {
                     </span>
                     <div className={styles.rightContainer}>
                         {(!(card.type === TYPE.LEGEND || card.type === TYPE.RUNE || card.type === TYPE.BATTLEFIELD)) &&
-                            <span className={styles.cost} style={{marginRight: (this.props.notTable === true) ? "2px" : ""}}>
+                            <span className={styles.cost} style={(this.props.options.type !== "table") ? {marginRight: "2px"} : {}}>
                                 <span className={styles.energyCost}>
                                     {card.stats.energy}
                                 </span>
                                 {(powerIcons.length > 0) && powerIcons}
                             </span>
                         }
-                        {(this.props.notTable === true || card.type === TYPE.LEGEND || card.type === TYPE.RUNE || card.type === TYPE.BATTLEFIELD) &&
+                        {(this.props.options.type !== "table" || card.type === TYPE.LEGEND || card.type === TYPE.RUNE || card.type === TYPE.BATTLEFIELD) &&
                             <img src={ImageUtil.getImage(card.type)} height={20} title={card.type} alt={card.type}
                                 className={`${styles.cardType} ${(card.faction === FACTION.ORDER) ? styles.invert : ""}`} />
                         }
                     </div>
-                    {/* {(card.type === TYPE.LEGEND || card.type === TYPE.RUNE || card.type === TYPE.BATTLEFIELD)
-                    ?
-                        <img src={ImageUtil.getImage((card.type === TYPE.RUNE && card.faction === FACTION.ORDER) ? "RuneDark" : card.type)} 
-                            className={styles.cardType} height={18} title={card.type} alt={card.type} />
-                    :
-                        <span className={styles.cost}>
-                            <span className={styles.energyCost}>
-                                {card.stats.energy}
-                            </span>
-                            {(powerIcons.length > 0) && powerIcons}
-                        </span>
-                    } */}
                 </div>
                 <div className={styles.cardImageFullContainer}>
                     <div className={`${styles.cardImageSmallContainer} ${posStyles[`${card.id}-div`]}`}>
@@ -96,6 +86,6 @@ export class VDecklistCard extends React.Component<IProps, IState> {
             </div>
         );
 
-        return (this.props.notTable) ? <>{content}</> : <td>{content}</td>;
+        return (this.props.options.type === "table") ? <td>{content}</td> : <>{content}</>;
     }
 }

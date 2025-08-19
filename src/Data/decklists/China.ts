@@ -3,7 +3,7 @@ import { TournamentResults } from "../Interfaces";
 
 export const SFC_20250803: TournamentResults = {
     tournamentName: "SFC", abbrName: "SFC", date: "2025/08/03", meta: PATCH.OGN, host: "?",
-    links: [],
+    links: ["https://staticaforestcard.com/decks?sort=match"],
     placings: [
         {placing: "1st", decklists: [
             {"username":"星迹缘阳光","date":"2025/08/03","archetype":"Master Yi Midrange","legend":"OGS-019-1","chosenChampion":"OGS-009-1","mainDeck":[{"id":"OGS-009-1","count":1},{"id":"OGN-045-1","count":3},{"id":"OGN-046-1","count":3},{"id":"OGN-043-1","count":3},{"id":"OGN-136-1","count":3},{"id":"OGN-052-1","count":3},{"id":"OGN-058-1","count":3},{"id":"OGN-044-1","count":3},{"id":"OGN-077-1","count":3},{"id":"OGN-054-1","count":1},{"id":"OGN-132-1","count":3},{"id":"OGN-154-1","count":2},{"id":"OGN-155-1","count":3},{"id":"OGN-149-1","count":3},{"id":"OGN-082-1","count":3}],"battlefields":[{"id":"OGN-280-1","count":1},{"id":"OGN-292-1","count":1},{"id":"OGN-284-1","count":1}],"runeDeck":[{"id":"OGN-042-1","count":5},{"id":"OGN-126-1","count":7}],"sideboard":[]},

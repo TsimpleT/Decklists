@@ -13,7 +13,7 @@ export class AllArchetypesPage extends React.Component {
         return (
             <div className={styles.container}>
                 {ALL_ARCHETYPES.map((archetype) => 
-                    <div onClick={() => {this.setState({archetype: archetype})}} key={archetype}>
+                    <div key={archetype}>
                         <Link to={`/decklists/riftbound/archetype/${archetype.replaceAll(" ", "-").toLowerCase()}`} style={{color: "var(--text-default)"}}>
                             {`${archetype}: ${GET_ARCHETYPE_DECKLISTS(archetype).length} decklist${GET_ARCHETYPE_DECKLISTS(archetype).length === 1 ? "" : "s"}`}
                         </Link>
