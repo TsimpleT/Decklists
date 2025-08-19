@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/decklists/static/css/main.78eb952e.css",
-    "main.js": "/decklists/static/js/main.a2f17753.js",
+    "main.css": "/decklists/static/css/main.5b41e031.css",
+    "main.js": "/decklists/static/js/main.e5fb2be8.js",
     "static/js/453.4ec2150a.chunk.js": "/decklists/static/js/453.4ec2150a.chunk.js",
     "static/media/RainbowRuneBorder.png": "/decklists/static/media/RainbowRuneBorder.77b0a7671c08b3e00cff.png",
     "static/media/RainbowRune.png": "/decklists/static/media/RainbowRune.7891cef5fa18cebd1b34.png",
@@ -34,12 +34,12 @@
     "static/media/OrderBW.png": "/decklists/static/media/OrderBW.2bce79e6617e17fdab60.png",
     "static/media/Battlefield.png": "/decklists/static/media/Battlefield.0517b5b4a467adb32d32.png",
     "index.html": "/decklists/index.html",
-    "main.78eb952e.css.map": "/decklists/static/css/main.78eb952e.css.map",
-    "main.a2f17753.js.map": "/decklists/static/js/main.a2f17753.js.map",
+    "main.5b41e031.css.map": "/decklists/static/css/main.5b41e031.css.map",
+    "main.e5fb2be8.js.map": "/decklists/static/js/main.e5fb2be8.js.map",
     "453.4ec2150a.chunk.js.map": "/decklists/static/js/453.4ec2150a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.78eb952e.css",
-    "static/js/main.a2f17753.js"
+    "static/css/main.5b41e031.css",
+    "static/js/main.e5fb2be8.js"
   ]
 }
