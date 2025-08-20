@@ -1,0 +1,94 @@
+
+.imageContainer {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid white;
+}
+
+.numLists {
+    position: absolute;
+    right: 6px;
+    bottom: 0;
+    color: #FFFFFFD0;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-size: 16px;
+    font-weight: 600;
+    z-index: 5;
+}
+
+.imageContainer > img {
+    width: 280%;
+    margin-top: -14%;
+    margin-left: -94%;
+}
+
+.position-OGS-017 {
+    width: 220% !important;
+    margin-top: -18% !important;
+    margin-left: -64% !important;
+}
+
+.position-OGS-019 {
+    width: 240% !important;
+    margin-top: -20% !important;
+    margin-left: -84% !important;
+}
+
+.position-OGN-247 {
+    width: 320% !important;
+    margin-top: -36% !important;
+    margin-left: -160% !important;
+}
+
+.position-OGN-249 {
+    width: 280% !important;
+    margin-top: -18% !important;
+    margin-left: -94% !important;
+}
+
+.position-OGN-251 {
+    width: 320% !important;
+    margin-top: -6% !important;
+    margin-left: -120% !important;
+}
+
+.position-OGN-253 {
+    width: 320% !important;
+    margin-top: -30% !important;
+    margin-left: -100% !important;
+}
+
+.position-OGN-255 {
+    margin-top: -18% !important;
+    margin-left: -70% !important;
+}
+
+.position-OGN-257 {
+    margin-top: -40% !important;
+    margin-left: -90% !important;
+}
+
+.position-OGN-263 {
+    width: 200% !important;
+    margin-top: -44% !important;
+    margin-left: -44% !important;
+}
+
+.position-OGN-265 {
+    width: 200% !important;
+    margin-top: -40% !important;
+    margin-left: -44% !important;
+}
+
+.position-OGN-267 {
+    width: 300% !important;
+    margin-top: -40% !important;
+    margin-left: -128% !important;
+}
+
+.position-OGN-269 {
+    width: 320% !important;
+    margin-top: -24% !important;
+    margin-left: -100% !important;
+}

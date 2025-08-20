@@ -182,6 +182,13 @@ export function DECKLIST_TTS_EXPORT(decklist: RawDecklist): string {
         }).join(" ");
 }
 
+export function DECKLIST_TCGA_EXPORT(decklist: RawDecklist): string {
+    return [[{id: decklist.legend, count: 1}], decklist.mainDeck, decklist.battlefields, decklist.runeDeck, decklist.sideboard]
+        .map((cardAmountArr: DecklistCardAmount[]) =>
+            cardAmountArr.map((cardAmount: DecklistCardAmount) => `${cardAmount.count} ${GET_CARD(cardAmount.id).name}`).join("\n")
+        ).join("\n\n");
+}
+
 export function MOCK_DECKLIST_FROM_RAW(raw: RawDecklist): Decklist {
     return {...raw, tournId: "", tournamentName: "", date: "", placing: "string"};
 }

@@ -1,4 +1,5 @@
 - VERSION \[0.2.X\]
+    - \[0.2.2\] (25Aug20) TCGArena Export
     - \[0.2.1\] (25Aug18) Decklist Links + TTS Export
     - \[0.2.0\] (25Aug18) Decklist View
 - VERSION \[0.1.X\]

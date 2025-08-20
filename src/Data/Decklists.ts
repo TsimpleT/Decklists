@@ -101,6 +101,29 @@ export function GET_TOURNAMENT_ID(tournamentName: string): string {
     return (tournamentName in tournamentNameToIdDict) ? tournamentNameToIdDict[tournamentName] : "";
 }
 
+const archetypeLegendDict: {[archetype: string]: string} = {
+    "Annie Aggro": "OGS-017",
+    "Master Yi Midrange": "OGS-019",
+    "Lux Control": "OGS-021",
+    "Garen Midrange": "OGS-023",
+    "Kai'Sa Tempo": "OGN-247",
+    "Volibear Ramp": "OGN-249",
+    "Jinx Aggro": "OGN-251",
+    "Darius": "OGN-253",
+    "Ahri Tempo": "OGN-255",
+    "Lee Sin Midrange": "OGN-257",
+    "Yasuo Midrange": "OGN-259",
+    "Leona Midrange": "OGN-261",
+    "Teemo Tempo": "OGN-263",
+    "Viktor": "OGN-265",
+    "Miss Fortune Aurora": "OGN-267",
+    "Miss Fortune Aggro": "OGN-267",
+    "Sett Midrange": "OGN-269",
+};
+export function GET_LEGEND_FOR_ARCHETYPE(archetype: string): string {
+    return (archetype in archetypeLegendDict) ? archetypeLegendDict[archetype] : "???";
+}
+
 // {
 //     "Viktor Swarm Control": [
 //         {

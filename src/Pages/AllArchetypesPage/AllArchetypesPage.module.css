@@ -5,3 +5,8 @@
 .container > * {
     margin-bottom: 4px;
 }
+
+.linkContainer {
+    float: left;
+    margin-right: 8px;
+}

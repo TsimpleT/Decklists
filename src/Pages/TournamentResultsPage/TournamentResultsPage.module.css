@@ -9,3 +9,18 @@
 .tournamentHeader {
     font-weight: 600;
 }
+
+.row {
+    height: 32px;
+}
+
+.linkContainer {
+    float: left;
+    margin-right: 2px;
+}
+
+.rowText {
+    height: 100%;
+    margin-top: 4px;
+    /* vertical-align: center; */
+}

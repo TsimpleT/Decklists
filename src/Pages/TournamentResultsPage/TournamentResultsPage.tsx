@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './TournamentResultsPage.module.css';
 
 import { DEV_STRING_PRE, TOURNAMENT_DECKLISTS, TOURNAMENT_RESULT_TO_ID } from '../../Data';
+import { LegendImage } from '../../Views';
 
 export class TournamentResultsPage extends React.Component {
     public override componentDidMount(): void {
@@ -20,17 +21,15 @@ export class TournamentResultsPage extends React.Component {
                                 <>
                                     {placing.decklists.map((decklist) => 
                                         <div className={styles.row}>
-                                            <span>{`[${placing.placing}] ${decklist.username}`}</span>
                                             {(decklist.legend.length > 0) &&
-                                                <span>
-                                                    {" ("}
+                                                <div className={styles.linkContainer}>
                                                     <Link to={`/decklists/riftbound/tournament/${TOURNAMENT_RESULT_TO_ID(tournament)}/decklist/${decklist.username}`}
                                                         style={{color: "var(--text-default)"}}>
-                                                            {decklist.archetype}
+                                                        <LegendImage id={decklist.legend} size={28} />
                                                     </Link>
-                                                    {")"}
-                                                </span>
+                                                </div>
                                             }
+                                            <div className={styles.rowText}>{`[${placing.placing}] ${decklist.username}`}</div>
                                         </div>
                                     )}
                                 </>

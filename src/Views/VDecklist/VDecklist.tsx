@@ -2,7 +2,7 @@ import React from 'react';
 import copy from 'copy-to-clipboard';
 import styles from './VDecklist.module.css';
 
-import { Decklist, DECKLIST_TTS_EXPORT, GET_CCATEGORY } from '../../Data';
+import { Decklist, DECKLIST_TTS_EXPORT, DECKLIST_TCGA_EXPORT, GET_CCATEGORY } from '../../Data';
 
 import { VDecklistCard } from '../VDecklistCard';
 import { GET_COLOR_STYLE } from '../VDecklistTable';
@@ -17,7 +17,12 @@ interface IProps {
 export class VDecklist extends React.Component<IProps> {
     private copyToTTS: React.MouseEventHandler<HTMLDivElement> = (_) => {
         copy(DECKLIST_TTS_EXPORT(this.props.decklist));
-        window.alert("Decklist copied to clipboard to be used for TTS.");
+        window.alert("Decklist copied to clipboard to be used in TTS.");
+    }
+
+    private copyToTCGArena: React.MouseEventHandler<HTMLDivElement> = (_) => {
+        copy(DECKLIST_TCGA_EXPORT(this.props.decklist));
+        window.alert("Decklist copied to clipboard to be used in TCGArena.");
     }
 
     public render(): React.ReactNode {
@@ -27,6 +32,7 @@ export class VDecklist extends React.Component<IProps> {
                 <div className={styles.title}>
                     {this.props.title}
                     {(this.props.hideExport !== true) && <div onClick={this.copyToTTS} className={`${styles.restyleButton}`}>TTS</div>}
+                    {(this.props.hideExport !== true) && <div onClick={this.copyToTCGArena} className={`${styles.restyleButton}`}>TCGArena</div>}
                 </div>
                 <div className={styles.subtitle}>{this.props.subtitle}</div>
                 <div className={styles.decklistContainer}>

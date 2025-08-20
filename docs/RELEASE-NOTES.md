@@ -1,2 +1,1 @@
-[0.2.1] Decklist Links + TTS Export
-- RawDecklist => autofill repeated tourney data => Decklist
+[0.2.2] Legend Images + TCGArena Export
