@@ -1,2 +1,3 @@
-[0.2.4] AllArchetypesPage Aesthetics
-- Proper version numbering from now on
+[0.2.5] Overnumber Support
+- id=ttsId typically; printId is on the card
+- removed constant art from CardData

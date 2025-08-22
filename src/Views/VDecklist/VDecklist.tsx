@@ -39,7 +39,7 @@ export class VDecklist extends React.Component<IProps> {
                     {[{id: dl.legend, count: 1}].concat(dl.mainDeck).concat(dl.battlefields).concat(dl.runeDeck).concat(dl.sideboard).map((listing, i) => (
                         <div className={styles.row}>
                             <span className={`${styles.count} ${GET_COLOR_STYLE(GET_CCATEGORY(listing.id), listing.count, 0)}`}>{listing.count}x</span>
-                            <VDecklistCard cardId={listing.id} key={i} options={{type: "all-cards"}} />
+                            <VDecklistCard cardId={listing.id} key={i} options={{type: "showType"}} />
                         </div>
                     ))}
                 </div>

@@ -4,12 +4,12 @@ import { RFC_20250809 } from "./decklists/France";
 import { MCW_20250807 } from "./decklists/Italy";
 import { LRCS_20250816 } from "./decklists/LuxuryRiftboundChampionSeries";
 import { RMW_20250809, RMW_20250802, RMW_20250726 } from "./decklists/RiftboundMetaWeekly";
-import { RLT_20250808 } from "./decklists/Riftlab";
+import { RLC_20250822, RLT_20250808 } from "./decklists/Riftlab";
 import { TNF_20250807, TNF_20250731, TNF_20250814, TNF_20250821 } from "./decklists/ThursdayNightFights";
 import { Decklist, GET_TOURNAMENT_ID, RawTournamentResults, TournamentResults } from "./Interfaces";
 
 const RAW_TOURNAMENT_DECKLISTS: RawTournamentResults[] = [
-    TNF_20250821, AEGIS_20250817, LRCS_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
+    RLC_20250822, TNF_20250821, AEGIS_20250817, LRCS_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
 ];
 
 export let TOURNAMENT_DECKLISTS: TournamentResults[] = [];
@@ -52,7 +52,9 @@ for(let tournamentResults of TOURNAMENT_DECKLISTS) {
 export function GET_ARCHETYPE_DECKLISTS(archetype: string): Decklist[] {
     const archetypeLower = archetype.toLowerCase();
     if(!(archetypeLower in archetypeDecklists)) {
-        console.warn(`no decklists for archetype ${archetypeLower}.`);
+        if(!(archetype in archetypeLegendDict)) {
+            console.warn(`Archetype "${archetype}" not found.`);
+        }
         return [];
     }
     return archetypeDecklists[archetypeLower];
@@ -109,7 +111,7 @@ const archetypeLegendDict: {[archetype: string]: string} = {
     "Miss Fortune Aggro": "OGN-267",
     "Sett Midrange": "OGN-269",
 };
-export function GET_LEGEND_FOR_ARCHETYPE(archetype: string): string {
+export function ARCHETYPE_TO_LEGEND_ID(archetype: string): string {
     return (archetype in archetypeLegendDict) ? archetypeLegendDict[archetype] : "???";
 }
 

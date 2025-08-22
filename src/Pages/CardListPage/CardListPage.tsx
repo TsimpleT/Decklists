@@ -13,10 +13,10 @@ export class CardListPage extends React.Component {
         return (
             <div className={styles.container}>
                 {ALL_CARD_IDS.map((id, i) => {
-                    const diff = (i === 0 || ALL_CARD_IDS[i].substring(0,3) !== ALL_CARD_IDS[i-1].substring(0,3)) ? 1 : parseInt(ALL_CARD_IDS[i].substring(4))-parseInt(ALL_CARD_IDS[i-1].substring(4));
+                    // const diff = (i === 0 || ALL_CARD_IDS[i].substring(0,3) !== ALL_CARD_IDS[i-1].substring(0,3)) ? 1 : parseInt(ALL_CARD_IDS[i].substring(4))-parseInt(ALL_CARD_IDS[i-1].substring(4));
                     return (<>
-                        {(diff !== 1) && <div>{`${diff-1} missing card(s)`}</div>}
-                        <VDecklistCard cardId={id} options={{type: "all-cards"}} key={id} />
+                        {/* {(diff !== 1) && <div>{`${diff-1} missing card(s)`}</div>} */}
+                        <VDecklistCard cardId={id} options={{type: "showType"}} key={id} />
                     </>);
                 })}
             </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './TournamentResultsPage.module.css';
 
-import { DEV_STRING_PRE, TOURNAMENT_DECKLISTS, GET_TOURNAMENT_ID, GET_LEGEND_FOR_ARCHETYPE } from '../../Data';
+import { DEV_STRING_PRE, TOURNAMENT_DECKLISTS, GET_TOURNAMENT_ID, ARCHETYPE_TO_LEGEND_ID } from '../../Data';
 import { LegendImage } from '../../Views';
 
 export class TournamentResultsPage extends React.Component {
@@ -23,7 +23,7 @@ export class TournamentResultsPage extends React.Component {
                                         const content = (
                                             <span className={styles.linkContainer}>
                                                 <div className={styles.resultContainer}>{placing.placing}</div>
-                                                <LegendImage id={(decklist.archetype) ? GET_LEGEND_FOR_ARCHETYPE( decklist.archetype) : ""} size={28} />
+                                                <LegendImage printId={(decklist.archetype) ? ARCHETYPE_TO_LEGEND_ID( decklist.archetype) : ""} size={28} />
                                                 <div className={styles.rowText}>{decklist.username}</div>
                                             </span>
                                         );

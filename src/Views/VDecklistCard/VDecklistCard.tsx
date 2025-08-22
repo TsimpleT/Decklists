@@ -2,16 +2,19 @@ import React from 'react';
 import styles from './VDecklistCard.module.css';
 import posStyles from './ImagePositioning.module.css';
 
-import { GET_CARD, CardDTO, ImageUtil, FACTION, TYPE } from '../../Data';
+import { GET_CARD, CardDTO, ImageUtil, FACTION, TYPE, GET_CARD_ART, TO_PRINT_ID } from '../../Data';
 
-type PropsOptions = {type: "table"|"all-cards"};
+type PropsOptions = {type: "table"|"showType"};
 
 interface IProps { cardId: string; options: PropsOptions; }
 interface IState { hover: boolean; }
 
 export class VDecklistCard extends React.Component<IProps, IState> {
+    private printId: string;
+
     constructor(props: IProps) {
         super(props);
+        this.printId = TO_PRINT_ID(props.cardId);
         this.state = { hover: false };
     }
 
@@ -51,7 +54,7 @@ export class VDecklistCard extends React.Component<IProps, IState> {
         }
 
         const content: React.ReactNode = (
-            <div className={styles.wrapperForImg} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} title={`${card.name} (${card.id})`} >
+            <div className={styles.wrapperForImg} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} title={`${card.name} (${this.printId})`} >
                 <div className={styles.container} style={containerStyle}>
                     <span className={(card.faction === FACTION.ORDER) ? styles.leftContainerOrder : styles.leftContainer}>
                         <span className={styles.cardName}>{card.name}</span>
@@ -72,16 +75,16 @@ export class VDecklistCard extends React.Component<IProps, IState> {
                     </div>
                 </div>
                 <div className={styles.cardImageFullContainer}>
-                    <div className={`${styles.cardImageSmallContainer} ${posStyles[`${card.id}-div`]}`}>
-                        <img src={card.art.thumbnailURL} title={`${card.name} (${card.id})`} alt={`${card.name} (${card.id})`}
-                            className={`${(card.type === TYPE.BATTLEFIELD) ? styles.cardSmallImageBF : styles.cardSmallImage} ${posStyles[card.id]}`}/>
+                    <div className={`${styles.cardImageSmallContainer} ${posStyles[`${this.printId.replaceAll("*","")}-div`]}`}>
+                        <img src={GET_CARD_ART(this.printId)} alt={`${card.name} (${this.props.cardId})`}
+                            className={`${(card.type === TYPE.BATTLEFIELD) ? styles.cardSmallImageBF : styles.cardSmallImage} ${posStyles[this.printId.replaceAll("*","")]}`}/>
                         <div className={styles.leftImageFade} style={fadeLStyle}/>
                         <div className={styles.rightImageFade} style={fadeRStyle} />
                     </div>
                 </div>
                 {(this.state.hover) &&
-                    <img src={card.art.fullURL} className={(card.type === TYPE.BATTLEFIELD) ? styles.cardHoverImageRotated : styles.cardHoverImage}
-                        title={`${card.name} (${card.id})`} alt={`${card.name} (${card.id})`} />
+                    <img src={GET_CARD_ART(this.printId)} className={(card.type === TYPE.BATTLEFIELD) ? styles.cardHoverImageRotated : styles.cardHoverImage}
+                        alt={`${card.name} (${this.printId})`} />
                 }
             </div>
         );

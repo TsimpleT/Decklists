@@ -1,9 +1,11 @@
 import { GET_CARD } from "./CardData";
 import { FACTION, PATCH, TYPE } from "./Enums";
 
+type TournamentAbbrName = "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LRCS" | "AEGIS" | "RLC";
+
 export interface TournamentResults {
     tournamentName: string;
-    abbrName: "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LRCS" | "AEGIS";
+    abbrName: TournamentAbbrName;
     date: string;
     meta: PATCH;
     host: string;
@@ -14,7 +16,7 @@ export interface TournamentResults {
 
 export interface RawTournamentResults {
     tournamentName: string;
-    abbrName: "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LRCS" | "AEGIS";
+    abbrName: TournamentAbbrName;
     date: string;
     meta: PATCH;
     host: string;
@@ -86,7 +88,7 @@ export interface CardDTO {
     faction?: FACTION;
     stats: CardStatsDTO;
     keywords: string[];
-    art: CardArtDTO;
+    // art: CardArtDTO;
     flavorText: string;
     tags: string[];
 }
@@ -98,11 +100,11 @@ export interface CardStatsDTO {
     power: number;
 }
 
-export interface CardArtDTO {
-    thumbnailURL: string;
-    fullURL: string;
-    artist: string;
-}
+// export interface CardArtDTO {
+//     thumbnailURL: string;
+//     fullURL: string;
+//     artist: string;
+// }
 
 export interface CARD_STATS {
     mdApp: number;

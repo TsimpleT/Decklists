@@ -9,6 +9,7 @@
     width: 100%;
     /* align-items: center; */
     border-bottom: 1px solid white;
+    overflow: hidden;
 }
 
 .container > * {

@@ -1,6 +1,37 @@
 import { PATCH } from "../Enums";
 import { RawTournamentResults } from "../Interfaces";
 
+export const RLC_20250822: RawTournamentResults = {
+    tournamentName: "Riftlab Clash I", abbrName: "RLC", date: "2025/08/22", meta: PATCH.OGN, host: "",
+    links: ["https://www.start.gg/tournament/riftlab-clash-i/details"],
+    placings: [
+        {placing: "4-0", decklists: [
+            {"username":"Presto","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //8-1
+            {"username":"Lusco_Luna","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //8-2
+            {"username":"Prismaticism","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //8-2
+            {"username":"GanZtrax","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //8-4
+        ]},
+        {placing: "3-1", decklists: [
+            {"username":"Vendorty","archetype":"Sett Midrange","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //7-2
+            {"username":"Randyyy","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //6-2
+            {"username":"housesarebig","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //7-3
+            {"username":"SouledOut","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //7-3
+            {"username":"Freakz","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //7-3
+            {"username":"PewQ","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //7-3
+            {"username":"Kuvi","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //7-3
+            {"username":"Rowdy","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //5-2
+            {"username":"Qzmik","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //6-3
+            {"username":"Batsu","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //6-3
+            {"username":"Gameslayer989","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //7-4
+            {"username":"Nashun","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //6-4
+            {"username":"Numberguy","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //7-5
+            {"username":"Kedjius","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //6-5
+            {"username":"SokkaQ113","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //6-5
+            {"username":"ElPorino","archetype":"Master Yi Midrange","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]}, //6-5
+        ]},
+    ]
+};
+
 export const RLT_20250808: RawTournamentResults = {
     tournamentName: "Riftlab Trials I", abbrName: "RLT", date: "2025/08/08", meta: PATCH.OGN, host: "Piltover Archive",
     links: [],

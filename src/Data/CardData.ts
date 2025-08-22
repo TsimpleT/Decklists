@@ -30,7 +30,7 @@ function addCard(id: string, cc: CCATEGORY, name: string, energy: number, power:
         id: id, collectorNumber: 0, set: id.substring(0,3), name: name,
         stats: { energy: energy, might: 0, cost: 0, power: power },
         description: "", type: type, rarity: "", faction: faction, 
-        keywords: [], art: { thumbnailURL: `https://static.dotgg.gg/riftbound/cards/${id}.webp`, fullURL: `https://static.dotgg.gg/riftbound/cards/${id}.webp`, artist: "" },
+        keywords: [], /*art: { thumbnailURL: `https://static.dotgg.gg/riftbound/cards/${id}.webp`, fullURL: `https://static.dotgg.gg/riftbound/cards/${id}.webp`, artist: "" },*/
         flavorText: "", tags: []
     };
     if(id in cardData) {
@@ -361,10 +361,10 @@ addCard("OGN-296", CCBF, "Void Gate", 0, 0, BF);
 addCard("OGN-297", CCBF, "Windswept Hillock", 0, 0, BF);
 addCard("OGN-298", CCBF, "Zaun Warrens", 0, 0, BF);
 
-export function GET_CARD(potentiallyFullID: string): CardDTO {
-    const id = potentiallyFullID.substring(0,7);
+export function GET_CARD(ttsId: string): CardDTO {
+    const id = ttsId.substring(0,7);
     if(!(id in cardData)) {
-        console.warn(`Card ${id} not found in cardData.`);
+        console.warn(`Card "${id}" not found in cardData.`);
         addCard(id, CCLG, id, 0, 0, TYPE.LEGEND);
     }
     return cardData[id];
@@ -374,4 +374,35 @@ export const ALL_CARD_IDS: string[] = Object.keys(cardData);
 
 export function GET_CCATEGORY(potentiallyFullID: string): CCATEGORY {
     return (potentiallyFullID.substring(0,7) in cardCategories) ? cardCategories[potentiallyFullID.substring(0,7)] : CCLG;
+}
+
+const OVERNUMBER_MAP: {[key: string]: string} = {
+    "OGN-247": "OGN-299",
+    "OGN-249": "OGN-300",
+    "OGN-251": "OGN-301",
+    "OGN-253": "OGN-302",
+    "OGN-255": "OGN-303",
+    "OGN-257": "OGN-304",
+    "OGN-259": "OGN-305",
+    "OGN-261": "OGN-306",
+    "OGN-263": "OGN-307",
+    "OGN-265": "OGN-308",
+    "OGN-267": "OGN-309",
+    "OGN-269": "OGN-310",
+}
+
+export function TO_PRINT_ID(ttsId: string): string {
+    const set = ttsId.substring(0,3);
+    const lastChar = (ttsId.length > 7) ? ttsId[ttsId.length-1] : "1";
+    const altArt: boolean = (lastChar !== "1");
+    const hasOvernumber: boolean = (ttsId.substring(0,7) in OVERNUMBER_MAP);
+    const idIfOvernumber = (hasOvernumber) ? OVERNUMBER_MAP[ttsId.substring(0,7)] : ttsId;
+    if(set === "OGN" && altArt) {
+        return (hasOvernumber) ? `${idIfOvernumber}${(lastChar === "3") ? "*" : ""}` : `${ttsId.substring(0,7)}a`;
+    }
+    return ttsId.substring(0,7);
+}
+
+export function GET_CARD_ART(printId: string): string {
+    return `https://static.dotgg.gg/riftbound/cards/${printId.replaceAll("*","s")}.webp`;
 }

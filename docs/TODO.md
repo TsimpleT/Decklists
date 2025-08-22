@@ -1,8 +1,7 @@
 # Important
-different host to support urls
+host elsewhere to properly support url/links
 
 # Future
-overnumbered/identical/reprinted cards
 
 # Aesthetic
 decklists remove empty bottom; make img hover for bottom rows higher

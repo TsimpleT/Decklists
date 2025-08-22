@@ -30,7 +30,7 @@ export class AppNav extends React.Component/*<{}, IState>*/ {
         return (<>
             <nav className={styles.container}>
                 <span className={styles.title} title={VERSION_STRING}>Decklists</span>
-                <span className={styles.titleNotes}>test build</span>
+                {/* <span className={styles.titleNotes}>test build</span> */}
                 <Link to={"/decklists/riftbound/all-archetypes"}>
                     All Archetypes
                 </Link>
