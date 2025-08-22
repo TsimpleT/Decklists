@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './VDecklistTable.module.css';
 
-import { ALL_CCATEGORIES, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CCATEGORY, ImageUtil } from '../../Data';
+import { ALL_CCATEGORIES, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CASED_ARCHETYPE, GET_CCATEGORY, ImageUtil } from '../../Data';
 
 import { VDecklistCard } from '../VDecklistCard';
 import { Link } from 'react-router-dom';
@@ -164,6 +164,13 @@ export class VDecklistTable extends React.Component<IProps> {
     }
 
     public render(): React.ReactNode {
+        if(this.decklists.length === 0) {
+            return (
+                <div className={styles.container}>
+                    {`No decklists found for ${GET_CASED_ARCHETYPE(this.props.archetype)}`}
+                </div>
+            );
+        }
         return (
             <div className={styles.container}>
                 <table>

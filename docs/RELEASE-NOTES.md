@@ -1,1 +1,2 @@
-[0.2.3] Fix Player Results Page
+[0.2.4] AllArchetypesPage Aesthetics
+- Proper version numbering from now on

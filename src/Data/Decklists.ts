@@ -27,7 +27,6 @@ for(let raw of RAW_TOURNAMENT_DECKLISTS) {
 }
 
 let archetypeDecklists: {[archetypeLower: string]: Decklist[]} = {};
-let archetypeCasedNames: {[archetypeLower: string]: string} = {};
 let tournamentDict: {[id: string]: TournamentResults} = {};
 let tournamentNames: {[id: string]: string} = {};
 let tournamentNameToAbbrDict: {[name: string]: string} = {};
@@ -43,7 +42,6 @@ for(let tournamentResults of TOURNAMENT_DECKLISTS) {
                 const archetypeLower = decklist.archetype.toLowerCase();
                 if(!(archetypeLower in archetypeDecklists)) {
                     archetypeDecklists[archetypeLower] = [];
-                    archetypeCasedNames[archetypeLower] = decklist.archetype;
                 }
                 archetypeDecklists[archetypeLower].push(decklist);
             }
@@ -54,20 +52,11 @@ for(let tournamentResults of TOURNAMENT_DECKLISTS) {
 export function GET_ARCHETYPE_DECKLISTS(archetype: string): Decklist[] {
     const archetypeLower = archetype.toLowerCase();
     if(!(archetypeLower in archetypeDecklists)) {
-        throw Error(`archetype ${archetypeLower} doesn't exist.`);
+        console.warn(`no decklists for archetype ${archetypeLower}.`);
+        return [];
     }
     return archetypeDecklists[archetypeLower];
 }
-
-export function GET_CASED_ARCHETYPE(archetype: string): string {
-    const archetypeLower = archetype.toLowerCase();
-    if(!(archetypeLower in archetypeDecklists)) {
-        throw Error(`archetype ${archetypeLower} doesn't exist.`);
-    }
-    return archetypeCasedNames[archetypeLower];
-}
-
-export const ALL_ARCHETYPES: string[] = Object.values(archetypeCasedNames).sort();
 
 export function GET_DECKLIST(tournId: string, username: string): Decklist|undefined {
     if(!(tournId in tournamentDict)) { return undefined; }
@@ -122,6 +111,21 @@ const archetypeLegendDict: {[archetype: string]: string} = {
 };
 export function GET_LEGEND_FOR_ARCHETYPE(archetype: string): string {
     return (archetype in archetypeLegendDict) ? archetypeLegendDict[archetype] : "???";
+}
+
+export const ALL_ARCHETYPES: string[] = Object.keys(archetypeLegendDict).sort();
+
+let archetypeCasedNames: {[archetypeLower: string]: string} = {};
+for(let archetype in archetypeLegendDict) {
+    archetypeCasedNames[archetype.toLowerCase()] = archetype;
+}
+
+export function GET_CASED_ARCHETYPE(archetype: string): string {
+    const archetypeLower = archetype.toLowerCase();
+    if(!(archetypeLower in archetypeCasedNames)) {
+        throw Error(`archetype ${archetypeLower} doesn't exist.`);
+    }
+    return archetypeCasedNames[archetypeLower];
 }
 
 // {

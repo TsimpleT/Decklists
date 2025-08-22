@@ -12,5 +12,5 @@ between each bullet, an extra newline space; within each section, by order of us
 - new line at bottom of files
 
 # COMMITS:
-- first line: "[VERY_MAJOR.MAJOR.MINOR(.PATCH)] <summary>"
+- first line: "[MAJOR.REGULAR.TWEAK/FIX] <summary>"
 - TODO.md / RELEASE-NOTES.md / UPDATE-HISTORY.md

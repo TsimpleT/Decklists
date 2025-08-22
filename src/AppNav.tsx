@@ -29,8 +29,8 @@ export class AppNav extends React.Component/*<{}, IState>*/ {
     public renderRiftbound(): React.ReactNode {
         return (<>
             <nav className={styles.container}>
-                <span className={styles.title}>Decklists</span>
-                <span className={styles.version}>{`${VERSION_STRING}`}</span>
+                <span className={styles.title} title={VERSION_STRING}>Decklists</span>
+                <span className={styles.titleNotes}>test build</span>
                 <Link to={"/decklists/riftbound/all-archetypes"}>
                     All Archetypes
                 </Link>

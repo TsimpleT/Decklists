@@ -23,7 +23,7 @@ export class PlayerResultsPage extends React.Component {
                                 return (
                                     <div className={styles.row}>
                                         <span>{`[${placing.placing}] ${placing.date} ${placing.tournament}`}</span>
-                                        {(decklist !== undefined && decklist.legend) &&
+                                        {(decklist !== undefined && decklist.mainDeck.length > 0) &&
                                             <span>
                                                 {" ("}
                                                 <Link to={`/decklists/riftbound/tournament/${tournId}/decklist/${decklist.username}`}

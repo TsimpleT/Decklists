@@ -30,6 +30,13 @@
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }
 
+.titleNotes {
+    float: left;
+    font-weight: lighter;
+    /* margin-top: 2px; */
+    margin-right: 16px;
+}
+
 .homeButton {
     float: left;
     padding: 2px;
@@ -42,13 +49,6 @@
 
 .homeButton:hover {
     background-color: #7E648A;
-}
-
-.version {
-    float: left;
-    font-weight: lighter;
-    /* margin-top: 2px; */
-    margin-right: 16px;
 }
 
 .imageButton {

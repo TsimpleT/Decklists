@@ -9,10 +9,10 @@ export const TNF_20250821: RawTournamentResults = {
             {"username":"TsimpleT","archetype":"Kai'Sa Tempo","legend":"OGN-247-3","chosenChampion":"OGN-039-2","mainDeck":[{"id":"OGN-039-2","count":3},{"id":"OGN-095-1","count":3},{"id":"OGN-004-1","count":2},{"id":"OGN-009-1","count":3},{"id":"OGN-104-1","count":1},{"id":"OGN-103-1","count":3},{"id":"OGN-029-1","count":3},{"id":"OGN-010-1","count":1},{"id":"OGN-093-1","count":3},{"id":"OGN-096-1","count":3},{"id":"OGN-087-1","count":3},{"id":"OGN-024-1","count":3},{"id":"OGN-106-1","count":3},{"id":"OGN-027-2","count":2},{"id":"OGN-116-1","count":2},{"id":"OGN-248-1","count":2}],"battlefields":[{"id":"OGN-289-1","count":1},{"id":"OGN-296-1","count":1},{"id":"OGN-285-1","count":1}],"runeDeck":[{"id":"OGN-007-2","count":7},{"id":"OGN-089-2","count":5}],"sideboard":[{"id":"OGN-004-1","count":1},{"id":"OGN-104-1","count":2},{"id":"OGN-036-1","count":2},{"id":"OGN-017-1","count":2},{"id":"OGN-027-2","count":1}]},
         ]},
         {placing: "3-1", decklists: [
-            {"username":"SouledOut","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
-            {"username":"Doughynut","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
-            {"username":"housesarebig","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
-            {"username":"Kuvi","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+            {"username":"SouledOut","archetype":"Annie Aggro","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+            {"username":"Doughynut","archetype":"Viktor","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+            {"username":"housesarebig","archetype":"Viktor","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
+            {"username":"Kuvi","archetype":"Darius","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
             {"username":"SamaBR","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
             {"username":"HermesLoki","archetype":"","legend":"","chosenChampion":"","mainDeck":[],"battlefields":[],"runeDeck":[],"sideboard":[]},
         ]}

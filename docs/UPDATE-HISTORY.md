@@ -1,4 +1,5 @@
 - VERSION \[0.2.X\]
+    - \[0.2.4\] (25Aug21) AllArchetypesPage Aesthetics
     - \[0.2.3\] (25Aug21) Fix Player Results Page
     - \[0.2.2\] (25Aug20) TCGArena Export
     - \[0.2.1\] (25Aug18) Decklist Links + TTS Export
