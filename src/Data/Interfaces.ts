@@ -126,8 +126,8 @@ export interface DL_CC_CARD_STATS {
     sbTotal: number;
 }
 
-export function TOURNAMENT_RESULT_TO_ID(result: TournamentResults): string {
-    return `${result.abbrName}${result.date.replaceAll("/","")}`;
+export function GET_TOURNAMENT_ID(abbrName: string, date: string): string {
+    return `${abbrName}${date.replaceAll("/","")}`;
 }
 
 export function PARSE_DECKLIST(text: string): RawDecklist {

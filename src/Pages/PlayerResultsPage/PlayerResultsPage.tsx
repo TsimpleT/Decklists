@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './PlayerResultsPage.module.css';
 
-import { DEV_STRING_PRE, GET_DECKLIST, GET_TOURNAMENT_ID } from '../../Data';
+import { DEV_STRING_PRE, GET_DECKLIST, GET_TOURNAMENT_ABBR, GET_TOURNAMENT_ID } from '../../Data';
 import { ALL_PLAYERS, GET_PLAYER_RESULTS } from '../../Data/PlayerResults';
 import { Link } from 'react-router-dom';
 
@@ -18,12 +18,12 @@ export class PlayerResultsPage extends React.Component {
                         <div className={styles.tournamentHeader}>{username}</div>
                         <div>
                             {GET_PLAYER_RESULTS(username).map((placing) => {
-                                const tournId = GET_TOURNAMENT_ID(placing.tournament);
+                                const tournId = GET_TOURNAMENT_ID(GET_TOURNAMENT_ABBR(placing.tournament), placing.date);
                                 const decklist = GET_DECKLIST(tournId, username);
                                 return (
                                     <div className={styles.row}>
                                         <span>{`[${placing.placing}] ${placing.date} ${placing.tournament}`}</span>
-                                        {(decklist !== undefined && decklist.legend.length > 0) &&
+                                        {(decklist !== undefined && decklist.legend) &&
                                             <span>
                                                 {" ("}
                                                 <Link to={`/decklists/riftbound/tournament/${tournId}/decklist/${decklist.username}`}

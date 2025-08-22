@@ -8,19 +8,26 @@
 
 .tournamentHeader {
     font-weight: 600;
-}
-
-.row {
-    height: 32px;
+    margin-bottom: 4px;
 }
 
 .linkContainer {
-    float: left;
+    display: flex;
     margin-right: 2px;
+    margin-bottom: 3px;
+}
+
+.resultContainer {
+    width: 48px;
+    height: 28px;
+    border-radius: 8px;
+    border: 1px solid white;
+    text-align: center;
+    margin-right: 4px;
 }
 
 .rowText {
     height: 100%;
-    margin-top: 4px;
-    /* vertical-align: center; */
+    display: inline;
+    margin-top: 1px;
 }
