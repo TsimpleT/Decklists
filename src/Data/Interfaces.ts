@@ -1,27 +1,25 @@
 import { GET_CARD } from "./CardData";
 import { FACTION, PATCH, TYPE } from "./Enums";
 
-type TournamentAbbrName = "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LRCS" | "AEGIS" | "RLC";
+type TournamentAbbrName = "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LUX" | "AEG" | "RLL" | "GZO";
+type TournamentTier = number; // 0 = Championship, 1 = Regional, 2 = Regional-ish, 3 = Local, 4 = "Small Local";
 
-export interface TournamentResults {
+interface ITournamentResults {
     tournamentName: string;
     abbrName: TournamentAbbrName;
     date: string;
     meta: PATCH;
+    tier: TournamentTier;
     host: string;
     // size: number;
     links: string[];
+}
+
+export interface TournamentResults extends ITournamentResults {
     placings: TournamentPlacing[];
 }
 
-export interface RawTournamentResults {
-    tournamentName: string;
-    abbrName: TournamentAbbrName;
-    date: string;
-    meta: PATCH;
-    host: string;
-    // size: number;
-    links: string[];
+export interface RawTournamentResults extends ITournamentResults {
     placings: RawTournamentPlacing[];
 }
 
@@ -42,13 +40,14 @@ export interface PlayerPlacing {
 }
 
 export interface Decklist extends RawDecklist {
+    date: string;
     tournId: string;
     tournamentName: string;
-    date: string;
     placing: string;
 }
 
 export interface RawDecklist {
+    date?: string;
     username: string;
     archetype: string;
     legend: string;
@@ -57,6 +56,7 @@ export interface RawDecklist {
     battlefields: DecklistCardAmount[];
     runeDeck: DecklistCardAmount[];
     sideboard: DecklistCardAmount[];
+    link?: string;
 }
 
 export interface DecklistCardAmount {
@@ -129,7 +129,7 @@ export interface DL_CC_CARD_STATS {
 }
 
 export function GET_TOURNAMENT_ID(abbrName: string, date: string): string {
-    return `${abbrName}${date.replaceAll("/","")}`;
+    return `${abbrName}-${date.replaceAll("/","")}`;
 }
 
 export function PARSE_DECKLIST(text: string): RawDecklist {
@@ -144,7 +144,7 @@ export function PARSE_DECKLIST(text: string): RawDecklist {
     }
 
     let decklist: RawDecklist = {
-        username: "", archetype: "", 
+        username: "", archetype: "", date: "", link: "",
         legend: rawCardList[0], chosenChampion: rawCardList[1],
         mainDeck: [], battlefields: [], runeDeck: [], sideboard: []
     };
@@ -184,13 +184,16 @@ export function DECKLIST_TTS_EXPORT(decklist: RawDecklist): string {
         }).join(" ");
 }
 
+export const parseDCAForTCGA = (dca: DecklistCardAmount) => `${dca.count} ${GET_CARD(dca.id).name}`;
+
 export function DECKLIST_TCGA_EXPORT(decklist: RawDecklist): string {
-    return [[{id: decklist.legend, count: 1}], decklist.mainDeck, decklist.battlefields, decklist.runeDeck, decklist.sideboard]
-        .map((cardAmountArr: DecklistCardAmount[]) =>
-            cardAmountArr.map((cardAmount: DecklistCardAmount) => `${cardAmount.count} ${GET_CARD(cardAmount.id).name}`).join("\n")
-        ).join("\n\n");
+    return [[{id: decklist.legend, count: 1}], decklist.mainDeck, decklist.battlefields, decklist.runeDeck]
+        .map((dcaArr: DecklistCardAmount[]) => dcaArr.map(parseDCAForTCGA).join("\n")).join("\n\n") +
+        ((decklist.sideboard.length === 0) ? "" :
+            "\n\nSideboard:\n" + decklist.sideboard.map(parseDCAForTCGA).join("\n")
+        );
 }
 
 export function MOCK_DECKLIST_FROM_RAW(raw: RawDecklist): Decklist {
-    return {...raw, tournId: "", tournamentName: "", date: "", placing: "string"};
+    return {...raw, tournId: "", tournamentName: "", placing: "", date: raw.date ?? ""};
 }

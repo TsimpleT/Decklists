@@ -1,5 +1,6 @@
 .container {
     margin: 2px 6px 390px;
+    overflow-x: scroll;
 }
 
 .labelHeaderRow > th {
@@ -8,8 +9,16 @@
     padding: 2px 0;
 }
 
-.cardColumnHeader {
-    width: 285px;
+.linkCell {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.deckLabelCell {
+    max-width: 60px;
+    padding: 2px 8px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .statsCell {

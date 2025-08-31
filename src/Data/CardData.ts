@@ -40,6 +40,8 @@ function addCard(id: string, cc: CCATEGORY, name: string, energy: number, power:
     cardCategories[id] = cc;
 }
 
+export const SET_LIST = ["OGS", "OGN"];
+
 addCard("OGS-001", CORE, "Annie, Fiery", 5, 1, CU, R);
 addCard("OGS-002", BINT, "Firestorm", 6, 1, SP, R);
 addCard("OGS-003", INTR, "Incinerate", 2, 0, SP, R);
@@ -81,7 +83,7 @@ addCard("OGN-013", EARL, "Pouty Poro", 2, 0, UN, R);
 addCard("OGN-014", BINT, "Skysplitter", 8, 1, SP, R);
 addCard("OGN-015", CORE, "Captain Farron", 4, 1, UN, R);
 addCard("OGN-016", CORE, "Dangerous Duo", 3, 0, UN, R);
-addCard("OGN-017", CORE, "Iron Ballista", 3, 0, GE, R);
+addCard("OGN-017", E2ND, "Iron Ballista", 3, 0, GE, R);
 addCard("OGN-018", SIDE, "Noxus Saboteur", 3, 0, UN, R);
 addCard("OGN-019", CORE, "Raging Soul", 4, 0, UN, R);
 addCard("OGN-020", CORE, "Scrapyard Champion", 5, 1, UN, R);
@@ -374,6 +376,32 @@ export const ALL_CARD_IDS: string[] = Object.keys(cardData);
 
 export function GET_CCATEGORY(potentiallyFullID: string): CCATEGORY {
     return (potentiallyFullID.substring(0,7) in cardCategories) ? cardCategories[potentiallyFullID.substring(0,7)] : CCLG;
+}
+
+const LEGEND_COLOR_DICT: {[legendId: string]: [FACTION, FACTION]} = {
+    "OGS-017": [R, P],
+    "OGS-019": [G, O],
+    "OGS-021": [B, Y],
+    "OGS-023": [O, Y],
+    "OGN-247": [R, B],
+    "OGN-249": [R, O],
+    "OGN-251": [R, P],
+    "OGN-253": [R, Y],
+    "OGN-255": [G, B],
+    "OGN-257": [G, O],
+    "OGN-259": [G, P],
+    "OGN-261": [G, Y],
+    "OGN-263": [B, P],
+    "OGN-265": [B, Y],
+    "OGN-267": [O, P],
+    "OGN-269": [O, Y],
+};
+
+export function LEGEND_TO_COLORS(legendId: string): [FACTION, FACTION] {
+    if(!(legendId in LEGEND_COLOR_DICT)) {
+        throw Error(`${legendId} colors not found.`);
+    }
+    return LEGEND_COLOR_DICT[legendId];
 }
 
 const OVERNUMBER_MAP: {[key: string]: string} = {

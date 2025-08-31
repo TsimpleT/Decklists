@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './PlayerResultsPage.module.css';
 
-import { DEV_STRING_PRE, GET_DECKLIST, GET_TOURNAMENT_ABBR, GET_TOURNAMENT_ID } from '../../Data';
+import { DEV_STRING_PRE, GET_TOURNAMENT_DECKLIST, GET_TOURNAMENT_ABBR, GET_TOURNAMENT_ID } from '../../Data';
 import { ALL_PLAYERS, GET_PLAYER_RESULTS } from '../../Data/PlayerResults';
 import { Link } from 'react-router-dom';
 
@@ -19,7 +19,7 @@ export class PlayerResultsPage extends React.Component {
                         <div>
                             {GET_PLAYER_RESULTS(username).map((placing) => {
                                 const tournId = GET_TOURNAMENT_ID(GET_TOURNAMENT_ABBR(placing.tournament), placing.date);
-                                const decklist = GET_DECKLIST(tournId, username);
+                                const decklist = GET_TOURNAMENT_DECKLIST(tournId, username);
                                 return (
                                     <div className={styles.row}>
                                         <span>{`[${placing.placing}] ${placing.date} ${placing.tournament}`}</span>

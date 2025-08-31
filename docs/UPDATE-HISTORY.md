@@ -1,3 +1,5 @@
+- VERSION \[1.0.0\]
+    - \[1.0.0\] (25Aug30) AllArchetypePage to Tier List
 - VERSION \[0.2.X\]
     - \[0.2.5\] (25Aug22) Overnumber Support
     - \[0.2.4\] (25Aug21) AllArchetypesPage Aesthetics

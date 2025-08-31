@@ -1,12 +1,43 @@
-.container {
-    margin-left: 8px;
+.tableContainer {
+    margin-left: 4px;
 }
 
-.container > * {
-    margin-bottom: 4px;
+.tableContainer > * > * {
+    border: 1px #E0E0CD solid;
+    vertical-align: top;
 }
 
-.linkContainer {
+.tierHeader {
+    min-width: 225px;
+}
+
+.linkRow {
+    min-height: 50px;
+    border-bottom: 1px #E0E0CD solid;
+}
+
+.linkRow > * {
     float: left;
-    margin-right: 8px;
+}
+
+.colorsContainer {
+    padding: 1px;
+    margin-left: 2px;
+}
+
+.colorDiv {
+    border-radius: 4px;
+    padding: 2px 2px 0 2px;
+}
+
+.labelContainer {
+    margin: 2px 0 0 4px;
+}
+
+.archetypeText {
+    font-weight: 600;
+}
+
+.archetypeSubtitle {
+    font-weight: 200;
 }

@@ -1,9 +1,9 @@
 import { PlayerPlacing } from "./Interfaces";
-import { TOURNAMENT_DECKLISTS } from "./Decklists";
+import { TOURNAMENT_RESULTS } from "./Decklists";
 
 let playerResults: {[username: string]: PlayerPlacing[]} = {};
 
-for(let tournamentResult of TOURNAMENT_DECKLISTS) {
+for(let tournamentResult of TOURNAMENT_RESULTS) {
     for(let placing of tournamentResult.placings) {
         for(let decklist of placing.decklists) {
             if(!(decklist.username in playerResults)) {

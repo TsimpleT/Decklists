@@ -30,11 +30,16 @@ export class VDecklist extends React.Component<IProps> {
         return (
             <div className={styles.container}>
                 <div className={styles.title}>
-                    {this.props.title}
+                    <span>{this.props.title}</span>
+                    {(this.props.decklist.link) && <span className={styles.deckLinkSpan}>
+                        (<a href={this.props.decklist.link} target="_blank" rel="noreferrer">Link</a>)
+                    </span>}
+                </div>
+                <div className={styles.subtitle}>
+                    {(this.props.subtitle) && <span style={{marginRight: "8px"}}>{this.props.subtitle}</span>}
                     {(this.props.hideExport !== true) && <div onClick={this.copyToTTS} className={`${styles.restyleButton}`}>TTS</div>}
                     {(this.props.hideExport !== true) && <div onClick={this.copyToTCGArena} className={`${styles.restyleButton}`}>TCGArena</div>}
                 </div>
-                <div className={styles.subtitle}>{this.props.subtitle}</div>
                 <div className={styles.decklistContainer}>
                     {[{id: dl.legend, count: 1}].concat(dl.mainDeck).concat(dl.battlefields).concat(dl.runeDeck).concat(dl.sideboard).map((listing, i) => (
                         <div className={styles.row}>

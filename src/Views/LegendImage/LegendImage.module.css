@@ -11,15 +11,15 @@
     height: 100%;
     padding-top: 1px;
     text-align: center;
+    font-weight: 600;
 }
 
 .subscript {
     position: absolute;
-    right: 6px;
+    right: 7px;
     bottom: 0;
-    color: #FFFFFFD0;
+    color: #FFFFFFD8;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    font-size: 16px;
     font-weight: 700;
     z-index: 5;
 }
@@ -32,8 +32,8 @@
 
 .position-OGS-017 {
     width: 220% !important;
-    margin-top: -18% !important;
-    margin-left: -64% !important;
+    margin-top: -20% !important;
+    margin-left: -63% !important;
 }
 
 .position-OGS-019 {
@@ -43,9 +43,9 @@
 }
 
 .position-OGS-023 {
-    width: 300% !important;
-    margin-top: -25% !important;
-    margin-left: -38% !important;
+    width: 350% !important;
+    margin-top: -38% !important;
+    margin-left: -50% !important;
 }
 
 .position-OGN-247 {
@@ -74,7 +74,7 @@
 
 .position-OGN-255 {
     width: 310% !important;
-    margin-top: -22% !important;
+    margin-top: -26% !important;
     margin-left: -85% !important;
 }
 

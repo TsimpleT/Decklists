@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { DEV_STRING_PRE } from './Data';
 
 import { AppNav } from './AppNav';
-import { AllArchetypesPage, CardListPage, DecklistTablePage, ErrorPage, EnterDecklistPage, PlayerResultsPage, TournamentResultsPage, DecklistPage } from './Pages';
+import { AllArchetypesPage, CardListPage, DecklistTablePage, ErrorPage, EnterDecklistPage, PlayerResultsPage, TournamentResultsPage, TournamentDecklistPage, DecklistPage } from './Pages';
 
 export class AppMainRouter extends React.Component {
     public override componentDidMount(): void {
@@ -24,7 +24,8 @@ export class AppMainRouter extends React.Component {
                     <Route path="/decklists/riftbound/enter-decklist" element={<EnterDecklistPage />} />
                     <Route path="/decklists/riftbound/all-cards" element={<CardListPage />} />
                     <Route path="/decklists/riftbound/tournaments" element={<TournamentResultsPage />} />
-                    <Route path="/decklists/riftbound/tournament/:tourneyName/decklist/:username" element={<DecklistPage />} />
+                    <Route path="/decklists/riftbound/tournament/:tourneyName/decklist/:username" element={<TournamentDecklistPage />} />
+                    <Route path="/decklists/riftbound/decklist/:archetype/:username" element={<DecklistPage />} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>
             </BrowserRouter>

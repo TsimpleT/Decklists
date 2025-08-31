@@ -1,19 +1,20 @@
 import { AEGIS_20250817 } from "./decklists/Aegis";
-import { SFC_20250803 } from "./decklists/China";
+import { GZO_20250824, SFC_20250803 } from "./decklists/China";
+import { EXPERT_DECKLISTS } from "./decklists/ExpertDecklists";
 import { RFC_20250809 } from "./decklists/France";
 import { MCW_20250807 } from "./decklists/Italy";
-import { LRCS_20250816 } from "./decklists/LuxuryRiftboundChampionSeries";
+import { LUX_20250816 } from "./decklists/LuxuryRiftboundChampionSeries";
 import { RMW_20250809, RMW_20250802, RMW_20250726 } from "./decklists/RiftboundMetaWeekly";
-import { RLC_20250822, RLT_20250808 } from "./decklists/Riftlab";
-import { TNF_20250807, TNF_20250731, TNF_20250814, TNF_20250821 } from "./decklists/ThursdayNightFights";
-import { Decklist, GET_TOURNAMENT_ID, RawTournamentResults, TournamentResults } from "./Interfaces";
+import { RLL_20250822, RLL_20250823, RLT_20250808 } from "./decklists/Riftlab";
+import { TNF_20250828, TNF_20250807, TNF_20250731, TNF_20250814, TNF_20250821 } from "./decklists/ThursdayNightFights";
+import { Decklist, GET_TOURNAMENT_ID, MOCK_DECKLIST_FROM_RAW, RawTournamentResults, TournamentResults } from "./Interfaces";
 
-const RAW_TOURNAMENT_DECKLISTS: RawTournamentResults[] = [
-    RLC_20250822, TNF_20250821, AEGIS_20250817, LRCS_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
+const RAW_TOURNAMENT_RESULTS: RawTournamentResults[] = [
+    TNF_20250828, GZO_20250824, RLL_20250823, RLL_20250822, TNF_20250821, AEGIS_20250817, LUX_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
 ];
 
-export let TOURNAMENT_DECKLISTS: TournamentResults[] = [];
-for(let raw of RAW_TOURNAMENT_DECKLISTS) {
+export let TOURNAMENT_RESULTS: TournamentResults[] = [];
+for(let raw of RAW_TOURNAMENT_RESULTS) {
     let tournamentResults: TournamentResults = {...raw} as TournamentResults;
     for(let placing of tournamentResults.placings) {
         for(let decklist of placing.decklists) {
@@ -23,7 +24,7 @@ for(let raw of RAW_TOURNAMENT_DECKLISTS) {
             decklist.tournId = GET_TOURNAMENT_ID(tournamentResults.abbrName, tournamentResults.date);
         }
     }
-    TOURNAMENT_DECKLISTS.push(tournamentResults);
+    TOURNAMENT_RESULTS.push(tournamentResults);
 }
 
 let archetypeDecklists: {[archetypeLower: string]: Decklist[]} = {};
@@ -31,7 +32,17 @@ let tournamentDict: {[id: string]: TournamentResults} = {};
 let tournamentNames: {[id: string]: string} = {};
 let tournamentNameToAbbrDict: {[name: string]: string} = {};
 
-for(let tournamentResults of TOURNAMENT_DECKLISTS) {
+for(let decklist of EXPERT_DECKLISTS) {
+    if(decklist.archetype && decklist.mainDeck.length > 0) {
+        const archetypeLower = decklist.archetype.toLowerCase();
+        if(!(archetypeLower in archetypeDecklists)) {
+            archetypeDecklists[archetypeLower] = [];
+        }
+        archetypeDecklists[archetypeLower].push(MOCK_DECKLIST_FROM_RAW(decklist));
+    }
+}
+
+for(let tournamentResults of TOURNAMENT_RESULTS) {
     const tournId = GET_TOURNAMENT_ID(tournamentResults.abbrName, tournamentResults.date);
     tournamentDict[tournId] = tournamentResults;
     tournamentNameToAbbrDict[tournamentResults.tournamentName] = tournamentResults.abbrName;
@@ -60,7 +71,7 @@ export function GET_ARCHETYPE_DECKLISTS(archetype: string): Decklist[] {
     return archetypeDecklists[archetypeLower];
 }
 
-export function GET_DECKLIST(tournId: string, username: string): Decklist|undefined {
+export function GET_TOURNAMENT_DECKLIST(tournId: string, username: string): Decklist|undefined {
     if(!(tournId in tournamentDict)) { return undefined; }
     const tournamentResult = tournamentDict[tournId];
     for(let placing of tournamentResult.placings) {
@@ -70,6 +81,16 @@ export function GET_DECKLIST(tournId: string, username: string): Decklist|undefi
             }
         }
     }
+}
+
+export function GET_EXPERT_DECKLIST(archetypeLower: string, username: string): Decklist|undefined {
+    if(!(archetypeLower in archetypeDecklists)) { return undefined; }
+    for(let decklist of archetypeDecklists[archetypeLower]) {
+        if(decklist.username === username) {
+            return decklist;
+        }
+    }
+    return undefined;
 }
 
 export function GET_PLACING(tournId: string, username: string): string|undefined {
@@ -93,11 +114,11 @@ export function GET_TOURNAMENT_ABBR(tournamentName: string): string {
 }
 
 const archetypeLegendDict: {[archetype: string]: string} = {
-    "Annie Aggro": "OGS-017",
+    "Annie Tempo": "OGS-017",
     "Master Yi Midrange": "OGS-019",
     "Lux Control": "OGS-021",
     "Garen Midrange": "OGS-023",
-    "Kai'Sa Tempo": "OGN-247",
+    "Kai'Sa": "OGN-247",
     "Volibear Ramp": "OGN-249",
     "Jinx Aggro": "OGN-251",
     "Darius": "OGN-253",
@@ -105,17 +126,25 @@ const archetypeLegendDict: {[archetype: string]: string} = {
     "Lee Sin Midrange": "OGN-257",
     "Yasuo Midrange": "OGN-259",
     "Leona Midrange": "OGN-261",
-    "Teemo Tempo": "OGN-263",
+    "Teemo": "OGN-263",
     "Viktor": "OGN-265",
-    "Miss Fortune Aurora": "OGN-267",
-    "Miss Fortune Aggro": "OGN-267",
+    "Miss Fortune Ramp": "OGN-267",
     "Sett Midrange": "OGN-269",
+    "Sett Ramp": "OGN-269",
 };
 export function ARCHETYPE_TO_LEGEND_ID(archetype: string): string {
     return (archetype in archetypeLegendDict) ? archetypeLegendDict[archetype] : "???";
 }
 
 export const ALL_ARCHETYPES: string[] = Object.keys(archetypeLegendDict).sort();
+
+export const ARCHETYPE_TIERS = [
+    ["Kai'Sa"],
+    ["Sett Midrange", "Master Yi Midrange"],
+    ["Darius", "Viktor", "Annie Tempo", "Teemo", "Ahri Tempo", "Miss Fortune Ramp"],
+    ["Lee Sin Midrange", "Sett Ramp", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Yasuo Midrange"],
+    ["Garen Midrange"],
+];
 
 let archetypeCasedNames: {[archetypeLower: string]: string} = {};
 for(let archetype in archetypeLegendDict) {

@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './VDecklistTable.module.css';
 
-import { ALL_CCATEGORIES, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CASED_ARCHETYPE, GET_CCATEGORY, ImageUtil } from '../../Data';
+import { ALL_CCATEGORIES, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CASED_ARCHETYPE, GET_CCATEGORY } from '../../Data';
 
 import { VDecklistCard } from '../VDecklistCard';
 import { Link } from 'react-router-dom';
@@ -167,7 +167,7 @@ export class VDecklistTable extends React.Component<IProps> {
         if(this.decklists.length === 0) {
             return (
                 <div className={styles.container}>
-                    {`No decklists found for ${GET_CASED_ARCHETYPE(this.props.archetype)}`}
+                    {`No top tournament decklists found for ${GET_CASED_ARCHETYPE(this.props.archetype)}`}
                 </div>
             );
         }
@@ -176,29 +176,34 @@ export class VDecklistTable extends React.Component<IProps> {
                 <table>
                     <thead>
                         <tr className={styles.labelHeaderRow}>
-                            <th className={styles.cardColumnHeader}>Card</th>
+                            <th>Card</th>
                             <th title={"Main Deck % Appearance"}>MD%</th>
                             <th>Avg</th>
-                            <th>Range</th>
+                            <th style={{padding: "0 8px"}}>Range</th>
                             {this.decklists.map((decklist, deckIdx) => {
                                 let md = 0, sb = 0;
                                 for(let cardId of this.cardIds) {
                                     md += this.cardAmounts[cardId][deckIdx];
                                     sb += this.sideboardAmounts[cardId][deckIdx];
                                 }
+                                if(md !== 56 || !(sb === 0 || sb === 8)) {
+                                    console.warn(`Decklist "${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}" has size ${md}+${sb}`);
+                                }
                                 return (
                                     <th className={styles.linkCell} key={deckIdx} title={`${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}`}>
-                                        {((md === 56) && (sb === 0 || sb === 8)) ? 
+                                        {(decklist.tournId.length > 0) ?
                                             <Link to={`/decklists/riftbound/tournament/${decklist.tournId}/decklist/${decklist.username}`} style={{color: "var(--text-default)"}}>
-                                                <img src={ImageUtil.getImage("Info")} height={17}
-                                                    title={`${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}`}
-                                                    alt={`${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}`} />
+                                                <div className={styles.deckLabelCell}>
+                                                    <div>{decklist.tournId.substring(0,decklist.tournId.indexOf("-"))}</div>
+                                                    <div>{decklist.placing}</div>
+                                                </div>
                                             </Link>
-                                        : <>
-                                            <span className={styles.mainDeck}>{md}</span>
-                                            {(sb > 0) &&
-                                                <span className={styles.sideboard}>{sb}</span>
-                                            }</>
+                                        :
+                                            <Link to={`/decklists/riftbound/decklist/${decklist.archetype.toLowerCase()}/${decklist.username}`} style={{color: "var(--text-default)"}}>
+                                                <div className={styles.deckLabelCell}>
+                                                    {decklist.username}
+                                                </div>
+                                            </Link>
                                         }
                                     </th>
                                 );
@@ -206,7 +211,7 @@ export class VDecklistTable extends React.Component<IProps> {
                         </tr>
                     </thead>
                     <tbody>
-                        {([...ALL_CCATEGORIES]/*.sort((a, b) => this.ccategoryStats[b].avg - this.ccategoryStats[a].avg)*/.map((cc) => (<>
+                        {([...ALL_CCATEGORIES].map((cc) => (<>
                             <tr>
                                 <th colSpan={2} className={styles.sectionHeader}>{cc}</th>
                                 <th className={styles.sectionHeaderCell}>
@@ -217,7 +222,7 @@ export class VDecklistTable extends React.Component<IProps> {
                                         <span className={styles.sideboard} title={"sideboard"}>{ this.ccategoryStats[cc].sbAvg.toFixed(2) }</span>
                                     }
                                 </th>
-                                <th className={styles.sectionHeaderCell}>
+                                <th className={styles.sectionHeaderCell} style={{padding: "0 8px"}}>
                                     <span className={styles.mainDeck}>
                                         { (this.ccategoryStats[cc].min === this.ccategoryStats[cc].max) ? this.ccategoryStats[cc].min : `${this.ccategoryStats[cc].min}-${this.ccategoryStats[cc].max}` }
                                     </span>
@@ -256,7 +261,7 @@ export class VDecklistTable extends React.Component<IProps> {
                                                 <span className={styles.sideboard} title={"sideboard"}>{ stats.sbAvg.toFixed(2) }</span>
                                             }
                                         </td>
-                                        <td className={styles.statsCell} style={{ backgroundColor: "#000" }}>
+                                        <td className={styles.statsCell} style={(cc === CCATEGORY.BATTLEFIELD) ? { backgroundColor: "black" } : getColorScale(cc, (stats.min+stats.max) / 6)}>
                                             <span className={styles.mainDeck}>
                                                 { (stats.min === stats.max) ? stats.min : `${stats.min}-${stats.max}` }
                                             </span>
