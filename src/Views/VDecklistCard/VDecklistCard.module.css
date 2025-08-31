@@ -6,7 +6,7 @@
 .container {
     position: relative;
     display: flex;
-    min-width: 260px;
+    min-width: 254px;
     font-weight: 500;
     /* border: 1px solid var(--text-default); */
     border-radius: 8px;

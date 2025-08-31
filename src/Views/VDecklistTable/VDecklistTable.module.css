@@ -9,9 +9,10 @@
     padding: 2px 0;
 }
 
-.linkCell {
+.headerLinkCell {
     font-size: 13px;
     font-weight: 400;
+    min-width: 50px;
 }
 
 .deckLabelCell {

@@ -2,7 +2,7 @@ import React from 'react';
 import copy from 'copy-to-clipboard';
 import styles from './EnterDecklistPage.module.css';
 
-import { DEV_STRING_PRE, MOCK_DECKLIST_FROM_RAW, PARSE_DECKLIST, RawDecklist } from '../../Data';
+import { ALL_ARCHETYPES, DEV_STRING_PRE, MOCK_DECKLIST_FROM_RAW, PARSE_DECKLIST, RawDecklist } from '../../Data';
 import { VDecklist } from '../../Views';
 
 interface IState {
@@ -73,7 +73,12 @@ export class EnterDecklistPage extends React.Component<{}, IState> {
                     <label>
                         Archetype
                         <br />
-                        <input id="archetype" type="text" placeholder="Enter Archetype" required />
+                        <select id="archetype">
+                            {ALL_ARCHETYPES.map((archetype) =>
+                                <option value={archetype}>{archetype}</option>
+                            )}
+                        </select>
+                        {/* <input id="archetype" type="text" placeholder="Enter Archetype" required /> */}
                         <br />
                     </label>
                     <div>

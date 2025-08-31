@@ -1,5 +1,5 @@
 import { AEGIS_20250817 } from "./decklists/Aegis";
-import { GZO_20250824, SFC_20250803 } from "./decklists/China";
+import { BJO_20250831, GZO_20250824, SFC_20250803 } from "./decklists/China";
 import { EXPERT_DECKLISTS } from "./decklists/ExpertDecklists";
 import { RFC_20250809 } from "./decklists/France";
 import { MCW_20250807 } from "./decklists/Italy";
@@ -10,7 +10,7 @@ import { TNF_20250828, TNF_20250807, TNF_20250731, TNF_20250814, TNF_20250821 } 
 import { Decklist, GET_TOURNAMENT_ID, MOCK_DECKLIST_FROM_RAW, RawTournamentResults, TournamentResults } from "./Interfaces";
 
 const RAW_TOURNAMENT_RESULTS: RawTournamentResults[] = [
-    TNF_20250828, GZO_20250824, RLL_20250823, RLL_20250822, TNF_20250821, AEGIS_20250817, LUX_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
+    BJO_20250831, TNF_20250828, GZO_20250824, RLL_20250823, RLL_20250822, TNF_20250821, AEGIS_20250817, LUX_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
 ];
 
 export let TOURNAMENT_RESULTS: TournamentResults[] = [];
@@ -139,12 +139,14 @@ export function ARCHETYPE_TO_LEGEND_ID(archetype: string): string {
 export const ALL_ARCHETYPES: string[] = Object.keys(archetypeLegendDict).sort();
 
 export const ARCHETYPE_TIERS = [
-    ["Kai'Sa"],
-    ["Sett Midrange", "Master Yi Midrange"],
-    ["Darius", "Viktor", "Annie Tempo", "Teemo", "Ahri Tempo", "Miss Fortune Ramp"],
+    ["Kai'Sa", "Master Yi Midrange"],
+    ["Sett Midrange", "Darius"],
+    ["Viktor", "Annie Tempo", "Teemo", "Ahri Tempo", "Miss Fortune Ramp"],
     ["Lee Sin Midrange", "Sett Ramp", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Yasuo Midrange"],
     ["Garen Midrange"],
 ];
+
+export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "Dark Horses", "Memes"];
 
 let archetypeCasedNames: {[archetypeLower: string]: string} = {};
 for(let archetype in archetypeLegendDict) {

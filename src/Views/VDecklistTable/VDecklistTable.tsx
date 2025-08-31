@@ -179,7 +179,7 @@ export class VDecklistTable extends React.Component<IProps> {
                             <th>Card</th>
                             <th title={"Main Deck % Appearance"}>MD%</th>
                             <th>Avg</th>
-                            <th style={{padding: "0 8px"}}>Range</th>
+                            <th style={{minWidth: "75px"}}>Range</th>
                             {this.decklists.map((decklist, deckIdx) => {
                                 let md = 0, sb = 0;
                                 for(let cardId of this.cardIds) {
@@ -190,7 +190,7 @@ export class VDecklistTable extends React.Component<IProps> {
                                     console.warn(`Decklist "${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}" has size ${md}+${sb}`);
                                 }
                                 return (
-                                    <th className={styles.linkCell} key={deckIdx} title={`${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}`}>
+                                    <th className={styles.headerLinkCell} key={deckIdx} title={`${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}`}>
                                         {(decklist.tournId.length > 0) ?
                                             <Link to={`/decklists/riftbound/tournament/${decklist.tournId}/decklist/${decklist.username}`} style={{color: "var(--text-default)"}}>
                                                 <div className={styles.deckLabelCell}>
