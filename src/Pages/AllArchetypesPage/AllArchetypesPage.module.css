@@ -2,7 +2,7 @@
     margin-left: 4px;
 }
 
-.tableContainer > * > * {
+th, td {
     border: 1px #E0E0CD solid;
     vertical-align: top;
 }

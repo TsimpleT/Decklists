@@ -1,14 +1,7 @@
-export enum FACTION {
-    FURY = "Fury", CALM = "Calm", MIND = "Mind", BODY = "Body", CHAOS = "Chaos", ORDER = "Order"
-};
-
-export enum TYPE {
-    BATTLEFIELD = "Battlefield", CHAMPION_UNIT = "Champion Unit", GEAR = "Gear", LEGEND = "Legend", RUNE = "Rune", SPELL = "Spell", UNIT = "Unit"
-}
-
-export enum PATCH {
-    OGN
-}
+export enum DOMAIN { FURY = "Fury", CALM = "Calm", MIND = "Mind", BODY = "Body", CHAOS = "Chaos", ORDER = "Order" };
+export enum PRETYPE { SIGNATURE = "Signature", CHAMPION = "Champion", TOKEN = "Token" }
+export enum TYPE { BATTLEFIELD = "Battlefield", GEAR = "Gear", LEGEND = "Legend", RUNE = "Rune", SPELL = "Spell", UNIT = "Unit" }
+export enum PATCH { OGN }
 
 export enum CCATEGORY { // CARD_CATEGORY
     LEGEND = "LEGEND", BATTLEFIELD = "BATTLEFIELD", RUNE = "RUNES", SIDE = "OTHER/SIDEBOARD",

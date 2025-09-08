@@ -1,16 +1,16 @@
 import { AEGIS_20250817 } from "./decklists/Aegis";
-import { BJO_20250831, GZO_20250824, SFC_20250803 } from "./decklists/China";
+import { BJO_20250831, CQO_20250831, GZO_20250824, SFC_20250803 } from "./decklists/China";
 import { EXPERT_DECKLISTS } from "./decklists/ExpertDecklists";
 import { RFC_20250809 } from "./decklists/France";
 import { MCW_20250807 } from "./decklists/Italy";
 import { LUX_20250816 } from "./decklists/LuxuryRiftboundChampionSeries";
 import { RMW_20250809, RMW_20250802, RMW_20250726 } from "./decklists/RiftboundMetaWeekly";
-import { RLL_20250822, RLL_20250823, RLT_20250808 } from "./decklists/Riftlab";
-import { TNF_20250828, TNF_20250807, TNF_20250731, TNF_20250814, TNF_20250821 } from "./decklists/ThursdayNightFights";
+import { RLL_20250905, RLL_20250822, RLL_20250823, RLT_20250808 } from "./decklists/Riftlab";
+import { TNF_20250904, TNF_20250828, TNF_20250807, TNF_20250731, TNF_20250814, TNF_20250821 } from "./decklists/ThursdayNightFights";
 import { Decklist, GET_TOURNAMENT_ID, MOCK_DECKLIST_FROM_RAW, RawTournamentResults, TournamentResults } from "./Interfaces";
 
 const RAW_TOURNAMENT_RESULTS: RawTournamentResults[] = [
-    BJO_20250831, TNF_20250828, GZO_20250824, RLL_20250823, RLL_20250822, TNF_20250821, AEGIS_20250817, LUX_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
+    CQO_20250831, RLL_20250905, TNF_20250904, BJO_20250831, TNF_20250828, GZO_20250824, RLL_20250823, RLL_20250822, TNF_20250821, AEGIS_20250817, LUX_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
 ];
 
 export let TOURNAMENT_RESULTS: TournamentResults[] = [];
@@ -116,6 +116,7 @@ export function GET_TOURNAMENT_ABBR(tournamentName: string): string {
 const archetypeLegendDict: {[archetype: string]: string} = {
     "Annie Tempo": "OGS-017",
     "Master Yi Midrange": "OGS-019",
+    "Master Yi Ramp": "OGS-019",
     "Lux Control": "OGS-021",
     "Garen Midrange": "OGS-023",
     "Kai'Sa": "OGN-247",
@@ -140,8 +141,8 @@ export const ALL_ARCHETYPES: string[] = Object.keys(archetypeLegendDict).sort();
 
 export const ARCHETYPE_TIERS = [
     ["Kai'Sa", "Master Yi Midrange"],
-    ["Sett Midrange", "Darius"],
-    ["Viktor", "Annie Tempo", "Teemo", "Ahri Tempo", "Miss Fortune Ramp"],
+    ["Miss Fortune Ramp", "Sett Midrange", "Darius"],
+    ["Viktor", "Annie Tempo", "Teemo", "Ahri Tempo", "Master Yi Ramp"],
     ["Lee Sin Midrange", "Sett Ramp", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Yasuo Midrange"],
     ["Garen Midrange"],
 ];

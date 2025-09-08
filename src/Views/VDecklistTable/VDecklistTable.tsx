@@ -159,7 +159,7 @@ export class VDecklistTable extends React.Component<IProps> {
             if(aStats.sbAvg !== bStats.sbAvg) {
                 return bStats.sbAvg - aStats.sbAvg;
             }
-            return a.id.localeCompare(b.id);
+            return a.baseId.localeCompare(b.baseId);
         });
     }
 

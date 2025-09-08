@@ -12,7 +12,7 @@ export class LegendImage extends React.Component<IProps> {
         return (
             <div className={styles.imageContainer} style={{width: this.props.size, height: this.props.size, ...(this.props.extraStyles ?? {})}}>
                 {(this.props.printId.length > 0)
-                    ? <img src={GET_CARD_ART(this.props.printId)} className={styles[`position-${card.id}`]} title={imgTitle} alt={imgTitle} />
+                    ? <img src={GET_CARD_ART(this.props.printId)} className={styles[`position-${this.props.printId}`]} title={imgTitle} alt={imgTitle} />
                     : <div className={styles.unknown}>?</div>
                 }
                 <span className={styles.subscript} style={(this.props.subscriptFontSize) ? {fontSize: `${this.props.subscriptFontSize}px`} : {}}>{this.props.subscript}</span>

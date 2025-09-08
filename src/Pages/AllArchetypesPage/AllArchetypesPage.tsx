@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './AllArchetypesPage.module.css';
 
-import { DEV_STRING_PRE, GET_ARCHETYPE_DECKLISTS, ARCHETYPE_TO_LEGEND_ID, ARCHETYPE_TIERS, ImageUtil, LEGEND_TO_COLORS, ARCHETYPE_TIER_NAMES } from '../../Data';
+import { DEV_STRING_PRE, GET_ARCHETYPE_DECKLISTS, ARCHETYPE_TO_LEGEND_ID, ARCHETYPE_TIERS, ImageUtil, ARCHETYPE_TIER_NAMES, GET_CARD } from '../../Data';
 import { LegendImage } from '../../Views';
 
 export class AllArchetypesPage extends React.Component {
@@ -14,16 +14,16 @@ export class AllArchetypesPage extends React.Component {
         const maxTierSize = Math.max(...ARCHETYPE_TIERS.map((tier) => tier.length));
         return (
             <table className={styles.tableContainer}>
-                <tr> {ARCHETYPE_TIERS.map((tier, i) => (tier.length === 0) ? <></> :
+                <thead><tr>{ARCHETYPE_TIERS.map((tier, i) => (tier.length === 0) ? <></> :
                     <th className={styles.tierHeader} key={i}>{ARCHETYPE_TIER_NAMES[i]}</th>
-                )} </tr>
-                <tr>{ARCHETYPE_TIERS.filter((tier) => tier.length > 0).map((tier, i) => (tier.length === 0) ? <></> :
+                )}</tr></thead>
+                <tbody><tr>{ARCHETYPE_TIERS.filter((tier) => tier.length > 0).map((tier, i) => (tier.length === 0) ? <></> :
                     <td key={i}> <div className={styles.tierCol}>
                         {tier.map((archetype, archetypeIdx) => {
                             const id = ARCHETYPE_TO_LEGEND_ID(archetype);
                             const numLists = GET_ARCHETYPE_DECKLISTS(archetype).length;
                             const title = `${archetype}: ${numLists} Decklists`;
-                            const colors = LEGEND_TO_COLORS(id);
+                            const colors = GET_CARD(id).domains;
                             return (
                                 <Link to={`/decklists/riftbound/archetype/${archetype.replaceAll(" ", "-").toLowerCase()}`} style={{color: "var(--text-default)"}} key={archetypeIdx}>
                                     <div className={styles.linkRow} style={(archetypeIdx+1 === maxTierSize) ? {border: "none"} : {}}>
@@ -45,7 +45,7 @@ export class AllArchetypesPage extends React.Component {
                             );
                         })}
                     </div> </td>
-                )}</tr>
+                )}</tr></tbody>
             </table>
         );
     }

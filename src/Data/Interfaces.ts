@@ -1,7 +1,8 @@
-import { GET_CARD } from "./CardData";
-import { FACTION, PATCH, TYPE } from "./Enums";
 
-type TournamentAbbrName = "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LUX" | "AEG" | "RLL" | "GZO" | "BJO";
+import { GET_CARD } from "./Cards";
+import { DOMAIN, PATCH, PRETYPE, TYPE } from "./Enums";
+
+type TournamentAbbrName = "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LUX" | "AEG" | "RLL" | "GZO" | "BJO" | "CQO";
 type TournamentTier = number; // 0 = Championship, 1 = Regional, 2 = Regional-ish, 3 = Local, 4 = "Small Local";
 
 interface ITournamentResults {
@@ -77,27 +78,21 @@ export interface SetDTO {
     cards: CardDTO[];
 }
 
+//'ID', 'Name', 'Pre-Type', 'Type', 'Domains', 'Rarity', 'Energy Cost', 'Power Cost', 'Might', 'Rules Text', 'Champion Tag', 'Other Tags', 'Other'
 export interface CardDTO {
-    id:	string;
-    collectorNumber: number;
-    set: string;
+    baseId:	string;
     name: string;
-    description: string;
+    preType?: PRETYPE;
     type: TYPE;
-    rarity: string;
-    faction?: FACTION;
-    stats: CardStatsDTO;
-    keywords: string[];
-    // art: CardArtDTO;
-    flavorText: string;
-    tags: string[];
-}
-
-export interface CardStatsDTO {
-    energy: number;
-    might: number;
-    cost: number;
-    power: number;
+    domains: DOMAIN[];
+    rarity: "Common"|"Uncommon"|"Rare"|"Epic"|"Alt Art";
+    energy?: number;
+    power?: number;
+    might?: number;
+    rulesText: string;
+    championTag?: string;
+    otherTags: string[];
+    other?: object;
 }
 
 // export interface CardArtDTO {

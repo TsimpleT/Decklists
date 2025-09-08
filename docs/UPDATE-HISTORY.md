@@ -1,13 +1,11 @@
-- VERSION \[1.0.0\]
-    - \[1.0.1\] (25Aug31) EnterDecklistPage Dropdown
-    - \[1.0.0\] (25Aug30) AllArchetypePage to Tier List
-- VERSION \[0.2.X\]
-    - \[0.2.5\] (25Aug22) Overnumber Support
-    - \[0.2.4\] (25Aug21) AllArchetypesPage Aesthetics
-    - \[0.2.3\] (25Aug21) Fix Player Results Page
-    - \[0.2.2\] (25Aug20) TCGArena Export
-    - \[0.2.1\] (25Aug18) Decklist Links + TTS Export
-    - \[0.2.0\] (25Aug18) Decklist View
-- VERSION \[0.1.X\]
-    - \[0.1.1\] (25Aug17) Player Results + Cleaning
-    - \[0.1.0\] (25Aug16) DecklistTable + All Cards
+\[1.1.0\] (25Sep07) Backend tweaks
+\[1.0.1\] (25Aug31) EnterDecklistPage Dropdown
+\[1.0.0\] (25Aug30) AllArchetypePage to Tier List
+\[0.2.5\] (25Aug22) Overnumber Support
+\[0.2.4\] (25Aug21) AllArchetypesPage Aesthetics
+\[0.2.3\] (25Aug21) Fix Player Results Page
+\[0.2.2\] (25Aug20) TCGArena Export
+\[0.2.1\] (25Aug18) Decklist Links + TTS Export
+\[0.2.0\] (25Aug18) Decklist View
+\[0.1.1\] (25Aug17) Player Results + Cleaning
+\[0.1.0\] (25Aug16) DecklistTable + All Cards

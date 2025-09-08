@@ -2,7 +2,7 @@ import React from 'react';
 import copy from 'copy-to-clipboard';
 import styles from './VDecklist.module.css';
 
-import { Decklist, DECKLIST_TTS_EXPORT, DECKLIST_TCGA_EXPORT, GET_CCATEGORY } from '../../Data';
+import { Decklist, DECKLIST_TTS_EXPORT, DECKLIST_TCGA_EXPORT, GET_CCATEGORY, TTS_ID_TO_ID } from '../../Data';
 
 import { VDecklistCard } from '../VDecklistCard';
 import { GET_COLOR_STYLE } from '../VDecklistTable';
@@ -42,9 +42,9 @@ export class VDecklist extends React.Component<IProps> {
                 </div>
                 <div className={styles.decklistContainer}>
                     {[{id: dl.legend, count: 1}].concat(dl.mainDeck).concat(dl.battlefields).concat(dl.runeDeck).concat(dl.sideboard).map((listing, i) => (
-                        <div className={styles.row}>
+                        <div className={styles.row} key={i}>
                             <span className={`${styles.count} ${GET_COLOR_STYLE(GET_CCATEGORY(listing.id), listing.count, 0)}`}>{listing.count}x</span>
-                            <VDecklistCard cardId={listing.id} key={i} options={{type: "showType"}} />
+                            <VDecklistCard cardId={TTS_ID_TO_ID(listing.id)} key={i} options={{type: "showType"}} />
                         </div>
                     ))}
                 </div>
