@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { DEV_STRING_PRE } from './Data';
-
 import { AppNav } from './AppNav';
 import { AllArchetypesPage, CardListPage, DecklistTablePage, ErrorPage, EnterDecklistPage, PlayerResultsPage, TournamentResultsPage, TournamentDecklistPage, DecklistPage } from './Pages';
 

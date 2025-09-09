@@ -3,6 +3,7 @@ host elsewhere to properly support url/links
 
 # Restructing
 DecklistPage base class for Regular/Expert vs Tournament
+Tournament results to json too?
 
 # Future
 

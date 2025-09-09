@@ -1,4 +1,4 @@
-ID,Name,Pre-Type,Type,Domains,Rarity,Energy Cost,Power Cost,Might,Rules Text,Champion Tag,Other Tags,Other
+Base ID,Name,Pre-Type,Type,Domains,Rarity,Energy Cost,Power Cost,Might,Rules Text,Champion Tag,Other Tags,Other
 OGN-001,Blazing Scorcher,,Unit,Fury,Common,5,0,5,[Accelerate],,"Noxus, Dragon",
 OGN-002,Brazen Buccaneer,,Unit,Fury,Common,6,0,5,"As you play me, you may discard a card as an additional cost. If you do, reduce my cost by [2].",,"Bilgewater, Pirate",
 OGN-003,Chemtech Enforcer,,Unit,Fury,Common,2,0,2,"[Assault 2]
@@ -444,10 +444,10 @@ Deal 2 to a unit at a battlefield.",,,
 OGS-004,"Master Yi, Meditative",Champion,Unit,Calm,Epic,5,1,,"While you have 8+ runes, I have +4 [M].",Master Yi,Ionia,
 OGS-005,Zephyr Sage,,Unit,Calm,Uncommon,6,1,,[Shield],,"Ionia, Bird",
 OGS-006,"Lux, Illuminated",Champion,Unit,Mind,Rare,6,1,,"When you play a spell that costs [5] or more, give me +3 [M] this turn.",Lux,Demacia,
-OGS-007,"Garen, Rugged",Champion,Unit,Order,Rare,6,1,,"[Assault 2], [Shield 2]",Garen,"Demacia, Elite",
-OGS-008,Gentlemen's Duel,,Spell,Order,Common,6,1,,"[Action]
+OGS-007,"Garen, Rugged",Champion,Unit,Body,Rare,6,1,,"[Assault 2], [Shield 2]",Garen,"Demacia, Elite",
+OGS-008,Gentlemen's Duel,,Spell,Body,Common,6,1,,"[Action]
 Give a friendly unit +3 [M] this turn. Then choose an enemy unit. They deal damage equal to their Mights to each other.",,,
-OGS-009,"Master Yi, Honed",Champion,Unit,Order,Epic,7,1,,"[Ganking]
+OGS-009,"Master Yi, Honed",Champion,Unit,Body,Epic,7,1,,"[Ganking]
 I enter ready.",Master Yi,Ionia,
 OGS-010,"Annie, Stubborn",Champion,Unit,Chaos,Rare,4,1,,"When you play me, return a spell from your trash to your hand.",Annie,Noxus,
 OGS-011,Flash,,Spell,Chaos,Common,2,0,,"[Reaction]

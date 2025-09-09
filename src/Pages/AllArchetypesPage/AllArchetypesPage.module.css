@@ -2,7 +2,7 @@
     margin-left: 4px;
 }
 
-th, td {
+.tableContainer th, .tableContainer td {
     border: 1px #E0E0CD solid;
     vertical-align: top;
 }
@@ -36,6 +36,8 @@ th, td {
 
 .archetypeText {
     font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .archetypeSubtitle {

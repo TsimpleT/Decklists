@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Decklist, DEV_STRING_PRE, GET_TOURNAMENT_DECKLIST, GET_PLACING, GET_TOURNAMENT_NAME } from '../../Data';
-
 import { VDecklist } from '../../Views';
 
 interface IProps {}

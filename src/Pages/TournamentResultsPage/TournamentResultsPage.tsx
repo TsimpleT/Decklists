@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './TournamentResultsPage.module.css';
 
-import { DEV_STRING_PRE, TOURNAMENT_RESULTS, GET_TOURNAMENT_ID, ARCHETYPE_TO_LEGEND_ID } from '../../Data';
+import { DEV_STRING_PRE, TOURNAMENT_RESULTS, GET_TOURNAMENT_ID, ARCHETYPE_TO_LEGEND_BASE_ID } from '../../Data';
 import { LegendImage } from '../../Views';
 
 export class TournamentResultsPage extends React.Component {
@@ -14,7 +14,7 @@ export class TournamentResultsPage extends React.Component {
         return (
             <div className={styles.container}>
                 {TOURNAMENT_RESULTS.map((tournament) => 
-                    <div className={styles.tournamentContainer}>
+                    <div className={styles.tournamentContainer} key={`${tournament.tournamentName} ${tournament.date}`}>
                         <div className={styles.tournamentHeader}>{`${tournament.tournamentName} ${tournament.date} (Tier ${tournament.tier})`}</div>
                         <div>
                             {tournament.placings.map((placing) => 
@@ -23,7 +23,7 @@ export class TournamentResultsPage extends React.Component {
                                         const content = (
                                             <span className={styles.linkContainer}>
                                                 <div className={styles.resultContainer}>{placing.placing}</div>
-                                                <LegendImage printId={(decklist.archetype) ? ARCHETYPE_TO_LEGEND_ID(decklist.archetype) : ""} size={28} />
+                                                <LegendImage id={ARCHETYPE_TO_LEGEND_BASE_ID(decklist.archetype)} size={28} />
                                                 <div className={styles.rowText}>{decklist.username}</div>
                                             </span>
                                         );

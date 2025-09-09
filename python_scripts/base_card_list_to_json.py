@@ -2,7 +2,7 @@ import sys
 import csv
 import json
 
-DEFAULT_DATE = "250907"
+DEFAULT_DATE = "250908"
 
 def process_str(s):
     return f'"{s}"'
@@ -19,7 +19,7 @@ def process_object(obj_str):
     return f"{{{s}}}"
 
 csv_handler = [
-    ("id", process_str),
+    ("baseId", process_str),
     ("name", process_str),
     ("preType", process_str),
     ("type", process_str),
@@ -38,15 +38,15 @@ def main():
     file_date = input(f'Enter file date (default "{DEFAULT_DATE}"): ')
     if not file_date: file_date = DEFAULT_DATE
     lastId = ""
-    with open(f"card_list_{file_date}.csv", 'r') as rf_raw:
+    with open(f"base_card_list_{file_date}.csv", 'r') as rf_raw:
         for row in reversed(rf_raw.readlines()):
             if row[3] == "-":
                 lastId = row[:row.index(",")]
                 break
-    with open(f"card_list_{file_date}.csv", 'r') as rf_raw:
+    with open(f"base_card_list_{file_date}.csv", 'r') as rf_raw:
         next(rf_raw)
         rf = csv.reader(rf_raw)
-        with open(f"CardList{file_date}.json", "w") as wf:
+        with open(f"BaseCardList{file_date}.json", "w") as wf:
             wf.write(f'{{\n\t"lastUpdated": "{file_date}",\n\t"cards": {{\n')
             for row in rf:
                 i = 0
@@ -58,10 +58,8 @@ def main():
                     i += 1
                 wf.write("}\n" if row[0] == lastId else "},\n")
             wf.write('\t}\n}\n')
+    print(f"BaseCardList{file_date}.json written successfully")
     return 0
 
 if __name__ == "__main__":
-    output = main()
-    if output == 0:
-        print("CardList.json written successfully")
-    sys.exit(output)
+    sys.exit(main())

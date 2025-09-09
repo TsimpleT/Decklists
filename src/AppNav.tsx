@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from "./AppNav.module.css";
+
 import { VERSION_STRING } from './Data';
 
 // enum Game { NONE, RIFTBOUND }

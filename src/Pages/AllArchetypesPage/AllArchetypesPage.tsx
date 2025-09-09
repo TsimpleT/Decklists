@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './AllArchetypesPage.module.css';
 
-import { DEV_STRING_PRE, GET_ARCHETYPE_DECKLISTS, ARCHETYPE_TO_LEGEND_ID, ARCHETYPE_TIERS, ImageUtil, ARCHETYPE_TIER_NAMES, GET_CARD } from '../../Data';
+import { DEV_STRING_PRE, GET_ARCHETYPE_DECKLISTS, ARCHETYPE_TO_LEGEND_BASE_ID, ARCHETYPE_TIERS, ImageUtil, ARCHETYPE_TIER_NAMES, GET_CARD } from '../../Data';
 import { LegendImage } from '../../Views';
 
 export class AllArchetypesPage extends React.Component {
@@ -20,14 +20,14 @@ export class AllArchetypesPage extends React.Component {
                 <tbody><tr>{ARCHETYPE_TIERS.filter((tier) => tier.length > 0).map((tier, i) => (tier.length === 0) ? <></> :
                     <td key={i}> <div className={styles.tierCol}>
                         {tier.map((archetype, archetypeIdx) => {
-                            const id = ARCHETYPE_TO_LEGEND_ID(archetype);
+                            const baseId = ARCHETYPE_TO_LEGEND_BASE_ID(archetype);
                             const numLists = GET_ARCHETYPE_DECKLISTS(archetype).length;
                             const title = `${archetype}: ${numLists} Decklists`;
-                            const colors = GET_CARD(id).domains;
+                            const colors = GET_CARD(baseId).domains;
                             return (
                                 <Link to={`/decklists/riftbound/archetype/${archetype.replaceAll(" ", "-").toLowerCase()}`} style={{color: "var(--text-default)"}} key={archetypeIdx}>
                                     <div className={styles.linkRow} style={(archetypeIdx+1 === maxTierSize) ? {border: "none"} : {}}>
-                                        <LegendImage printId={id} imgTitle={title} size={50} extraStyles={{border: "none", borderRadius: "0"}} />
+                                        <LegendImage id={baseId} imgTitle={title} size={50} extraStyles={{border: "none", borderRadius: "0"}} />
                                         <div className={styles.colorsContainer}>
                                             <div className={styles.colorDiv} style={{backgroundColor: `var(--bg-${colors[0].toLowerCase()})`}}>
                                                 <img src={ImageUtil.getImage(`${colors[0]}BW`)} height={16} title={colors[0]} alt={colors[0]} />

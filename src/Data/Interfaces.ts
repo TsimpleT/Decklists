@@ -1,5 +1,5 @@
 
-import { GET_CARD } from "./Cards";
+import { GET_CARD, TTS_ID_TO_ID } from "./Cards";
 import { DOMAIN, PATCH, PRETYPE, TYPE } from "./Enums";
 
 type TournamentAbbrName = "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LUX" | "AEG" | "RLL" | "GZO" | "BJO" | "CQO";
@@ -65,20 +65,7 @@ export interface DecklistCardAmount {
     count: number;
 }
 
-export interface RiftboundContentDTO {
-    game: string;
-    version: string;
-    lastUpdated: string;
-    sets: SetDTO[];
-}
-
-export interface SetDTO {
-    id: string;
-    name: string;
-    cards: CardDTO[];
-}
-
-//'ID', 'Name', 'Pre-Type', 'Type', 'Domains', 'Rarity', 'Energy Cost', 'Power Cost', 'Might', 'Rules Text', 'Champion Tag', 'Other Tags', 'Other'
+//'Base ID', 'Name', 'Pre-Type', 'Type', 'Domains', 'Rarity', 'Energy Cost', 'Power Cost', 'Might', 'Rules Text', 'Champion Tag', 'Other Tags', 'Other'
 export interface CardDTO {
     baseId:	string;
     name: string;
@@ -94,12 +81,6 @@ export interface CardDTO {
     otherTags: string[];
     other?: object;
 }
-
-// export interface CardArtDTO {
-//     thumbnailURL: string;
-//     fullURL: string;
-//     artist: string;
-// }
 
 export interface CARD_STATS {
     mdApp: number;
@@ -127,20 +108,20 @@ export function GET_TOURNAMENT_ID(abbrName: string, date: string): string {
     return `${abbrName}-${date.replaceAll("/","")}`;
 }
 
-export function PARSE_DECKLIST(text: string): RawDecklist {
-    const rawCardList: string[] = text.split(" ");
+export function PARSE_TTS_DECKLIST(text: string): RawDecklist {
+    const cardIds: string[] = text.split(" ").map(ttsId => TTS_ID_TO_ID(ttsId));
     let cardDict: {[cardId: string]: number} = {};
-    for(let cardId of rawCardList) {
-        if(cardId in cardDict) {
-            cardDict[cardId] += 1;
+    for(let id of cardIds) {
+        if(id in cardDict) {
+            cardDict[id] += 1;
         } else {
-            cardDict[cardId] = 1;
+            cardDict[id] = 1;
         }
     }
 
     let decklist: RawDecklist = {
         username: "", archetype: "", date: "", link: "",
-        legend: rawCardList[0], chosenChampion: rawCardList[1],
+        legend: cardIds[0], chosenChampion: cardIds[1],
         mainDeck: [], battlefields: [], runeDeck: [], sideboard: []
     };
     let mode: "MD" | "BF" | "RU" | "SB" = "MD";
@@ -149,10 +130,10 @@ export function PARSE_DECKLIST(text: string): RawDecklist {
     }
     
     let count = 0;
-    for(let i = 1; i < rawCardList.length; i++) {
+    for(let i = 1; i < cardIds.length; i++) {
         count++;
-        if(i === cardDict.length-1 || rawCardList[i] !== rawCardList[i+1]) {
-            const cardType = GET_CARD(rawCardList[i]).type;
+        if(i === cardDict.length-1 || cardIds[i] !== cardIds[i+1]) {
+            const cardType = GET_CARD(cardIds[i]).type;
             if(cardType === TYPE.BATTLEFIELD) {
                 mode = "BF";
             } else if(cardType === TYPE.RUNE) {
@@ -160,7 +141,7 @@ export function PARSE_DECKLIST(text: string): RawDecklist {
             } else if(mode === "RU") { // cardType is already guaranteed not to be RUNE bc else
                 mode = "SB";
             }
-            getDecklistPortion().push({id: rawCardList[i], count: count});
+            getDecklistPortion().push({id: cardIds[i], count: count});
             count = 0;
         }
     }
@@ -180,7 +161,6 @@ export function DECKLIST_TTS_EXPORT(decklist: RawDecklist): string {
 }
 
 export const parseDCAForTCGA = (dca: DecklistCardAmount) => `${dca.count} ${GET_CARD(dca.id).name}`;
-
 export function DECKLIST_TCGA_EXPORT(decklist: RawDecklist): string {
     return [[{id: decklist.legend, count: 1}], decklist.mainDeck, decklist.battlefields, decklist.runeDeck]
         .map((dcaArr: DecklistCardAmount[]) => dcaArr.map(parseDCAForTCGA).join("\n")).join("\n\n") +

@@ -1,17 +1,19 @@
-import CardList from "./CardList.json";
+import BaseCardList from "./BaseCardList.json";
 import CardCategories from "./CardCategories.json";
 import IdMappings from "./IdMappings.json";
-import { CardDTO } from "../Interfaces";
 import { CCATEGORY, TYPE } from '../Enums';
+import { CardDTO } from "../Interfaces";
 
-let cardData: {[cardId: string]: CardDTO} = CardList.cards as any;
+let cardData: {[cardId: string]: CardDTO} = BaseCardList.cards as any;
 let cardCategories: {[cardId: string]: CCATEGORY} = CardCategories.cardCategories as any;
-let idMappings: {[id: string]: {baseId:string, ttsId:string}} = IdMappings.mappings as any;
-let ttsIdMappings: {[ttsId: string]: {baseId:string, id:string}} = {};
-for(let id in idMappings) {
-    const mapping = idMappings[id];
-    ttsIdMappings[mapping.ttsId] = {baseId: mapping.baseId, id};
+const fullIdMappings: {[id: string]: {baseId: string, ttsId: string}} = IdMappings.mappings as any;
+let ttsIdMappings: {[id: string]: string} = {};
+let fromTtsIdMappings: {[ttsId: string]: string} = {};
+for(let id in fullIdMappings) {
+    const mapping = fullIdMappings[id];
     cardData[id] = cardData[mapping.baseId];
+    ttsIdMappings[id] = mapping.ttsId;
+    fromTtsIdMappings[mapping.ttsId] = id;
 }
 
 var sortableArray = Object.entries(cardData);
@@ -40,22 +42,23 @@ export function GET_CCATEGORY(potentiallyFullID: string): CCATEGORY {
 }
 
 export function TO_BASE_ID(id: string): string {
-    if(!(id in idMappings)) {
+    return GET_CARD(id).baseId;
+}
+
+export function TO_TTS_BASE_ID(id: string): string {
+    if(!(id in ttsIdMappings)) {
         console.warn(`Card "${id}" not found in idMappings.`);
-        idMappings[id] = {baseId: id, ttsId: id};
+        ttsIdMappings[id] = (id.length === 7 || id.length === 8) ? `${id}-1` : id;
     }
-    return idMappings[id].baseId;
+    return ttsIdMappings[id];
 }
 
 export function TTS_ID_TO_ID(ttsId: string): string {
-    if(ttsId.endsWith("-1")) {
-        return ttsId.substring(0,7);
+    if(!(ttsId in fromTtsIdMappings)) {
+        console.warn(`Card "${ttsId}" not found in fromTtsIdMappings.`);
+        fromTtsIdMappings[ttsId] = (ttsId.length > 7 && ttsId[3] === '-') ? ttsId.substring(0,7) : ttsId;
     }
-    if(!(ttsId in ttsIdMappings)) {
-        console.warn(`Card "${ttsId}" not found in ttsIdMappings.`);
-        ttsIdMappings[ttsId] = {baseId: ttsId.substring(0,7), id: ttsId.substring(0,7)};
-    }
-    return ttsIdMappings[ttsId].id;
+    return fromTtsIdMappings[ttsId];
 }
 
 export function GET_CARD_ART(printId: string): string {

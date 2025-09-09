@@ -1,5 +1,5 @@
-import { PlayerPlacing } from "./Interfaces";
 import { TOURNAMENT_RESULTS } from "./Decklists";
+import { PlayerPlacing } from "./Interfaces";
 
 let playerResults: {[username: string]: PlayerPlacing[]} = {};
 

@@ -14,8 +14,6 @@
     margin: 1px 0;
     height: 21px;
     justify-content: space-between;
-    background-color: #967925;
-    /* background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs-KBOf_RmT-AHqt0KlXwiiY62d9dOEpMbpQ&s") no-repeat top 25% right 20% / 40%; */
 }
 
 .leftContainer {
@@ -103,7 +101,6 @@
     top: 0px;
     width: 30%;
     height: calc(100%);
-    background: linear-gradient(to left, rgba(255, 255, 255, 0), #967925);
 }
 
 .rightImageFade {
@@ -112,7 +109,6 @@
     top: 0px;
     width: 30%;
     height: calc(100%);
-    background: linear-gradient(to right, rgba(255, 255, 255, 0), #967925);
 }
 
 .cardHoverImage {

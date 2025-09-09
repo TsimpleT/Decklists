@@ -1,3 +1,4 @@
+import { Decklist, GET_TOURNAMENT_ID, MOCK_DECKLIST_FROM_RAW, RawTournamentResults, TournamentResults } from "./Interfaces";
 import { AEGIS_20250817 } from "./decklists/Aegis";
 import { BJO_20250831, CQO_20250831, GZO_20250824, SFC_20250803 } from "./decklists/China";
 import { EXPERT_DECKLISTS } from "./decklists/ExpertDecklists";
@@ -7,7 +8,6 @@ import { LUX_20250816 } from "./decklists/LuxuryRiftboundChampionSeries";
 import { RMW_20250809, RMW_20250802, RMW_20250726 } from "./decklists/RiftboundMetaWeekly";
 import { RLL_20250905, RLL_20250822, RLL_20250823, RLT_20250808 } from "./decklists/Riftlab";
 import { TNF_20250904, TNF_20250828, TNF_20250807, TNF_20250731, TNF_20250814, TNF_20250821 } from "./decklists/ThursdayNightFights";
-import { Decklist, GET_TOURNAMENT_ID, MOCK_DECKLIST_FROM_RAW, RawTournamentResults, TournamentResults } from "./Interfaces";
 
 const RAW_TOURNAMENT_RESULTS: RawTournamentResults[] = [
     CQO_20250831, RLL_20250905, TNF_20250904, BJO_20250831, TNF_20250828, GZO_20250824, RLL_20250823, RLL_20250822, TNF_20250821, AEGIS_20250817, LUX_20250816, TNF_20250814, RMW_20250809, RFC_20250809, RLT_20250808, MCW_20250807, TNF_20250807, SFC_20250803, RMW_20250802, TNF_20250731, RMW_20250726
@@ -133,8 +133,9 @@ const archetypeLegendDict: {[archetype: string]: string} = {
     "Sett Midrange": "OGN-269",
     "Sett Ramp": "OGN-269",
 };
-export function ARCHETYPE_TO_LEGEND_ID(archetype: string): string {
-    return (archetype in archetypeLegendDict) ? archetypeLegendDict[archetype] : "???";
+export const UNKNOWN_LEGEND_ID = "???-???";
+export function ARCHETYPE_TO_LEGEND_BASE_ID(archetype: string): string {
+    return (archetype in archetypeLegendDict) ? archetypeLegendDict[archetype] : UNKNOWN_LEGEND_ID;
 }
 
 export const ALL_ARCHETYPES: string[] = Object.keys(archetypeLegendDict).sort();

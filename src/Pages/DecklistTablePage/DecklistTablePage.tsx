@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { DEV_STRING_PRE, GET_CASED_ARCHETYPE } from '../../Data';
-
 import { VDecklistTable } from '../../Views';
 
 interface IProps {}

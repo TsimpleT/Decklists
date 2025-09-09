@@ -2,7 +2,7 @@ import sys
 import csv
 import json
 
-DEFAULT_DATE = "250907"
+DEFAULT_DATE = "250908"
 
 def process_str(s):
     return f'"{s}"'
@@ -49,10 +49,9 @@ def main():
                     i += 1
                 wf.write("}\n" if row[0] == lastId else "},\n")
             wf.write('\t}\n}\n')
+    
+    print(f"IdMappings{file_date}.json written successfully")
     return 0
 
 if __name__ == "__main__":
-    output = main()
-    if output == 0:
-        print("IdMappings.json written successfully")
-    sys.exit(output)
+    sys.exit(main())

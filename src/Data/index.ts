@@ -4,3 +4,4 @@ export * from "./Decklists";
 export * from "./Enums";
 export * from "./ImageUtil";
 export * from "./Interfaces";
+export * from "./PlayerResults";

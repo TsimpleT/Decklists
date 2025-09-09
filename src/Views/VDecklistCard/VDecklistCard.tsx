@@ -6,7 +6,7 @@ import { GET_CARD, CardDTO, ImageUtil, DOMAIN, TYPE, GET_CARD_ART } from '../../
 
 type PropsOptions = {type: "table"|"showType"};
 
-interface IProps { cardId: string; options: PropsOptions; }
+interface IProps { id: string; options: PropsOptions; }
 interface IState { hover: boolean; }
 
 export class VDecklistCard extends React.Component<IProps, IState> {
@@ -24,7 +24,7 @@ export class VDecklistCard extends React.Component<IProps, IState> {
     }
 
     public render(): React.ReactNode {
-        const card: CardDTO = GET_CARD(this.props.cardId);
+        const card: CardDTO = GET_CARD(this.props.id);
         let powerIcons = [];
         let containerStyle: React.CSSProperties = {};
         let fadeLStyle: React.CSSProperties = {};
@@ -37,21 +37,22 @@ export class VDecklistCard extends React.Component<IProps, IState> {
         }
         if(card.domains.length === 0) {
             containerStyle.background = "#6C6C6C";
-            // containerStyle.color = "#000";
-            fadeLStyle.background = "linear-gradient(to left, rgba(255, 255, 255, 0), #6C6C6C)";
-            fadeRStyle.background = "linear-gradient(to right, rgba(255, 255, 255, 0), #6C6C6C)";
-        }
-        if(card.domains.length === 1) {
+            fadeLStyle.background = "linear-gradient(to left, transparent, #6C6C6C)";
+            fadeRStyle.background = "linear-gradient(to right, transparent, #6C6C6C)";
+        } else if(card.domains.length === 1) {
             containerStyle.backgroundColor = `var(--bg-${card.domains[0].toLowerCase()})`;
-            fadeLStyle.background = `linear-gradient(to left, rgba(255, 255, 255, 0), var(--bg-${card.domains[0].toLowerCase()})`;
-            fadeRStyle.background = `linear-gradient(to right, rgba(255, 255, 255, 0), var(--bg-${card.domains[0].toLowerCase()})`;
-            if(card.domains[0] === DOMAIN.ORDER) {
-                containerStyle.color = "#000";
-            }
+            fadeLStyle.background = `linear-gradient(to left, transparent, var(--bg-${card.domains[0].toLowerCase()})`;
+            fadeRStyle.background = `linear-gradient(to right, transparent, var(--bg-${card.domains[0].toLowerCase()})`;
+        } else if(card.domains.length === 2) {
+            containerStyle.background = (this.props.options.type === "showType")
+                ? `linear-gradient(90deg, var(--bg-${card.domains[0].toLowerCase()}) 15%, var(--bg-${card.domains[1].toLowerCase()}) 50%, var(--bg-${card.domains[1].toLowerCase()}) 85%, var(--bg-${card.domains[0].toLowerCase()}) 96%)`
+                : `linear-gradient(90deg, var(--bg-${card.domains[0].toLowerCase()}) 15%, var(--bg-${card.domains[1].toLowerCase()}) 40%, var(--bg-${card.domains[1].toLowerCase()}) 85%, var(--bg-${card.domains[0].toLowerCase()}) 85%)`;
+            fadeLStyle.background = `linear-gradient(to left, transparent, var(--bg-${card.domains[1].toLowerCase()})`;
+            fadeRStyle.background = `linear-gradient(to right, transparent, var(--bg-${card.domains[(this.props.options.type === "showType") ? 1 : 0].toLowerCase()})`;
         }
-
+        
         const content: React.ReactNode = (
-            <div className={styles.wrapperForImg} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} title={`${card.name} (${this.props.cardId})`} >
+            <div className={styles.wrapperForImg} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} title={`${card.name} (${this.props.id})`} >
                 <div className={styles.container} style={containerStyle}>
                     <span className={(card.domains.length > 0 && card.domains[0] === DOMAIN.ORDER) ? styles.leftContainerOrder : styles.leftContainer}>
                         <span className={styles.cardName}>{card.name}</span>
@@ -72,16 +73,16 @@ export class VDecklistCard extends React.Component<IProps, IState> {
                     </div>
                 </div>
                 <div className={styles.cardImageFullContainer}>
-                    <div className={`${styles.cardImageSmallContainer} ${posStyles[`${this.props.cardId.replaceAll("*","")}-div`]}`}>
-                        <img src={GET_CARD_ART(this.props.cardId)} alt={`${card.name} (${this.props.cardId})`}
-                            className={`${(card.type === TYPE.BATTLEFIELD) ? styles.cardSmallImageBF : styles.cardSmallImage} ${posStyles[this.props.cardId.replaceAll("*","")]}`}/>
+                    <div className={`${styles.cardImageSmallContainer} ${posStyles[`${this.props.id.replaceAll("*","")}-div`]}`}>
+                        <img src={GET_CARD_ART(this.props.id)} alt={`${card.name} (${this.props.id})`}
+                            className={`${(card.type === TYPE.BATTLEFIELD) ? styles.cardSmallImageBF : styles.cardSmallImage} ${posStyles[this.props.id.replaceAll("*","")]}`}/>
                         <div className={styles.leftImageFade} style={fadeLStyle}/>
                         <div className={styles.rightImageFade} style={fadeRStyle} />
                     </div>
                 </div>
                 {(this.state.hover) &&
-                    <img src={GET_CARD_ART(this.props.cardId)} className={(card.type === TYPE.BATTLEFIELD) ? styles.cardHoverImageRotated : styles.cardHoverImage}
-                        alt={`${card.name} (${this.props.cardId})`} />
+                    <img src={GET_CARD_ART(this.props.id)} className={(card.type === TYPE.BATTLEFIELD) ? styles.cardHoverImageRotated : styles.cardHoverImage}
+                        alt={`${card.name} (${this.props.id})`} />
                 }
             </div>
         );

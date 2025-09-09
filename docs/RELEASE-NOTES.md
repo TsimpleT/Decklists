@@ -1,3 +1,3 @@
-[1.1.0] Backend tweaks
-- JSON and python scripts for card info and id mappings
-- More events
+[1.1.1] Use print id as id + fixes
+- Multi-colored cards
+- Follow import order conventions

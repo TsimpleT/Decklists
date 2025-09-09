@@ -1,10 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styles from './VDecklistTable.module.css';
 
-import { ALL_CCATEGORIES, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CASED_ARCHETYPE, GET_CCATEGORY } from '../../Data';
-
+import { ALL_CCATEGORIES, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CASED_ARCHETYPE, GET_CCATEGORY, TO_BASE_ID } from '../../Data';
 import { VDecklistCard } from '../VDecklistCard';
-import { Link } from 'react-router-dom';
 
 interface IProps {
     archetype: string;
@@ -15,7 +14,7 @@ export function GET_COLOR_STYLE(cc: CCATEGORY, count: number, sideCount: number)
         : (count === 3) ? styles.gold : (count === 2) ? styles.silver : (count === 1) ? styles.bronze : (count === 0 && sideCount === 0) ? styles.blank : "";
 }
 
-const colors: [number, number, number][] = [  [0,0,0], [180,95,6], [100,100,100], [187,154,66] ];
+const colors: [number, number, number][] = [ [0,0,0], [180,95,6], [100,100,100], [187,154,66] ];
 const maxStyleStr: string = `rgb(${colors[colors.length-1][0]},${colors[colors.length-1][1]},${colors[colors.length-1][2]})`;
 function getColorScale(cc: CCATEGORY, n: number): React.CSSProperties {
     if(cc === CCATEGORY.RUNE) { return { backgroundColor: "#000" }; }
@@ -65,7 +64,7 @@ export class VDecklistTable extends React.Component<IProps> {
         for(let decklistNum = 0; decklistNum < this.decklists.length; decklistNum++) {
             const decklist = this.decklists[decklistNum];
             for(let listing of decklist.mainDeck.concat(decklist.battlefields).concat(decklist.runeDeck).concat({id: decklist.legend, count: 1})) {
-                const cardId = listing.id.substring(0,7);
+                const cardId = TO_BASE_ID(listing.id);
                 if(!this.cardIds.includes(cardId)) {
                     this.cardIds.push(cardId);
                     this.cardAmounts[cardId] = [];
@@ -80,7 +79,7 @@ export class VDecklistTable extends React.Component<IProps> {
                 this.cardAmounts[cardId].push(listing.count);
             }
             for(let listing of decklist.sideboard) {
-                const cardId = listing.id.substring(0, 7);
+                const cardId = TO_BASE_ID(listing.id);
                 if(!this.cardIds.includes(cardId)) {
                     this.cardIds.push(cardId);
                     this.cardAmounts[cardId] = [];
@@ -113,7 +112,7 @@ export class VDecklistTable extends React.Component<IProps> {
             const maindeckAmts = this.cardAmounts[cardId];
             this.cardStats[cardId] = {
                 mdApp: maindeckAmts.filter((n) => n > 0).length / maindeckAmts.length,
-                avg: maindeckAmts.reduce((a,b)=>a+b)/maindeckAmts.length,
+                avg: maindeckAmts.reduce((a,b)=>a+b) / maindeckAmts.length,
                 min: Math.min(...maindeckAmts),
                 max: Math.max(...maindeckAmts),
                 sbAvg: this.sideboardAmounts[cardId].reduce((a, b) => a + b) / this.sideboardAmounts[cardId].length
@@ -148,7 +147,6 @@ export class VDecklistTable extends React.Component<IProps> {
 
     private sortCardIds(): void {
         this.cardIds.sort((aId, bId) => {
-            const a = GET_CARD(aId), b = GET_CARD(bId);
             const aStats = this.cardStats[aId], bStats = this.cardStats[bId];
             if(aStats.mdApp !== bStats.mdApp) {
                 return bStats.mdApp - aStats.mdApp;
@@ -159,7 +157,7 @@ export class VDecklistTable extends React.Component<IProps> {
             if(aStats.sbAvg !== bStats.sbAvg) {
                 return bStats.sbAvg - aStats.sbAvg;
             }
-            return a.baseId.localeCompare(b.baseId);
+            return aId.localeCompare(bId);
         });
     }
 
@@ -247,7 +245,7 @@ export class VDecklistTable extends React.Component<IProps> {
                                 const stats = this.cardStats[cardId];
                                 return (
                                     <tr key={cardIdx}>
-                                        <VDecklistCard cardId={cardId} options={{type: "table"}}/>
+                                        <VDecklistCard id={cardId} options={{type: "table"}}/>
                                         <td className={styles.statsCell} style={getColorScale(cc, stats.mdApp)}>
                                             <span className={styles.mainDeck}>
                                                 { stats.mdApp.toLocaleString(undefined,{style:'percent'}) }

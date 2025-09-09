@@ -1,3 +1,4 @@
+\[1.1.1\] (25Sep08) Use print id as id + fixes
 \[1.1.0\] (25Sep07) Backend tweaks
 \[1.0.1\] (25Aug31) EnterDecklistPage Dropdown
 \[1.0.0\] (25Aug30) AllArchetypePage to Tier List

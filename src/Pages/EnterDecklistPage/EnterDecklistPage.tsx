@@ -2,7 +2,7 @@ import React from 'react';
 import copy from 'copy-to-clipboard';
 import styles from './EnterDecklistPage.module.css';
 
-import { ALL_ARCHETYPES, DEV_STRING_PRE, MOCK_DECKLIST_FROM_RAW, PARSE_DECKLIST, RawDecklist } from '../../Data';
+import { ALL_ARCHETYPES, DEV_STRING_PRE, MOCK_DECKLIST_FROM_RAW, PARSE_TTS_DECKLIST, RawDecklist } from '../../Data';
 import { VDecklist } from '../../Views';
 
 interface IState {
@@ -25,7 +25,7 @@ export class EnterDecklistPage extends React.Component<{}, IState> {
         e.preventDefault();
         const data = (e.currentTarget as any).elements;
 
-        let decklist: RawDecklist = PARSE_DECKLIST(`${data.decklist.value}`);
+        let decklist: RawDecklist = PARSE_TTS_DECKLIST(`${data.decklist.value}`);
         decklist.username = data.username.value;
         decklist.archetype = data.archetype.value;
 
@@ -34,7 +34,7 @@ export class EnterDecklistPage extends React.Component<{}, IState> {
     }
 
     private onTextChange: React.ChangeEventHandler<HTMLTextAreaElement> = (e) => {
-        this.setState({decklist: (e.target.value === "") ? undefined : PARSE_DECKLIST(`${e.target.value}`)});
+        this.setState({decklist: (e.target.value === "") ? undefined : PARSE_TTS_DECKLIST(`${e.target.value}`)});
     }
 
     private showForm: React.MouseEventHandler<HTMLDivElement> = (_) => {
@@ -75,7 +75,7 @@ export class EnterDecklistPage extends React.Component<{}, IState> {
                         <br />
                         <select id="archetype">
                             {ALL_ARCHETYPES.map((archetype) =>
-                                <option value={archetype}>{archetype}</option>
+                                <option value={archetype} key={archetype}>{archetype}</option>
                             )}
                         </select>
                         {/* <input id="archetype" type="text" placeholder="Enter Archetype" required /> */}

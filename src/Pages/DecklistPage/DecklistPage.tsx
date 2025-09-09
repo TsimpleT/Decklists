@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Decklist, DEV_STRING_PRE, GET_CASED_ARCHETYPE, GET_EXPERT_DECKLIST } from '../../Data';
-
 import { VDecklist } from '../../Views';
 
 interface IProps {}
@@ -28,8 +27,8 @@ export class DecklistPage extends React.Component<IProps> {
     }
 
     public render(): React.ReactNode {
-        return ((!this.decklist) ? <div style={{marginLeft: "4px"}}>decklist not found</div> : <>
-            <VDecklist decklist={this.decklist} title={`${this.username}'s ${GET_CASED_ARCHETYPE(this.archetype)}`} subtitle={""}  />
-        </>);
+        return ((!this.decklist) ? <div style={{marginLeft: "4px"}}>decklist not found</div> : 
+            <VDecklist decklist={this.decklist} title={GET_CASED_ARCHETYPE(this.archetype)} subtitle={`by ${this.username}`}  />
+        );
     }
 }
