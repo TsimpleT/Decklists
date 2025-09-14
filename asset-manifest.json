@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/decklists/static/css/main.a0d923c8.css",
-    "main.js": "/decklists/static/js/main.c064dda2.js",
+    "main.css": "/decklists/static/css/main.ea593c84.css",
+    "main.js": "/decklists/static/js/main.a723a288.js",
     "static/js/453.4ec2150a.chunk.js": "/decklists/static/js/453.4ec2150a.chunk.js",
     "static/media/RainbowRuneBorder.png": "/decklists/static/media/RainbowRuneBorder.77b0a7671c08b3e00cff.png",
     "static/media/RainbowRune.png": "/decklists/static/media/RainbowRune.7891cef5fa18cebd1b34.png",
@@ -27,6 +27,7 @@
     "static/media/Legend.png": "/decklists/static/media/Legend.61d4e34ec368da4acc6b.png",
     "static/media/SwordIconRB.png": "/decklists/static/media/SwordIconRB.ff3fac41f3d2b33d6a0a.png",
     "static/media/Rune.png": "/decklists/static/media/Rune.47016f988135420163fa.png",
+    "static/media/Riftbound.png": "/decklists/static/media/Riftbound.7d7a1b318ae6c2bdb614.png",
     "static/media/Tap.png": "/decklists/static/media/Tap.ca86d5039bb20862370b.png",
     "static/media/OrderOG.png": "/decklists/static/media/OrderOG.5e00703463be163adfc3.png",
     "static/media/MindBW.png": "/decklists/static/media/MindBW.3eeeea90bdd34d2d01b6.png",
@@ -34,12 +35,12 @@
     "static/media/OrderBW.png": "/decklists/static/media/OrderBW.2bce79e6617e17fdab60.png",
     "static/media/Battlefield.png": "/decklists/static/media/Battlefield.0517b5b4a467adb32d32.png",
     "index.html": "/decklists/index.html",
-    "main.a0d923c8.css.map": "/decklists/static/css/main.a0d923c8.css.map",
-    "main.c064dda2.js.map": "/decklists/static/js/main.c064dda2.js.map",
+    "main.ea593c84.css.map": "/decklists/static/css/main.ea593c84.css.map",
+    "main.a723a288.js.map": "/decklists/static/js/main.a723a288.js.map",
     "453.4ec2150a.chunk.js.map": "/decklists/static/js/453.4ec2150a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a0d923c8.css",
-    "static/js/main.c064dda2.js"
+    "static/css/main.ea593c84.css",
+    "static/js/main.a723a288.js"
   ]
 }
