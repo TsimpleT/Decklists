@@ -6,6 +6,9 @@ let playerResults: {[username: string]: PlayerPlacing[]} = {};
 for(let tournamentResult of TOURNAMENT_RESULTS) {
     for(let placing of tournamentResult.placings) {
         for(let decklist of placing.decklists) {
+            if(decklist.username[0] === "*") {
+                continue;
+            }
             if(!(decklist.username in playerResults)) {
                 playerResults[decklist.username] = [];
             }

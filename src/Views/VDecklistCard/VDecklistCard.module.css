@@ -6,12 +6,12 @@
 .container {
     position: relative;
     display: flex;
-    min-width: 254px;
+    min-width: 260px;
+    width: 260px;
+    max-width: 260px;
     font-weight: 500;
-    /* border: 1px solid var(--text-default); */
     border-radius: 8px;
     padding: 0 4px 4px 8px;
-    margin: 1px 0;
     height: 21px;
     justify-content: space-between;
 }
@@ -36,7 +36,6 @@
 }
 
 .cardType {
-    /* margin: 3px 3px 0 0; */
     position: relative;
     z-index: 10;
 }
@@ -48,7 +47,7 @@
 .rightContainer {
     display: flex;
     height: 100%;
-    margin-top: 2.8px;
+    margin-top: 2.7px;
     z-index: 10;
 }
 
@@ -69,8 +68,8 @@
 
 .cardImageFullContainer {
     position: absolute;
-    left: 110px;
-    top: 0px;
+    left: 95px;
+    top: 0;
     width: 160px;
     height: 25px;
     display: flex;
@@ -114,7 +113,7 @@
 .cardHoverImage {
     position: absolute;
     top: 0px;
-    right: -304px;
+    right: -288px;
     width: 300px;
     border-radius: 16px;
     z-index: 100;
@@ -124,7 +123,7 @@
     position: absolute;
     rotate: 90deg;
     top: -60px;
-    right: -364px;
+    right: -350px;
     width: 300px;
     border-radius: 16px;
     z-index: 100;

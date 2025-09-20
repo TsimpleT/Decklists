@@ -1,29 +1,38 @@
 .container {
     margin-left: 4px;
+    display: flex;
 }
 
 .tournamentContainer {
-    margin-bottom: 16px;
+    margin-right: 16px;
+    min-width: 210px;
 }
 
 .tournamentHeader {
     font-weight: 600;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
+}
+
+.deckLinkSpan > a {
+    all: unset;
+    text-decoration: underline;
+    font-weight: 400;
+    margin-left: 4px;
 }
 
 .linkContainer {
     display: flex;
-    margin-right: 2px;
+    padding-right: 4px;
     margin-bottom: 3px;
+    border-radius: 8px;
+    border: 1px solid white;
 }
 
 .resultContainer {
     width: 48px;
     height: 28px;
-    border-radius: 8px;
-    border: 1px solid white;
+    border-right: 1px solid white;
     text-align: center;
-    margin-right: 4px;
 }
 
 .rowText {
@@ -31,4 +40,6 @@
     display: inline;
     margin-top: 1px;
     margin-left: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

@@ -1,12 +1,86 @@
 .container {
-    margin: 2px 6px 390px;
-    overflow-x: scroll;
+    display: flex;
+    height: 100%;
+    margin-left: 6px;
+    margin-bottom: 390px;
 }
 
-.labelHeaderRow > th {
-    background-color: #000;
+.container > table {
+    table-layout: fixed;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+.container > table td,
+.container > table th {
+    border: 1px solid var(--bg-default);
     border-radius: 8px;
-    padding: 2px 0;
+    padding: 0;
+}
+
+.stickyColumns {
+    position: sticky;
+    left: 0;
+    z-index: 50 !important;
+    background-color: var(--bg-default);
+}
+
+.topRow {
+    position: sticky;
+    top: 34px;
+    z-index: 40;
+    background-color: var(--bg-default);
+}
+
+.topRow > th {
+    background-color: #000;
+    min-height: 45px;
+    max-height: 45px;
+    height: 45px;
+    background: #000;
+}
+
+.stickyCol2 {
+    min-width: 55px;
+    max-width: 55px;
+}
+
+.stickyCol3 {
+    min-width: 70px;
+    max-width: 70px;
+}
+
+.stickyCol4 {
+    min-width: 60px;
+    max-width: 60px;
+    border-right: 2px solid #a0a0a0 !important;
+}
+
+.categorySectionHeader {
+    background-color: #C0C0C0;
+    color: #000;
+    font-weight: 600;
+    padding: 2px 8px !important;
+    margin-top: 16px;
+    text-align: left;
+}
+
+.sectionHeaderRowCell {
+    background-color: #C0C0C0;
+    color: #000;
+    font-weight: 700;
+    padding: 4px 8px;
+    text-align: center;
+}
+
+.mainDeck {
+    font-weight: 500;
+}
+
+.sideboard {
+    font-size: 11px;
+    font-style: italic;
+    padding-left: 3px;
 }
 
 .headerLinkCell {
@@ -23,14 +97,12 @@
 }
 
 .statsCell {
-    border-radius: 8px;
     text-align: center;
     padding: 0 6px;
 }
 
 .cell {
     background-color: #000;
-    border-radius: 8px;
     text-align: center;
     padding: 0 6px;
 }
@@ -39,32 +111,3 @@
 .silver { background-color: var(--bg-silver); }
 .bronze { background-color: var(--bg-bronze); }
 .blank { background-color: #000; color: #000; }
-
-.sectionHeader {
-    background-color: #C0C0C0;
-    color: #000;
-    border-radius: 8px;
-    font-weight: 600;
-    padding: 5px 8px;
-    margin-top: 16px;
-    text-align: left;
-}
-
-.sectionHeaderCell {
-    background-color: #C0C0C0;
-    color: #000;
-    border-radius: 8px;
-    font-weight: 700;
-    padding: 4px 8px;
-    text-align: center;
-}
-
-.mainDeck {
-    font-weight: 500;
-}
-
-.sideboard {
-    font-size: 11px;
-    font-style: italic;
-    padding-left: 3px;
-}

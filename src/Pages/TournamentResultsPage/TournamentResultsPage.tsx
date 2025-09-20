@@ -15,7 +15,14 @@ export class TournamentResultsPage extends React.Component {
             <div className={styles.container}>
                 {TOURNAMENT_RESULTS.map((tournament) => 
                     <div className={styles.tournamentContainer} key={`${tournament.tournamentName} ${tournament.date}`}>
-                        <div className={styles.tournamentHeader}>{`${tournament.tournamentName} ${tournament.date} (Tier ${tournament.tier})`}</div>
+                        <div className={styles.tournamentHeader}>
+                            {`${tournament.tournamentName} ${tournament.date} (T${tournament.tier})`}
+                            <span className={styles.deckLinkSpan}>
+                                {(tournament.links.map((link) =>
+                                    <a href={link} target="_blank" rel="noreferrer">Link</a>
+                                ))}
+                            </span>
+                        </div>
                         <div>
                             {tournament.placings.map((placing) => 
                                 <>
@@ -23,8 +30,10 @@ export class TournamentResultsPage extends React.Component {
                                         const content = (
                                             <span className={styles.linkContainer}>
                                                 <div className={styles.resultContainer}>{placing.placing}</div>
-                                                <LegendImage id={ARCHETYPE_TO_LEGEND_BASE_ID(decklist.archetype)} size={28} />
-                                                <div className={styles.rowText}>{decklist.username}</div>
+                                                <LegendImage id={ARCHETYPE_TO_LEGEND_BASE_ID(decklist.archetype)} size={28} extraStyles={{border: "none"}} />
+                                                <span className={styles.rowText} title={decklist.username} style={(decklist.username[0] === "*") ? {fontStyle: "italic"} : {}}>
+                                                    {decklist.username}
+                                                </span>
                                             </span>
                                         );
                                         return ((decklist.mainDeck.length > 0)

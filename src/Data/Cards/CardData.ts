@@ -37,15 +37,15 @@ export function GET_CARD(id: string): CardDTO {
 
 export const ALL_CARD_IDS: string[] = Object.keys(cardData);
 
-export function GET_CCATEGORY(potentiallyFullID: string): CCATEGORY {
-    return (potentiallyFullID.substring(0,7) in cardCategories) ? cardCategories[potentiallyFullID.substring(0,7)] : CCATEGORY.LEGEND;
+export function GET_CCATEGORY(id: string): CCATEGORY {
+    return (TO_BASE_ID(id) in cardCategories) ? cardCategories[TO_BASE_ID(id)] : CCATEGORY.LEGEND;
 }
 
 export function TO_BASE_ID(id: string): string {
     return GET_CARD(id).baseId;
 }
 
-export function TO_TTS_BASE_ID(id: string): string {
+export function TO_TTS_ID(id: string): string {
     if(!(id in ttsIdMappings)) {
         console.warn(`Card "${id}" not found in idMappings.`);
         ttsIdMappings[id] = (id.length === 7 || id.length === 8) ? `${id}-1` : id;
@@ -61,6 +61,6 @@ export function TTS_ID_TO_ID(ttsId: string): string {
     return fromTtsIdMappings[ttsId];
 }
 
-export function GET_CARD_ART(printId: string): string {
-    return `https://static.dotgg.gg/riftbound/cards/${printId.replaceAll("*","s")}.webp`;
+export function GET_CARD_ART(id: string): string {
+    return `https://static.dotgg.gg/riftbound/cards/${id.replaceAll("*","s")}.webp`;
 }

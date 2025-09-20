@@ -106,7 +106,7 @@ export class VDecklistTable extends React.Component<IProps> {
 
     private recordStats(): void {
         for(let cc of ALL_CCATEGORIES) {
-            this.ccategoryStats[cc] = { avg: 0, sbAvg: 0, min: -1, max: -1, sbMin: -1, sbMax: -1 };
+            this.ccategoryStats[cc] = { avg: 0, sbAvg: 0, min: -1, max: -1/*, sbMin: -1, sbMax: -1*/ };
         }
         for(let cardId of this.cardIds) {
             const maindeckAmts = this.cardAmounts[cardId];
@@ -140,8 +140,8 @@ export class VDecklistTable extends React.Component<IProps> {
             const statsArr: DL_CC_CARD_STATS[] = this.decklistCCategoryStats.map((ccDict) => ccDict[cc]);
             this.ccategoryStats[cc].min = Math.min(...statsArr.map((stats) => stats.total));
             this.ccategoryStats[cc].max = Math.max(...statsArr.map((stats) => stats.total));
-            this.ccategoryStats[cc].sbMin = Math.min(...statsArr.map((stats) => stats.sbTotal));
-            this.ccategoryStats[cc].sbMax = Math.max(...statsArr.map((stats) => stats.sbTotal));
+            // this.ccategoryStats[cc].sbMin = Math.min(...statsArr.map((stats) => stats.sbTotal));
+            // this.ccategoryStats[cc].sbMax = Math.max(...statsArr.map((stats) => stats.sbTotal));
         }
     }
 
@@ -171,13 +171,70 @@ export class VDecklistTable extends React.Component<IProps> {
         }
         return (
             <div className={styles.container}>
+                <table className={styles.stickyColumns}>
+                    <thead>
+                        <tr className={styles.topRow}>
+                            <th className={styles.stickyCol1}>Card</th>
+                            <th className={styles.stickyCol2} title={"Main Deck % Appearance"}>MD%</th>
+                            <th className={styles.stickyCol3}>Avg</th>
+                            <th className={styles.stickyCol4}>Range</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {([...ALL_CCATEGORIES].map((cc) => (<>
+                            <tr>
+                                <th colSpan={2} className={`${styles.categorySectionHeader} ${styles.stickyCol1}`}>{cc}</th>
+                                <th className={`${styles.sectionHeaderRowCell} ${styles.stickyCol3}`}>
+                                    <span className={styles.mainDeck}>
+                                        { this.ccategoryStats[cc].avg.toFixed(2) }
+                                    </span>
+                                    {(this.ccategoryStats[cc].sbAvg > 0) &&
+                                        <span className={styles.sideboard} title={"sideboard"}>{ this.ccategoryStats[cc].sbAvg.toFixed(2) }</span>
+                                    }
+                                </th>
+                                <th className={`${styles.sectionHeaderRowCell} ${styles.stickyCol4}`}>
+                                    <span className={styles.mainDeck}>
+                                        { (this.ccategoryStats[cc].min === this.ccategoryStats[cc].max) ? this.ccategoryStats[cc].min : `${this.ccategoryStats[cc].min}-${this.ccategoryStats[cc].max}` }
+                                    </span>
+                                    {/* {(this.ccategoryStats[cc].sbMin + this.ccategoryStats[cc].sbMax > 0) &&
+                                        <span className={styles.sideboard} title={"sideboard"}>
+                                            { (this.ccategoryStats[cc].sbMin === this.ccategoryStats[cc].sbMax) ? this.ccategoryStats[cc].sbMin : `${this.ccategoryStats[cc].sbMin}-${this.ccategoryStats[cc].sbMax}` }
+                                        </span>
+                                    } */}
+                                </th>
+                            </tr>
+                            {this.cardIds.filter((cardId) => GET_CCATEGORY(cardId) === cc).map((cardId, cardIdx) => {
+                                const stats = this.cardStats[cardId];
+                                return (
+                                    <tr key={cardIdx}>
+                                        <VDecklistCard id={cardId} options={{type: "table"}} fixHover={true} />
+                                        <td className={`${styles.statsCell} ${styles.stickyCol2}`} style={getColorScale(cc, stats.mdApp)}>
+                                            <span className={styles.mainDeck}>
+                                                { stats.mdApp.toLocaleString(undefined,{style:'percent'}) }
+                                            </span>
+                                        </td>
+                                        <td className={`${styles.statsCell} ${styles.stickyCol3}`} style={getColorScale(cc, stats.avg / ((cc === CCATEGORY.BATTLEFIELD) ? 1 : 3))}>
+                                            <span className={styles.mainDeck}>
+                                                { stats.avg.toFixed(2) }
+                                            </span>
+                                            {(stats.sbAvg > 0) &&
+                                                <span className={styles.sideboard} title={"sideboard"}>{ stats.sbAvg.toFixed(2) }</span>
+                                            }
+                                        </td>
+                                        <td className={`${styles.statsCell} ${styles.stickyCol4}`} style={(cc === CCATEGORY.BATTLEFIELD) ? { backgroundColor: "black" } : getColorScale(cc, (stats.min+stats.max) / 6)}>
+                                            <span className={styles.mainDeck}>
+                                                { (stats.min === stats.max) ? stats.min : `${stats.min}-${stats.max}` }
+                                            </span>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
+                        </>)))}
+                    </tbody>
+                </table>
                 <table>
                     <thead>
-                        <tr className={styles.labelHeaderRow}>
-                            <th>Card</th>
-                            <th title={"Main Deck % Appearance"}>MD%</th>
-                            <th>Avg</th>
-                            <th style={{minWidth: "75px"}}>Range</th>
+                        <tr className={styles.topRow}>
                             {this.decklists.map((decklist, deckIdx) => {
                                 let md = 0, sb = 0;
                                 for(let cardId of this.cardIds) {
@@ -188,7 +245,7 @@ export class VDecklistTable extends React.Component<IProps> {
                                     console.warn(`Decklist "${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}" has size ${md}+${sb}`);
                                 }
                                 return (
-                                    <th className={styles.headerLinkCell} key={deckIdx} title={`${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}`}>
+                                    <th className={styles.headerLinkCell} key={deckIdx} title={((decklist.username === "") ? "" : `${decklist.username}: `) + `${decklist.tournamentName} ${decklist.date} ${decklist.placing}`}>
                                         {(decklist.tournId.length > 0) ?
                                             <Link to={`/decklists/riftbound/tournament/${decklist.tournId}/decklist/${decklist.username}`} style={{color: "var(--text-default)"}}>
                                                 <div className={styles.deckLabelCell}>
@@ -211,27 +268,8 @@ export class VDecklistTable extends React.Component<IProps> {
                     <tbody>
                         {([...ALL_CCATEGORIES].map((cc) => (<>
                             <tr>
-                                <th colSpan={2} className={styles.sectionHeader}>{cc}</th>
-                                <th className={styles.sectionHeaderCell}>
-                                    <span className={styles.mainDeck}>
-                                        { this.ccategoryStats[cc].avg.toFixed(2) }
-                                    </span>
-                                    {(this.ccategoryStats[cc].sbAvg > 0) &&
-                                        <span className={styles.sideboard} title={"sideboard"}>{ this.ccategoryStats[cc].sbAvg.toFixed(2) }</span>
-                                    }
-                                </th>
-                                <th className={styles.sectionHeaderCell} style={{padding: "0 8px"}}>
-                                    <span className={styles.mainDeck}>
-                                        { (this.ccategoryStats[cc].min === this.ccategoryStats[cc].max) ? this.ccategoryStats[cc].min : `${this.ccategoryStats[cc].min}-${this.ccategoryStats[cc].max}` }
-                                    </span>
-                                    {(this.ccategoryStats[cc].sbMin + this.ccategoryStats[cc].sbMax > 0) &&
-                                        <span className={styles.sideboard} title={"sideboard"}>
-                                            { (this.ccategoryStats[cc].sbMin === this.ccategoryStats[cc].sbMax) ? this.ccategoryStats[cc].sbMin : `${this.ccategoryStats[cc].sbMin}-${this.ccategoryStats[cc].sbMax}` }
-                                        </span>
-                                    }
-                                </th>
                                 {this.decklists.map((_, deckIdx) => 
-                                    <th className={styles.sectionHeaderCell}>
+                                    <th className={styles.sectionHeaderRowCell}>
                                         <span className={styles.mainDeck}>
                                             { this.decklistCCategoryStats[deckIdx][cc].total }
                                         </span>
@@ -242,28 +280,8 @@ export class VDecklistTable extends React.Component<IProps> {
                                 )}
                             </tr>
                             {this.cardIds.filter((cardId) => GET_CCATEGORY(cardId) === cc).map((cardId, cardIdx) => {
-                                const stats = this.cardStats[cardId];
                                 return (
                                     <tr key={cardIdx}>
-                                        <VDecklistCard id={cardId} options={{type: "table"}}/>
-                                        <td className={styles.statsCell} style={getColorScale(cc, stats.mdApp)}>
-                                            <span className={styles.mainDeck}>
-                                                { stats.mdApp.toLocaleString(undefined,{style:'percent'}) }
-                                            </span>
-                                        </td>
-                                        <td className={styles.statsCell} style={getColorScale(cc, stats.avg / ((cc === CCATEGORY.BATTLEFIELD) ? 1 : 3))}>
-                                            <span className={styles.mainDeck}>
-                                                { stats.avg.toFixed(2) }
-                                            </span>
-                                            {(stats.sbAvg > 0) &&
-                                                <span className={styles.sideboard} title={"sideboard"}>{ stats.sbAvg.toFixed(2) }</span>
-                                            }
-                                        </td>
-                                        <td className={styles.statsCell} style={(cc === CCATEGORY.BATTLEFIELD) ? { backgroundColor: "black" } : getColorScale(cc, (stats.min+stats.max) / 6)}>
-                                            <span className={styles.mainDeck}>
-                                                { (stats.min === stats.max) ? stats.min : `${stats.min}-${stats.max}` }
-                                            </span>
-                                        </td>
                                         {this.cardAmounts[cardId].map((count, deckIdx) => (
                                             <td className={`${styles.cell} ${GET_COLOR_STYLE(cc, count, this.sideboardAmounts[cardId][deckIdx])}`} key={deckIdx}>
                                                 <span className={styles.mainDeck}>{count}</span>

@@ -1,8 +1,8 @@
 
-import { GET_CARD, TTS_ID_TO_ID } from "./Cards";
+import { GET_CARD, TO_TTS_ID, TTS_ID_TO_ID } from "./Cards";
 import { DOMAIN, PATCH, PRETYPE, TYPE } from "./Enums";
 
-type TournamentAbbrName = "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LUX" | "AEG" | "RLL" | "GZO" | "BJO" | "CQO";
+type TournamentAbbrName = "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LUX" | "AEG" | "RLL" | "GZO" | "BJO" | "CQO" | "HZO";
 type TournamentTier = number; // 0 = Championship, 1 = Regional, 2 = Regional-ish, 3 = Local, 4 = "Small Local";
 
 interface ITournamentResults {
@@ -95,8 +95,8 @@ export interface CC_CARD_STATS {
     sbAvg: number;
     min: number;
     max: number;
-    sbMin: number;
-    sbMax: number;
+    // sbMin: number;
+    // sbMax: number;
 }
 
 export interface DL_CC_CARD_STATS {
@@ -154,7 +154,7 @@ export function DECKLIST_TTS_EXPORT(decklist: RawDecklist): string {
         .map((cardAmount: DecklistCardAmount) => {
             let arr = [];
             for(let i = 0; i < cardAmount.count; i++) {
-                arr.push(cardAmount.id);
+                arr.push(TO_TTS_ID(cardAmount.id));
             }
             return arr.join(" ");
         }).join(" ");

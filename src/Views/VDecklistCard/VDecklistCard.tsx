@@ -6,7 +6,7 @@ import { GET_CARD, CardDTO, ImageUtil, DOMAIN, TYPE, GET_CARD_ART } from '../../
 
 type PropsOptions = {type: "table"|"showType"};
 
-interface IProps { id: string; options: PropsOptions; }
+interface IProps { id: string; options: PropsOptions; fixHover?: boolean }
 interface IState { hover: boolean; }
 
 export class VDecklistCard extends React.Component<IProps, IState> {
@@ -44,11 +44,9 @@ export class VDecklistCard extends React.Component<IProps, IState> {
             fadeLStyle.background = `linear-gradient(to left, transparent, var(--bg-${card.domains[0].toLowerCase()})`;
             fadeRStyle.background = `linear-gradient(to right, transparent, var(--bg-${card.domains[0].toLowerCase()})`;
         } else if(card.domains.length === 2) {
-            containerStyle.background = (this.props.options.type === "showType")
-                ? `linear-gradient(90deg, var(--bg-${card.domains[0].toLowerCase()}) 15%, var(--bg-${card.domains[1].toLowerCase()}) 50%, var(--bg-${card.domains[1].toLowerCase()}) 85%, var(--bg-${card.domains[0].toLowerCase()}) 96%)`
-                : `linear-gradient(90deg, var(--bg-${card.domains[0].toLowerCase()}) 15%, var(--bg-${card.domains[1].toLowerCase()}) 40%, var(--bg-${card.domains[1].toLowerCase()}) 85%, var(--bg-${card.domains[0].toLowerCase()}) 85%)`;
+            containerStyle.background = `linear-gradient(90deg, var(--bg-${card.domains[0].toLowerCase()}) 27%, var(--bg-${card.domains[1].toLowerCase()}) 45%, var(--bg-${card.domains[1].toLowerCase()}) 90%, var(--bg-${card.domains[0].toLowerCase()}) 99%`;
             fadeLStyle.background = `linear-gradient(to left, transparent, var(--bg-${card.domains[1].toLowerCase()})`;
-            fadeRStyle.background = `linear-gradient(to right, transparent, var(--bg-${card.domains[(this.props.options.type === "showType") ? 1 : 0].toLowerCase()})`;
+            fadeRStyle.background = `linear-gradient(to right, transparent, var(--bg-${card.domains[1].toLowerCase()})`;
         }
         
         const content: React.ReactNode = (
@@ -82,7 +80,7 @@ export class VDecklistCard extends React.Component<IProps, IState> {
                 </div>
                 {(this.state.hover) &&
                     <img src={GET_CARD_ART(this.props.id)} className={(card.type === TYPE.BATTLEFIELD) ? styles.cardHoverImageRotated : styles.cardHoverImage}
-                        alt={`${card.name} (${this.props.id})`} />
+                        alt={`${card.name} (${this.props.id})`} style={(this.props.fixHover) ? {right: "-301px"} : {}} />
                 }
             </div>
         );

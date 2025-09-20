@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from "./AppNav.module.css";
 
-import { VERSION_STRING } from './Data';
+import { ImageUtil, VERSION_STRING } from './Data';
 
 // enum Game { NONE, RIFTBOUND }
 // interface IState { game: Game }
@@ -30,8 +30,8 @@ export class AppNav extends React.Component/*<{}, IState>*/ {
     public renderRiftbound(): React.ReactNode {
         return (<>
             <nav className={styles.container}>
+                <span><img className={styles.icon} src={ImageUtil.getImage("Riftbound")} height={26} title={"Riftbound"} alt={"Riftbound"} /></span>
                 <span className={styles.title} title={VERSION_STRING}>Decklists</span>
-                {/* <span className={styles.titleNotes}>test build</span> */}
                 <Link to={"/decklists/riftbound/all-archetypes"}>
                     All Archetypes
                 </Link>
