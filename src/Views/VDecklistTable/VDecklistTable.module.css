@@ -53,7 +53,7 @@
 .stickyCol4 {
     min-width: 60px;
     max-width: 60px;
-    border-right: 2px solid #a0a0a0 !important;
+    border-right: 4px solid var(--bg-default) !important;
 }
 
 .categorySectionHeader {
@@ -87,6 +87,10 @@
     font-size: 13px;
     font-weight: 400;
     min-width: 50px;
+}
+
+.headerLinkCell:hover {
+    background-color: var(--bg-dark-hover-darker);
 }
 
 .deckLabelCell {

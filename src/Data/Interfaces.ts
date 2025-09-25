@@ -1,5 +1,5 @@
 
-import { GET_CARD, TO_TTS_ID, TTS_ID_TO_ID } from "./Cards";
+import { GET_CARD, IS_CARD, TO_TTS_ID, TTS_ID_TO_ID } from "./Cards";
 import { DOMAIN, PATCH, PRETYPE, TYPE } from "./Enums";
 
 type TournamentAbbrName = "RMW" | "TNF" | "SFC" | "RLT" | "MCW" | "RFC" | "LUX" | "AEG" | "RLL" | "GZO" | "BJO" | "CQO" | "HZO";
@@ -47,10 +47,23 @@ export interface Decklist extends RawDecklist {
     placing: string;
 }
 
+export const ALL_ARCHETYPES = [
+    "Kai'Sa Midrange", "Master Yi Midrange",
+    "Miss Fortune Aurora", "Darius", "Sett Midrange", "Master Yi Aurora", "Viktor",
+    "Annie Tempo", "Teemo", "Ahri",
+    "Kai'Sa Control", "Lee Sin Midrange", "Sett Aurora", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Yasuo Midrange",
+    "Garen Midrange", "Unknown"
+] as const;
+export type Archetype = typeof ALL_ARCHETYPES[number];
+
+export function ARCHETYPE_FROM_STRING(str: string): Archetype {
+    return (ALL_ARCHETYPES.includes(str as Archetype)) ? str as Archetype : "Unknown";
+}
+
 export interface RawDecklist {
     date?: string;
     username: string;
-    archetype: string;
+    archetype: Archetype;
     legend: string;
     chosenChampion: string;
     mainDeck: DecklistCardAmount[];
@@ -108,10 +121,18 @@ export function GET_TOURNAMENT_ID(abbrName: string, date: string): string {
     return `${abbrName}-${date.replaceAll("/","")}`;
 }
 
+// in order: 1x legend, 40x main deck, 3x battlefield, 12x rune, 8x sideboard (or 0x)
 export function PARSE_TTS_DECKLIST(text: string): RawDecklist {
-    const cardIds: string[] = text.split(" ").map(ttsId => TTS_ID_TO_ID(ttsId));
+    const cardIdList: string[] = text.split(" ").map(ttsId => TTS_ID_TO_ID(ttsId));
+
+    let decklist: RawDecklist = {
+        username: "", archetype: "Unknown", date: "", link: "",
+        legend: (cardIdList.length > 0) ? cardIdList[0] : "", chosenChampion: (cardIdList.length > 1) ? cardIdList[1] : "",
+        mainDeck: [], battlefields: [], runeDeck: [], sideboard: []
+    };
     let cardDict: {[cardId: string]: number} = {};
-    for(let id of cardIds) {
+    for(let id of cardIdList) {
+        if(!IS_CARD(id)) continue;
         if(id in cardDict) {
             cardDict[id] += 1;
         } else {
@@ -119,21 +140,20 @@ export function PARSE_TTS_DECKLIST(text: string): RawDecklist {
         }
     }
 
-    let decklist: RawDecklist = {
-        username: "", archetype: "", date: "", link: "",
-        legend: cardIds[0], chosenChampion: cardIds[1],
-        mainDeck: [], battlefields: [], runeDeck: [], sideboard: []
-    };
     let mode: "MD" | "BF" | "RU" | "SB" = "MD";
     function getDecklistPortion(): DecklistCardAmount[] {
         return (mode === "MD") ? decklist.mainDeck : (mode === "BF") ? decklist.battlefields : (mode === "RU") ? decklist.runeDeck : decklist.sideboard;
     }
     
     let count = 0;
-    for(let i = 1; i < cardIds.length; i++) {
+    for(let i = 1; i < cardIdList.length; i++) { // first card is legend
         count++;
-        if(i === cardDict.length-1 || cardIds[i] !== cardIds[i+1]) {
-            const cardType = GET_CARD(cardIds[i]).type;
+        if(i === cardIdList.length-1 || cardIdList[i] !== cardIdList[i+1]) {
+            if(!IS_CARD(cardIdList[i])) {
+                count = 0;
+                continue;
+            }
+            const cardType = GET_CARD(cardIdList[i]).type;
             if(cardType === TYPE.BATTLEFIELD) {
                 mode = "BF";
             } else if(cardType === TYPE.RUNE) {
@@ -141,7 +161,7 @@ export function PARSE_TTS_DECKLIST(text: string): RawDecklist {
             } else if(mode === "RU") { // cardType is already guaranteed not to be RUNE bc else
                 mode = "SB";
             }
-            getDecklistPortion().push({id: cardIds[i], count: count});
+            getDecklistPortion().push({id: cardIdList[i], count: count});
             count = 0;
         }
     }

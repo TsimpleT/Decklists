@@ -1,4 +1,4 @@
-import { Decklist, GET_TOURNAMENT_ID, MOCK_DECKLIST_FROM_RAW, RawTournamentResults, TournamentResults } from "./Interfaces";
+import { Archetype, Decklist, GET_TOURNAMENT_ID, MOCK_DECKLIST_FROM_RAW, RawTournamentResults, TournamentResults } from "./Interfaces";
 import { AEGIS_20250817 } from "./Decklists/Aegis";
 import { HZO_20250914, BJO_20250831, CQO_20250907, GZO_20250824, SFC_20250803 } from "./Decklists/China";
 import { EXPERT_DECKLISTS } from "./Decklists/PinnedDecklists";
@@ -31,19 +31,34 @@ for(let raw of RAW_TOURNAMENT_RESULTS) {
     TOURNAMENT_RESULTS.push(tournamentResults);
 }
 
-let archetypeDecklists: {[archetypeLower: string]: Decklist[]} = {};
+let archetypeDecklists: {[archetype in Archetype]: Decklist[]} = {
+    "Kai'Sa Midrange": [],
+    "Master Yi Midrange": [],
+    "Miss Fortune Aurora": [],
+    Darius: [],
+    "Sett Midrange": [],
+    "Master Yi Aurora": [],
+    Viktor: [],
+    "Annie Tempo": [],
+    Teemo: [],
+    Ahri: [],
+    "Kai'Sa Control": [],
+    "Lee Sin Midrange": [],
+    "Sett Aurora": [],
+    "Volibear Ramp": [],
+    "Lux Control": [],
+    "Jinx Aggro": [],
+    "Leona Midrange": [],
+    "Yasuo Midrange": [],
+    "Garen Midrange": [],
+    Unknown: []
+};
 let tournamentDict: {[id: string]: TournamentResults} = {};
 let tournamentNames: {[id: string]: string} = {};
 let tournamentNameToAbbrDict: {[name: string]: string} = {};
 
 for(let decklist of EXPERT_DECKLISTS) {
-    if(decklist.archetype && decklist.mainDeck.length > 0) {
-        const archetypeLower = decklist.archetype.toLowerCase();
-        if(!(archetypeLower in archetypeDecklists)) {
-            archetypeDecklists[archetypeLower] = [];
-        }
-        archetypeDecklists[archetypeLower].push(MOCK_DECKLIST_FROM_RAW(decklist));
-    }
+    archetypeDecklists[decklist.archetype].push(MOCK_DECKLIST_FROM_RAW(decklist));
 }
 
 for(let tournamentResults of TOURNAMENT_RESULTS) {
@@ -54,25 +69,14 @@ for(let tournamentResults of TOURNAMENT_RESULTS) {
     for(let placing of tournamentResults.placings) {
         for(let decklist of placing.decklists) {
             if(decklist.archetype && decklist.mainDeck.length > 0) {
-                const archetypeLower = decklist.archetype.toLowerCase();
-                if(!(archetypeLower in archetypeDecklists)) {
-                    archetypeDecklists[archetypeLower] = [];
-                }
-                archetypeDecklists[archetypeLower].push(decklist);
+                archetypeDecklists[decklist.archetype].push(decklist);
             }
         }
     }
 }
 
-export function GET_ARCHETYPE_DECKLISTS(archetype: string): Decklist[] {
-    const archetypeLower = archetype.toLowerCase();
-    if(!(archetypeLower in archetypeDecklists)) {
-        if(!(archetype in archetypeLegendDict)) {
-            console.warn(`Archetype "${archetype}" not found.`);
-        }
-        return [];
-    }
-    return archetypeDecklists[archetypeLower];
+export function GET_ARCHETYPE_DECKLISTS(archetype: Archetype): Decklist[] {
+    return archetypeDecklists[archetype];
 }
 
 export function GET_TOURNAMENT_DECKLIST(tournId: string, username: string): Decklist|undefined {
@@ -87,9 +91,8 @@ export function GET_TOURNAMENT_DECKLIST(tournId: string, username: string): Deck
     }
 }
 
-export function GET_EXPERT_DECKLIST(archetypeLower: string, username: string): Decklist|undefined {
-    if(!(archetypeLower in archetypeDecklists)) { return undefined; }
-    for(let decklist of archetypeDecklists[archetypeLower]) {
+export function GET_EXPERT_DECKLIST(archetype: Archetype, username: string): Decklist|undefined {
+    for(let decklist of archetypeDecklists[archetype]) {
         if(decklist.username === username) {
             return decklist;
         }
@@ -117,13 +120,14 @@ export function GET_TOURNAMENT_ABBR(tournamentName: string): string {
     return (tournamentName in tournamentNameToAbbrDict) ? tournamentNameToAbbrDict[tournamentName] : "";
 }
 
-const archetypeLegendDict: {[archetype: string]: string} = {
+export const UNKNOWN_LEGEND_ID = "???-???";
+const archetypeLegendDict: {[archetype in Archetype]: string} = {
     "Annie Tempo": "OGS-017",
     "Master Yi Midrange": "OGS-019",
-    "Master Yi Ramp": "OGS-019",
+    "Master Yi Aurora": "OGS-019",
     "Lux Control": "OGS-021",
     "Garen Midrange": "OGS-023",
-    "Kai'Sa": "OGN-247",
+    "Kai'Sa Midrange": "OGN-247",
     "Kai'Sa Control": "OGN-247",
     "Volibear Ramp": "OGN-249",
     "Jinx Aggro": "OGN-251",
@@ -134,36 +138,21 @@ const archetypeLegendDict: {[archetype: string]: string} = {
     "Leona Midrange": "OGN-261",
     "Teemo": "OGN-263",
     "Viktor": "OGN-265",
-    "Miss Fortune Ramp": "OGN-267",
+    "Miss Fortune Aurora": "OGN-267",
     "Sett Midrange": "OGN-269",
-    "Sett Ramp": "OGN-269",
+    "Sett Aurora": "OGN-269",
+    "Unknown": UNKNOWN_LEGEND_ID
 };
-export const UNKNOWN_LEGEND_ID = "???-???";
-export function ARCHETYPE_TO_LEGEND_BASE_ID(archetype: string): string {
+export function ARCHETYPE_TO_LEGEND_BASE_ID(archetype: Archetype): string {
     return (archetype in archetypeLegendDict) ? archetypeLegendDict[archetype] : UNKNOWN_LEGEND_ID;
 }
 
-export const ALL_ARCHETYPES: string[] = Object.keys(archetypeLegendDict).sort();
-
-export const ARCHETYPE_TIERS = [
-    ["Kai'Sa", "Master Yi Midrange"],
-    ["Miss Fortune Ramp", "Darius", "Sett Midrange", "Master Yi Ramp"],
-    ["Viktor", "Annie Tempo", "Teemo", "Ahri", "Kai'Sa Control"],
-    ["Lee Sin Midrange", "Sett Ramp", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Yasuo Midrange"],
+export const ARCHETYPE_TIERS: Archetype[][] = [
+    ["Kai'Sa Midrange", "Master Yi Midrange"],
+    ["Miss Fortune Aurora", "Darius", "Sett Midrange", "Master Yi Aurora", "Viktor"],
+    ["Annie Tempo", "Teemo", "Ahri"],
+    ["Kai'Sa Control", "Lee Sin Midrange", "Sett Aurora", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Yasuo Midrange"],
     ["Garen Midrange"],
 ];
 
 export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "Dark Horses", "Memes"];
-
-let archetypeCasedNames: {[archetypeLower: string]: string} = {};
-for(let archetype in archetypeLegendDict) {
-    archetypeCasedNames[archetype.toLowerCase()] = archetype;
-}
-
-export function GET_CASED_ARCHETYPE(archetype: string): string {
-    const archetypeLower = archetype.toLowerCase();
-    if(!(archetypeLower in archetypeCasedNames)) {
-        throw Error(`archetype ${archetypeLower} doesn't exist.`);
-    }
-    return archetypeCasedNames[archetypeLower];
-}

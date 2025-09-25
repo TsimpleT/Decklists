@@ -20,7 +20,11 @@
     margin-left: 4px;
 }
 
-.linkContainer {
+.resultsContainer > a > span:hover {
+    background-color: var(--bg-default-hover);
+}
+
+.resultRow {
     display: flex;
     padding-right: 4px;
     margin-bottom: 3px;
@@ -28,7 +32,7 @@
     border: 1px solid white;
 }
 
-.resultContainer {
+.placing {
     width: 48px;
     height: 28px;
     border-right: 1px solid white;

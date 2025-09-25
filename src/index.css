@@ -1,5 +1,10 @@
 :root {
-    --bg-default: #3D3143;
+    --bg-default: rgb(61, 49, 67);
+    --bg-default-off: rgb(61, 49, 67);
+    --bg-default-hover: rgb(104, 84, 116);
+    --bg-dark: rgb(21, 1, 26);
+    --bg-dark-hover: rgb(63, 43, 78);
+    --bg-dark-hover-darker: rgb(42, 2, 52);
     --text-default: #E0E0CD;
     --bg-gold: #bb9a42; /* rgb(187,154,66) */
     --bg-silver: #646464; /* rgb(100,100,100) */

@@ -2,7 +2,7 @@ import React from 'react';
 import copy from 'copy-to-clipboard';
 import styles from './VDecklist.module.css';
 
-import { Decklist, DECKLIST_TTS_EXPORT, DECKLIST_TCGA_EXPORT, GET_CCATEGORY } from '../../Data';
+import { Decklist, DECKLIST_TTS_EXPORT, DECKLIST_TCGA_EXPORT, GET_CCATEGORY, IS_CARD, ImageUtil } from '../../Data';
 import { VDecklistCard } from '../VDecklistCard';
 import { GET_COLOR_STYLE } from '../VDecklistTable';
 
@@ -36,11 +36,17 @@ export class VDecklist extends React.Component<IProps> {
                 </div>
                 <div className={styles.subtitle}>
                     {(this.props.subtitle) && <span style={{marginRight: "8px"}}>{this.props.subtitle}</span>}
-                    {(this.props.hideExport !== true) && <div onClick={this.copyToTTS} className={`${styles.restyleButton}`}>TTS</div>}
-                    {(this.props.hideExport !== true) && <div onClick={this.copyToTCGArena} className={`${styles.restyleButton}`}>TCGArena</div>}
+                    {(this.props.hideExport !== true) && <div onClick={this.copyToTTS} className={`${styles.restyleButton} ${styles.emptyButton}`} title={"Export to TTS"}>
+                        <img className={styles.icon} src={ImageUtil.getImage("Export")} height={14} alt={"Export"} />
+                        <span style={{marginLeft: "4px"}}>TTS</span>
+                    </div>}
+                    {(this.props.hideExport !== true) && <div onClick={this.copyToTCGArena} className={`${styles.restyleButton} ${styles.emptyButton}`} title={"Export to TCGArena"}>
+                        <img className={styles.icon} src={ImageUtil.getImage("Export")} height={14} alt={"Export"} />
+                        <span style={{marginLeft: "4px"}}>TCGArena</span>
+                    </div>}
                 </div>
                 <div className={styles.decklistContainer}>
-                    {[{id: dl.legend, count: 1}].concat(dl.mainDeck).concat(dl.battlefields).concat(dl.runeDeck).concat(dl.sideboard).map((listing, i) => (
+                    {(IS_CARD(dl.legend) ? [{id: dl.legend, count: 1}] : []).concat(dl.mainDeck).concat(dl.battlefields).concat(dl.runeDeck).concat(dl.sideboard).map((listing, i) => (
                         <div className={styles.row} key={i}>
                             <span className={`${styles.count} ${GET_COLOR_STYLE(GET_CCATEGORY(listing.id), listing.count, 0)}`}>{listing.count}x</span>
                             <VDecklistCard id={listing.id} key={i} options={{type: "showType"}} />

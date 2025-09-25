@@ -7,14 +7,19 @@ interface IProps { id: string; size: number; imgTitle?: string; subscript?: stri
 
 export class LegendImage extends React.Component<IProps> {
     public render(): React.ReactNode {
+        if(this.props.id === UNKNOWN_LEGEND_ID) {
+            return (
+                <div className={styles.imageContainer} style={{width: this.props.size, height: this.props.size, ...(this.props.extraStyles ?? {})}}>
+                    <div className={styles.unknown}>?</div>
+                    <span className={styles.subscript} style={(this.props.subscriptFontSize) ? {fontSize: `${this.props.subscriptFontSize}px`} : {}}>{this.props.subscript}</span>
+                </div>
+            );
+        }
         const card = GET_CARD(this.props.id);
         const imgTitle = this.props.imgTitle ?? card.name.substring(0, card.name.search(","));
         return (
             <div className={styles.imageContainer} style={{width: this.props.size, height: this.props.size, ...(this.props.extraStyles ?? {})}}>
-                {(this.props.id !== UNKNOWN_LEGEND_ID)
-                    ? <img src={GET_CARD_ART(this.props.id)} className={styles[`position-${this.props.id}`]} title={imgTitle} alt={imgTitle} />
-                    : <div className={styles.unknown}>?</div>
-                }
+                <img src={GET_CARD_ART(this.props.id)} className={styles[`position-${this.props.id}`]} title={imgTitle} alt={imgTitle} />
                 <span className={styles.subscript} style={(this.props.subscriptFontSize) ? {fontSize: `${this.props.subscriptFontSize}px`} : {}}>{this.props.subscript}</span>
             </div>
         );

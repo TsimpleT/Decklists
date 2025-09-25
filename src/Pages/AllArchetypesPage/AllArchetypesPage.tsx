@@ -11,23 +11,20 @@ export class AllArchetypesPage extends React.Component {
     }
     
     public render(): React.ReactNode {
-        const maxTierSize = Math.max(...ARCHETYPE_TIERS.map((tier) => tier.length));
         return (
-            <table className={styles.tableContainer}>
-                <thead><tr>{ARCHETYPE_TIERS.map((tier, i) => (tier.length === 0) ? <></> :
-                    <th className={styles.tierHeader} key={i}>{ARCHETYPE_TIER_NAMES[i]}</th>
-                )}</tr></thead>
-                <tbody><tr>{ARCHETYPE_TIERS.filter((tier) => tier.length > 0).map((tier, i) => (tier.length === 0) ? <></> :
-                    <td key={i}> <div className={styles.tierCol}>
+            <div className={styles.container}>
+                {ARCHETYPE_TIERS.map((tier, tierIdx) =>
+                    <div className={styles.columnContainer} key={tierIdx}>
+                        <div className={styles.tierHeader}>{ARCHETYPE_TIER_NAMES[tierIdx]}</div>   
                         {tier.map((archetype, archetypeIdx) => {
                             const baseId = ARCHETYPE_TO_LEGEND_BASE_ID(archetype);
                             const numLists = GET_ARCHETYPE_DECKLISTS(archetype).length;
                             const title = `${archetype}: ${numLists} Decklists`;
                             const colors = GET_CARD(baseId).domains;
                             return (
-                                <Link to={`/decklists/riftbound/archetype/${archetype.replaceAll(" ", "-").toLowerCase()}`} style={{color: "var(--text-default)"}} key={archetypeIdx}>
-                                    <div className={styles.linkRow} style={(archetypeIdx+1 === maxTierSize) ? {border: "none"} : {}}>
-                                        <LegendImage id={baseId} imgTitle={title} size={50} extraStyles={{border: "none", borderRadius: "0"}} />
+                                <Link to={`/decklists/riftbound/archetype/${archetype.replaceAll(" ", "-")}`} style={{all: "unset"}} key={archetypeIdx}>
+                                    <div className={styles.archetypeContainer}>
+                                        <LegendImage id={baseId} imgTitle={title} size={48} extraStyles={{border: "none"}} />
                                         <div className={styles.colorsContainer}>
                                             <div className={styles.colorDiv} style={{backgroundColor: `var(--bg-${colors[0].toLowerCase()})`}}>
                                                 <img src={ImageUtil.getImage(`${colors[0]}BW`)} height={16} title={colors[0]} alt={colors[0]} />
@@ -44,9 +41,10 @@ export class AllArchetypesPage extends React.Component {
                                 </Link>
                             );
                         })}
-                    </div> </td>
-                )}</tr></tbody>
-            </table>
+
+                    </div>
+                )}
+            </div>
         );
     }
 }

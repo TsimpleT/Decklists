@@ -1,39 +1,54 @@
 .container {
     position: fixed;
+    display: flex;
+    gap: 4px;
+    align-items: center;
     top: 0px;
     z-index: 100;
     background-color: #251D28;
-    min-height: 26px;
-    max-height: 26px;
-    padding: 4px 0 4px 6px;
+    min-height: 34px;
+    max-height: 34px;
+    padding-left: 6px;
     width: 100%;
     /* align-items: center; */
     border-bottom: 1px solid white;
     overflow: hidden;
-    font-size: 17px;
-}
-
-.icon {
-    /* margin-top: 4px; */
-    float: left;
-    border-radius: 4px;
-    margin-right: -1px !important;
-}
-
-.container > * {
-    color: var(--text-default);
-    margin-right: 8px;
-}
-
-.title {
-    font-weight: 600;
     /* font-size: 17px; */
-    /* margin-top: 1px;
-    margin-right: 6px; */
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Old versions of Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
     user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.icon {
+    border-radius: 4px;
+    margin-right: 2px;
+}
+
+.container > a {
+    all: unset;
+    border-radius: 4px;
+    font-size: 14px;
+    padding: 1px 8px;
+    background-color: var(--bg-dark);
+    border: 1px solid var(--text-default);
+}
+
+.container > a:hover {
+    background-color: var(--bg-dark-hover);
+}
+
+.title {
+    font-weight: 600;
+    font-size: 18px;
+    margin: 0 4px 2px 0;
+}
+
+.titleNotes {
+    font-weight: lighter;
+    transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
+    margin: 0 4px 2px -2px;
 }

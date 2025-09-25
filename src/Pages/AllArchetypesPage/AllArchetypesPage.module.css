@@ -1,30 +1,43 @@
-.tableContainer {
-    margin-left: 4px;
-    border-spacing: 0;
-    border-collapse: collapse;
+.container {
+    margin-left: 8px;
+    display: flex;
+    gap: 20px;
 }
 
-.tableContainer th, .tableContainer td {
-    border: 1px #E0E0CD solid;
-    vertical-align: top;
+.columnContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 250px;
+    max-width: 250px;
 }
 
 .tierHeader {
-    min-width: 225px;
+    text-align: center;
+    background-color: black;
+    border: 1px black solid;
+    border-radius: 8px;
+    padding: 4px 0;
+    margin-bottom: 2px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
-.linkRow {
-    min-height: 50px;
-    border-bottom: 1px #E0E0CD solid;
+.archetypeContainer {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    min-height: 52px;
+    max-height: 52px;
+    border: 1px #E0E0CD solid;
+    border-radius: 8px;
+    padding: 2px 0 2px 4px;
+    color: var(--text-default);
+    background-color: var(--bg-default-off);
 }
 
-.linkRow > * {
-    float: left;
-}
-
-.colorsContainer {
-    padding: 0.4px 1px 1px 1px;
-    margin-left: 2px;
+.archetypeContainer:hover {
+    background-color: var(--bg-default-hover);
 }
 
 .colorDiv {
@@ -33,15 +46,15 @@
 }
 
 .labelContainer {
-    margin: 2px 6px 0 4px;
+    margin: 0 0 3px 2px;
 }
 
 .archetypeText {
     font-weight: 600;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    text-decoration: none;
 }
 
 .archetypeSubtitle {
     font-weight: 200;
+    text-decoration: none;
 }

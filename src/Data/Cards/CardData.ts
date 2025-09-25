@@ -27,10 +27,15 @@ for(let card in cardData) {
 
 export const SET_LIST = Array.from(setSet.values());
 
+export function IS_CARD(id: string): boolean {
+    return id in cardData;
+}
+
 export function GET_CARD(id: string): CardDTO {
     if(!(id in cardData)) {
         console.warn(`Card "${id}" not found in cardData.`);
-        cardData[id] = { baseId: id, name: id, type: TYPE.LEGEND, domains: [], rarity: "Common", rulesText: "", otherTags: [] };
+        return { baseId: id, name: id, type: TYPE.LEGEND, domains: [], rarity: "Common", rulesText: "", otherTags: [] };
+        // cardData[id] = { baseId: id, name: id, type: TYPE.LEGEND, domains: [], rarity: "Common", rulesText: "", otherTags: [] };
     }
     return cardData[id];
 }
@@ -47,16 +52,14 @@ export function TO_BASE_ID(id: string): string {
 
 export function TO_TTS_ID(id: string): string {
     if(!(id in ttsIdMappings)) {
-        console.warn(`Card "${id}" not found in idMappings.`);
-        ttsIdMappings[id] = (id.length === 7 || id.length === 8) ? `${id}-1` : id;
+        ttsIdMappings[id] = (id.length === 7) ? `${id}-1` : id;
     }
     return ttsIdMappings[id];
 }
 
 export function TTS_ID_TO_ID(ttsId: string): string {
     if(!(ttsId in fromTtsIdMappings)) {
-        console.warn(`Card "${ttsId}" not found in fromTtsIdMappings.`);
-        fromTtsIdMappings[ttsId] = (ttsId.length > 7 && ttsId[3] === '-') ? ttsId.substring(0,7) : ttsId;
+        fromTtsIdMappings[ttsId] = (ttsId.length >= 7 && ttsId[3] === '-') ? ttsId.substring(0,7) : ttsId;
     }
     return fromTtsIdMappings[ttsId];
 }

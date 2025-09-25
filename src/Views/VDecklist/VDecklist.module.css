@@ -19,12 +19,19 @@
 
 .restyleButton {
     all: unset;
-    color: var(--text-default);
-    border: 1px solid var(--text-default);
     border-radius: 4px;
     font-size: 14px;
     padding: 1px 8px;
     margin-right: 8px;
+}
+
+.emptyButton {
+    color: var(--text-default);
+    border: 1px solid var(--text-default);
+}
+
+.emptyButton:hover {
+    background-color: var(--bg-default-hover);
 }
 
 .subtitle {

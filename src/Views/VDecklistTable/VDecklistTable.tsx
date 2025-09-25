@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './VDecklistTable.module.css';
 
-import { ALL_CCATEGORIES, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CASED_ARCHETYPE, GET_CCATEGORY, TO_BASE_ID } from '../../Data';
+import { ALL_CCATEGORIES, Archetype, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CCATEGORY, TO_BASE_ID } from '../../Data';
 import { VDecklistCard } from '../VDecklistCard';
 
 interface IProps {
-    archetype: string;
+    archetype: Archetype;
 }
 
 export function GET_COLOR_STYLE(cc: CCATEGORY, count: number, sideCount: number): string {
@@ -165,7 +165,7 @@ export class VDecklistTable extends React.Component<IProps> {
         if(this.decklists.length === 0) {
             return (
                 <div className={styles.container}>
-                    {`No top tournament decklists found for ${GET_CASED_ARCHETYPE(this.props.archetype)}`}
+                    {`No top tournament decklists found for ${this.props.archetype}`}
                 </div>
             );
         }
@@ -254,7 +254,7 @@ export class VDecklistTable extends React.Component<IProps> {
                                                 </div>
                                             </Link>
                                         :
-                                            <Link to={`/decklists/riftbound/decklist/${decklist.archetype.toLowerCase()}/${decklist.username}`} style={{color: "var(--text-default)"}}>
+                                            <Link to={`/decklists/riftbound/decklist/${decklist.archetype}/${decklist.username}`} style={{color: "var(--text-default)"}}>
                                                 <div className={styles.deckLabelCell}>
                                                     {decklist.username}
                                                 </div>

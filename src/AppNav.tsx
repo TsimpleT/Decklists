@@ -30,19 +30,20 @@ export class AppNav extends React.Component/*<{}, IState>*/ {
     public renderRiftbound(): React.ReactNode {
         return (<>
             <nav className={styles.container}>
-                <span><img className={styles.icon} src={ImageUtil.getImage("Riftbound")} height={26} title={"Riftbound"} alt={"Riftbound"} /></span>
+                <img className={styles.icon} src={ImageUtil.getImage("Riftbound")} height={26} title={"Riftbound"} alt={"Riftbound"} />
                 <span className={styles.title} title={VERSION_STRING}>Decklists</span>
+                {/* <span className={styles.titleNotes}>alpha build</span> */}
                 <Link to={"/decklists/riftbound/all-archetypes"}>
-                    All Archetypes
+                    Archetype Stats
                 </Link>
-                <Link to={"/decklists/riftbound/tournaments"}>
+                <Link to={"/decklists/riftbound/me"}>
+                    My Decklists
+                </Link>
+                <Link to={"/decklists/riftbound/tournament-results"}>
                     Tournament Results
                 </Link>
                 <Link to={"/decklists/riftbound/player-results"}>
                     Player Results
-                </Link>
-                <Link to={"/decklists/riftbound/enter-decklist"}>
-                    Enter Decklist
                 </Link>
                 <Link to={"/decklists/riftbound/all-cards"}>
                     All Cards
