@@ -24,7 +24,7 @@ export class TournamentResultsPage extends React.Component {
                             </span>
                         </div>
                         <div className={styles.resultsContainer}>
-                            {tournament.placings.map((placing, i) => 
+                            {tournament.results.map((placing, i) => 
                                 <>
                                     {placing.decklists.map((decklist, j) => {
                                         const content = (

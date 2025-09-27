@@ -1,10 +1,9 @@
-import { PATCH } from "../Enums";
-import { RawTournamentResults } from "../Interfaces";
+import { ITournamentResults } from "../TournamentResults";
 
-export const MCW_20250807: RawTournamentResults = {
-    tournamentName: "Multiplayer Club Weekly", abbrName: "MCW", date: "2025/08/07", meta: PATCH.OGN, host: "Multplayer Club LGS in Palermo, Italy", tier: 4,
+export const MCW_20250807: ITournamentResults = {
+    tournamentName: "Multiplayer Club Weekly", abbrName: "MCW", date: "2025/08/07", meta: "OGN", host: "Multplayer Club LGS in Palermo, Italy", tier: 4,
     links: ["https://piltoverarchive.com/tournaments/ab035468-b9fa-4d60-b8d7-43c656e71492"],
-    placings: [
+    results: [
         {placing: "1st", decklists: [
             {"username":"Santa","archetype":"Jinx Aggro","legend":"OGN-251","chosenChampion":"OGN-030","mainDeck":[{"id":"OGN-030","count":3},{"id":"OGN-040","count":3},{"id":"OGN-004","count":3},{"id":"OGN-009","count":2},{"id":"OGN-185","count":3},{"id":"OGN-036","count":3},{"id":"OGN-029","count":3},{"id":"OGN-010","count":3},{"id":"OGN-003","count":3},{"id":"OGN-037","count":3},{"id":"OGN-006","count":3},{"id":"OGN-012","count":3},{"id":"OGN-252","count":3},{"id":"OGN-028","count":2}],"battlefields":[{"id":"OGN-298","count":1},{"id":"OGN-290","count":1},{"id":"OGN-285","count":1}],"runeDeck":[{"id":"OGN-007","count":12}],"sideboard":[{"id":"OGN-179","count":3},{"id":"OGN-168","count":2},{"id":"OGN-200","count":3}]},
         ]},

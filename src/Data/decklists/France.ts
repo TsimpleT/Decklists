@@ -1,10 +1,9 @@
-import { PATCH } from "../Enums";
-import { RawTournamentResults } from "../Interfaces";
+import { ITournamentResults } from "../TournamentResults";
 
-export const RFC_20250809: RawTournamentResults = {
-    tournamentName: "Riftbound France Cup", abbrName: "RFC", date: "2025/08/09", meta: PATCH.OGN, host: "", tier: 3,
+export const RFC_20250809: ITournamentResults = {
+    tournamentName: "Riftbound France Cup", abbrName: "RFC", date: "2025/08/09", meta: "OGN", host: "", tier: 3,
     links: ["https://piltoverarchive.com/tournaments/8e7ba9cb-e88f-45c4-9723-45f7d26755c3"],
-    placings: [
+    results: [
         {placing: "1st", decklists: [
             {"username":"Thagor","archetype":"Master Yi Midrange","legend":"OGS-019","chosenChampion":"OGS-009","mainDeck":[{"id":"OGS-009","count":1},{"id":"OGN-045","count":3},{"id":"OGN-046","count":3},{"id":"OGN-043","count":3},{"id":"OGN-136","count":3},{"id":"OGN-052","count":3},{"id":"OGN-058","count":3},{"id":"OGN-044","count":3},{"id":"OGN-077","count":3},{"id":"OGN-054","count":3},{"id":"OGN-132","count":3},{"id":"OGN-154","count":2},{"id":"OGN-149","count":3},{"id":"OGN-164","count":2},{"id":"OGN-082","count":2}],"battlefields":[{"id":"OGN-280","count":1},{"id":"OGN-292","count":1},{"id":"OGN-281","count":1}],"runeDeck":[{"id":"OGN-042","count":6},{"id":"OGN-126","count":6}],"sideboard":[{"id":"OGN-145","count":3},{"id":"OGN-128","count":3},{"id":"OGN-064","count":2}]},
         ]},

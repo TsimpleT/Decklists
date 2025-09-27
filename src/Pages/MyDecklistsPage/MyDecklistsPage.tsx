@@ -2,18 +2,21 @@ import React from 'react';
 import copy from 'copy-to-clipboard';
 import styles from './MyDecklistsPage.module.css';
 
-import { DEV_STRING_PRE, MOCK_DECKLIST_FROM_RAW, RawDecklist, LocalStorageManager as LSM, PARSE_TTS_DECKLIST } from '../../Data';
+import { DEV_STRING_PRE, Decklist, LocalStorageManager } from '../../Data';
 import { VDecklist } from '../../Views';
 
+const LSM = LocalStorageManager.getInstance();
+
 interface IState {
-    decklists: {[key: number]: RawDecklist};
-    showEditOptions: {[key: number]: boolean};
+    decklists: Decklist[];
+    ids: string[];
+    showEditOptions: {[key: string]: boolean};
 }
 
 export class MyDecklistsPage extends React.Component<{}, IState> {
     constructor(props: {}) {
         super(props);
-        this.state = { decklists: LSM.GET_DECKLIST_DICT(), showEditOptions: {} };
+        this.state = { decklists: LSM.getAllDecklists(), ids: LSM.getAllDecklistIds(), showEditOptions: {} };
     }
 
     public override componentDidMount(): void {
@@ -23,7 +26,7 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
 
     public add: React.MouseEventHandler<HTMLDivElement> = async (): Promise<void> => {
         const text = await navigator.clipboard.readText();
-        const decklist = PARSE_TTS_DECKLIST(text);
+        const decklist = Decklist.fromTTSText(text, "You");
         if(decklist.legend === "") { window.alert("no legend found"); return; }
         if(decklist.chosenChampion === "") { window.alert("no chosen champion found"); return; }
         if(decklist.mainDeck.reduce((sum, current) => sum + current.count, 0) !== 40) {
@@ -38,15 +41,17 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
             window.alert(`${decklist.runeDeck.reduce((sum, current) => sum + current.count, 0)} cards in rune deck (need 12)`);
             return;
         }
-        const key = LSM.ADD_DECKLIST(decklist);
-        const decklists = {...this.state.decklists};
-        decklists[key] = decklist;
-        this.setState({ decklists: decklists });
+        const id = LSM.addDecklist(decklist);
+        let ids = this.state.ids;
+        ids.push(id);
+        let decklists = this.state.decklists;
+        decklists.push(decklist);
+        this.setState({ ids: ids, decklists: decklists });
     }
 
     public devCopy: React.MouseEventHandler<HTMLDivElement> = async (): Promise<void> => {
         const text = await navigator.clipboard.readText();
-        const decklist = PARSE_TTS_DECKLIST(text);
+        const decklist = Decklist.fromTTSText(text);
         if(decklist.legend === "") { window.alert("no legend found"); return; }
         if(decklist.chosenChampion === "") { window.alert("no chosen champion found"); return; }
         if(decklist.mainDeck.reduce((sum, current) => sum + current.count, 0) !== 40) {
@@ -65,9 +70,9 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
         window.alert("Decklist copied.");
     }
 
-    public replace = async (n: number): Promise<void> => {
+    public replace = async (id: string): Promise<void> => {
         const text = await navigator.clipboard.readText();
-        const decklist = PARSE_TTS_DECKLIST(text);
+        const decklist = Decklist.fromTTSText(text, "You");
         if(decklist.legend === "") { window.alert("no legend found"); return; }
         if(decklist.chosenChampion === "") { window.alert("no chosen champion found"); return; }
         if(decklist.mainDeck.reduce((sum, current) => sum + current.count, 0) !== 40) {
@@ -82,22 +87,25 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
             window.alert(`${decklist.runeDeck.reduce((sum, current) => sum + current.count, 0)} cards in rune deck (need 12)`);
             return;
         }
-        LSM.WRITE_DECKLIST(n, decklist);
-        const decklists = {...this.state.decklists};
-        decklists[n] = decklist;
+        LSM.updateDecklist(id, decklist);
+        const decklists = [...this.state.decklists];
+        decklists[this.state.ids.indexOf(id)] = decklist;
         this.setState({ decklists: decklists });
     }
 
-    public delete = (n: number): void => {
-        LSM.DELETE_DECKLIST(n);
-        const decklists = {...this.state.decklists};
-        delete decklists[n];
-        this.setState({ decklists: decklists });
+    public delete = (id: string): void => {
+        LSM.deleteDecklist(id);
+        const index = this.state.ids.indexOf(id);
+        let decklists = [...this.state.decklists];
+        decklists.splice(index, 1);
+        let ids = [...this.state.ids];
+        ids.splice(index, 1);
+        this.setState({ decklists: decklists, ids: ids });
     }
 
-    public toggleEdit = (n: number): void => {
+    public toggleEdit = (id: string): void => {
         const showEditOptions = {...this.state.showEditOptions};
-        showEditOptions[n] = !showEditOptions[n];
+        showEditOptions[id] = !showEditOptions[id];
         this.setState({ showEditOptions: showEditOptions });
     }
 
@@ -109,20 +117,19 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
                 <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={this.devCopy}>[DEV] Preprocess Deck</div>
             </div>
             <div className={styles.decklistsContainer}>
-                {Object.entries(this.state.decklists).map(([keyStr, decklist]) => {
-                    const key = parseInt(keyStr);
+                {this.state.ids.map((id, index) => {
                     return (
-                        <div key={key}>
+                        <div key={id}>
                             <div className={styles.editMenu}>
-                                <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={() => this.toggleEdit(key)}>
-                                    {(this.state.showEditOptions[key]) ? "X" : "Edit"}
+                                <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={() => this.toggleEdit(id)}>
+                                    {(this.state.showEditOptions[id]) ? "X" : "Edit"}
                                 </div>
-                                {(this.state.showEditOptions[key]) && (<>
-                                    <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={() => this.replace(key)}>Update From Clipboard</div>
-                                    <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={() => this.delete(key)}>Delete</div>
+                                {(this.state.showEditOptions[id]) && (<>
+                                    <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={() => this.replace(id)}>Update From Clipboard</div>
+                                    <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={() => this.delete(id)}>Delete</div>
                                 </>)}
                             </div>
-                            <VDecklist decklist={MOCK_DECKLIST_FROM_RAW(decklist)} title={""} subtitle={""} />
+                            <VDecklist decklist={this.state.decklists[index]} title={""} subtitle={""} />
                         </div>
                     );
                 })}

@@ -1,8 +1,54 @@
 import BaseCardList from "./BaseCardList.json";
 import CardCategories from "./CardCategories.json";
 import IdMappings from "./IdMappings.json";
-import { CCATEGORY, TYPE } from '../Enums';
-import { CardDTO } from "../Interfaces";
+
+type Domain = "Fury"|"Calm"|"Mind"|"Body"|"Chaos"|"Order";
+type CardTypePrefix = "Signature"|"Champion"|"Token";
+type CardType = "Battlefield"|"Gear"|"Legend"|"Rune"|"Spell"|"Unit";
+type Rarity = "Common"|"Uncommon"|"Rare"|"Epic"|"Alt Art";
+
+//'Base ID', 'Name', 'Pre-Type', 'Type', 'Domains', 'Rarity', 'Energy Cost', 'Power Cost', 'Might', 'Rules Text', 'Champion Tag', 'Other Tags', 'Other'
+interface CardDTO {
+    baseId:	string;
+    name: string;
+    preType?: CardTypePrefix;
+    type: CardType;
+    domains: Domain[];
+    rarity: Rarity;
+    energy?: number;
+    power?: number;
+    might?: number;
+    rulesText: string;
+    championTag?: string;
+    otherTags: string[];
+    other?: object;
+}
+
+export enum CCATEGORY { // CARD_CATEGORY
+    LEGEND = "LEGEND", BATTLEFIELD = "BATTLEFIELD", RUNE = "RUNES", SIDE = "OTHER/SIDEBOARD",
+    EARLY = "TURN 1 PLAYS", EARLY2ND = "TURN 1 PLAYS GOING 2ND", INTERACTION = "SMALL REMOVAL/INTERACTION",
+    CORE = "CORE/VALUE", BIG_INTERACTION = "BIG REMOVAL/INTERACTION", LATE = "LATEGAME/CLOSERS"
+}
+
+// keep order matching CATEGORY_ORDERING
+export const ALL_CCATEGORIES: CCATEGORY[] = [
+    CCATEGORY.LEGEND, CCATEGORY.EARLY, CCATEGORY.EARLY2ND, CCATEGORY.INTERACTION, CCATEGORY.CORE,
+    CCATEGORY.BIG_INTERACTION, CCATEGORY.LATE, CCATEGORY.SIDE, CCATEGORY.BATTLEFIELD, CCATEGORY.RUNE
+];
+
+// keep order matching ALL_CATEGORIES
+export const CCATEGORY_ORDERING: {[key in CCATEGORY]: number} = {
+    [CCATEGORY.LEGEND]: 0,
+    [CCATEGORY.EARLY]: 1,
+    [CCATEGORY.EARLY2ND]: 2,
+    [CCATEGORY.INTERACTION]: 3,
+    [CCATEGORY.CORE]: 4,
+    [CCATEGORY.BIG_INTERACTION]: 5,
+    [CCATEGORY.LATE]: 6,
+    [CCATEGORY.SIDE]: 7,
+    [CCATEGORY.BATTLEFIELD]: 9,
+    [CCATEGORY.RUNE]: 10,
+};
 
 let cardData: {[cardId: string]: CardDTO} = BaseCardList.cards as any;
 let cardCategories: {[cardId: string]: CCATEGORY} = CardCategories.cardCategories as any;
@@ -34,7 +80,7 @@ export function IS_CARD(id: string): boolean {
 export function GET_CARD(id: string): CardDTO {
     if(!(id in cardData)) {
         console.warn(`Card "${id}" not found in cardData.`);
-        return { baseId: id, name: id, type: TYPE.LEGEND, domains: [], rarity: "Common", rulesText: "", otherTags: [] };
+        return { baseId: id, name: id, type: "Legend", domains: [], rarity: "Common", rulesText: "", otherTags: [] };
         // cardData[id] = { baseId: id, name: id, type: TYPE.LEGEND, domains: [], rarity: "Common", rulesText: "", otherTags: [] };
     }
     return cardData[id];
@@ -66,4 +112,5 @@ export function TTS_ID_TO_ID(ttsId: string): string {
 
 export function GET_CARD_ART(id: string): string {
     return `https://static.dotgg.gg/riftbound/cards/${id.replaceAll("*","s")}.webp`;
+    // https://cdn.rgpub.io/public/live/map/riftbound/latest/OGN/cards/OGN-001/full-desktop-2x.jpg // high quality
 }

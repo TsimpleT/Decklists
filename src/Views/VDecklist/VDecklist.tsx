@@ -2,7 +2,7 @@ import React from 'react';
 import copy from 'copy-to-clipboard';
 import styles from './VDecklist.module.css';
 
-import { Decklist, DECKLIST_TTS_EXPORT, DECKLIST_TCGA_EXPORT, GET_CCATEGORY, IS_CARD, ImageUtil } from '../../Data';
+import { Decklist, GET_CCATEGORY, IS_CARD, ImageUtil } from '../../Data';
 import { VDecklistCard } from '../VDecklistCard';
 import { GET_COLOR_STYLE } from '../VDecklistTable';
 
@@ -15,12 +15,12 @@ interface IProps {
 
 export class VDecklist extends React.Component<IProps> {
     private copyToTTS: React.MouseEventHandler<HTMLDivElement> = (_) => {
-        copy(DECKLIST_TTS_EXPORT(this.props.decklist));
+        copy(this.props.decklist.exportToTTS());
         window.alert("Decklist copied to clipboard to be used in TTS.");
     }
 
     private copyToTCGArena: React.MouseEventHandler<HTMLDivElement> = (_) => {
-        copy(DECKLIST_TCGA_EXPORT(this.props.decklist));
+        copy(this.props.decklist.exportToTCGA());
         window.alert("Decklist copied to clipboard to be used in TCGArena.");
     }
 

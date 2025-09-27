@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './VDecklistTable.module.css';
 
-import { ALL_CCATEGORIES, Archetype, CARD_STATS, CC_CARD_STATS, CCATEGORY, Decklist, DL_CC_CARD_STATS, GET_ARCHETYPE_DECKLISTS, GET_CCATEGORY, TO_BASE_ID } from '../../Data';
+import { ALL_CCATEGORIES, Archetype, CCATEGORY, DECK_KEY_TO_UUID, Decklist, GET_ARCHETYPE_DECKLISTS, GET_CCATEGORY, LocalStorageManager, TO_BASE_ID } from '../../Data';
 import { VDecklistCard } from '../VDecklistCard';
 
 interface IProps {
@@ -36,8 +36,13 @@ function getColorScale(cc: CCATEGORY, n: number): React.CSSProperties {
     return { backgroundColor: `rgb(${r},${g},${b})` };
 }
 
+interface CARD_STATS { mdApp: number; avg: number; sbAvg: number; min: number; max: number; }
+interface CC_CARD_STATS { avg: number; sbAvg: number; min: number; max: number; /*sbMin: number; sbMax: number;*/}
+interface DL_CC_CARD_STATS { total: number; sbTotal: number; }
+
 export class VDecklistTable extends React.Component<IProps> {
-    private decklists: Decklist[];
+    private lsmDecklistIds: string[];
+    private decklists: Decklist[]; // tournament decklists
     private cardIds: string[];
     private cardAmounts: {[cardId: string]: number[]};
     private sideboardAmounts: {[cardId: string]: number[]};
@@ -47,7 +52,8 @@ export class VDecklistTable extends React.Component<IProps> {
 
     constructor(props: IProps) {
         super(props);
-        this.decklists = GET_ARCHETYPE_DECKLISTS(props.archetype);
+        this.lsmDecklistIds = LocalStorageManager.getInstance().getArchetypeDecklistIds(props.archetype);
+        this.decklists = (this.lsmDecklistIds.map((id) => LocalStorageManager.getInstance().getDecklist(id)).filter((e) => e !== undefined) as Decklist[]).concat(GET_ARCHETYPE_DECKLISTS(props.archetype));
         this.cardIds = [];
         this.cardAmounts = {};
         this.sideboardAmounts = {};
@@ -246,7 +252,7 @@ export class VDecklistTable extends React.Component<IProps> {
                                 }
                                 return (
                                     <th className={styles.headerLinkCell} key={deckIdx} title={((decklist.username === "") ? "" : `${decklist.username}: `) + `${decklist.tournamentName} ${decklist.date} ${decklist.placing}`}>
-                                        {(decklist.tournId.length > 0) ?
+                                        {(decklist.username !== "You") ?
                                             <Link to={`/decklists/riftbound/tournament/${decklist.tournId}/decklist/${decklist.username}`} style={{color: "var(--text-default)"}}>
                                                 <div className={styles.deckLabelCell}>
                                                     <div>{decklist.tournId.substring(0,decklist.tournId.indexOf("-"))}</div>
@@ -254,7 +260,7 @@ export class VDecklistTable extends React.Component<IProps> {
                                                 </div>
                                             </Link>
                                         :
-                                            <Link to={`/decklists/riftbound/decklist/${decklist.archetype}/${decklist.username}`} style={{color: "var(--text-default)"}}>
+                                            <Link to={`/decklists/riftbound/me/${DECK_KEY_TO_UUID(this.lsmDecklistIds[deckIdx])}`} style={{color: "var(--text-default)"}}>
                                                 <div className={styles.deckLabelCell}>
                                                     {decklist.username}
                                                 </div>

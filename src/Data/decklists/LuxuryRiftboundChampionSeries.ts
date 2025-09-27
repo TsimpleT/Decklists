@@ -1,10 +1,9 @@
-import { PATCH } from "../Enums";
-import { RawTournamentResults } from "../Interfaces";
+import { ITournamentResults } from "../TournamentResults";
 
-export const LUX_20250816: RawTournamentResults = {
-    tournamentName: "Luxury Riftbound Champion Series", abbrName: "LUX", date: "2025/08/16", meta: PATCH.OGN, host: "Luxury Gaming", tier: 1,
+export const LUX_20250816: ITournamentResults = {
+    tournamentName: "Luxury Riftbound Champion Series", abbrName: "LUX", date: "2025/08/16", meta: "OGN", host: "Luxury Gaming", tier: 1,
     links: ["https://luxurygaming.challonge.com/LRCS", "https://luxurygaming.challonge.com/LRCSTC"],
-    placings: [
+    results: [
         {placing: "1st", decklists: [
             {"username":"Prismaticism","archetype":"Darius","legend":"OGN-253","chosenChampion":"OGN-027","mainDeck":[{"id":"OGN-027","count":1},{"id":"OGN-245","count":3},{"id":"OGN-004","count":3},{"id":"OGN-213","count":2},{"id":"OGN-029","count":2},{"id":"OGN-210","count":3},{"id":"OGN-217","count":3},{"id":"OGN-211","count":3},{"id":"OGN-242","count":3},{"id":"OGN-016","count":1},{"id":"OGN-218","count":3},{"id":"OGN-226","count":3},{"id":"OGN-012","count":1},{"id":"OGN-035","count":2},{"id":"OGN-039","count":2},{"id":"OGN-028","count":3},{"id":"OGN-233","count":2}],"battlefields":[{"id":"OGN-298","count":1},{"id":"OGN-294","count":1},{"id":"OGN-291","count":1}],"runeDeck":[{"id":"OGN-214","count":7},{"id":"OGN-007","count":5}],"sideboard":[{"id":"OGN-224","count":2},{"id":"OGN-029","count":1},{"id":"OGN-016","count":1},{"id":"OGN-207","count":1},{"id":"OGN-012","count":1},{"id":"OGN-238","count":2}]},
         ]},

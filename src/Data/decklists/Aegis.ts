@@ -1,10 +1,9 @@
-import { PATCH } from "../Enums";
-import { RawTournamentResults } from "../Interfaces";
+import { ITournamentResults } from "../TournamentResults";
 
-export const AEGIS_20250817: RawTournamentResults = {
-    tournamentName: "Aegis Test Tournament", abbrName: "AEG", date: "2025/08/17", meta: PATCH.OGN, host: "Aegis", tier: 4,
+export const AEGIS_20250817: ITournamentResults = {
+    tournamentName: "Aegis Test Tournament", abbrName: "AEG", date: "2025/08/17", meta: "OGN", host: "Aegis", tier: 4,
     links: ["https://challonge.com/AegisRBTest", "https://docs.google.com/spreadsheets/d/1p8sBQAizh16DrX_PP7eAKkHpEcJ1GybZ9Wj7UyHhvlQ/edit?gid=1179065216#gid=1179065216"],
-    placings: [
+    results: [
         {placing: "1st", decklists: [
             {"username":"Robomaster18","archetype":"Sett Midrange","legend":"OGN-269","chosenChampion":"OGN-164","mainDeck":[{"id":"OGN-164","count":2},{"id":"OGN-270","count":3},{"id":"OGN-156","count":2},{"id":"OGN-136","count":3},{"id":"OGN-139","count":3},{"id":"OGN-213","count":2},{"id":"OGN-210","count":3},{"id":"OGN-128","count":2},{"id":"OGN-217","count":3},{"id":"OGN-132","count":3},{"id":"OGN-207","count":3},{"id":"OGN-141","count":3},{"id":"OGN-155","count":3},{"id":"OGN-232","count":3},{"id":"OGN-149","count":2}],"battlefields":[{"id":"OGN-286","count":1},{"id":"OGN-295","count":1},{"id":"OGN-282","count":1}],"runeDeck":[{"id":"OGN-214a","count":3},{"id":"OGN-126a","count":9}],"sideboard":[{"id":"OGN-145","count":2},{"id":"OGN-222","count":3},{"id":"OGN-154","count":1},{"id":"OGN-164","count":1},{"id":"OGN-148","count":1}]},
         ]},

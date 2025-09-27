@@ -1,10 +1,15 @@
-import { TOURNAMENT_RESULTS } from "./Decklists";
-import { PlayerPlacing } from "./Interfaces";
+import { TOURNAMENT_RESULTS } from "./TournamentResults";
+
+interface PlayerPlacing {
+    placing: string;
+    tournament: string;
+    date: string;
+}
 
 let playerResults: {[username: string]: PlayerPlacing[]} = {};
 
 for(let tournamentResult of TOURNAMENT_RESULTS) {
-    for(let placing of tournamentResult.placings) {
+    for(let placing of tournamentResult.results) {
         for(let decklist of placing.decklists) {
             if(decklist.username[0] === "*") {
                 continue;

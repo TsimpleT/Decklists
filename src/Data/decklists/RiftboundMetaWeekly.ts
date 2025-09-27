@@ -1,10 +1,9 @@
-import { PATCH } from "../Enums";
-import { RawTournamentResults } from "../Interfaces";
+import { ITournamentResults } from "../TournamentResults";
 
-export const RMW_20250809: RawTournamentResults = {
-    tournamentName: "Riftbound Meta Weekly", abbrName: "RMW", date: "2025/08/09", meta: PATCH.OGN, host: "Riftbound Meta", tier: 3,
+export const RMW_20250809: ITournamentResults = {
+    tournamentName: "Riftbound Meta Weekly", abbrName: "RMW", date: "2025/08/09", meta: "OGN", host: "Riftbound Meta", tier: 3,
     links: ["https://challonge.com/qai98auk", "https://challonge.com/aaqosn5i"],
-    placings: [
+    results: [
         {placing: "1st", decklists: [
             {"username":"Freakz","archetype":"Viktor","legend":"OGN-265","chosenChampion":"OGN-246","mainDeck":[{"id":"OGN-246","count":1},{"id":"OGN-095","count":3},{"id":"OGN-104","count":3},{"id":"OGN-103","count":3},{"id":"OGN-213","count":3},{"id":"OGN-093","count":3},{"id":"OGN-210","count":3},{"id":"OGN-216","count":3},{"id":"OGN-209","count":3},{"id":"OGN-208","count":3},{"id":"OGN-106","count":3},{"id":"OGN-085","count":3},{"id":"OGN-105","count":3},{"id":"OGN-116","count":3}],"battlefields":[{"id":"OGN-289","count":1},{"id":"OGN-290","count":1},{"id":"OGN-284","count":1}],"runeDeck":[{"id":"OGN-214","count":6},{"id":"OGN-089","count":6}],"sideboard":[{"id":"OGN-241","count":2},{"id":"OGN-094","count":3},{"id":"OGN-238","count":3}]}
         ]},
@@ -24,10 +23,10 @@ export const RMW_20250809: RawTournamentResults = {
     ]
 };
 
-export const RMW_20250802: RawTournamentResults = {
-    tournamentName: "Riftbound Meta Weekly", abbrName: "RMW", date: "2025/08/02", meta: PATCH.OGN, host: "Riftbound Meta", tier: 3,
+export const RMW_20250802: ITournamentResults = {
+    tournamentName: "Riftbound Meta Weekly", abbrName: "RMW", date: "2025/08/02", meta: "OGN", host: "Riftbound Meta", tier: 3,
     links: ["https://challonge.com/t3unid18"],
-    placings: [
+    results: [
         {placing: "6-0", decklists: [
             {"username":"Gadzior","archetype":"Viktor","legend":"OGN-265","chosenChampion":"OGN-246","mainDeck":[{"id":"OGN-246","count":1},{"id":"OGN-095","count":3},{"id":"OGN-104","count":2},{"id":"OGN-103","count":3},{"id":"OGN-108","count":2},{"id":"OGN-213","count":3},{"id":"OGN-093","count":3},{"id":"OGN-210","count":3},{"id":"OGN-209","count":2},{"id":"OGN-211","count":3},{"id":"OGN-218","count":3},{"id":"OGN-208","count":3},{"id":"OGN-106","count":3},{"id":"OGN-233","count":2},{"id":"OGN-105","count":2},{"id":"OGN-116","count":2}],"battlefields":[{"id":"OGN-294","count":1},{"id":"OGN-284","count":1},{"id":"OGN-291","count":1}],"runeDeck":[{"id":"OGN-214a","count":6},{"id":"OGN-089a","count":6}],"sideboard":[{"id":"OGN-224","count":2},{"id":"OGN-085","count":2},{"id":"OGN-233","count":1},{"id":"OGN-092","count":1},{"id":"OGN-105","count":1},{"id":"OGN-234","count":1}]}
         ]},
@@ -43,10 +42,10 @@ export const RMW_20250802: RawTournamentResults = {
     ]
 };
 
-export const RMW_20250726: RawTournamentResults = {
-    tournamentName: "Riftbound Meta Weekly", abbrName: "RMW", date: "2025/07/26", meta: PATCH.OGN, host: "Riftbound Meta", tier: 3,
+export const RMW_20250726: ITournamentResults = {
+    tournamentName: "Riftbound Meta Weekly", abbrName: "RMW", date: "2025/07/26", meta: "OGN", host: "Riftbound Meta", tier: 3,
     links: ["https://challonge.com/t5x02f3u"],
-    placings: [
+    results: [
         {placing: "6-0", decklists: [
             {"username":"Kuvi","archetype":"Kai'Sa Midrange","legend":"OGN-247","chosenChampion":"OGN-039a","mainDeck":[{"id":"OGN-039a","count":3},{"id":"OGN-095","count":3},{"id":"OGN-004","count":2},{"id":"OGN-009","count":3},{"id":"OGN-090","count":2},{"id":"OGN-103","count":3},{"id":"OGN-029","count":3},{"id":"OGN-033","count":2},{"id":"OGN-093","count":3},{"id":"OGN-096","count":3},{"id":"OGN-087","count":2},{"id":"OGN-024","count":3},{"id":"OGN-106","count":3},{"id":"OGN-027a","count":3},{"id":"OGN-116","count":2}],"battlefields":[{"id":"OGN-297","count":1},{"id":"OGN-296","count":1},{"id":"OGN-285","count":1}],"runeDeck":[{"id":"OGN-007a","count":7},{"id":"OGN-089a","count":5}],"sideboard":[{"id":"OGN-104","count":2},{"id":"OGN-036","count":2},{"id":"OGN-022","count":2},{"id":"OGN-248","count":2}]}
         ]},
