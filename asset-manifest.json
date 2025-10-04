@@ -1,10 +1,12 @@
 {
   "files": {
-    "main.css": "/decklists/static/css/main.24715579.css",
-    "main.js": "/decklists/static/js/main.5f7bd85f.js",
-    "static/js/453.4ec2150a.chunk.js": "/decklists/static/js/453.4ec2150a.chunk.js",
+    "main.css": "/decklists/static/css/main.b1470a3d.css",
+    "main.js": "/decklists/static/js/main.6747a4be.js",
+    "static/js/453.0c9396f7.chunk.js": "/decklists/static/js/453.0c9396f7.chunk.js",
     "static/media/RainbowRuneBorder.png": "/decklists/static/media/RainbowRuneBorder.77b0a7671c08b3e00cff.png",
     "static/media/RainbowRune.png": "/decklists/static/media/RainbowRune.7891cef5fa18cebd1b34.png",
+    "static/media/Challonge.png": "/decklists/static/media/Challonge.04a3a2039f4cabdc800d.png",
+    "static/media/Sheets.png": "/decklists/static/media/Sheets.822f5b79aa6b8a20721b.png",
     "static/media/CalmDetail.png": "/decklists/static/media/CalmDetail.23d5e486a0dd844487f8.png",
     "static/media/MindDetail.png": "/decklists/static/media/MindDetail.9d5e14696c111cab2e57.png",
     "static/media/ChaosDetail.png": "/decklists/static/media/ChaosDetail.3e1b8003fa4232a09e8f.png",
@@ -34,13 +36,14 @@
     "static/media/Order.png": "/decklists/static/media/Order.01bdad0955cc15e6f18d.png",
     "static/media/OrderBW.png": "/decklists/static/media/OrderBW.2bce79e6617e17fdab60.png",
     "static/media/Battlefield.png": "/decklists/static/media/Battlefield.0517b5b4a467adb32d32.png",
+    "static/media/Battlefy.png": "/decklists/static/media/Battlefy.b15d53dd9826e1a33967.png",
     "index.html": "/decklists/index.html",
-    "main.24715579.css.map": "/decklists/static/css/main.24715579.css.map",
-    "main.5f7bd85f.js.map": "/decklists/static/js/main.5f7bd85f.js.map",
-    "453.4ec2150a.chunk.js.map": "/decklists/static/js/453.4ec2150a.chunk.js.map"
+    "main.b1470a3d.css.map": "/decklists/static/css/main.b1470a3d.css.map",
+    "main.6747a4be.js.map": "/decklists/static/js/main.6747a4be.js.map",
+    "453.0c9396f7.chunk.js.map": "/decklists/static/js/453.0c9396f7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.24715579.css",
-    "static/js/main.5f7bd85f.js"
+    "static/css/main.b1470a3d.css",
+    "static/js/main.6747a4be.js"
   ]
 }
