@@ -1,0 +1,40 @@
+ID,Name,Supertype,Type,Domains,Rarity,Energy Cost,Power Cost,Might,Rules Text,Effect Text,Champion Tag,Other Tags,Flavor Text,Errata-ed
+OGS-001,"Annie, Fiery",Champion,Unit,Fury,Epic,5,1,,Your spells and abilities deal 1 Bonus Damage.,,Annie,Noxus,"""I never play with matches.""",FALSE
+OGS-002,Firestorm,,Spell,Fury,Uncommon,6,1,,Deal 3 to all enemy units at a battlefield.,,,,"""Eeny, meeny, miny, burn!""
+—Annie",FALSE
+OGS-003,Incinerate,,Spell,Fury,Common,2,0,,"[Action]
+Deal 2 to a unit at a battlefield.",,,,"""You smell like burning!""
+—Annie",FALSE
+OGS-004,"Master Yi, Meditative",Champion,Unit,Calm,Epic,5,1,,"While you have 8+ runes, I have +4 [M].",,Master Yi,Ionia,"""Anger gives motivation without purpose.""",FALSE
+OGS-005,Zephyr Sage,,Unit,Calm,Uncommon,6,1,,[Shield],,,"Ionia, Bird","""A true master is an eternal student.""
+—Master Yi",FALSE
+OGS-006,"Lux, Illuminated",Champion,Unit,Mind,Rare,6,1,,"When you play a spell that costs [5] or more, give me +3 [M] this turn.",,Lux,Demacia,"""No more holding back!""",FALSE
+OGS-007,"Garen, Rugged",Champion,Unit,Body,Rare,6,1,,"[Assault 2], [Shield 2]",,Garen,"Demacia, Elite","""Fear is the first of many foes.""",FALSE
+OGS-008,Gentlemen's Duel,,Spell,Body,Common,6,1,,"[Action]
+Give a friendly unit +3 [M] this turn. Then choose an enemy unit. They deal damage equal to their Mights to each other.",,,,A proper and formal way to kill your enemies.,FALSE
+OGS-009,"Master Yi, Honed",Champion,Unit,Body,Epic,7,1,,"[Ganking]
+I enter ready.",,Master Yi,Ionia,"""The focused mind can pierce through stone.""",FALSE
+OGS-010,"Annie, Stubborn",Champion,Unit,Chaos,Rare,4,1,,"When you play me, return a spell from your trash to your hand.",,Annie,Noxus,"""I want a turn!""",FALSE
+OGS-011,Flash,,Spell,Chaos,Common,2,0,,"[Reaction]
+Move up to 2 friendly units to base.",,,,It's not running away. It's strategic repositioning.,FALSE
+OGS-012,Blast of Power,,Spell,Order,Common,6,1,,"[Action]
+Kill a unit at a battlefield.",,,,"""Illuminate the enemy!""
+—Lux",FALSE
+OGS-013,"Garen, Commander",Champion,Unit,Order,Epic,6,1,,Other friendly units have +1 [M] here.,,Garen,"Demacia, Elite","""For Demacia!""",FALSE
+OGS-014,"Lux, Crownguard",Champion,Unit,Order,Epic,4,0,,[E]: [Reaction] — [Add] [2]. Use only to play spells.,,Lux,Demacia,"""I've been hiding my light long enough.""",FALSE
+OGS-015,Recruit the Vanguard,,Spell,Order,Uncommon,6,0,,"[Action]
+Play four 1 [M] Recruit unit tokens.",,,,"""My heart and sword always for Demacia.""
+—Garen",FALSE
+OGS-016,Vanguard Attendant,,Unit,Order,Common,6,1,,I enter ready.,,,"Demacia, Elite",Even the Vanguard needs a first line of defense.,FALSE
+OGS-017,"Annie, Dark Child",,Legend,"Fury, Chaos",Rare,,,,"At the end of your turn, ready up to 2 runes.",,Annie,,,TRUE
+OGS-018,Tibbers,Signature,Unit,"Fury, Chaos",Epic,8,2,,"When you play me, deal 3 to all units at battlefields.",,Annie,,"""Bear hug!""
+—Annie",FALSE
+OGS-019,"Master Yi, Wuju Bladesman",,Legend,"Calm, Body",Rare,,,,"While a friendly unit defends alone, it gets +2 [M].",,Master Yi,,,FALSE
+OGS-020,Highlander,Signature,Spell,"Calm, Body",Epic,4,0,,"[Reaction]
+Choose a friendly unit. The next time it would die this turn, heal it, exhaust it, and recall it instead.",,Master Yi,,,TRUE
+OGS-021,"Lux, Lady of Luminosity",,Legend,"Mind, Order",Rare,,,,"When you play a spell that costs [5] or more, draw 1.",,Lux,,,FALSE
+OGS-022,Final Spark,Signature,Spell,"Mind, Order",Epic,8,0,,"[Action]
+Deal 8 to a unit.",,Lux,,,FALSE
+OGS-023,"Garen, Might of Demacia",,Legend,"Body, Order",Rare,,,,"When you conquer, if you have 4+ units at that battlefield, draw 2.",,Garen,,,FALSE
+OGS-024,Decisive Strike,Signature,Spell,"Body, Order",Epic,5,1,,"[Action]
+Give friendly units +2 [M] this turn.",,Garen,,,FALSE

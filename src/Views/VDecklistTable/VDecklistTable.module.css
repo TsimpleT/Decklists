@@ -3,6 +3,7 @@
     height: 100%;
     margin-left: 6px;
     margin-bottom: 390px;
+    /* overflow-x:scroll; */
 }
 
 .container > table {
@@ -23,6 +24,34 @@
     left: 0;
     z-index: 50 !important;
     background-color: var(--bg-default);
+}
+
+.settingsButton {
+    position: absolute;
+    top: 11.5px;
+    margin-left: 6px;
+    background-color: #ffffffd8;
+    padding: 3px;
+    border-radius: 4px;
+}
+
+.settingsContainer {
+    position: absolute;
+    top: 10.5px;
+    left: 181px;
+    margin-left: 6px;
+    background-color: var(--bg-dark);
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--text-default);
+}
+
+.settingsCardWrapper {
+    margin-bottom: 2px;
+}
+
+.settingsSubheader {
+    font-weight: 400;
 }
 
 .topRow {

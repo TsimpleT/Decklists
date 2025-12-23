@@ -1,3 +1,4 @@
+\[2.2.0\] (25Dec23) Many Decklists + SFD
 \[2.1.0\] (25Sep26) My Decklists in Archetype Stats
 \[2.0.0\] (25Sep24) MyDecklistPage
 \[1.2.0\] (25Sep19) Archetype Decklist Table Visual Update

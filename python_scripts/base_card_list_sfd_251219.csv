@@ -1,0 +1,388 @@
+ID,Name,Supertype,Type,Domains,Rarity,Energy Cost,Power Cost,Might,Rules Text,Effect Text,Champion Tag,Other Tags,Flavor Text,Errata-ed
+SFD-001,Against the Odds,,Spell,Fury,Common,2,,,"[Reaction]
+Give a friendly unit at a battlefield +2[M] this turn for each enemy unit there.",,,,"""We are what we overcome.""
+—Pantheon",FALSE
+SFD-002,Armed Assailant,,Unit,Fury,Common,6,1,6,"[Accelerate]
+[Weaponmaster]",,,Noxus,,FALSE
+SFD-003,Blood Rush,,Spell,Fury,Common,1,,,"[Action]
+[Repeat] [1]
+Give a unit [Assault 2] this turn.",,,,,TRUE
+SFD-004,Ambush,,Spell,Fury,Common,2,1,,"[Hidden]
+Friendly units enter ready this turn. Play a Gold gear token exhausted.",,,,Always check the brush.,FALSE
+SFD-005,Detonate,,Spell,Fury,Common,1,1,,Kill a gear. Its controller draws 2.,,,,Nobody wants to be left holding the exploding end of the stick.,FALSE
+SFD-006,Eager Drakehound,,Unit,Fury,Common,3,1,3,I enter ready.,,,"Noxus, Dog, Dragon","There are two kinds of drakehound trainer: strict, and dead.",FALSE
+SFD-007,Gem Jammer,,Unit,Fury,Common,2,,2,"When you play me, give a unit [Ganking] this turn.",,,"Bandle City, Mech","""You have GOT to see this.""",FALSE
+SFD-008,Sentinel Adept,,Unit,Fury,Common,3,,3,[Weaponmaster],,,"Shadow Isles, Sentinel","""My turn.""",FALSE
+SFD-009,Serrated Dirk,,Gear,Fury,Common,1,,,[Equip] [R],[Assault 2] [M]+0,,Equipment,,FALSE
+SFD-010,Void Drone,,Unit,Fury,Common,3,,3,I cost [2] less to play from anywhere other than your hand.,,,The Void,"Rek'Sai's children appear without warning, ambushing their prey beneath the Shuriman sands.",FALSE
+SFD-011,Angle Shot,,Spell,Fury,Uncommon,2,,,"[Reaction]
+Choose a unit and an Equipment with the same controller. Attach that Equipment to that unit or detach that Equipment from that unit. Draw 1.",,,,"""Admit it, you're hooked.""",FALSE
+SFD-012,Battering Ram,,Unit,Fury,Uncommon,5,,5,"I cost [1] less for each card you've played this turn, to a minimum of [1].",,,"Noxus, Trifarian","They call it ""the Noxian hello.""",FALSE
+SFD-013,Blast Corps Cadet,,Unit,Fury,Uncommon,2,,2,"You may pay [1][R] as an addtional cost to play me.
+When you play me, if you paid the additional cost, deal 2 to a unit at a battlefield.",,,Piltover,"The bigger the bangs, the less you have to aim.",FALSE
+SFD-014,Minotaur Reckoner,,Unit,Fury,Uncommon,5,,5,Units can't move to base.,,,Noxus,"He is blessed with immense patience, a gift he feels compelled to share.",FALSE
+SFD-015,Perched Grimwyrm,,Unit,Fury,Uncommon,4,,5,Play me only to a battlefield you conquered this turn.,,,"Shadow Isles, Dragon","When you see the Grimwyrm's shadow, it's already too late.",FALSE
+SFD-016,Recurve Bow,,Gear,Fury,Uncommon,2,,,[Equip] [R],"When I attack or defend, deal 2 to an enemy unit here. [M]+0",,Equipment,,FALSE
+SFD-017,Sudden Storm,,Spell,Fury,Uncommon,3,,,"[Hidden]
+[Action]
+Deal 2 to a unit at a battlefield. If it's attacking, deal 4 to it instead.",,,,Haste lays waste.,FALSE
+SFD-018,Void Hatchling,,Unit,Fury,Uncommon,2,,2,"If you would reveal cards from a deck, look at the top card first. You may recycle it. Then reveal those cards.",,,The Void,"From the moment of hatching, xer'sai serve their queen.",FALSE
+SFD-019,Assembly Rig,,Gear,Fury,Uncommon,4,,,"[1][R], Recycle a unit from your trash, [E]: Play a 3[M] Mech unit token to your base.",,,,"""Can't believe someone would throw this out!""",FALSE
+SFD-020,"Draven, Vanquisher",Champion,Unit,Fury,Rare,4,,4,"When I win a combat, play a Gold gear token exhausted.
+When I attack or defend, you may pay [R]. If you do, give me +2[M] this turn.",,Draven,Noxus,"""Man, I'm good.""",FALSE
+SFD-021,Ferrous Forerunner,,Unit,Fury,Rare,6,1,6,[Deathknell] — Play two 3[M] Mech unit tokens to your base.,,,"Bandle City, Yordle, Mech","""You are a wreck waiting to happen. I just see parts that aren't spare yet.""",FALSE
+SFD-022,Long Sword,,Gear,Fury,Rare,2,1,,"[Quick-Draw]
+[Equip] [R]",[M]+2,,Equipment,Efforts to create the Longer Sword quickly ran into diminishing returns.,FALSE
+SFD-023,Piercing Light,,Spell,Fury,Rare,2,1,,"[Repeat] [2][R]
+Deal 2 to a unit at a battefield, then deal 2 to up to one other unit.",,,,"""I got two good reasons for you to turn back.""
+—Lucian",FALSE
+SFD-024,"Rell, Magnetic",Champion,Unit,Fury,Rare,4,,4,"[Tank]
+When I attack, you may play an Equipment with Energy cost no more than [2], ignoring its cost, and attach it to me.",,Rell,Noxus,"""Bones shatter and people lie, but I can always count on iron.""",FALSE
+SFD-025,"Rengar, Pouncing",Champion,Unit,Fury,Rare,3,1,3,"[Reaction]
+[Assault 2]
+I can be played to a battlefield you're attacking.",,Rengar,"Ixtal, Cat","""Tonight, we hunt!""",FALSE
+SFD-026,"Rumble, Hotheaded",Champion,Unit,Fury,Rare,4,,4,"Your Mechs each have [Assault].
+When I conquer, you may recycle another friendly unit to play a Mech from your trash. Reduce its Energy cost by the Might of the unit you recycled.",,Rumble,"Bandle City, Yordle, Mech",,FALSE
+SFD-027,Dunebreaker,,Unit,Fury,Epic,7,1,7,"If you have two or fewer cards in your hand, I enter ready.
+When I hold, draw 2.",,,The Void,Dunes don't break like branches. They break like waves.,FALSE
+SFD-028,"Lucian, Gunslinger",Champion,Unit,Fury,Epic,3,,2,"[Assault]
+When I attack, deal damage equal to my [Assault] to an enemy unit here.",,Lucian,"Demacia, Sentinel","""Everybody dies. Some just need a little help.""",FALSE
+SFD-029,"Rek'Sai, Breacher",Champion,Unit,Fury,Epic,3,,3,"[Accelerate]
+[Assault]
+Friendly units played from anywhere other than a player's hand have [Accelerate].",,Rek'Sai,The Void,,FALSE
+SFD-030,Skyfall of Areion,,Gear,Fury,Epic,3,,,[Equip] [1][R],"My hold effects are also conquer effects, and vice versa. [M]+2",,Equipment,,FALSE
+SFD-031,Desert's Call,,Spell,Calm,Common,2,,,"[Repeat] [2]
+Play a 2[M] Sand Soldier unit token.",,,,The Great Sai desert hides as many spears as it does secrets.,FALSE
+SFD-032,Disarming Rake,,Unit,Calm,Common,3,1,2,"When you play me, you may kill a gear.",,,Demacia,"""I like to break things: swords, arms, hearts...""",FALSE
+SFD-033,Doran's Shield,,Gear,Calm,Common,1,,,[Equip] [G],[Tank] [M]+1,,Equipment,,FALSE
+SFD-034,Feral Strength,,Spell,Calm,Common,2,,,"[Reaction]
+[Repeat] [2]
+Give a unit +2[M] this turn.",,,,,FALSE
+SFD-035,Guardian of the Passage,,Unit,Calm,Common,6,,6,"When I hold, you may return a unit or gear from your trash to your hand.",,,"Shadow Isles, Spirit","In the Shadow Isles, the veil between life and death is thin indeed.",FALSE
+SFD-036,Lonely Poro,,Unit,Calm,Common,2,,2,"[Deathknell] — If I died alone, draw 1.",,,"Freljord, Poro","Far from fluft and all alone
+None to mourn but ice and stone
+—Ode to a Lonely Poro",FALSE
+SFD-037,Navori Scout,,Unit,Calm,Common,4,,4,[Deflect],,,"Ionia, Yordle",The Navori Brotherhood has neither a height requirement nor a retirement age.,FALSE
+SFD-038,Ribbon Dancer,,Unit,Calm,Common,3,,3,"When I move to a battlefield, give another friendly unit +1[M] this turn.",,,Ionia,A flutter of silk is all the warning her enemies get.,FALSE
+SFD-039,Royal Entourage,,Unit,Calm,Common,3,1,4,"When you play me, ready or exhaust a legend.",,,Shurima,"After the seat of the ancient Shuriman Empire rose from the sands and its immortal emperor stpped out of myth to lead it, those who first embraced his rule were richly rewarded.",FALSE
+SFD-040,Thwonk!,,Spell,Calm,Common,2,,,"[Action]
+[Repeat] [2]
+Stun an attacking unit.",,,,,FALSE
+SFD-041,Apprentice Smith,,Unit,Calm,Common,2,,2,"When I move, reveal the top card of your Main Deck. If it's a gear, draw it. Otherwise, recycle it.",,,Freljord,"""My mentor says every failed project is a lesson. Me, I use 'em as paperweights.""",FALSE
+SFD-042,Brutalizer,,Gear,Calm,Uncommon,2,,,[Equip] [G],"If this was attached to me this turn, I have an additional +2[M]. [M]+1",,Equipment,,FALSE
+SFD-043,Emperor's Divide,,Spell,Calm,Uncommon,2,,,"[Hidden]
+[Action]
+Move any number of friendly units at a battlefield to their base.",,,,The sands of battle shift at Azir's command.,FALSE
+SFD-044,Legion Quartermaster,,Unit,Calm,Uncommon,3,,4,"As an additional cost to play me, return a friendly gear to its owner's hand.",,,"Noxus, Trifarian","""An ancient runeblade! Very rare. Take it to Tent 3 for processing.""",FALSE
+SFD-045,Not So Fast,,Spell,Calm,Uncommon,2,1,,"[Reaction]
+Counter an enemy spell or ability that chooses a friendly unit or gear.",,,,,FALSE
+SFD-046,Poro Snax,,Gear,Calm,Uncommon,1,1,,"When you play this, draw 1.
+[1][G], [E], Kill this: Draw 1.",,,,"""Eat, eat and grow strong!""
+—Braum",FALSE
+SFD-047,Simian Ancestor,,Unit,Calm,Uncommon,5,1,5,"When you buff me, ready me.",,,Ionia,"""I'm faster than I look. Older too, if you can believe it.""",FALSE
+SFD-048,Stellacorn Herder,,Unit,Calm,Uncommon,4,,3,"When I move, draw 1.",,,Mount Targon,"""Finding lost stellacorns is easy! It's catching them that's the hard part.""",FALSE
+SFD-049,"Aphelios, Exalted",Champion,Unit,Calm,Rare,4,1,4,"When you attach an Equipment to me, choose one that hasn't been chosen this turn —
+• Ready 2 runes.
+• Channel 1 rune exhausted.
+• Buff a friendly unit.",,Aphelios,Mount Targon,,FALSE
+SFD-050,"Azir, Ascendant",Champion,Unit,Calm,Rare,6,1,6,"[G]: [Action] — Choose a unit you control. Move me to its location and move it to my original location. If it's is equipped, you may attach one of its Equipment to me. Use only once per turn.",,Azir,"Shurima, Bird","""Challenge Shurima, challenge fate.""",FALSE
+SFD-051,Guardian Angel,,Gear,Calm,Rare,2,,,[Equip] [G],"If I would die, kill Guardian Angel instead. Heal me, exhaust me, and recall me. [M]+1",,Equipment,Claws for concern.,FALSE
+SFD-052,Heart of Dark Ice,,Gear,Calm,Rare,3,1,,[E]: Give a unit +3[M] this turn.,,,,"""All will kneel ... in time.""
+—Lissandra",FALSE
+SFD-053,"Janna, Savior",Champion,Unit,Calm,Rare,3,1,3,"[Reaction]
+When you play me, heal your units here, then move an enemy unit from here to its base.",,Janna,Zaun,"""Gale winds unleashed!""",FALSE
+SFD-054,"Jax, Unmatched",Champion,Unit,Calm,Rare,5,1,5,"[Deflect]
+Each Equipment in your hand has [Quick-Draw].",,Jax,Icathia,"""Fighting words! My favorite kind.""",FALSE
+SFD-055,Needlessly Large Yordle,,Unit,Calm,Rare,10,3,5,"[Shield 5]
+[Tank]
+I cost [2][G] less for each point you scored from holding this turn.",,,"Bandle City, Yordle",How did a yordle get so big? You're welcome to ask him.,FALSE
+SFD-056,Sterak's Gage,,Gear,Calm,Rare,3,2,,"[Quick-Draw]
+[Equip] [G]",[M]+3,,Equipment,Claws for concern.,FALSE
+SFD-057,"Irelia, Fervent",Champion,Unit,Calm,Epic,5,,4,"[Deflect]
+When you choose or ready me, give me +1[M] this turn.",,Irelia,Ionia,"""Do we want to be safe, or free? The choice is ours.""",FALSE
+SFD-058,"Ornn, Blacksmith",Champion,Unit,Calm,Epic,5,1,5,"When you play me or when I hold, look at the top 4 cards of your Main Deck. You may reveal a gear from among them and draw it. Then recycle the rest.",,Ornn,Freljord,"""Gods do not need followers. Followers need gods.""",FALSE
+SFD-059,Svellsongur,,Gear,Calm,Epic,3,1,,[Equip] [1][G],"As this is attached to a unit, copy that unit's text to this Equipment's effect text for as long as this is attached to it. [M]+0",,Equipment,"""Only the greatest Freljord heroes have weapons made of True Ice!"" —Nunu",FALSE
+SFD-060,Tianna Crownguard,,Unit,Calm,Epic,7,2,4,"[Deflect]
+While I'm at a battlefield, opponents can't score points.",,,"Demacia, Elite","""I will stand for my country, my family, and nothing else.""",FALSE
+SFD-061,Aspiring Engineer,,Unit,Mind,Common,3,1,3,"When you play me, return a gear from your trash to your hand.",,,Piltover,"""Before you know it, I'll be running this place.""",FALSE
+SFD-062,Bubble Bot,,Unit,Mind,Common,3,,3,"When you play me, ready another friendly Mech.",,,"Bandle City, Yordle, Mech","The first Bubble Bot started as a practical joke in the scrapyard, but the Mark II soon replaced the morning wake-up bell.",FALSE
+SFD-063,Chemtech Cask,,Gear,Mind,Common,1,,,"When you play a spell on an opponent's turn, you may exhaust me to play a Gold gear token exhausted.",,,,"""Piltover coos over perfumes while Zaun struggles to breathe.""
+—Renata Glasc",FALSE
+SFD-064,Cloth Armor,,Gear,Mind,Common,1,,,"[Quick-Draw]
+[Equip] [B]",[Shield 2] [M]+0,,Equipment,,FALSE
+SFD-065,Forecaster,,Unit,Mind,Common,2,,2,Your Mechs have [Vision].,,,"Bandle City, Yordle, Mech",A good mech pilot has quick reflexes. A great one doesn't need them.,FALSE
+SFD-066,Frigid Toucch,,Spell,Mind,Common,2,,,"[Reaction]
+[Repeat] [2]
+Give a unit -2[M] this turn.",,,,"""Freeze.""",FALSE
+SFD-067,Frostcoat Cub,,Unit,Mind,Common,3,,3,"You may pay [B] as an additional cost to play me.
+When you play me, if you paid the additional cost, give a unit -2[M] this turn.",,,"Freljord, Dog","In the Freljord, cuteness is just another survival tactic.",FALSE
+SFD-068,Gearhead,,Unit,Mind,Common,5,,3,"[Accelerate]
+Each Equipment attached to me gives double its base Might bonus.",,,Zaun,"""Some people dream about the future. I'm living it.""",FALSE
+SFD-069,Plundering Poro,,Unit,Mind,Common,2,,2,"When I conquer, play a Gold gear token exhausted.",,,"Bilgewater, Poro, Pirate",Piracy is the universal language.,FALSE
+SFD-070,Wages of Pain,,Spell,Mind,Common,3,,,"[Hidden]
+[Action]
+Deal 3 to a unit at a battlefield. Play a Gold gear token exhausted.",,,,Smash AND grab.,FALSE
+SFD-071,Breakneck Mech,,Unit,Mind,Uncommon,8,2,,"Your Mechs have [Deflect] and [Ganking].
+I enter ready if you control another Mech.",,,"Bandle City, Yordle, Mech",,FALSE
+SFD-072,Dropboarder,,Unit,Mind,Uncommon,4,,4,"When you play me, if you control two or more gear, ready me.",,,Zaun,"Piltover prides itself on progress, but the Firelights prove that Zaun is no less inventive.",FALSE
+SFD-073,Experimental Hexplate,,Gear,Mind,Uncommon,1,,,[Equip] [B],I am a Mech. [M]+1,,Equipment,,FALSE
+SFD-074,Pickpocket,,Unit,Mind,Uncommon,3,,3,"When you play me, you may kill a gear with Energy cost no more than [1]. If you do, play a Gold gear token exhausted.",,,Zaun,"""Sticky fingers never linger.""
+—Pickpockets' motto",FALSE
+SFD-075,Prize of Progress,,Unit,Mind,Uncommon,4,1,3,"When you use an activated ability of a gear, give me +1[M] this turn.",,,"Piltover, Mech","In Piltover's Progress Day parade, even the floats are groundbreaking innovations.",FALSE
+SFD-076,Production Surge,,Spell,Mind,Uncommon,4,1,,"This costs [2] less if you control a Mech.
+Play a 3[M] Mech unit token to your base.
+Draw 1.",,,,"When in doubt, make more mechs.",FALSE
+SFD-077,Rocket Barrage,,Spell,Mind,Uncommon,4,1,,"[Repeat] [4][B]
+Choose one —
+• Deal 4 to a unit in a base.
+• Kill a gear.",,,,,FALSE
+SFD-078,Temporal Portal,,Gear,Mind,Uncommon,3,,,"[A], [E]: Give the next spell you play this turn [Repeat] equal to its cost.",,,,Those who study history get to choose whether they'll repeat it.,FALSE
+SFD-079,"Bard, Mercurial",Champion,Unit,Mind,Rare,4,1,4,"You may exhaust your legend as an addtional cost to play me.
+When you play me, if you paid the additional cost, move any number of your units to an open battlefield.",,Bard,,(Mysterious chiming noises intensify.),FALSE
+SFD-080,Bellows Breath,,Spell,Mind,Rare,1,1,,"[Action]
+[Repeat] [1][B]
+Deal 1 to up to three units at the same location.",,,,"""My work speaks in the roar of flame and the ringing of steel.""
+—Ornn",FALSE
+SFD-081,Card Sharp,,Unit,Mind,Rare,3,,3,"When you play me, you and each opponent may play a Gold gear token exhausted. For each opponent who did, you play a Gold gear token exhausted.",,,Bilgewater,"""Call.""",FALSE
+SFD-082,"Ezreal, Dashing",Champion,Unit,Mind,Rare,4,1,3,"When I attack or defend, deal damage equal to my Might to an enemy unit here.
+I don't deal combat damage.
+[B]: [Action] — Move me to your base.",,Ezreal,Piltover,"""Time for a true display of skill.""",FALSE
+SFD-083,Hextech Anomaly,,Gear,Mind,Rare,3,1,,[E]: [Reaction] — Pay any amount of [A] to [Add] that much Energy.,,,,"""Hextech promises to transform the present. But progress must not come at the future's expense!""
+—Heimerdinger",FALSE
+SFD-084,"Jayce, Man of Progress",Champion,Unit,Mind,Rare,4,,4,"When you play me, you may kill a friendly gear. If you do, you may play a gear with Energy cost no more than [7] from hand this turn, ignoring its Energy cost.",,Jayce,Piltover,"""This is what the future looks like.""",FALSE
+SFD-085,"Ornn, Forge God",Champion,Unit,Mind,Rare,6,,4,"[Deflect 2]
+[Weaponmaster]
+I have +1[M] for each friendly gear.",,Ornn,Freljord,,FALSE
+SFD-086,World Atlas,,Gear,Mind,Rare,3,,,[Equip] [B],"When I hold, play two Gold gear tokens exhausted. [M]+2",,Equipment,,FALSE
+SFD-087,Premonition,,Spell,Mind,Epic,2,3,,"[Reaction]
+Draw 3.",,,,"Wisdom through power, power through wisdom.",FALSE
+SFD-088,"Renata Glasc, Mastermind",Champion,Unit,Mind,Epic,5,,4,"[1][B]: Draw 1.
+[4][B][B][B][B], [E]: Score 1 point.
+Use my abilities only while I'm at a battlefield.",,Renata Glasc,Zaun,"""Progress comes at a price others aren't willing to pay.""",FALSE
+SFD-089,"Rumble, Scrapper",Champion,Unit,Mind,Epic,5,1,4,"Your Mechs have +1[M].
+When I hold, play a 3[M] Mech unit token to your base.",,Rumble,"Bandle City, Yordle, Mech","""Ever looked up to a yordle?""",FALSE
+SFD-090,The Zero Drive,,Gear,Mind,Epic,3,,,"[Equip] [1][B]
+[3][B], Banish this: Play all units banished with this, ignoring their costs.",[Deathknell] — Banish me. [M]+2,,Equipment,,FALSE
+SFD-091,Buhru Captain,,Unit,Body,Common,3,1,3,"When you play me, you may draw 1 or buff me.",,,Bilgewater,"""The Buhru knew these waters long before the flotsam of Bilgewater washed up on our shores. We know them still.""",FALSE
+SFD-092,Combat Chef,,Unit,Body,Common,5,,5,[Weaponmaster],,,Demacia,"""The tastiest soup is the one you eat after almost getting your head chopped off.""",FALSE
+SFD-093,Dauntless Vanguard,,Unit,Body,Common,4,1,4,You may play me to an occupied enemy battlefield.,,,"Demacia, Elite","When the Demacian Elite receive an order, their commander considers the mission complete.",FALSE
+SFD-094,Direwing,,Unit,Body,Common,7,,7,I enter ready if you control another Dragon.,,,"Demacia, Dragon","A dragon's definition of ""prey"" is all-inclusive.",FALSE
+SFD-095,Doran's Blade,,Gear,Body,Common,2,,,[Equip] [O],[M]+2,,,"""I guess I could... throw it at someone.""
+—Miss Fortune",FALSE
+SFD-096,Laurent Bladekeeper,,Unit,Body,Common,3,,3,[Ganking],,,Demacia,"""This old dog has plenty of tricks already.""",FALSE
+SFD-097,Punch First,,Spell,Body,Common,1,2,,"[Action]
+Give a unit +5[M] this turn.",,,,It's not for the inquisitive.,FALSE
+SFD-098,Sea Monkey,,Unit,Body,Common,2,,2,"You may pay [1] as an additional cost to play me.
+When you play me, if you paid the additional cost, buff me.",,,"Bilgewater, Pirate","""Do, monkey.""
+—Nilah",FALSE
+SFD-099,Veteran Poro,,Unit,Body,Common,2,2,,[Weaponmaster],,,"Freljord, Poro","""Train hard, little poro, and one day you will be strong.""
+—Braum",FALSE
+SFD-100,Yordle Explorer,,Unit,Body,Common,4,,4,"When you play a card with Power cost [A][A] or more, draw 1.",,,"Bandle City, Yordle","""We can't stop yet! We're just getting started!""",FALSE
+SFD-101,Fae Dragon,,Unit,Body,Common,7,1,7,"When you play me, buff up to four friendly units.
+When you spend a buff, play a Gold gear token exhausted.",,,"Bandle City, Fae, Dragon",The fae who guard the boundary of the spirit realm take their job as seriously as they take anything.,FALSE
+SFD-102,Hexdrinker,,Unit,Body,Uncommon,2,,,[Equip] [O],[Deflect] [M]+1,,Equipment,,FALSE
+SFD-103,Jaull-Fish,,Unit,Body,Uncommon,7,2,6,"[Accelerate]
+I cost [2] less for each of your [Mighty] units.",,,,,FALSE
+SFD-104,Petricite Monument,,Unit,Body,Uncommon,2,,,"[Temporary]
+Friendly units have [Deflect].",,,,Monuments of magic-absorbing petricite serve both to protect the Kingdom of Demacia and to celebrate it.,FALSE
+SFD-105,Ruin Runner,,Unit,Body,Uncommon,6,,5,I can't be chosen by enemy spells and abilities.,,,Shurima,"""Catch me if you can.""",FALSE
+SFD-106,Show of Strength,,Spell,Body,Uncommon,2,1,,"[Reaction]
+Draw 1 for each of your [Mighty] units.",,,,Strength in numbers.,FALSE
+SFD-107,Strike Down,,Spell,Body,Uncommon,3,1,,Choose an equipped friendly unit. It deals damage equal to its Might to an enemy unit. Then detach an Equipment from it.,,,,"""Is that all it takes?""",FALSE
+SFD-108,Warmog's Armor,,Gear,Body,Uncommon,1,,,[Equip] [O],"When I conquer, buff me. [M]+1",,Equipment,,FALSE
+SFD-109,"Akshan, Mischievous",Champion,Unit,Body,Rare,4,,4,"[Weaponmaster]
+You may pay [O][O] as an addtional cost to play me.
+When you play me, if you paid the additional cost, move an enemy gear to your base. You control it until I leave the board. If it's an Equipment, attach it to me.",,Akshan,"Shurima, Sentinel",,FALSE
+SFD-110,"Fiora, Peerless",Champion,Unit,Body,Rare,3,1,3,"When I attack or defend one on one, double my Might this combat.",,Fiora,Demacia,"""I have no equal.""",FALSE
+SFD-111,Here to Help,,Spell,Body,Rare,2,1,,"[Hidden]
+[Action]
+You may play a unit from hand to a battlefield you control, reducing its cost by [3].",,,Noxus,"""Let's give 'em a good show!""",FALSE
+SFD-112,Kato the Arm,,Unit,Body,Rare,4,1,3,"[Deflect]
+When I move to a battlefield, give a friendly unit my keywords and +[M] equal to my Might this turn.",,,,,FALSE
+SFD-113,"Lucian, Merciless",Champion,Unit,Body,Rare,3,,,"[Weaponmaster]
+The first time I conquer each turn, ready me.",,Lucian,"Demacia, Sentinel","""One of us finds peace. One of us walks away.""",FALSE
+SFD-114,Marching Orders,,Spell,Body,Rare,3,,,"[Action]
+[Repeat] [3]
+Choose a friendly unit anywhere and an enemy unit at a battlefield. They deal damage equal to their Mights to each other.",,,,,FALSE
+SFD-115,Trinity Force,,Gear,Body,Rare,4,,,[Equip] [O],"When I hold, score 1 point. [M]+2",,Equipment,,FALSE
+SFD-116,"Yone, Blademaster",Champion,Unit,Body,Rare,5,1,5,"[Weaponmaster]
+When I conquer an open battlefield, deal damage equal to my Might to an enemy unit in a base.",,Yone,"Ionia, Demon",,FALSE
+SFD-117,Ancient Henge,,Gear,Body,Epic,2,1,,[E]: [Reaction] — Pay any amount of energy to [Add] that much [A].,,,,"""It's not enough to protect a pile of ice and stone. We must protect each other, and build a community on the foundations our ancestors left."" —Ashe",FALSE
+SFD-118,Boneshiver,,Gear,Body,Epic,3,,,[Equip] [1][O],"When I conquer, channel 1 rune exhausted. [M]+2",,Equipment,,FALSE
+SFD-119,"Jax, Unrelenting",Champion,Unit,Body,Epic,4,1,3,"[Weaponmaster]
+When you attach an Equipment to me, you may pay [1] to draw 1.",,Jax,Icathia,,FALSE
+SFD-120,"Sivir, Ambitious",Champion,Unit,Body,Epic,6,3,7,"[Deflect 2]
+When I conquer after an attack, if you assigned 5 or more excess damage to enemy units, you may deal that much to an enemy unit.",,Sivir,Shurima,"""Honor is the rust on a dull blade.""",FALSE
+SFD-121,Black Market Broker,,Unit,Chaos,Common,3,,3,"When you play a card from facedown, play a Gold gear token exhausted.",,,Zaun,"""Top of the line. Never used. And no pesky licenses to worry about.""",FALSE
+SFD-122,Called Shot,,Spell,Chaos,Common,0,1,,"[Action]
+[Repeat] [P]
+Look at the top 2 cards of your Main Deck. Draw one and recycle the other.",,,,,FALSE
+SFD-123,Corrupt Enforcer,,Unit,Chaos,Common,3,1,4,"When I move to a battlefield, discard 1.
+When I win a combat, draw 1.",,,Piltover,"In his eyes, the law binds but does not protect.",FALSE
+SFD-124,Doran's Ring,,Gear,Chaos,Common,1,,,[Equip] [P],"When I conquer, discard 1, then draw 1. [M]+1",,Equipment,,FALSE
+SFD-125,Fae Porter,,Unit,Chaos,Common,4,,4,"When I move to a battlefield, you may pay [P] to move a unit you control to the same battlefield.",,,"Ionia, Fae",A surprisingly soft landing.,FALSE
+SFD-126,Loyal Pup,,Unit,Chaos,Common,3,,3,"When you defend at a battlefield, you may move me there.",,,"Bandle City, Dog","""Arf!""",FALSE
+SFD-127,Master Bingwen,,Unit,Chaos,Common,6,,6,[Weaponmaster],,,Ionia,"""Perceive your own weakness, before your opponent does.""",FALSE
+SFD-128,Overzealous Fan,,Unit,Chaos,Common,2,,2,"When I defend, you may kill me to move an attacking unit to its base.",,,Noxus,"""Like Draven says... Hit 'em where it hurts!""",FALSE
+SFD-129,Temptation,,Spell,Chaos,Common,2,,,"[Repeat] [2]
+Move an enemy unit to a location where there's a unit with the same controller.",,,,Seems legit.,FALSE
+SFD-130,Treasure Hunter,,Unit,Chaos,Common,2,,1,"When I move, play a Gold gear token exhausted.",,,Shurima,"""I'm sure they won't miss it.""",FALSE
+SFD-131,Ancient Warmonger,,Unit,Chaos,Uncommon,5,,4,"[Accelerate]
+I have [Assault] equal to the number of enemy units here.",,,"Noxus, Spirit",,FALSE
+SFD-132,Beast Below,,Unit,Chaos,Uncommon,7,2,8,"When you play me, return another friendly unit and an enemy unit to their owners' hands.",,,Bilgewater,Terror knows no allegiance.,FALSE
+SFD-133,Boots of Swiftness,,Gear,Chaos,Uncommon,3,,,[Equip] [P],[Ganking] [M]+2,,Equipment,,FALSE
+SFD-134,Cull,,Gear,Chaos,Uncommon,1,,,[Equip] [P],"When I conquer, play a Gold gear token exhausted. [M]+1",,Equipment,,FALSE
+SFD-135,Factory Recall,,Spell,Chaos,Uncommon,1,,,"[Action]
+Return a gear to its owner's hand.",,,,"""NO REFUNDS!""",FALSE
+SFD-136,Hard Bargain,,Spell,Chaos,Uncommon,2,,,"[Reaction]
+[Repeat] [2]
+Counter a spell unless its controller pays [2].",,,,,FALSE
+SFD-137,Harpoon Squad,,Unit,Chaos,Uncommon,4,,4,"When I move from a battlefield, give me +2[M] this turn.",,,"Bilgewater, Pirate",No room for fear on the boat.,FALSE
+SFD-138,Windsinger,,Unit,Chaos,Uncommon,2,,1,"[Hidden]
+When you play me, you may return another unit at a battlefield with 3[M] or less to its owner's hand.",,,Ionia,She never sticks around for encores.,FALSE
+SFD-139,Edge of Night,,Gear,Chaos,Rare,3,,,"[Hidden]
+When you play this from facedown, attach it to a unit you control here.
+[Equip] [P]",[M]+2,,Equipment,Every shadow an ally.,FALSE
+SFD-140,"Fizz, Trickster",Champion,Unit,Chaos,Rare,3,1,3,"When you play me, you may play a spell from your trash with Energy cost no more than [3], ignoring its Energy cost. Recycle that spell after you play it.",,Fizz,"Bilgewater, Yordle","""One jump ahead of you.""",FALSE
+SFD-141,"Irelia, Graceful",Champion,Unit,Chaos,Rare,4,1,4,Your spells that choose me cost [1] or [A] less.,,Irelia,Ionia,"""None can do what I do, so I will do it.""",FALSE
+SFD-142,Jae Medarda,,Unit,Chaos,Rare,5,2,5,"When you choose me with a spell, draw 1.",,,Noxus,"A scion of the m ilitant Medarda family, Jae seeks enchanted treasure rather than power or glory.",FALSE
+SFD-143,"Sivir, Mercenary",Champion,Unit,Chaos,Rare,4,1,4,"[Accelerate]
+If you've spent at least [A][A] this turn, I have +2[M] and [Ganking].",,Sivir,Shurima,,FALSE
+SFD-144,Spirit Wheel,,Gear,Chaos,Rare,2,,,"When you choose a friendly unit, you may pay [1] and exhaust this to draw 1.",,,,Never broken.,FALSE
+SFD-145,Switcheroo,,Spell,Chaos,Rare,2,2,,"[Hidden]
+[Action]
+Swap the Mights of two units at the same battlefield this turn.",,,,Always look out for the little guy.,FALSE
+SFD-146,"Vex, Cheerless",Champion,Unit,Chaos,Rare,5,1,5,"While I'm in combat, friendly spells cost [1][A] less to a minimum of [1], and enemy spells cost [1][A] more.",,Vex,"Shadow Isles, Yordle","""Let's turn these smiles upside down.""",FALSE
+SFD-147,Downwell,,Spell,Chaos,Epic,8,2,,Return all units and gear to their owners' hands.,,,,Sunk costs have a very painful definition in Bilgewater Bay.,FALSE
+SFD-148,"Draven, Audacious",Champion,Unit,Chaos,Epic,6,1,6,"[Deflect]
+The first time I win a combat each turn, you score 1 point.
+When I die in combat, choose an opponent. They score 1 point.",,Draven,Noxus,,FALSE
+SFD-149,"Ezreal, Prodigy",Champion,Unit,Chaos,Epic,3,1,3,"When you play me, discard 1, then draw 2.
+Optional addtional costs you pay cost [1] or [A] less.",,Ezreal,Piltover,"""Who needs a map?""",FALSE
+SFD-150,Last Rites,,Gear,Chaos,Epic,3,,,"[Equip] — [P], Recycle 2 cards from your trash.","Whenever I conquer or hold, you may play a unit from your trash.",,Equipment,,FALSE
+SFD-151,Bonds of Strength,,Spell,Order,Common,2,,,"[Reaction]
+[Repeat] [2]
+Give 2 friendly units each +1[M] this turn.",,,,A vow is stronger than the words that make it.,FALSE
+SFD-152,Eminent Benefactor,,Unit,Order,Common,6,,5,"When I hold, play two Gold gear tokens exhausted.",,,Piltover,Few things are more costly than free money.,FALSE
+SFD-153,Eye of the Herald,,Gear,Order,Common,1,,,[Equip] [Y],"When I move, play a 1[M] Recruit unit token here. [M]+0",,Equipment,,FALSE
+SFD-154,Guards!,,Spell,Order,Common,3,,,"[Hidden]
+Play a 2[M] Sand Soldier unit token. You may pay [Y] to ready it.",,,,"""My empire lives in every grain of sand.""
+—Azir",FALSE
+SFD-155,Honest Broker,,Unit,Order,Common,2,2,,[Deathknell] — Play a Gold gear token exhausted.,,,Ionia,,FALSE
+SFD-156,Laurent Duelist,,Unit,Order,Common,4,,3,[Assault 2],,,Demacia,"""No, my old foil, this isn't revenge—it's épéeback.""",FALSE
+SFD-157,Royal Guard,,Unit,Order,Common,4,2,,"When you play me, play a 2[M] Sand Solider unit token here.",,,Shurima,A ruler's true power is in the loyalty they inspire.,FALSE
+SFD-158,Sandshifter,,Unit,Order,Common,5,2,6,"When you play me, kill an enemy unit with 3[M] or less.",,,Shurima,"""Recognize your emperor... or the sands will make you.""",FALSE
+SFD-159,Trusty Ramhound,,Unit,Order,Common,2,,2,"While you have another unit here, I have +1[M].",,,"Demacia, Elite, Dog",It's always best to have a dog in the fight.,FALSE
+SFD-160,Zaun Punk,,Unit,Order,Common,3,,3,"You may kill a friendly gear as an additional cost to play me.
+When you play me, if you paid the additional cost, kill a gear.",,,Zaun,The guitar isn't the only thing he shreds.,FALSE
+SFD-161,B.F. Sword,,Gear,Order,Uncommon,4,,,[Equip] [Y],[M]+3,,Equipment,It certainly is big.,FALSE
+SFD-162,Blood Money,,Spell,Order,Uncommon,2,,,"[Action]
+Kill a unit at a battlefield with 2[M] or less. If was an enemy unit, play a Gold gear token exhausted. If it was a friendly unit, play two Gold gear tokens exhausted.",,,,"Even among the unscrupulous, betrayal costs extra.",FALSE
+SFD-163,Deathgrip,,Spell,Order,Uncommon,2,,,"[Reaction]
+Kill a friendly unit to give +[M] equal to its Might to another friendly unit this turn. Draw 1.",,,,"""Death is my kindness.""
+—Mordekaiser",FALSE
+SFD-164,Drag Under,,Spell,Order,Uncommon,5,1,,"[Action]
+I cost [2] less to play from anywhere other than your hand.
+Kill a unit at a battlefield.",,,,"""If we hurry, we can reach the oasis by nightfall.""
+—Common last words",FALSE
+SFD-165,Glasc Mixologist,,Unit,Order,Uncommon,5,1,5,"[Deathknell] — You may play a unit with cost no more than [3] and no more than [A] from your trash, ignoring its cost.",,,Zaun,"""The difference between medicine and poison is the dosage."" —Renata Glasc",FALSE
+SFD-166,Rally the Troops,,Spell,Order,Uncommon,2,,,"[Action]
+When a friendly unit is played htis turn, buff it.
+Draw 1.",,,,"""DEMACIA!""",FALSE
+SFD-167,Unsung Hero,,Unit,Order,Uncommon,2,,2,"[Deathknell] — If I was [Mighty], draw 2.",,,"Demacia, Elite",She gave everything she had for the cause—even her legacy.,FALSE
+SFD-168,Vanguard Armory,,Gear,Order,Uncommon,7,1,,[E]: Play three 1[M] Recuit unit tokens.,,,,It takes more than a sword and shield to make a soldier. But it's a good start.,FALSE
+SFD-169,Altar of Memories,,Gear,Order,Rare,2,,,"When a friendly unit dies, you may exhaust me to draw 1, then put a card from your hand on the top or bottom of your Main Deck.",,,,"""The spider demands sacrifice.""
+—Elise",FALSE
+SFD-170,"Rek'Sai, Swarm Queen",Champion,Unit,Order,Rare,5,1,5,"When I attack, you may reveal the top 2 cards of your Main Deck. You may play one. Then recycle the rest. If the played card is a unit, you may play it here.",,Rek'Sai,The Void,"""KKRRKRKRRKKRKK!""",FALSE
+SFD-171,"Renata Glasc, Industrialist",Champion,Unit,Order,Rare,4,1,4,Your tokens enter ready.,,Renata Glasc,Zaun,"""Nothing's free. All I ask is your loyalty.""",FALSE
+SFD-172,Sacred Shears,,Gear,Order,Rare,2,1,,[Equip] [Y],[Deathknell] — Draw 1. [M]+1,,Equipment,,FALSE
+SFD-173,"Soraka, Wanderer",Champion,Unit,Order,Rare,4,1,4,"I must be assigned combat damage last.
+If another unit you control here would die, if it has less Might than me, instead heal it, exhaust it, and recall it.",,Soraka,Mount Targon,"""Never waste a breath.""",FALSE
+SFD-174,Trove Golem,,Unit,Order,Rare,8,2,9,"When you play me, play four Gold gear tokens exhausted.",,,Freljord,As expensive as it is expansive.,FALSE
+SFD-175,Undertitan,,Unit,Order,Rare,6,1,5,"When you play me, give your other units +2[M] this turn.
+As I'm revealed from your deck, [Add] [2].",,,The Void,,FALSE
+SFD-176,"Xin Zhao, Vigilant",Champion,Unit,Order,Rare,3,1,4,"[Tank]
+I enter ready if you have two or more other units in your base.",,Xin Zhao,Demacia,"""A Demacian does not retreat!""",FALSE
+SFD-177,"Azir, Sovereign",Champion,Unit,Order,Epic,4,,4,"[Accelerate]
+When I attack, you may move any number of your token units to this battlefield.",,Azir,"Shurima, Bird","""You need not follow, but you must witness.""",FALSE
+SFD-178,Blade of the Ruined King,,Gear,Order,Epic,3,1,,"[Equip] - [Y], Kill a friendly unit",[M]+4,,Equipment,"""You are not the hero of this tale.""
+—Viego",FALSE
+SFD-179,Corina Veraza,,Unit,Order,Epic,7,1,6,"[Accelerate]
+When I move to a battlefield, play three 1[M] Recruit unit tokens here.",,,Zaun,"""I told them that every achievement had its cost. I didn't tell them who would pay it.""",FALSE
+SFD-180,"Fiora, Worthy",Champion,Unit,Order,Epic,3,3,,"Whenever a unit you control becomes [Mighty], you may pay [Y] to ready it.",,Fiora,Demacia,"""Strike quickly. Strike deftly.""",FALSE
+SFD-181,"Rumble, Mechanized Menace",,Legend,"Fury, Mind",Rare,,,,Your Mechs have [Shield].,,Rumble,,,FALSE
+SFD-182,Danger Zone,Signature,Spell,"Fury, Mind",Epic,1,1,,"[Reaction]
+[Repeat] [1][C]
+Give your Mechs +1[M] this turn.",,Rumble,,,FALSE
+SFD-183,"Lucian, Purifier",,Legend,"Fury, Body",Rare,,,,Your Equipment each give [Assault].,,Lucian,,,FALSE
+SFD-184,Relentless Pursuit,Signature,Spell,"Fury, Body",Epic,2,1,,"[Action]
+Move a friendly unit. You may attach an Equipment with the same controller to it. This turn, that unit has ""When I conquer, you may move me to my base.""",,Lucian,,,FALSE
+SFD-185,"Draven, Glorious Executioner",,Legend,"Fury, Chaos",Rare,,,,"When you win a combat, draw 1.",,Draven,,,FALSE
+SFD-186,Spinning Axe,Signature,Gear,"Fury, Chaos",Epic,2,1,,"[Quick-Draw]
+[Equip] [A]
+[Temporary]",[M]+3,Draven,Equipment,"""Got axes, need victims.""
+—Draven",FALSE
+SFD-187,"Rek'Sai, Void Burrower",,Legend,"Fury, Order",Rare,,,,"When you conquer, you may exhaust me to reveal the top 2 cards of your Main Deck. You may play one. Then recycle the rest.",,Rek'Sai,,,FALSE
+SFD-188,Void Rush,Signature,Spell,"Fury, Order",Epic,2,1,,"Reveal the top 2 cards of your Main Deck. You may play one of them, reducing its cost by [2]. Draw any you did not play this way.",,Rek'Sai,,,FALSE
+SFD-189,"Ornn, Fire Below the Mountain",,Legend,"Calm, Mind",Rare,,,,[E]: [Reaction] — [Add] [A]. Use only to play gear or use gear abilities.,,Ornn,,,FALSE
+SFD-190,Forgefire Cape,Signature,Gear,"Calm, Mind",Epic,4,2,,"[Unique]
+[Equip] [A]","When I attack or defend, deal 2 to all enemy units here. [M]+3",Ornn,,,FALSE
+SFD-191,Rabadon's Deathcrown,Signature,Gear,"Calm, Mind",Epic,4,2,,"[Unique]
+[Equip] [A]",Your spells and abilities deal 1 Bonus Damage. [M]+3,Ornn,,,FALSE
+SFD-192,Shurelya's Requiem,Signature,Gear,"Calm, Mind",Epic,4,2,,"[Unique]
+[Equip] [A]
+When you play this, ready your units.",Your units here have [Ganking]. [M]+2,Ornn,,,FALSE
+SFD-193,"Jax, Grandmaster at Arms",,Legend,"Calm, Body",Rare,,,,"[1], [E]: Attach a detached Equipment you control to a unit you control.
+[E]. Attach an attached Equipment you control to a unit you control.",,Jax,,,FALSE
+SFD-194,Counter Strike,Signature,Spell,"Calm, Body",Epic,2,1,,"[Reaction]
+Choose a unit. The next time that unit would be dealt damage this turn, prevent it. Draw 1.",,Jax,,"""That all you got?!""
+—Jax",FALSE
+SFD-195,"Irelia, Blade Dancer",,Legend,"Calm, Chaos",Rare,,,,"When you choose a friendly unit, you may exhaust me and pay [A] to ready it.
+When you conquer, you may pay [1] to ready me.",,Irelia,,,FALSE
+SFD-196,Defiant Dance,Signature,Spell,"Calm, Chaos",Epic,1,1,,"[Reaction]
+Give a unit +2[M] this turn and another unit -2[M] this turn.",,Irelia,,"""I am both the tranquil sea and the tempest.""
+—Irelia",FALSE
+SFD-197,"Azir, Emperor of the Sands",,Legend,"Calm, Order",Rare,,,,"Your Sand Soldiers have [Weaponmaster].
+[1], [E]: Play a 2[M] Sand Soldier unit token to your base. Use only if you've played an Equipment this turn.",,Azir,,,FALSE
+SFD-198,Arise!,Signature,Spell,"Calm, Order",Epic,6,1,,Play a 2[M] Sand Soldier unit token for each Equipment you control. Then ready two of them.,,Azir,,"""The order is given!""
+—Azir",FALSE
+SFD-199,"Ezreal, Prodigal Explorer",,Legend,"Mind, Chaos",Rare,,,,[E]: [Reaction] — Draw 1. Use only if you've chosen enemy units and/or gear twice this turn with spells or unit abilities.,,Ezreal,,,FALSE
+SFD-200,Arcane Shift,Signature,Spell,"Mind, Chaos",Epic,3,1,,"[Action]
+Banish a friendly unit, then its controller plays it, ignoring its cost. Deal 3 to an enemy unit at a battlefield. Banish this.",,Ezreal,,"""Hah! I can blink and still not miss.""
+—Ezreal",FALSE
+SFD-201,"Renata Glasc, Chem-Baroness",,Legend,"Mind, Order",Rare,,,,"When you or an ally hold, you may exhaust me to play a Gold gear token exhausted.
+While your score is within 3 points of the Victory Score, your Gold [Add] an additional [1].",,Renata Glasc,,,FALSE
+SFD-202,Hostile Takeover,Signature,Spell,"Mind, Order",Epic,5,2,,"[Hidden]
+Take control of an enemy unit at a battlefield. Ready it.
+Lose control of that unit and recall it at end of turn.",,Renata Glasc,,,FALSE
+SFD-203,"Sivir, Battle Mistress",,Legend,"Body, Chaos",Rare,,,,"When you recycle a rune, you may exhaust me to play a Gold gear token exhausted.
+When one or more enemy units die, ready me.",,Sivir,,,FALSE
+SFD-204,On the Hunt,Signature,Spell,"Body, Chaos",Epic,1,2,,Ready your units.,,Sivir,,"""Step light, strike hard.""
+—Sivir",FALSE
+SFD-205,"Fiora, Grand Duelist",,Legend,"Body, Order",Rare,,,,"When one of your units becomes [Mighty], you may exhaust me to channel 1 rune exhausted.",,Fiora,,,FALSE
+SFD-206,Riposte,Signature,Spell,"Body, Order",Epic,2,2,,"[Reaction]
+Choose a friendly unit and a spell. Counter that spell give that unit +[M] equal to the spell's Energy cost this turn.",,Fiora,,"""Too slow!"" —Fiora",FALSE
+SFD-207,Emperor's Dais,,Battlefield,,Uncommon,,,,"When you conquer here, you may pay [1] and return a unit you control here to its owner's hand. If you do, play a 2[M] Sand Soldier unit token here.",,,,,FALSE
+SFD-208,Forge of the Fluft,,Battlefield,,Uncommon,,,,"While you control this battlefield, friendly legends have ""[E]: Attach an Equipment you control to a unit you control.""",,,,,FALSE
+SFD-209,Forgotten Monument,,Battlefield,,Uncommon,,,,Players cannot score here until their third turn.,,,,,FALSE
+SFD-210,Hall of Legends,,Battlefield,,Uncommon,,,,"When you conquer here, you may pay [1] to ready your legend.",,,,,FALSE
+SFD-211,Marai Spire,,Battlefield,,Uncommon,,,,"While you control this battlefield, friendly [Repeat] costs cost [1] less.",,,,,FALSE
+SFD-212,Minefield,,Battlefield,,Uncommon,,,,"When you conquer here, put the top 2 cards of your Main Deck into your trash.",,,,,FALSE
+SFD-213,Ornn's Forge,,Battlefield,,Uncommon,,,,"While you control this battlefield, the first friendly non-token gear played each turn costs [1] less.",,,,,FALSE
+SFD-214,Power Nexus,,Battlefield,,Uncommon,,,,"When you hold here, you may pay [A][A][A][A] to score 1 point.",,,,,FALSE
+SFD-215,Ravenbloom Conservatory,,Battlefield,,Uncommon,,,,"When you defend here, reveal the top card of your Main Deck. If it's a spell, put it in your hand. Otherwise, recycle it.",,,,,FALSE
+SFD-216,Rockfall Path,,Battlefield,,Uncommon,,,,Units can't be played here.,,,,,FALSE
+SFD-217,Seat of Power,,Battlefield,,Uncommon,,,,"When you conquer here, draw 1 for each other battlefield you or allies control.",,,,,FALSE
+SFD-218,Sunken Temple,,Battlefield,,Uncommon,,,,"When you conquer here with one or more [Mighty] units, you may [1] to draw 1.",,,,,FALSE
+SFD-219,The Papertree,,Battlefield,,Uncommon,,,,"When you hold here, each player channels 1 rune exhausted.",,,,,FALSE
+SFD-220,Treasure Hoard,,Battlefield,,Uncommon,,,,"When you conquer here, you may pay [1] to play a Gold gear token exhausted.",,,,,FALSE
+SFD-221,Veiled Temple,,Battlefield,,Uncommon,,,,"When you conquer here, you may ready a friendly gear. If it's an Equipment, you may detach it.",,,,,FALSE
+SFD-R01,Fury Rune,,Rune,Fury,Common,,,,,,,,,FALSE
+SFD-R02,Calm Rune,,Rune,Calm,Common,,,,,,,,,FALSE
+SFD-R03,Mind Rune,,Rune,Mind,Common,,,,,,,,,FALSE
+SFD-R04,Body Rune,,Rune,Body,Common,,,,,,,,,FALSE
+SFD-R05,Chaos Rune,,Rune,Chaos,Common,,,,,,,,,FALSE
+SFD-R06,Order Rune,,Rune,Order,Common,,,,,,,,,FALSE
+SFD-T01,Mech,Token,Unit,,Common,,,3,,,,,"Sure, they're loud, messy, and unreliable. But so are people, when you get down to it.",FALSE
+SFD-T02,Sand Soldier,Token,Unit,,Common,,,2,,,,,They do not rest. They do not hesitate. And they do not yield.,FALSE
+SFD-T03,Gold,Token,Gear,,Common,,,,"Kill this, [E]: [Reaction] - [Add] [A].",,,,,FALSE

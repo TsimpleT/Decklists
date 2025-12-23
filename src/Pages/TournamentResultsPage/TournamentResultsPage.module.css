@@ -1,42 +1,74 @@
 .container {
     margin-left: 4px;
     display: flex;
+    gap: 20px;
 }
 
 .tournamentContainer {
-    margin-right: 16px;
-    min-width: 210px;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    max-width: 250px;
 }
 
 .tournamentHeader {
     font-weight: 600;
-    margin-bottom: 8px;
+    text-align: center;
+    background-color: black;
+    /* border-bottom: 1px #E0E0CD solid; */
+    border-radius: 8px 8px 0 0;
+    padding: 4px 6px;
+    /* font-size: 18px; */
+    font-weight: 700;
+    border: 1px #E0E0CD solid;
+    border-radius: 8px;
 }
 
-.deckLinkSpan > a {
+.tournamentLinksContainer > a {
     all: unset;
     text-decoration: underline;
     font-weight: 400;
     margin-left: 4px;
 }
 
+.placing {
+    margin-top: 8px;
+    padding: 1.5px 0;
+    font-size: 14px;
+    min-width: 60px;
+    max-width: 60px;
+    text-align: center;
+    background-color: black;
+    border-radius: 8px 8px 0 0;
+    border: 1px #E0E0CD solid;
+    border-bottom: none;
+}
+
+.resultsContainer {
+    border-radius: 0 8px 8px 8px;
+    border: 1px #E0E0CD solid;
+}
+
 .resultsContainer > a > span:hover {
     background-color: var(--bg-default-hover);
 }
 
-.resultRow {
-    display: flex;
-    padding-right: 4px;
-    margin-bottom: 3px;
-    border-radius: 8px;
-    border: 1px solid white;
+.resultsContainer > a > span:active {
+    background-color: var(--bg-default-active);
 }
 
-.placing {
-    width: 48px;
-    height: 28px;
-    border-right: 1px solid white;
-    text-align: center;
+.resultRow {
+    display: flex;
+    padding: 0 4px 0 2px;
+    border-bottom: 1px #E0E0CD solid;
+}
+
+.resultsContainer > *:last-child {
+    border-bottom: none;
+}
+
+.resultsContainer > *:last-child > * {
+    border-bottom: none;
 }
 
 .rowText {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './TournamentResultsPage.module.css';
 
-import { DEV_STRING_PRE, TOURNAMENT_RESULTS, GET_TOURNAMENT_ID, ARCHETYPE_TO_LEGEND_BASE_ID } from '../../Data';
+import { DEV_STRING_PRE, TOURNAMENT_RESULTS, GET_TOURNAMENT_ID, ARCHETYPE_TO_LEGEND_BASE_ID, ImageUtil, ImageType } from '../../Data';
 import { LegendImage } from '../../Views';
 
 export class TournamentResultsPage extends React.Component {
@@ -17,19 +17,30 @@ export class TournamentResultsPage extends React.Component {
                     <div className={styles.tournamentContainer} key={`${tournament.tournamentName} ${tournament.date}`}>
                         <div className={styles.tournamentHeader}>
                             {`${tournament.tournamentName} ${tournament.date} (T${tournament.tier})`}
-                            <span className={styles.deckLinkSpan}>
-                                {(tournament.links.map((link, i) =>
-                                    <a href={link} target="_blank" rel="noreferrer" key={i}>Link</a>
+                            <span className={styles.tournamentLinksContainer}>
+                                {(tournament.links.map((link, i) => {
+                                    const s = link.toLowerCase();
+                                    const imgType: ImageType = (
+                                        (s.includes("challonge")) ? "Challonge" :
+                                        (s.includes("start")) ? "Start" :
+                                        (s.includes("docs.google.com/spreadsheets")) ? "Sheets" :
+                                        (s.includes("battlefy")) ? "Battlefy" : ""
+                                    );
+                                    return (
+                                        <a href={link} target="_blank" rel="noreferrer" key={i}>
+                                            {(imgType) ? <img src={ImageUtil.getImage(imgType)} height={16} alt={"Link"}/> : "Link"}
+                                        </a>
+                                    );
+                                }
                                 ))}
                             </span>
                         </div>
-                        <div className={styles.resultsContainer}>
-                            {tournament.results.map((placing, i) => 
-                                <>
+                            {tournament.results.filter((placing) => placing.decklists.length > 0).map((placing, i) => <>
+                                <div className={styles.placing}>{placing.placing}</div>
+                                <div className={styles.resultsContainer}>
                                     {placing.decklists.map((decklist, j) => {
                                         const content = (
                                             <span className={styles.resultRow} key={`${i} ${j}`}>
-                                                <div className={styles.placing}>{placing.placing}</div>
                                                 <LegendImage id={ARCHETYPE_TO_LEGEND_BASE_ID(decklist.archetype)} size={28} extraStyles={{border: "none"}} />
                                                 <span className={styles.rowText} title={decklist.username} style={(decklist.username[0] === "*") ? {fontStyle: "italic"} : {}}>
                                                     {decklist.username}
@@ -43,9 +54,8 @@ export class TournamentResultsPage extends React.Component {
                                         );
                                     }
                                     )}
-                                </>
-                            )}
-                        </div>
+                                </div>
+                            </>)}
                     </div>
                 )}
             </div>

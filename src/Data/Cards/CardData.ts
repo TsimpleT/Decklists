@@ -1,11 +1,13 @@
-import BaseCardList from "./BaseCardList.json";
+import BaseCardListOGN from "./BaseCardListOGN251219.json";
+import BaseCardListOGS from "./BaseCardListOGS251219.json";
+import BaseCardListSFD from "./BaseCardListSFD251219.json";
 import CardCategories from "./CardCategories.json";
 import IdMappings from "./IdMappings.json";
 
-type Domain = "Fury"|"Calm"|"Mind"|"Body"|"Chaos"|"Order";
+export type Domain = "Fury"|"Calm"|"Mind"|"Body"|"Chaos"|"Order";
 type CardTypePrefix = "Signature"|"Champion"|"Token";
-type CardType = "Battlefield"|"Gear"|"Legend"|"Rune"|"Spell"|"Unit";
-type Rarity = "Common"|"Uncommon"|"Rare"|"Epic"|"Alt Art";
+export type CardType = "Battlefield"|"Gear"|"Legend"|"Rune"|"Spell"|"Unit";
+type Rarity = "Common"|"Uncommon"|"Rare"|"Epic"|"Showcase";
 
 //'Base ID', 'Name', 'Pre-Type', 'Type', 'Domains', 'Rarity', 'Energy Cost', 'Power Cost', 'Might', 'Rules Text', 'Champion Tag', 'Other Tags', 'Other'
 interface CardDTO {
@@ -50,14 +52,15 @@ export const CCATEGORY_ORDERING: {[key in CCATEGORY]: number} = {
     [CCATEGORY.RUNE]: 10,
 };
 
-let cardData: {[cardId: string]: CardDTO} = BaseCardList.cards as any;
+let cardData: {[cardId: string]: CardDTO} = {...BaseCardListOGN.cards, ...BaseCardListOGS.cards, ...BaseCardListSFD.cards} as any;
 let cardCategories: {[cardId: string]: CCATEGORY} = CardCategories.cardCategories as any;
-const fullIdMappings: {[id: string]: {baseId: string, ttsId: string}} = IdMappings.mappings as any;
+const fullIdMappings: {[id: string]: {baseId: string, ttsId: string, rarity: Rarity}} = IdMappings.mappings as any;
 let ttsIdMappings: {[id: string]: string} = {};
 let fromTtsIdMappings: {[ttsId: string]: string} = {};
 for(let id in fullIdMappings) {
     const mapping = fullIdMappings[id];
-    cardData[id] = cardData[mapping.baseId];
+    cardData[id] = {...cardData[mapping.baseId]};
+    cardData[id].rarity = mapping.rarity;
     ttsIdMappings[id] = mapping.ttsId;
     fromTtsIdMappings[mapping.ttsId] = id;
 }

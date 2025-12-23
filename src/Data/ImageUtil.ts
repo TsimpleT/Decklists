@@ -1,3 +1,9 @@
+import { CardType, Domain } from "./Cards";
+
+export type ImageType = Domain|`${Domain}BW`|LinkType|CardType|OtherType;
+type LinkType = "Challonge"|"Start"|"Sheets"|"Battlefy";
+type OtherType = "Riftbound"|"RainbowRune"|"Export"|"Info"|"Settings"|"";
+
 class ImageUtil {
     private imageMap: {[key: string]: string};
 
@@ -5,7 +11,7 @@ class ImageUtil {
         this.imageMap = {};
     }
 
-    public getImage(name: string): string {
+    public getImage(name: ImageType): string {
         if(name in this.imageMap) {
             return this.imageMap[name];
         }

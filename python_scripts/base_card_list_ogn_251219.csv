@@ -1,0 +1,470 @@
+ID,Name,Supertype,Type,Domains,Rarity,Energy Cost,Power Cost,Might,Rules Text,Effect Text,Champion Tag,Other Tags,Flavor Text,Errata-ed
+OGN-001,Blazing Scorcher,,Unit,Fury,Common,5,0,5,[Accelerate],,,"Noxus, Dragon",,FALSE
+OGN-002,Brazen Buccaneer,,Unit,Fury,Common,6,0,5,"As you play me, you may discard a card as an additional cost. If you do, reduce my cost by [2].",,,"Bilgewater, Pirate","""They called my crew 'scurvy dogs,' and I took that personally.""",FALSE
+OGN-003,Chemtech Enforcer,,Unit,Fury,Common,2,0,2,"[Assault 2]
+When you play me, discard 1.",,,Zaun,"""Knock, knock.""",FALSE
+OGN-004,Cleave,,Spell,Fury,Common,1,0,,"[Action]
+Give a unit [Assault 3] this turn.",,,,Nobody ever won a won without attacking.,FALSE
+OGN-005,Disintegrate,,Spell,Fury,Common,4,0,,"[Action]
+Deal 3 to a unit at a battlefield. If this kills it, do this: draw 1.",,,,"""Ashes, ashes, they all fall down.""
+—Annie",TRUE
+OGN-006,Flame Chompers,,Unit,Fury,Common,3,0,3,"When you discard me, you may pay [C] to play me.",,,Zaun,"""GET 'EM, CHOMPIES!""
+—Jinx",FALSE
+OGN-007,Fury Rune,,Rune,Fury,Common,,,,,,,,,FALSE
+OGN-008,Get Excited!,,Spell,Fury,Common,2,1,,"[Action]
+Discard 1. Deal its Energy cost as damage to a unit at a battlefield.",,,,"""Everybody, panic!""
+—Jinx",FALSE
+OGN-009,Hextech Ray,,Spell,Fury,Common,1,1,,"[Action]
+Deal 3 to a unit at a battlefield.",,,,"""Destroy. Then Improve.""
+—Viktor",FALSE
+OGN-010,Legion Rearguard,,Unit,Fury,Common,2,0,2,[Accelerate],,,"Noxus, Trifarian",The last line of offense.,FALSE
+OGN-011,Magma Wurm,,Unit,Fury,Common,8,1,8,Other friendly units enter ready.,,,Freljord,A river of flame in an ocean of ice.,FALSE
+OGN-012,Noxus Hopeful,,Unit,Fury,Common,4,0,4,[Legion] — I cost [2] less.,,,"Noxus, Trifarian","First to the front, first to glory.",FALSE
+OGN-013,Pouty Poro,,Unit,Fury,Common,2,0,,[Deflect],,,Poro,"""Braum takes medicine too, see?""
+—Braum",FALSE
+OGN-014,Skysplitter,,Spell,Fury,Common,8,1,,"[Action]
+This spell's Energy cost is reduced by the highest Might among units you control. Deal 5 to a unit at a battlefield.",,,,"""Puny mortals!"" —Volibear",FALSE
+OGN-015,Captain Farron,,Unit,Fury,Uncommon,4,1,5,Other friendly units here have [Assault].,,,"Noxus, Trifarian","""Forward! Always!""",FALSE
+OGN-016,Dangerous Duo,,Unit,Fury,Uncommon,3,0,3,"[Legion] — When you play me, give a unit +2 [M] this turn.",,,"Bandle City, Mech",,FALSE
+OGN-017,Iron Ballista,,Gear,Fury,Uncommon,3,0,,"This enters exhausted.
+[E]: Deal 2 to a unit at a battlefield.",,,,"""There's no way they can hit us at this dist—AUGH!""",FALSE
+OGN-018,Noxus Saboteur,,Unit,Fury,Uncommon,3,0,3,Your opponents' [Hidden] cards can't be revealed here.,,,"Noxus, Trifarian",Nothing fails like a perfect plan.,FALSE
+OGN-019,Raging Soul,,Unit,Fury,Uncommon,4,0,4,"If you've discarded a card this turn, I have [Assault] and [Ganking].",,,"Shadow Isles, Spirit",,FALSE
+OGN-020,Scrapyard Champion,,Unit,Fury,Uncommon,5,1,5,"[Legion] — When you play me, discard 2, then draw 2.",,,"Bandle City, Mech","""Last one standing"" is a bit subjective.",FALSE
+OGN-021,Sun Disc,,Gear,Fury,Uncommon,2,1,,[E]: [Legion] — The next unit you play this turn enters ready.,,,,"""Those who follow me follow destiny!""
+—Azir",FALSE
+OGN-022,Thermo Beam,,Spell,Fury,Uncommon,5,2,,"[Action]
+Kill all gear.",,,,"""Turn the limiter off, the beam is totally unstable.""
+—Common last words",FALSE
+OGN-023,Unlicensed Armory,,Gear,Fury,Uncommon,2,0,,"Discard 1, [E]: Choose a friendly unit. The next time it would die this turn, you may pay [C] to heal it, exhaust it, and recall it instead.",,,,,TRUE
+OGN-024,Void Seeker,,Spell,Fury,Uncommon,3,1,,"[Action]
+Deal 4 ot a unit at a battlefield. Draw 1.",,,,"""It's a good day for a hunt.""
+—Kai'Sa",FALSE
+OGN-025,Blind Fury,,Spell,Fury,Rare,4,2,,"[Action]
+Each opponent reveals the top card of their Main Deck. Choose one and banish it, then play it, ignoring its cost. Then recycle the rest.",,,,,TRUE
+OGN-026,Brynhir Thundersong,,Unit,Fury,Rare,6,0,5,"When you play me, opponents can't play cards this turn.",,,Freljord,"""Silence. The sky speaks.""",FALSE
+OGN-027,"Darius, Trifarian",Champion,Unit,Fury,Rare,5,1,5,"When you play your second card in a turn, give me +2 [M] this turn and ready me.",,Darius,"Noxus, Trifarian","""With overwhelming force.""",FALSE
+OGN-028,"Draven, Showboat",Champion,Unit,Fury,Rare,5,1,3,My Might is increased by your points.,,Darius,Noxus,"""Let's admire me for a bit.""",FALSE
+OGN-029,Falling Star,,Spell,Fury,Rare,2,2,,"Do this twice:
+Deal 3 to a unit.",,,,,FALSE
+OGN-030,"Jinx, Demolitionist",Champion,Unit,Fury,Rare,3,1,4,"[Accelerate]
+[Assault 2]
+When you play me, discard 2.",,Jinx,Zaun,"""I really need a new gun. But don't tell my other guns.""",FALSE
+OGN-031,Raging Firebrand,,Unit,Fury,Rare,6,1,4,"When you play me, the next spell you play this turn costs [5] less.",,,"Mount Targon, Dragon",,FALSE
+OGN-032,Ravenborn Tome,,Gear,Fury,Rare,3,0,,[E]: The next spell you play this turn deals 1 Bonus Damage.,,,,"The book is bound in flame-resistant materials, for obvious reasons.",TRUE
+OGN-033,Shakedown,,Spell,Fury,Rare,2,1,,"[Reaction]
+Choose an enemy unit. Deal 6 to it unless its controller has you draw 2.",,,,"""Blink once for yes.""",FALSE
+OGN-034,"Tryndamere, Barbarian",Champion,Unit,Fury,Rare,7,2,8,"When I conquer after an attack, if you assigned 5 or more excess damage to enemy units, you score 1 point.",,Tryndamere,Freljord,"""You never stood a chance.""",FALSE
+OGN-035,"Vayne, Hunter",Champion,Unit,Fury,Rare,4,1,2,"[Assault 3]
+If an opponent controls a battlefield, I enter ready.
+When I conquer, you may pay [1] to return me to my owner's hand.",,Vayne,"Demacia, Sentinel","""On wings of night.""",TRUE
+OGN-036,"Vi, Destructive",Champion,Unit,Fury,Rare,2,1,3,"[Ganking]
+Recycle 1 from your trash: Give me +1 [M] this turn.",,Vi,Piltover,"""Punch first. Ask questions while punching.""",FALSE
+OGN-037,Immortal Phoenix,,Unit,Fury,Epic,3,1,3,"[Assault 2]
+When you kill a unit with a spell, you may pay [1][C] to play me from your trash.",,,Spirit,The memory of every death fuels even brighter flames.,FALSE
+OGN-038,Kadregrin the Infernal,,Unit,Fury,Epic,9,2,9,"When you play me, draw 1 for each of your [Mighty] units.",,,"Demacia, Dragon",First among flames.,FALSE
+OGN-039,"Kai'Sa, Survivor",Champion,Unit,Fury,Epic,4,0,4,"[Accelerate]
+When I conquer, draw 1.",,,The Void,"""I like it here. I just might stay.""",FALSE
+OGN-040,Seal of Rage,,Gear,Fury,Epic,0,1,,[E]: [Reaction] — [Add] [C].,,,,,FALSE
+OGN-041,"Volibear, Furious",Champion,Unit,Fury,Epic,10,2,9,"[Deflect 2]
+When I attack, deal 5 damage split among any number of enemy units here.",,Volibear,Freljord,"""I split mountains with my roar!""",FALSE
+OGN-042,Calm Rune,,Rune,Calm,Common,,,,,,,,,FALSE
+OGN-043,Charm,,Spell,Calm,Common,1,1,,Move an enemy unit.,,,,"""There's no harm in looking.""
+—Common last words",FALSE
+OGN-044,Clockwork Keeper,,Unit,Calm,Common,2,0,2,"You may pay [C] as an additional cost to play me.
+When you play me, if you paid the additional cost, draw 1.",,,Shurima,It always goes back for seconds.,TRUE
+OGN-045,Defy,,Spell,Calm,Common,1,1,,"[Reaction]
+Counter a spell that costs no more than [4] and no more than [A].",,,,"""No.""",FALSE
+OGN-046,En Garde,,Spell,Calm,Common,1,0,,"[Reaction]
+Give a friendly unit +1 [M] this turn, then an addtional +1 [M] this turn if it is the only unit you control there.",,,,"""Is this supposed to be a challenge?"" —Fiora",FALSE
+OGN-047,Find Your Center,,Spell,Calm,Common,3,0,,"[Action]
+If an opponent's score is within 3 points of the Victory Score, this costs [2] less.
+Draw 1 and channel 1 rune exhausted.",,,,One does not wait for the perfect moment.,FALSE
+OGN-048,Meditation,,Spell,Calm,Common,2,0,,"[Reaction]
+As an additional cost to play this, you may exhaust a friendly unit. If you do, draw 2. Otherwise, draw 1.",,,,,FALSE
+OGN-049,Playful Phantom,,Unit,Calm,Common,5,0,5,,,,"Shadow Isles, Spirit","""My toys break so easiliy.""",FALSE
+OGN-050,Rune Prison,,Spell,Calm,Common,2,1,,"[Action]
+Stun a unit.",,,,"""Be still!""
+—Ryze",FALSE
+OGN-051,Solari Shieldbearer,,Unit,Calm,Common,3,0,2,"When you play me, stun a unit.",,,Mount Targon,"""Discipline is our shield.""",FALSE
+OGN-052,Stalwart Poro,,Unit,Calm,Common,2,0,2,[Shield],,,Poro,It suits him.,FALSE
+OGN-053,Stand United,,Spell,Calm,Common,3,0,,"[Hidden]
+[Action]
+Buff a friendly unit. Buffs give an addtional +1 [M] to friendly units this turn.",,,,,FALSE
+OGN-054,Sunlit Guardian,,Unit,Calm,Common,3,0,3,"[Shield]
+[Tank]",,,Shurima,Nobody ever won a war without defending.,FALSE
+OGN-055,Wielder of Water,,Unit,Calm,Common,3,0,2,"While I'm attacking or defending alone, I have +2 [M].",,,Ionia,Each drop an ocean of possibilities.,FALSE
+OGN-056,Adaptatron,,Unit,Calm,Uncommon,4,0,3,"When I conquer, you may kill a gear. If you do, buff me.",,,"Piltover, Mech",There's a scrap for that.,FALSE
+OGN-057,Block,,Spell,Calm,Uncommon,2,0,,"[Hidden]
+[Action]
+Give a unit [Shield 3] and [Tank] this turn.",,,,,FALSE
+OGN-058,Discipline,,Spell,Calm,Uncommon,2,0,,"[Reaction]
+Give a unit +2 [M] this turn. Draw 1.",,,,A blade is only as sharp as the one who wields it.,FALSE
+OGN-059,Eclipse Herald,,Unit,Calm,Uncommon,7,1,7,"When you stun an enemy unit, ready me and give me +1 [M] this turn.",,,"Mount Targon, Bird",An omen as terrifying as that which follows.,FALSE
+OGN-060,Mask of Foresight,,Gear,Calm,Uncommon,2,0,,"When a friendly unit attacks or defends alone, give it +1 [M] this turn.",,,,"To know the future, you must first accept it.",FALSE
+OGN-061,Poro Herder,,Unit,Calm,Uncommon,3,1,3,"When you play me, if you control a Poro, buff me and draw 1.",,,Freljord,A fluft is where you make it.,FALSE
+OGN-062,Reinforce,,Spell,Calm,Uncommon,5,0,,Look at the top 5 cards of your Main Deck. You may play a unit from among them. Its Energy cost is reduced by [5]. Then recycle the remaining cards.,,,,,FALSE
+OGN-063,Spirit's Refuge,,Gear,Calm,Uncommon,2,1,,"When you play this, buff a friendly unit.
+Friendly buffed units have [Deflect] if they didn't already.",,,,,FALSE
+OGN-064,Wind Wall,,Spell,Calm,Uncommon,3,2,,"[Reaction]
+Counter a spell.",,,,"""Face the wind!""
+—Yasuo",FALSE
+OGN-065,Wizened Elder,,Unit,Calm,Uncommon,4,0,4,"While I'm buffed, I have an addtional +1 [M].",,,Ionia,"""I'm still fighting at my age. That should concern you more than it does.""",FALSE
+OGN-066,"Ahri, Alluring",Champion,Unit,Calm,Rare,5,1,4,"When I hold, you score 1 point.",,Ahri,Ionia,"""Remember this moment.""",FALSE
+OGN-067,"Blitzcrank, Impassive",Champion,Unit,Calm,Rare,5,1,5,"[Tank]
+When you play me to a battlefield, you may move an enemy unit to here.
+When I hold, return me to my owner's hand.",,Blitzcrank,"Zaun, Mech",,FALSE
+OGN-068,"Caitlyn, Patrolling",Champion,Unit,Calm,Rare,3,1,3,"I must be assigned combat damage last.
+[E]: Deal damage equal to my Might to a unit at a battlefield. Use this ability only while I'm at a battlefield.",,Caitlyn,Piltover,"""I never miss.""",FALSE
+OGN-069,Last Stand,,Spell,Calm,Rare,3,1,,"[Action]
+Double a friendly unit's Might this turn. Give it [Temporary].",,,,Worth it.,FALSE
+OGN-070,Mageseeker Warden,,Unit,Calm,Rare,6,1,5,"While I'm at a battlefield, opponents can only play units to their base.
+While I'm at a battlefield, spells and abilities can't ready enemy units and gear.",,,Demacia,,FALSE
+OGN-071,Party Favors,,Spell,Calm,Rare,3,0,,"Each other player chooses Cards or Runes. For each player that chooses Cards, you and that player each draw 1. For each player that chooses Runes, you and that player each channel 1 rune exhausted.",,,,,FALSE
+OGN-072,Solari Shrine,,Gear,Calm,Rare,3,0,,"Whenever you kill a stunned enemy unit, you may exhaust this to draw 1.",,,,The names of the fallen are a lesson for our descendants.,FALSE
+OGN-073,"Sona, Harmonious",Champion,Unit,Calm,Rare,4,1,4,"At the end of your turn, if I'm at a battlefield, ready up to 4 friendly runes.",,Sona,Demacia,"""The symphony never ends.""",TRUE
+OGN-074,"Taric, Protector",Champion,Unit,Calm,Rare,4,1,4,"[Shield]
+[Tank]
+Other friendly units here have [Shield].",,Taric,Mount Targon,"""Each life is a rare jewel.""",FALSE
+OGN-075,Tasty Faefolk,,Unit,Calm,Rare,7,0,6,"[Accelerate]
+[Deathknell] — Channel 2 runes exhausted and draw 1.",,,"Bandle City, Fae",,FALSE
+OGN-076,"Yasuo, Remorseful",Champion,Unit,Calm,Rare,6,2,6,"When I attack, deal damage equal to my Might to an enemy unit here.",,Yasuo,Ionia,"""Is a leaf's only purpose to fall?""",FALSE
+OGN-077,Zhonya's Hourglass,,Gear,Calm,Rare,2,0,,"[Hidden]
+If a friendly unit would die, kill this instead. Heal that unit, exhaust it, and recall it.",,,,,TRUE
+OGN-078,"Lee Sin, Ascetic",Champion,Unit,Calm,Epic,5,1,5,"[Shield]
+[E]: Buff me.
+I can have any number of buffs.",,Lee Sin,Ionia,"""Let us see whose spirit is stronger.""",FALSE
+OGN-079,"Leona, Zealot",Champion,Unit,Calm,Epic,6,1,6,"If an opponent's score is within 3 points of the Victory Score, I enter ready.
+Stunned enemy units here have -8 [M], to a minimum of 1 [M].",,Leona,Mount Targon,"""Feel the sun's glory!""",FALSE
+OGN-080,Mystic Reversal,,Spell,Calm,Epic,4,3,,"[Reaction]
+Gain control of a spell. You may make new choices for it.",,,,"Good mages borrow, great mages steal.",FALSE
+OGN-081,Seal of Focus,,Gear,Calm,Epic,0,1,,[E]: [Reaction] — [Add] [C].,,,,,FALSE
+OGN-082,Whiteflame Protector,,Unit,Calm,Epic,8,2,8,"When you play me, give a unit +8 [M] this turn.",,,"Mount Targon, Dragon",A dragon is capable of nobility equal to its r age.,FALSE
+OGN-083,Consult the Past,,Spell,Mind,Common,4,0,,"[Hidden]
+[Reaction]
+Draw 2.",,,,,FALSE
+OGN-084,Eager Apprentice,,Unit,Mind,Common,3,0,3,"While I'm at a battlefield, the Energy costs for spells you play is reduced by [1], to a minimum of [1].",,,Piltover,"""As long as these thirty-seven things go right, it'll work every time!""",FALSE
+OGN-085,Falling Comet,,Spell,Mind,Common,5,0,,"[Action]
+Deal 6 to a unit at a battlefield.",,,,Just an everyday celestial event.,FALSE
+OGN-086,Jeweled Colossus,,Unit,Mind,Common,5,0,5,"[Vision]
+[Shield]",,,Mount Targon,,FALSE
+OGN-087,Lecturing Yordle,,Unit,Mind,Common,3,0,2,"[Tank]
+When you play me, draw 1.",,,"Bandle City, Yordle","""... poisonous, but I didn't know that at the time. You see...""",FALSE
+OGN-088,Mega-Mech,,Unit,Mind,Common,7,0,8,,,,"Bandle City, Mech","Mech fights have two rules:
+One—No cheating.
+Two—Don't get caught cheating.",FALSE
+OGN-089,Mind Rune,,Rune,Mind,Common,,,,,,,,,FALSE
+OGN-090,Orb of Regret,,Gear,Mind,Common,1,0,,"[E]: Give a unit -1 [M] this turn, to a minimum of 1 [M].",,,,"""There's beauty in even the most painful memories.""
+—Ahri",FALSE
+OGN-091,Pit Crew,,Unit,Mind,Common,3,0,3,"When you play a gear, ready me.",,,Bandle City,"""GOOD ENOUGH LET'S GOOOOO!""",FALSE
+OGN-092,Riptide Rex,,Unit,Mind,Common,6,2,6,"When you play me, deal 6 to an enemy unit at a battlefield.",,,"Bilgewater, Pirate","""Rainin' fire!""",FALSE
+OGN-093,Smoke Screen,,Spell,Mind,Common,2,1,,"[Reaction]
+Give a unit -4 [M] this turn, to a minimum of 1 [M].",,,,"""Well, well, well. What have we here?""",FALSE
+OGN-094,Sprite Call,,Spell,Mind,Common,3,0,,"[Hidden]
+[Action]
+Play a ready 3 [M] Sprite unit token with [Temporary].",,,,,FALSE
+OGN-095,Stupefy,,Spell,Mind,Common,1,0,,"Give a unit -1 [M] this turn, to a minimum of 1 [M].
+Draw 1.",,,,It's easier to outsmart an opponent with a concussion.,FALSE
+OGN-096,Watchful Sentry,,Unit,Mind,Common,2,0,1,[Deathknell] — Draw 1.,,,Freljord,"He may never see home again. But because of him, that home still stands.",FALSE
+OGN-097,Blastcone Fae,,Unit,Mind,Uncommon,2,1,2,"[Hidden]
+When you play me, give a unit -2 [M] this turn, to a minimum of 1 [M].",,,"Bandle City, Fae",,FALSE
+OGN-098,Energy Conduit,,Gear,Mind,Uncommon,3,0,,[E]: [Reaction] — [Add] [1].,,,,"Whatever it does, it sure does a lot of it.",FALSE
+OGN-099,Garbage Grabber,,Gear,Mind,Uncommon,2,0,,"Recycle 3 from your trash, [1], [E]: Draw 1.",,,,The constructs of the in-between feed on whatever gets lost in the portals—mostly keys and left socks.,FALSE
+OGN-100,Gemcraft Seer,,Unit,Mind,Uncommon,3,1,3,"[Vision]
+Other friendly units have [Vision].",,,Mount Targon,The light changes with every reflection.,FALSE
+OGN-101,Mushroom Pouch,,Gear,Mind,Uncommon,2,0,,"At the start of your Beginning Phase, if you control a facedown card at a battlefield, draw 1.",,,,"""A Bandle Scout is always prepared!""
+—Teemo",FALSE
+OGN-102,Portal Rescue,,Spell,Mind,Uncommon,3,1,,"Banish a friendly unit, then its owner plays it to their base, ignoring its cost.",,,,"""Where do the portals go? You know, I've never asked.""
+—Norra",TRUE
+OGN-103,Ravenbloom Student,,Unit,Mind,Uncommon,2,0,2,"When you play a spell, give me +1 [M] this turn.",,,Noxus,A little knowledge is a dagnerous thing. A lot of knowledge is awesome,FALSE
+OGN-104,Retreat,,Spell,Mind,Uncommon,1,0,,"[Reaction]
+Return a friendly unit to its owner's hand. Its owner channels 1 rune exhausted.",,,,There's always tomorrow.,FALSE
+OGN-105,Singularity,,Spell,Mind,Uncommon,6,2,,Deal 6 to each of up to two units.,,,,"Two fates, very briefly intertwined.",FALSE
+OGN-106,Sprite Mother,,Unit,Mind,Uncommon,4,1,3,"When you play me, play a ready 3 [M] Sprite unit token with [Temporary] here.",,,Fae,"""Come, little ones.""",FALSE
+OGN-107,Ava Achiever,,Unit,Mind,Rare,5,0,4,"When I attack, you may pay [C] to play a card with [Hidden] from your hand, ignoring its cost. If itʼs a unit, play it here.",,,"Bandle City, Yordle","""I brought snacks!""",TRUE
+OGN-108,Convergent Mutation,,Spell,Mind,Rare,2,1,,"[Reaction]
+Choose a friendly unit. This turn, increase its Might to the Might of another friendly unit.",,,,"""I don't know. I think it's kind of cute.""",TRUE
+OGN-109,"Dr. Mundo, Expert",Champion,Unit,Mind,Rare,8,2,6,"My Might is increased by the number of cards in your trash.
+At the start of your Beginning Phase, recycle 3 from your trash.",,Dr. Mundo,Zaun,"""This not hurt a bit!""",FALSE
+OGN-110,"Ekko, Recurrent",Champion,Unit,Mind,Rare,5,1,5,[Accelerate] [Deathknell] — Recycle me to ready your runes.,,Ekko,Zaun,"""Time to start some trouble.""",FALSE
+OGN-111,"Heimerdinger, Inventor",Champion,Unit,Mind,Rare,3,1,3,"I have all [E] abilities of all friendly legends, units, and gear.",,Heimerdinger,"Piltover, Yordle","""I do love a good conundrum.""",FALSE
+OGN-112,"Kai'Sa, Evolutionary",Champion,Unit,Mind,Rare,6,1,6,"[Ganking]
+When I conquer, you may play a spell from your trash with Energy cost less than your points without paying its Energy cost. Then recycle it.",,Kai'Sa,The Void,,FALSE
+OGN-113,"Malzahar, Fanatic",Champion,Unit,Mind,Rare,4,0,3,"Kill a friendly unit or gear, [E]: [Action] — [Add] [A][A].",,Malzahar,The Void,"""We demand sacrifice.""",FALSE
+OGN-114,Progress Day,,Spell,Mind,Rare,6,1,,Draw 4.,,,,"See the dreams of a thousand tomorrows, and at such a low price!",FALSE
+OGN-115,Promising Future,,Spell,Mind,Rare,5,1,,"Each player looks at the top 5 cards of their Main Deck, banishes one of them, then recycles the rest. Starting with the next player, each player plays those cards, ignoring Energy costs.",,,,,TRUE
+OGN-116,Thousand-Tailed Watcher,,Unit,Mind,Rare,7,1,7,"[Accelerate]
+When you play me, give enemy units -3 [M] htis turn, to a minimum of 1 [M].",,,Ionia,You will know when you've pushed the wilds too far.,FALSE
+OGN-117,"Viktor, Innovator",Champion,Unit,Mind,Rare,4,1,3,"When you play a card on an opponent's turn , play a 1 [M] Recruit unit token in your base.",,Viktor,Zaun,"""Join the glorious evolution.""",FALSE
+OGN-118,Wraith of Echoes,,Unit,Mind,Rare,6,1,5,"The first time another friendly unit dies each turn, draw 1.",,,"Shadow Isles, Spirit",His friends are with him in spirit.,FALSE
+OGN-119,"Ahri, Inquisitive",Champion,Unit,Mind,Epic,3,1,3,"When I attack or defend, give an enemy unit here -2 [M] this turn, to a minimum of 1 [M].",,Ahri,Ionia,"""The hunter and the hunted.""",FALSE
+OGN-120,Seal of Insight,,Gear,Mind,Epic,0,1,,[E]: [Reaction] — [Add] [C].,,,,,FALSE
+OGN-121,"Teemo, Strategist",Champion,Unit,Mind,Epic,2,1,,"[Hidden]
+When I defend, choose an enemy unit here and reveal the top 5 cards of your Main Deck. Deal 1 to that unit for each card with [Hidden] revealed this way, then recycle the revealed cards.",,Teemo,"Bandle City, Yordle",,TRUE
+OGN-122,Time Warp,,Spell,Mind,Epic,10,4,,Take a turn after this one. Banish this.,,,,"""Fool me once... and I'll just rewind.""
+—Ekko",FALSE
+OGN-123,Unchecked Power,,Spell,Mind,Epic,7,2,,"Exhaust all friendly units, then deal 12 to all units at battlefields.",,,,That's enough.,FALSE
+OGN-124,Arena Bar,,Gear,Body,Common,3,0,,[E]: Buff an exhausted friendly unit.,,,,"""This one's on the house!""",FALSE
+OGN-125,Bilgewater Bully,,Unit,Body,Common,6,0,6,"While I'm buffed, I have [Ganking].",,,Bilgewater,"Places to go, people to gank.",FALSE
+OGN-126,Body Rune,,Rune,Body,Common,,,,,,,,,FALSE
+OGN-127,Cannon Barrage,,Spell,Body,Common,2,1,,"[Reaction]
+Deal 2 to all enemy units in combat.",,,,"If you've got enough guns, you don't need to aim.",FALSE
+OGN-128,Challenge,,Spell,Body,Common,2,1,,"[Action]
+Choose a friendly unit and an enemy unit. They deal damage equal to their Mights to each other.",,,,"""He started it when he hit me back!""",FALSE
+OGN-129,Confront,,Spell,Body,Common,2,0,,"[Action]
+Units you play this turn enter ready.
+Draw 1.",,,,Now is the only moment that matters.,FALSE
+OGN-130,Crackshot Corsair,,Unit,Body,Common,3,0,3,"When I attack, deal 1 to an enemy unit here.",,,"Bilgewater, Pirate","""Ahoy.""",FALSE
+OGN-131,Dune Drake,,Unit,Body,Common,5,0,5,"When I attack, give me +2 [M] this turn if there is a ready enemy unit here. ",,,"Shurima, Dragon","Dragons hunt not just for food, but for the thrill of it.",TRUE
+OGN-132,First Mate,,Unit,Body,Common,3,0,3,"When you play me, ready another unit.",,,"Bilgewater, Pirate","""It's a boarding party! Try to have some fun with it.""",FALSE
+OGN-133,Flurry of Blades,,Spell,Body,Common,1,0,,"[Reaction]
+Deal 1 to all units at battlefields.",,,,"""Violence solves everything.""
+—Katarina",FALSE
+OGN-134,Mobilize,,Spell,Body,Common,2,0,,"Channel 1 rune exhausted. If you can't, draw 1.",,,,The sound of trumpets is the first blow struck in battle.,FALSE
+OGN-135,Pakaa Cub,,Unit,Body,Common,3,0,3,[HIdden],,,"Ixtal, Cat","""Oh, it's so cute!""
+—Common last words",FALSE
+OGN-136,Pit Rookie,,Unit,Body,Common,2,0,2,"When you play me, buff another friendly unit.",,,Bilgewater,"""Is that all you got?""",FALSE
+OGN-137,Stormclaw Ursine,,Unit,Body,Common,7,0,6,"[Tank]
+When you play me, channel 1 rune exhausted.",,,Freljord,"""The Ursine speak for man, and the wild responds.""
+—Volibear",FALSE
+OGN-138,Catalyst of Aeons,,Spell,Body,Common,4,0,,"Channel 2 runes exhausted. If you couldn't channel 2 runes this way, draw 1.",,,,"Ages of strife, crystallized into eternity.",FALSE
+OGN-139,Cithria of Cloudfield,,Unit,Body,Uncommon,2,0,1,"When you play another unit, buff me.",,,"Demacia, Elite",Every story starts small.,FALSE
+OGN-140,Herald of Scales,,Unit,Body,Uncommon,4,0,3,"Your Dragons' Energy costs are reduced by [2], to a minimum of [1].",,,Mount Targon,The language of dragons is a magic of its own.,FALSE
+OGN-141,Kinkou Monk,,Unit,Body,Uncommon,4,1,4,"When you play me, buff up to two other friendly units.",,,Ionia,"A master teaches the same lesson again and again, and learns something new each time.",TRUE
+OGN-142,Mountain Drake,,Unit,Body,Uncommon,9,0,10,,,,Dragon,"After centuries spent trying to understand dragon behavior, researchers can agree on one thing: If you're seeing that behavior up close... run.",FALSE
+OGN-143,Pirate's Haven,,Gear,Body,Uncommon,3,0,,"When you ready a friendly unit, give it +1 [M] this turn.",,,,"It's the best place in the world, until you run out of coin.",FALSE
+OGN-144,Spoils of War,,Spell,Body,Uncommon,4,1,,"[Reaction]
+If an enemy unit has died this turn, this costs [2] less.
+Draw 2.",,,,Waste nothing.,FALSE
+OGN-145,Unyielding Spirit,,Spell,Body,Uncommon,1,1,,Prevent all damage that would be dealt this turn by spells and abilities.,,,,Battles are won in the heart before they are won on the field.,FALSE
+OGN-146,Wallop,,Spell,Body,Uncommon,2,0,,"[Action]
+As you play this, you may spend a buff as an additional cost. If you do, ignore this spell's cost.",,,,"If smashing doesn't work, just keep smashing.",FALSE
+OGN-147,Wildclaw Shaman,,Unit,Body,Uncommon,4,0,3,"When you play me, you may spend a buff to buff me and ready me.",,,Freljord,"To channel nature's fury, a shaman must endure it.",FALSE
+OGN-148,"Anivia, Primal",Champion,Unit,Body,Rare,7,2,8,"When I attack, deal 3 to all enemy units here.",,Anivia,"Freljord, Bird","""Do not tempt the blizzard.""",FALSE
+OGN-149,Carnivorous Snapvine,,Unit,Body,Rare,5,2,6,"When you play me, choose an enemy unit at a battlefield. We deal damage equal to our Mights to each other.",,,Shadow Isles,Gardening is usually a very relaxing hobby.,FALSE
+OGN-150,Kraken Hunter,,Unit,Body,Rare,3,2,5,"[Accelerate]
+[Assault]
+As you play me, you may spend any number of buffs as an additional cost. Reduce my cost by [C] for each buff you spend.",,,"Bilgewater, Pirate",,FALSE
+OGN-151,"Lee Sin, Centered",Champion,Unit,Body,Rare,6,0,6,"[Accelerate]
+Other buffed friendly units at my battlefield have +2 [M].",,Lee Sin,Ionia,"""Today will be a worthy test.""",FALSE
+OGN-152,Mistfall,,Gear,Body,Rare,3,0,,"When you buff a friendly unit, you may pay [C] and exhaust this to ready it.",,,,"Thousands of thwarted dreams, ready to be lifted anews.",FALSE
+OGN-153,Overt Operation,,Spell,Body,Rare,5,2,,"[Action]
+For each friendly unit, you may spend its buff to ready it. Then buff all friendly units.",,,,"""We can go deep undercover, sneak in through the back, and end this quietly. Or...""",FALSE
+OGN-154,Primal Strength,,Spell,Body,Rare,4,1,,"[Action]
+Give a unit +7 [M] this turn.",,,,There is savagery inside us all.,FALSE
+OGN-155,"Qiyana, Victorious",Champion,Unit,Body,Rare,4,1,4,"[Deflect]
+When I conquer, draw 1 or channel 1 rune exhausted.",,Qiyana,Ixtal,"""Line them up. I will bend their knees.""",FALSE
+OGN-156,Sabotage,,Spell,Body,Rare,1,1,,"Choose an opponent. They reveal their hand. Choose a non-unit card from it, and recycle that card.",,,,Sometimes it takes dirty tricks to ensure a fair fight.,FALSE
+OGN-157,"Udyr, Wildman",Champion,Unit,Body,Rare,6,1,6,"Spend my buff: Choose one you've not chosen this turn —
+• Deal 2 to a unit at a battlefield.
+• Stun a unit at a battlefield.
+• Ready me.
+• Give me [Ganking] this turn.",,Udyr,Freljord,,FALSE
+OGN-158,"Volibear, Imposing",Champion,Unit,Body,Rare,12,2,10,"[Shield 3]
+[Tank]
+When an opponent moves to a battlefield other than mine, draw 1.",,Volibear,Freljord,"""Gods do not beg. We take what is ours!""",FALSE
+OGN-159,"Warwick, Hunter",Champion,Unit,Body,Rare,6,1,5,"I enter ready.
+When I attack, kill all damaged enemy units here.",,Warwick,"Zaun, Dog","""The blood you spilled calls to me.""",FALSE
+OGN-160,Dazzling Aurora,,Gear,Body,Epic,9,2,,"At the end of your turn, reveal cards from the top of your Main Deck until you reveal a unit and banish it. Play it, ignoring its cost, and recycle the rest.",,,,The omens offer much to those who dare to see them.,TRUE
+OGN-161,Deadbloom Predator,,Unit,Body,Epic,8,2,8,"[Deflect]
+You may play me to an occupied enemy battlefield.",,,Shadow Isles,The souls of those who died unfulfilled coalesce into a form to sate those hungers.,FALSE
+OGN-162,"Miss Fortune, Captain",Champion,Unit,Body,Epic,5,1,5,"[Accelerate]
+[Ganking]
+The first time I move each turn, you may ready something else that's exhausted.",,Miss Fortune,"Bilgewater, Pirate","""Set sail!""",FALSE
+OGN-163,Seal of Strength,,Gear,Body,Epic,0,1,,[E]: [Reaction] — [Add] [C].,,,,"""Momma always said I had her temper.""",FALSE
+OGN-164,"Sett, Brawler",Champion,Unit,Body,Epic,5,1,4,"When I'm played and when I conquer, buff me.
+Spend my buff: Give me +4 [M] this turn.",,Sett,Ionia,,FALSE
+OGN-165,Cemetery Attendant,,Unit,Chaos,Common,3,1,3,"When you play me, return a unit from your trash to your hand.",,,"Shadow Isles, Dog","""Good boy! Now, where's the rest of 'em?""",FALSE
+OGN-166,Chaos Rune,,Rune,Chaos,Common,,,,,,,,,FALSE
+OGN-167,Ember Monk,,Unit,Chaos,Common,4,0,4,"When you play a card from [Hidden], give me +2 [M] this turn.",,,Bandle City,A flame bright enough to cast many shadows.,FALSE
+OGN-168,Fight or Flight,,Spell,Chaos,Common,2,0,,"[Hidden]
+[Action]
+Move a unit from a battlefield to its base.",,,,"""Boo.""",FALSE
+OGN-169,Gust,,Spell,Chaos,Common,1,0,,"[Reaction]
+Return a unit at a battlefield with 3 [M] or less to its owner's hand.",,,,,FALSE
+OGN-170,Morbid Return,,Spell,Chaos,Common,2,0,,"[Action]
+Return a unit from your trash to your hand.",,,,"""Soon, this long cruel night will end. But not yet.""
+—Viego",FALSE
+OGN-171,Mystic Poro,,Unit,Chaos,Common,2,0,2,[Vision],,,Poro,"Forecast: Sunny, with a chance of snax.",FALSE
+OGN-172,Rebuke,,Spell,Chaos,Common,2,2,,"[Action]
+Return a unit at a battlefield to its owner's hand.",,,,"""Get out.""",FALSE
+OGN-173,Ride the Wind,,Spell,Chaos,Common,2,1,,"[Action]
+Move a friendly unit and ready it.",,,,"""Follow the wind, but watch your back.""
+—Yasuo",FALSE
+OGN-174,Sai Scout,,Unit,Chaos,Common,6,0,5,"[Vision]
+You may play me to an open battlefield.",,,Shurima,"""Ours for the taking!""",FALSE
+OGN-175,Shipyard Skulker,,Unit,Chaos,Common,3,0,3,,,,"Bilgewater, Pirate","Few people laughed when she claimed she was a ""dock pirate""—or at least, few remained.",FALSE
+OGN-176,Sneaky Deckhand,,Unit,Chaos,Common,3,0,2,You may play me to an open battlefield.,,,"Bilgewater, Pirate","""I like to think of her as a pre-boarding party.""
+—Miss Fortune",FALSE
+OGN-177,Stealthy Pursuer,,Unit,Chaos,Common,4,1,4,"When a friendly unit moves from my location, I may be moved with it.",,,Shurima,"""Anywhere you can go, I can go better.""",FALSE
+OGN-178,Undercover Agent,,Unit,Chaos,Common,5,1,5,"[Deathknell] — Discard 2, then draw 2.",,,,Even he no longer knew which side he worked for.,FALSE
+OGN-179,Acceptable Losses,,Spell,Chaos,Uncommon,1,0,,Each player kills one of their gear.,,,,"""Never liked that sword anyway.""",FALSE
+OGN-180,Fading Memories,,Spell,Chaos,Uncommon,4,1,,Give a unit at a battlefield or a gear [Temporary].,,,,You too shall pass.,FALSE
+OGN-181,Pack of Wonders,,Gear,Chaos,Uncommon,2,0,,"[E]: Return another friendly gear, unit, or facedown card to its owner's hand.",,,,"""I know I put it in here somewhere...""
+—Teemo",TRUE
+OGN-182,Scrapheap,,Gear,Chaos,Uncommon,2,0,,"When this is played, discarded, or killed, draw 1.",,,,The parts that make it to the heap are the ones that DIDN'T blow up.,FALSE
+OGN-183,Stacked Deck,,Gear,Chaos,Uncommon,1,0,,"[Action]
+Look at the top 3 card of your Main Deck. Put 1 into your hand and recycle the rest.",,,,"""Just lucky, I guess.""",FALSE
+OGN-184,The Syren,,Gear,Chaos,Uncommon,2,0,,"[1], [E]: Move a friendly unit at a battlefield to its base.",,,,"Without a ship, a pirate's just another common criminal.",TRUE
+OGN-185,Traveling Merchant,,Unit,Chaos,Uncommon,2,0,2,"When I move, discard 1, then draw 1.",,,Bilgewater,"Payment first, refund never.",FALSE
+OGN-186,Treasure Trove,,Gear,Chaos,Uncommon,2,0,,"When this leaves the board, draw 1 and channel 1 rune exhausted.
+[C], [E]: Kill this.",,,,"""We're gonna be rich!""
+—Common last words",FALSE
+OGN-187,Whirlwind,,Spell,Chaos,Uncommon,4,1,,"Starting with the next player, each player may return a unit to its owner's hand.",,,,"""The storm approaches.""
+—Janna",FALSE
+OGN-188,Zaunite Bouncer,,Unit,Chaos,Uncommon,4,2,2,"When you play me, return another unit at a battlefield to its owner's hand.",,,Zaun,"If he had things his way, NOBODY would get in.""",FALSE
+OGN-189,"Kayn, Unleashed",Champion,Unit,Chaos,Rare,6,1,6,"[Ganking]
+If I have moved twice this turn, I don't take damage.",,Kayn,Ionia,"""I will survive eternity. They will die today.""",FALSE
+OGN-190,"Kog'Maw, Caustic",Champion,Unit,Chaos,Rare,3,1,1,[Deathknell] — Deal 4 to all units at my battlefield.,,Kog'Maw,The Void,"""Oblivion come.""",FALSE
+OGN-191,Maddened Marauder,,Unit,Chaos,Rare,5,0,4,"[Tank]
+When you play me, move a unit from a battlefield to its base.",,,"Bilgewater, Pirate","They know no fear. Nor much of anything else, really.",FALSE
+OGN-192,Mindsplitter,,Unit,Chaos,Rare,7,2,7,"When you play me, choose an opponent. They reveal their hand. Choose a card from it, and they discard that card.",,,"Mount Targon, Dragon",Its victims go mad deciding which half to run from first.,FALSE
+OGN-193,"Miss Fortune, Buccaneer",Champion,Unit,Chaos,Rare,4,1,4,"You may play me to an open battlefield.
+Friendly units may be played to open battlefields.",,Miss Fortune,"Bilgewater, Pirate","""I always shoot first.""",FALSE
+OGN-194,"Nocturne, Horrifying",Champion,Unit,Chaos,Rare,4,1,4,"[Ganking]
+As you look at or reveal me from the top of your deck, you may banish me. If you do, you may play me for [A].",,Nocturne,,,TRUE
+OGN-195,Rhasa the Sunderer,,Unit,Chaos,Rare,10,1,6,I cost [1] less for each card in your trash.,,,"Shadow Isles, Spirit","It feeds well on death, but better on madness.",FALSE
+OGN-196,Soul Gorger,,Unit,Chaos,Rare,8,2,5,"When you play me, you may play a unit from your trash, ignoring its Energy cost.",,,"Shadow Isles, Spirit",,FALSE
+OGN-197,"Teemo, Scout",Champion,Unit,Chaos,Rare,2,0,1,"[Hidden]
+When you play me, give me +3 [M] this turn.",,Teemo,"Bandle City, Yordle","""Reporting in!""",FALSE
+OGN-198,The Harrowing,,Spell,Chaos,Rare,6,2,,"Play a unit from your trash, ignoring its Energy cost.",,,,,FALSE
+OGN-199,Tideturner,,Unit,Chaos,Rare,2,0,2,"[Hidden]
+When you play me, you may choose a unit you control at another location. Move me to its location and it to my original location.",,,Bilgewater,,TRUE
+OGN-200,"Twisted Fate, Gambler",Champion,Unit,Chaos,Rare,4,0,4,"When I attack, reveal the top rune of your rune deck, then recycle it. Do one of the following based on its domain:
+[R] - Deal 2 to an enemy unit here and 1 to all other enemy units here.
+[B] - Draw 1.
+[Y] - Stun an enemy unit.",,Twisted Fate,Bilgewater,,FALSE
+OGN-201,Invert Timelines,,Spell,Chaos,Epic,3,1,,"Each player discards their hand, then draws 4.",,,,"""Good a time as any to act reckless.""
+—Ekko",FALSE
+OGN-202,"Jinx, Rebel",Champion,Unit,Chaos,Epic,5,1,5,"When you discard one or more cards, ready me and give me +1 [M] this turn.",,Jinx,Zaun,"""Rules are made to be broken. Like buildings! Or people!""",FALSE
+OGN-203,Possession,,Spell,Chaos,Epic,8,3,,"[Action]
+Choose an enemy unit at a battlefield. Take control of it and recall it.",,,,Some have a change of heart. Others need you to change it for them.,FALSE
+OGN-204,Seal of Discord,,Gear,Chaos,Epic,0,1,,[E]: [Reaction] — [Add] [C].,,,,,FALSE
+OGN-205,"Yasuo, Windrider",Champion,Unit,Chaos,Epic,5,1,4,"[Ganking]
+The third time I move in a turn, you score 1 point.",,Yasuo,Ionia,"""I will follow the path until the end.""",FALSE
+OGN-206,Back to Back,,Spell,Order,Common,3,0,,"[Reaction]
+Give two friendly units each +2 [M] this turn.",,,,Fight together or die alone.,FALSE
+OGN-207,Call to Glory,,Spell,Order,Common,3,0,,"[Reactton]
+As you play this, you may spend a buff as an addtional cost. If you do, ignore this spell's cost.",,,,,FALSE
+OGN-208,Cruel Patron,,Unit,Order,Common,4,0,6,"As an additional cost to play me, kill a friendly unit.",,,Noxus,"Fealty is a duty, not a choice.",FALSE
+OGN-209,Cull the Weak,,Spell,Order,Common,2,1,,Each player kills one of their units.,,,,What good is having a plank if nobody ever walks it?,FALSE
+OGN-210,Daring Poro,,Unit,Order,Common,2,0,2,[Assault],,,Poro,"Don't worry, they love it.",FALSE
+OGN-211,Faithful Manufactor,,Unit,Order,Common,3,0,2,"When you play me, play a 1 [M] Recruit unit token here.",,,Piltover,Hard work is its own reward.,FALSE
+OGN-212,Forge of the Future,,Gear,Order,Common,2,0,,"When you play this, play a 1 [M] Recruit unit token at your base.
+Kill this: Recycle up to 4 cards from trashes.",,,,"""What do we make? Beats me, but we do it better than anyone else.""",FALSE
+OGN-213,Hidden Blade,,Spell,Order,Common,2,1,,"[Hidden]
+[Action]
+Kill a unit at a battlefield. Its controller draws 2.",,,,Not every Noxian decree is read aloud.,FALSE
+OGN-214,Order Rune,,Rune,Order,Common,,,,,,,,,FALSE
+OGN-215,Petty Officer,,Unit,Order,Common,5,0,5,[Assault],,,"Bilgewater, Pirate",Cross him and you'll learn just how petty he can be.,FALSE
+OGN-216,Soaring Scout,,Unit,Order,Common,2,0,1,[Deathknell] — Channel 1 rune exhausted.,,,"Freljord, Bird","""Show us a path!""
+—Ashe",FALSE
+OGN-217,Trifarian Gloryseeker,,Unit,Order,Common,2,0,2,"[Legion] — When you play me, buff me.",,,"Noxus, Trifarian",War demands your life but offers immortality.,FALSE
+OGN-218,Vanguard Captain,,Unit,Order,Common,3,1,3,"[Legion] — When you play me, play two 1 [M] Recruit unit tokens here.",,,"Demacia, Elite","""Soldiers, to me!""",FALSE
+OGN-219,Vanguard Sergeant,,Unit,Order,Common,4,0,4,,,,"Demacia, Elite","He knew his orders: hold the line, or there would be nothing left to hold.",FALSE
+OGN-220,Facebreaker,,Spell,Order,Uncommon,2,0,,"[Hidden]
+[Action]
+Stun a friendly unit and an enemy unit at the same battlefield.",,,,"""Play nice!"" —Sett",FALSE
+OGN-221,Imperial Decree,,Spell,Order,Uncommon,5,2,,"[Action]
+When any unit takes damage this turn, kill it.",,,,"""With a word, I end you.""
+—Azir",FALSE
+OGN-222,Noxian Drummer,,Unit,Order,Uncommon,3,0,3,"When I move to a battlefield, play a 1 [M] Recruit unit token here.",,,"Noxus, Trifarian",Even the Legion's musicians are hard to beat.,FALSE
+OGN-223,Peak Guardian,,Unit,Order,Uncommon,6,1,5,"When you play me, buff me. Then, if I am at a battlefield, buff all other friendly units there.",,,Mount Targon,Mount Targon's blessing is bestowed upon those who have proven they are strong enough without it.,FALSE
+OGN-224,Salvage,,Spell,Order,Uncommon,2,1,,"[Action]
+You may kill up to one gear. Draw 1.",,,,One person's treasure is another one's trash.,TRUE
+OGN-225,Solari Chief,,Unit,Order,Uncommon,5,1,4,"When you play me, choose an enemy unit. If it is stunned, kill it. Otherwise, stun it.",,,Mount Targon,"The sun has many rays, each tasked with driving out the darkness.",FALSE
+OGN-226,Spectral Matron,,Unit,Order,Uncommon,4,2,4,"When you play me, you may play a unit costing no more than [3] and no more than [A] from your trash, ignoring its cost.",,,"Shadow Isles, Spirit","""Come—there is use for you yet.""",FALSE
+OGN-227,Symbol of the Solari,,Gear,Order,Uncommon,1,0,,"If a combat where you are the attacker ends in a tie that would recall any of your units, recall all units at that battlefield instead.",,,,"""Next time, try to leave a dent!""
+—Leona",FALSE
+OGN-228,Vanguard Helm,,Gear,Order,Uncommon,2,0,,"When a buffed friendly unit dies, buff another friendly unit.",,,,Vanguard soliders share both a helm and a vision.,FALSE
+OGN-229,Vengeance,,Spell,Order,Uncommon,4,2,,Kill a unit.,,,,A brief moment of turmoil—then peace.,FALSE
+OGN-230,Albus Ferros,,Unit,Order,Rare,4,0,3,"When you play me, spend any number of buffs. For each buff spent, channel 1 rune exhausted.",,,Piltover,"In Piltover, the best way to become a great inventor is to find a great investor.",FALSE
+OGN-231,Commander Ledros,,Unit,Order,Rare,6,4,8,"As you play me, you may kill any number of friendly units as an additional cost. Reduce my cost by [C] for each killed this way.
+[Deflect]
+[Ganking]",,,"Shadow Isles, Spirit",,FALSE
+OGN-232,"Fiora, Victorious",Champion,Unit,Order,Rare,4,0,4,"While I'm [Mighty], I have [Deflect], [Ganking], and [Shield].",,Fiora,Demacia,"""I long for a worthy opponent.""",FALSE
+OGN-233,Grand Strategem,,Spell,Order,Rare,6,3,,"[Action]
+Give friendly units +5 [M] this turn.",,,,You need not understand the plan—only believe in it.,FALSE
+OGN-234,Harnessed Dragon,,Unit,Order,Rare,8,2,6,"When you play me, kill an enemy unit.",,,"Demacia, Dragon","What bends a dragon's will is not strength, but sense of purpose.",FALSE
+OGN-235,"Karma, Channeler",Champion,Unit,Order,Rare,6,1,6,"[Vision]
+When you recycle one or more cards to your Main Deck, buff a friendly unit.",,Karma,Ionia,"""Heart and mind as one.""",TRUE
+OGN-236,"Karthus, Eternal",Champion,Unit,Order,Rare,3,1,3,Your [Deathknell] effects trigger an additional time.,,Karthus,"Shadow Isles, Spirit","""We all have a place among the divine. We have only to accept it.""",FALSE
+OGN-237,King's Edict,,Spell,Order,Rare,6,2,,"Starting with the next player, each other player chooses a unit you don't control that hasn't been chosen for this spell. Kill those units.",,,,Ruling is about making the hard choices. Serving is about living with the consequences.,FALSE
+OGN-238,"Leona, Determined",Champion,Unit,Order,Rare,4,1,4,"[Shield]
+When I attack, stun an enemy unit here.",,Leona,Mount Targon,"""First light approaches.""",FALSE
+OGN-239,Machine Evangel,,Unit,Order,Rare,5,1,4,[Deathknell] — Play three 1 [M] Recruit unit tokens into your base.,,,Piltover,The future is built by those who never see it.,FALSE
+OGN-240,"Sett, Kingpin",Champion,Unit,Order,Rare,4,1,5,"[Tank]
+I get +1 [M] for each buffed friendly unit at my battlefield.",,Sett,Ionia,"""Bein' the boss is a lot better than not bein' the boss.""",FALSE
+OGN-241,"Shen, Kinkou",Champion,Unit,Order,Rare,3,1,3,"[Reaction]
+[Shield 2]
+[Tank]",,Shen,Ionia,"""Tread carefully.""",FALSE
+OGN-242,Baited Hook,,Gear,Order,Epic,3,0,,"[1][C], [E]: Kill a friendly unit. Look at the top 5 cards of your Main Deck. You may banish a unit from among them that has Might up to 1 more than the killed unit and play it, ignoring its cost. Then recycle the rest.",,,,There's always a bigger fish—sometimes a MUCH bigger fish.,TRUE
+OGN-243,"Darius, Executioner",Champion,Unit,Order,Epic,6,1,6,"[Legion] — When you play me, ready me.
+Other friendly units have +1 [M] here.",,Darius,"Noxus, Trifarian","""They will regret opposing me.""",FALSE
+OGN-244,Divine Judgement,,Spell,Order,Epic,7,2,,"Each player chooses 2 units, 2 gear, 2 runes, and 2 cards in their hands. Recycle the rest.",,,,Equality isn't always equal.,FALSE
+OGN-245,Seal of Unity,,Gear,Order,Epic,0,1,,[E]: [Reaction] — [Add] [C].,,,,,FALSE
+OGN-246,"Viktor, Leader",Champion,Unit,Order,Epic,4,1,4,"When another non-Recruit unit you control dies, play a 1 [M] Recruit unit token into your base.",,Viktor,Zaun,"""I am the first of many.""",FALSE
+OGN-247,"Kai'Sa, Daughter of the Void",,Legend,"Fury, Mind",Rare,,,,[E]: [Reaction] — [Add] [A]. Use only to play spells.,,Kai'Sa,,,FALSE
+OGN-248,Icathian Rain,Signature,Spell,"Fury, Mind",Epic,7,3,,"Do this 6 times:
+Deal 2 to a unit.",,Kai'Sa,,,FALSE
+OGN-249,"Volibear, Relentless Storm",,Legend,"Fury, Body",Rare,,,,"When you play a [Mighty] unit,l you may exhaust me to channel 1 rune exhausted.",,Volibear,,,FALSE
+OGN-250,Stormbringer,Signature,Spell,"Fury, Body",Epic,6,2,,"Choose a friendly unit in your base. Deal damage equal to its Might to all enemy units at a battlefield, then move your unit there.",,Volibear,,,FALSE
+OGN-251,"Jinx, Loose Cannon",,Legend,"Fury, Chaos",Rare,,,,"At start of your Beginning Phase, draw 1 if you have one or fewer cards in your hand.",,Jinx,,,FALSE
+OGN-252,Super Mega Death Rocket!,Signature,Spell,"Fury, Chaos",Epic,4,1,,"Deal 5 to a unit.
+When you conquer, you may discard 1 to return this from your trash to your hand.",,Jinx,,,FALSE
+OGN-253,"Darius, Hand of Noxus",,Legend,"Fury, Order",Rare,,,,"[E]: [Reaction], [Legion] — [Add] [1].",,Darius,,,FALSE
+OGN-254,Noxian Guillotine,Signature,Spell,"Fury, Order",Epic,4,1,,"[Action]
+Choose a unit. Kill it the next time it takes damage this turn.
+[Legion] — Kill it now instead.",,Darius,,,FALSE
+OGN-255,"Ahri, Nine-Tailed Fox",,Legend,"Calm, Mind",Rare,,,,"When an enemy unit attacks a battlefield you control, give it -1 [M] this turn, to a minimum of 1 [M].",,Ahri,,,FALSE
+OGN-256,Fox-Fire,Signature,Spell,"Calm, Mind",Epic,3,0,,"[Hidden]
+[Action]
+Kill any number of units at a battlefield with total Might 4 or less.",,Ahri,,,FALSE
+OGN-257,"Lee Sin, Blind Monk",,Legend,"Calm, Body",Rare,,,,"[1], [E]: Buff a friendly unit.",,Lee Sin,,,FALSE
+OGN-258,Dragon's Rage,Signature,Spell,"Calm, Body",Epic,4,1,,Move an enemy unit. Then do this: Choose another enemy unit at its destination. They deal damage equal to their Mights to each other.,,Lee Sin,,,TRUE
+OGN-259,"Yasuo, Unforgiven",,Legend,"Calm, Chaos",Rare,,,,"[2], [E]: Move a friendly unit to or from its base.",,Yasuo,,,TRUE
+OGN-260,Last Breath,Signature,Spell,"Calm, Chaos",Epic,3,2,,"[Action]
+Ready a friendly unit. It deals damage equal to its Might to an enemy unit at a battlefield.",,Yasuo,,,FALSE
+OGN-261,"Leona, Radiant Dawn",,Legend,"Calm, Order",Rare,,,,"When you stun one or more enemy units, buff a friendly unit.",,Leona,,,FALSE
+OGN-262,Zenith Blade,Signature,Spell,"Calm, Order",Epic,3,2,,"[Action]
+Stun an enemy unit at a battlefield. You may move a friendly unit to that enemy unit's battlefield.",,Leona,,,FALSE
+OGN-263,"Teemo, Swift Scout",,Legend,"Mind, Chaos",Rare,,,,"You may pay [1] to hide a card with [Hidden] instead of [A].
+[1], [E]: Put a Teemo unit you own into your hand from your Champion Zone or the board.",,Teemo,,,FALSE
+OGN-264,Guerilla Warfare,Signature,Spell,"Mind, Chaos",Epic,2,1,,Return up to two cards with [Hidden] from your trash to your hand. You can hide ignoring costs this turn.,,Teemo,,,FALSE
+OGN-265,"Viktor, Herald of the Arcane",,Legend,"Mind, Order",Rare,,,,"[1], [E]: Play a 1 [M] Recruit unit token.",,Viktor,,,FALSE
+OGN-266,Siphon Power,Signature,Spell,"Mind, Order",Epic,2,1,,"[Reaction]
+Choose a battlefield. Give friendly units there +1 [M] this turn and enemy units there -1 [M] this turn, to a minimum of 1 [M].",,Viktor,,,FALSE
+OGN-267,"Miss Fortune, Bounty Hunter",,Legend,"Body, Chaos",Rare,,,,[E]: Give a unit [Ganking] this turn.,,Miss Fortune,,,FALSE
+OGN-268,Bullet Time,Signature,Spell,"Body, Chaos",Epic,1,0,,"[Action]
+Pay any amount of [A] to deal that much damage to all enemy units at a battlefield.",,Miss Fortune,,,FALSE
+OGN-269,"Sett, the Boss",,Legend,"Body, Order",Rare,,,,"If a buffed unit you control would die, you may pay [C], exhaust me, and spend its buff to heal it, exhaust it, and recall it instead.
+When you conquer, ready me.",,Sett,,,TRUE
+OGN-270,Showstopper,Signature,Spell,"Body, Order",Epic,1,1,,"Buff a friendly unit in your base, then move it to a battlefield.",,Sett,,,FALSE
+OGN-271,Recruit,Token,Unit,,Common,,,1,,,,Recruit,"""To strike against any of us is to strike against all of us!""",FALSE
+OGN-272,Recruit,Token,Unit,,Common,,,1,,,,Recruit,"""Few earn the right to call themselves Trifarian.""",FALSE
+OGN-273,Recruit,Token,Unit,,Common,,,1,,,,Recruit,"""We are the future.""",FALSE
+OGN-274,Sprite,Token,Unit,,Common,,,3,[Temporary],,,Fae,"Dreams rarely linger, but the dreamer is still changed.",FALSE
+OGN-275,Altar to Unity,,Battlefield,,Uncommon,,,,"When you hold here, play a 1 [M] Recruit unit token in your base.",,,,,FALSE
+OGN-276,Aspirant's Climb,,Battlefield,,Uncommon,,,,Increase the points needed to win the game by 1.,,,,,FALSE
+OGN-277,Back-Alley Bar,,Battlefield,,Uncommon,,,,"When a unit moves from here, give it +1 [M] this turn.",,,,,FALSE
+OGN-278,Bandle Tree,,Battlefield,,Uncommon,,,,You may hide an additional card here.,,,,,FALSE
+OGN-279,Fortified Position,,Battlefield,,Uncommon,,,,"When you defend here, choose a unit. It gains [Shield 2] this combat.",,,,,FALSE
+OGN-280,Grove of the God-Willow,,Battlefield,,Uncommon,,,,"When you hold here, draw 1.",,,,,FALSE
+OGN-281,Hallowed Tomb,,Battlefield,,Uncommon,,,,"When you hold here, you may return your Chosen Champion from your trash to your Champion Zone if it is empty.",,,,,FALSE
+OGN-282,Monastery of Hirana,,Battlefield,,Uncommon,,,,"When you conquer here, you may spend a buff to draw 1.",,,,,FALSE
+OGN-283,Navori Fighting Pit,,Battlefield,,Uncommon,,,,"When you hold here, buff a unit here.",,,,,FALSE
+OGN-284,Obelisk of Power,,Battlefield,,Uncommon,,,,"At the start of each player's first Beginning Phase, that player channels 1 rune.",,,,,FALSE
+OGN-285,Reaver's Row,,Battlefield,,Uncommon,,,,"When you defend here, you may move a friendly unit here to base.",,,,,FALSE
+OGN-286,Reckoner's Arena,,Battlefield,,Uncommon,,,,"When you hold here, activate the conquer effects of units here.",,,,,FALSE
+OGN-287,Sigil of the Storm,,Battlefield,,Uncommon,,,,"When you conquer here, you must recycle one of your runes.",,,,,TRUE
+OGN-288,Startipped Peak,,Battlefield,,Uncommon,,,,"When you hold here, you may channel 1 rune exhausted.",,,,,FALSE
+OGN-289,Targon's Peak,,Battlefield,,Uncommon,,,,"When you conquer here, ready up to 2 runes at the end of this turn.",,,,,TRUE
+OGN-290,The Arena's Greatest,,Battlefield,,Uncommon,,,,"At the start of each player's first Beginning Phase, that player gains 1 point.",,,,,FALSE
+OGN-291,The Candlelit Sanctum,,Battlefield,,Uncommon,,,,"When you conquer here, look at the top two cards of your Main Deck. You may recycle one or both of them. Put those you don't back in any order.",,,,,FALSE
+OGN-292,The Dreaming Tree,,Battlefield,,Uncommon,,,,"When a player chooses a friendly unit here with a spell for the first time each turn, they draw 1.",,,,,TRUE
+OGN-293,The Grand Plaza,,Battlefield,,Uncommon,,,,"When you hold here, if you have 7+ units here, you win the game.",,,,,FALSE
+OGN-294,Trifarian War Camp,,Battlefield,,Uncommon,,,,Units here have +1 [M].,,,,,FALSE
+OGN-295,Vilemaw's Lair,,Battlefield,,Uncommon,,,,Units can't move from here to base.,,,,,FALSE
+OGN-296,Void Gate,,Battlefield,,Uncommon,,,,Spells and abilities deal 1 Bonus Damage to units here.,,,,,TRUE
+OGN-297,Windswept Hillock,,Battlefield,,Uncommon,,,,Units here have [Ganking].,,,,,FALSE
+OGN-298,Zaun Warrens,,Battlefield,,Uncommon,,,,"When you conquer here, discard 1, then draw 1.",,,,,FALSE

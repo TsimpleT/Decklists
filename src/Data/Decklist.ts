@@ -7,12 +7,12 @@ export interface IDecklist {
     date?: string;
     username?: string;
     archetype?: Archetype;
-    legend: string;
-    chosenChampion: string;
-    mainDeck: DecklistCardAmount[];
-    battlefields: DecklistCardAmount[];
-    runeDeck: DecklistCardAmount[];
-    sideboard: DecklistCardAmount[];
+    legend?: string;
+    chosenChampion?: string;
+    mainDeck?: DecklistCardAmount[];
+    battlefields?: DecklistCardAmount[];
+    runeDeck?: DecklistCardAmount[];
+    sideboard?: DecklistCardAmount[];
     link?: string;
 }
 
@@ -38,10 +38,21 @@ export class Decklist {
     readonly tournId: string;
     readonly placing: string;
 
-    private static unknownPlayerCount = 0;
+    private static unknownPlayerCount = 1;
 
     public constructor(idl: IDecklist, tournamentName: string = "", tournId: string = "", placing: string = "") {
-        [this.date, this.username, this.legend, this.chosenChampion, this.mainDeck, this.battlefields, this.runeDeck, this.sideboard, this.link, this.tournamentName, this.tournId, this.placing] = [idl.date??"", (idl.username === "" || idl.username === undefined) ? `*Unknown${Decklist.unknownPlayerCount++}*` : idl.username, idl.legend, idl.chosenChampion, idl.mainDeck, idl.battlefields, idl.runeDeck, idl.sideboard, idl.link??"", tournamentName, tournId, placing];
+        this.date = idl.date??"";
+        this.username = (idl.username) ? idl.username : `*Unknown${Decklist.unknownPlayerCount++}*`;
+        this.legend = idl.legend ?? "";
+        this.chosenChampion = idl.chosenChampion ?? "";
+        this.mainDeck = idl.mainDeck ?? [];
+        this.battlefields = idl.battlefields ?? [];
+        this.runeDeck = idl.runeDeck ?? [];
+        this.sideboard = idl.sideboard ?? [];
+        this.link = idl.link ?? "";
+        this.tournamentName = tournamentName;
+        this.tournId = tournId;
+        this.placing = placing;
         this.archetype = (idl.archetype !== undefined && idl.archetype !== "Unknown") ? idl.archetype : PREDICT_ARCHETYPE(this);
     }
 
@@ -80,7 +91,8 @@ export class Decklist {
             );
     }
 
-    // in order: 1x legend, 40x main deck, 3x battlefield, 12x rune, 8x sideboard (or 0x)
+    // in order: 1x legend, 40x main deck, 3x battlefield, 12x rune, 8x sideboard (or 0x); 1st card in main deck is chosen champion
+    // but this handles any number (besides 1x legend)
     public static fromTTSText(text: string, username?: string): Decklist {
         const cardIdList: string[] = text.split(" ").map(ttsId => TTS_ID_TO_ID(ttsId));
 
@@ -93,28 +105,44 @@ export class Decklist {
             decklist.username = username;
         }
 
-        let decklistPortion = decklist.mainDeck;
-        let count = 0;
-        for(let i = 1; i < cardIdList.length; i++) { // first card is legend
-            count++;
-            if(i === cardIdList.length-1 || cardIdList[i] !== cardIdList[i+1]) {
-                if(!IS_CARD(cardIdList[i])) {
-                    count = 0;
-                    continue;
-                }
-                const cardType = GET_CARD(cardIdList[i]).type;
-                if(cardType === "Battlefield") {
-                    decklistPortion = decklist.battlefields;
-                } else if(cardType === "Rune") {
-                    decklistPortion = decklist.runeDeck;
-                } else if(decklistPortion === decklist.runeDeck) { // cardType is already guaranteed not to be RUNE bc else
-                    decklistPortion = decklist.sideboard;
-                }
-                decklistPortion.push({id: cardIdList[i], count: count});
-                count = 0;
+        let mainDeckDone = false;
+        for(let startI = 1; startI < cardIdList.length; startI++) { // skip first card legend; already handled
+            if(!IS_CARD(cardIdList[startI])) { continue; }
+            let count = 1;
+            while(startI+count < cardIdList.length && cardIdList[startI+count] === cardIdList[startI]) {
+                count++;
             }
+            const dca: DecklistCardAmount = {id: cardIdList[startI], count: count};
+            const cardType = GET_CARD(cardIdList[startI]).type;
+            if(!mainDeckDone && (cardType === "Battlefield" || cardType === "Rune")) {
+                mainDeckDone = true;
+            }
+            if(cardType === "Battlefield") {
+                decklist.battlefields?.push(dca);
+            } else if(cardType === "Rune") {
+                decklist.runeDeck?.push(dca);
+            } else {
+                (mainDeckDone ? decklist.sideboard : decklist.mainDeck)?.push(dca);
+            }
+            startI += count-1;
         }
 
         return new Decklist(decklist);
+    }
+
+    public toInterface(forceUsername: boolean = false): IDecklist {
+        let obj: IDecklist = {};
+        if(this.date) { obj.date = this.date; }
+        if(forceUsername || (this.username && !this.username.startsWith("*Unknown"))) { obj.username = this.username; }
+        if(this.archetype) { obj.archetype = this.archetype; }
+        if(this.legend) { obj.legend = this.legend; }
+        if(this.chosenChampion) { obj.chosenChampion = this.chosenChampion; }
+        if(this.mainDeck) { obj.mainDeck = this.mainDeck; }
+        if(this.battlefields) { obj.battlefields = this.battlefields; }
+        if(this.runeDeck) { obj.runeDeck = this.runeDeck; }
+        if(this.sideboard) { obj.sideboard = this.sideboard; }
+        if(this.link) { obj.link = this.link; } 
+
+        return obj;
     }
 }

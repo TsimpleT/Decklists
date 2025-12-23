@@ -1,5 +1,16 @@
 import { ITournamentResults } from "../TournamentResults";
 
+export const RMW_20251214: ITournamentResults = {
+    tournamentName: "Spiritforged New Legends Only", abbrName: "RMW", date: "2025/12/14", meta: "SFD", host: "", tier: 3, size: 8,
+    links: ["https://challonge.com/ock6ed93"],
+    results: [
+        {placing: "3-0", decklists: [{"username":"MasonReptiloid"}]},
+        {placing: "2-1", decklists: [{"username":"GanZtrax"},{"username":"Buffmann"},{"username":"Samsam"}]},
+        {placing: "1-2", decklists: [{"username":"MichiWy"},{"username":"noodledaddy"},{"username":"robert_5674"}]},
+        {placing: "0-1", decklists: [{"username":"Skycake"}]}
+    ]
+};
+
 export const RMW_20250809: ITournamentResults = {
     tournamentName: "Riftbound Meta Weekly", abbrName: "RMW", date: "2025/08/09", meta: "OGN", host: "Riftbound Meta", tier: 3,
     links: ["https://challonge.com/qai98auk", "https://challonge.com/aaqosn5i"],

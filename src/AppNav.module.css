@@ -40,6 +40,10 @@
     background-color: var(--bg-dark-hover);
 }
 
+.container > a:active {
+    background-color: var(--bg-dark-active);
+}
+
 .title {
     font-weight: 600;
     font-size: 18px;

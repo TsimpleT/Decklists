@@ -3,7 +3,7 @@ import { Decklist } from "./Decklist";
 
 export const ALL_ARCHETYPES = [
     "Ahri", "Darius", "Jinx Aggro", "Kai'Sa Midrange", "Kai'Sa Control", "Lee Sin Midrange", "Leona Midrange", "Miss Fortune Aurora", "Miss Fortune Aggro", "Sett Aurora", "Sett Midrange", "Teemo", "Viktor", "Volibear Ramp", "Yasuo Midrange",
-    "Annie Tempo", "Garen Midrange", "Lux Control", "Master Yi Midrange", "Master Yi Aurora",
+    "Annie Tempo", "Garen Midrange", "Lux Control", "Master Yi Midrange", "Master Yi Aurora", "Garen Aurora",
     "Unknown"
 ] as const;
 export type Archetype = typeof ALL_ARCHETYPES[number];
@@ -12,13 +12,13 @@ export function ARCHETYPE_FROM_STRING(str: string): Archetype {
     return (ALL_ARCHETYPES.includes(str as Archetype)) ? str as Archetype : "Unknown";
 }
 
-export const UNKNOWN_LEGEND_ID = "???-???";
 const archetypeLegendDict: {[archetype in Archetype]: string} = {
     "Annie Tempo": "OGS-017",
     "Master Yi Midrange": "OGS-019",
     "Master Yi Aurora": "OGS-019",
     "Lux Control": "OGS-021",
     "Garen Midrange": "OGS-023",
+    "Garen Aurora": "OGS-023",
     "Kai'Sa Midrange": "OGN-247",
     "Kai'Sa Control": "OGN-247",
     "Volibear Ramp": "OGN-249",
@@ -34,10 +34,10 @@ const archetypeLegendDict: {[archetype in Archetype]: string} = {
     "Miss Fortune Aurora": "OGN-267",
     "Sett Midrange": "OGN-269",
     "Sett Aurora": "OGN-269",
-    "Unknown": UNKNOWN_LEGEND_ID
+    "Unknown": ""
 };
 export function ARCHETYPE_TO_LEGEND_BASE_ID(archetype: Archetype): string {
-    return (archetype in archetypeLegendDict) ? archetypeLegendDict[archetype] : UNKNOWN_LEGEND_ID;
+    return (archetype in archetypeLegendDict) ? archetypeLegendDict[archetype] : "";
 }
 let legendArchetypesDict: {[baseId: string]: Archetype[]} = {};
 for(let archetypeStr in archetypeLegendDict) {
@@ -59,27 +59,28 @@ export function PREDICT_ARCHETYPE(decklist: Decklist): Archetype {
     }
     const baseLegendId = TO_BASE_ID(decklist.legend);
     const potentialArchetype = LEGEND_BASE_ID_TO_ARCHETYPE(baseLegendId);
-    console.log(decklist, potentialArchetype);
     if(potentialArchetype !== "Unknown") {
         return potentialArchetype;
     } else if(baseLegendId === "OGS-019") {
         return decklist.contains("OGN-160", {exactCount: 3}) ? "Master Yi Aurora" : "Master Yi Midrange";
     } else if(baseLegendId === "OGN-247") {
-        return decklist.contains("OGN-099") ? "Kai'Sa Control" : "Kai'Sa Midrange"; // garbage grabber lol
+        return decklist.contains("OGN-098") && decklist.contains("OGN-099") ? "Kai'Sa Control" : "Kai'Sa Midrange"; // energy conduit + garbage grabber
     } else if(baseLegendId === "OGN-267") {
         return decklist.contains("OGN-160", {exactCount: 3}) ? "Miss Fortune Aurora" : "Miss Fortune Aggro";
     } else if(baseLegendId === "OGN-269") {
         return decklist.contains("OGN-160", {exactCount: 3}) ? "Sett Aurora" : "Sett Midrange";
+    } else if(baseLegendId === "OGS-023") {
+        return decklist.contains("OGN-160", {exactCount: 3}) ? "Garen Aurora" : "Garen Midrange";
     }
     return "Unknown";
 }
 
 export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "Dark Horses", "Memes"];
 export const ARCHETYPE_TIERS: Archetype[][] = [
-    ["Kai'Sa Midrange", "Master Yi Midrange"],
-    ["Miss Fortune Aurora", "Darius", "Sett Midrange", "Master Yi Aurora", "Viktor", "Ahri", "Annie Tempo"],
-    ["Teemo"],
-    ["Kai'Sa Control", "Lee Sin Midrange", "Sett Aurora", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Yasuo Midrange", "Miss Fortune Aggro"],
+    ["Kai'Sa Midrange", "Annie Tempo"],
+    ["Miss Fortune Aurora", "Master Yi Aurora", "Master Yi Midrange"],
+    ["Sett Midrange", "Viktor", "Ahri", "Darius", "Teemo"],
+    ["Kai'Sa Control", "Lee Sin Midrange", "Sett Aurora", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Yasuo Midrange", "Miss Fortune Aggro", "Garen Aurora"],
     ["Garen Midrange"],
 ];
 

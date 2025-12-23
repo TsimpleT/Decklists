@@ -66,8 +66,8 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
             window.alert(`${decklist.runeDeck.reduce((sum, current) => sum + current.count, 0)} cards in rune deck (need 12)`);
             return;
         }
-        copy(JSON.stringify(decklist)+",");
-        window.alert("Decklist copied.");
+        copy(JSON.stringify(decklist.toInterface(true))+",");
+        window.alert("Decklist copied to clipboard.");
     }
 
     public replace = async (id: string): Promise<void> => {
@@ -113,7 +113,7 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
         return (<>
             <div className={styles.menu}>
                 <div className={styles.title}>My Decklists</div>
-                <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={this.add}>Add New Deck From Clipboard</div>
+                <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={this.add}>Add New Deck From Clipboard (TTS Export)</div>
                 <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={this.devCopy}>[DEV] Preprocess Deck</div>
             </div>
             <div className={styles.decklistsContainer}>

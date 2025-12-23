@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './LegendImage.module.css';
 
-import { GET_CARD, GET_CARD_ART, UNKNOWN_LEGEND_ID } from '../../Data';
+import { GET_CARD, GET_CARD_ART } from '../../Data';
 
 interface IProps { id: string; size: number; imgTitle?: string; subscript?: string; subscriptFontSize?: number; extraStyles?: React.CSSProperties }
 
 export class LegendImage extends React.Component<IProps> {
     public render(): React.ReactNode {
-        if(this.props.id === UNKNOWN_LEGEND_ID) {
+        if(this.props.id === "") {
             return (
                 <div className={styles.imageContainer} style={{width: this.props.size, height: this.props.size, ...(this.props.extraStyles ?? {})}}>
                     <div className={styles.unknown}>?</div>

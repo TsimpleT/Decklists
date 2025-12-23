@@ -28,6 +28,10 @@
     background-color: var(--bg-dark-hover);
 }
 
+.darkButton:active {
+    background-color: var(--bg-dark-active);
+}
+
 .decklistsContainer {
     display: flex;
 }
