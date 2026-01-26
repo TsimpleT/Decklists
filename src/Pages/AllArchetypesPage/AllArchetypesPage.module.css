@@ -21,6 +21,15 @@
     padding: 6px 14px;
 }
 
+.headerLabelLink {
+    border-radius: 0 8px 8px 0;
+    font-weight: 400;
+}
+
+.headerLabelLink:hover {
+    background-color: var(--bg-dark-hover);
+}
+
 .innerContainer {
     display: flex;
     flex-direction: row;

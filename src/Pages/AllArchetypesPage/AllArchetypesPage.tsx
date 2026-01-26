@@ -30,9 +30,15 @@ export class AllArchetypesPage extends React.Component<{}, IState> {
         return (
             <div className={styles.container}>
                 <div className={styles.headerContainer}>
-                    <div className={styles.headerLabel} style={{borderLeft: "none"}}>{`META ${GET_SET_NAME(this.state.meta)}`}</div>
-                    {/* <div className={styles.headerLabel}>Spiritforged</div>
-                    <div className={styles.headerLabel} style={{fontWeight: "200"}}>Origins (will re-enable later)</div> */}
+                    <div className={styles.headerLabel} style={{borderLeft: "none"}}>{`${GET_SET_NAME(this.state.meta)} Meta`}</div>
+                    {ALL_METAS.filter((meta) => meta !== this.state.meta).map((meta) =>
+                        <div className={`${styles.headerLabel} ${styles.headerLabelLink}`} onClick={() => {
+                            window.history.pushState("", "", `/decklists/riftbound/all-archetypes/${meta}`);
+                            this.setState({meta: meta});
+                        }}>
+                            {meta}
+                        </div>
+                    )}
                 </div>
                 <div className={styles.innerContainer}>
                     {GET_ARCHETYPE_TIERS(this.state.meta).map((tier, tierIdx) =>
