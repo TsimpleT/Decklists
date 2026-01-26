@@ -111,7 +111,7 @@ SFD-063,Chemtech Cask,,Gear,Mind,Common,1,,,"When you play a spell on an opponen
 SFD-064,Cloth Armor,,Gear,Mind,Common,1,,,"[Quick-Draw]
 [Equip] [B]",[Shield 2] [M]+0,,Equipment,,FALSE
 SFD-065,Forecaster,,Unit,Mind,Common,2,,2,Your Mechs have [Vision].,,,"Bandle City, Yordle, Mech",A good mech pilot has quick reflexes. A great one doesn't need them.,FALSE
-SFD-066,Frigid Toucch,,Spell,Mind,Common,2,,,"[Reaction]
+SFD-066,Frigid Touch,,Spell,Mind,Common,2,,,"[Reaction]
 [Repeat] [2]
 Give a unit -2[M] this turn.",,,,"""Freeze.""",FALSE
 SFD-067,Frostcoat Cub,,Unit,Mind,Common,3,,3,"You may pay [B] as an additional cost to play me.

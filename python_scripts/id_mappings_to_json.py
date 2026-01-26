@@ -17,11 +17,11 @@ csv_handler = [
 def main():
     file_date = input(f'Enter file date (default "{DEFAULT_DATE}"): ')
     if not file_date: file_date = DEFAULT_DATE
-    lastId = ""
+    last_id = ""
     with open(f"id_mappings_{file_date}.csv", 'r') as rf_raw:
         for row in reversed(rf_raw.readlines()):
             if row[3] == "-":
-                lastId = row[:row.index(",")]
+                last_id = row[:row.index(",")]
                 break
     with open(f"id_mappings_{file_date}.csv", 'r') as rf_raw:
         # ID,Base ID,TTS ID
@@ -37,7 +37,7 @@ def main():
                         if i > 1: wf.write(", ")
                         wf.write(f'"{key}":{handler(row[i])}')
                     i += 1
-                wf.write("}\n" if row[0] == lastId else "},\n")
+                wf.write("}\n" if row[0] == last_id else "},\n")
             wf.write('\t}\n}\n')
     
     print(f"IdMappings{file_date}.json written successfully")

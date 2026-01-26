@@ -1,5 +1,5 @@
 import { Archetype, PREDICT_ARCHETYPE } from "./Archetype";
-import { GET_CARD, IS_CARD, TO_BASE_ID, TO_TTS_ID, TTS_ID_TO_ID } from "./Cards";
+import { CardDTO, GET_CARD, IS_CARD, TO_BASE_ID, TO_TTS_ID, TTS_ID_TO_ID } from "./Cards";
 
 export interface DecklistCardAmount { id: string; count: number; }
 
@@ -20,6 +20,10 @@ interface IDecklistContainsOptions {
     exactCount?: number;
     minCount?: number;
     maxCount?: number;
+    includeSideboard?: boolean;
+}
+
+interface IDecklistNumTypeOptions {
     includeSideboard?: boolean;
 }
 
@@ -66,6 +70,16 @@ export class Decklist {
             }
         }
         return false;
+    }
+
+    public numMatchingQuery(query: (card: CardDTO) => boolean, options?: IDecklistNumTypeOptions): number {
+        let n = 0;
+        for(let listing of this.combinedDCAs(options?.includeSideboard ?? false)) {
+            if(query(GET_CARD(listing.id))) {
+                n += listing.count;
+            }
+        }
+        return n;
     }
 
     private combinedDCAs(includeSideboard: boolean = true): DecklistCardAmount[] {

@@ -10,7 +10,7 @@ export type CardType = "Battlefield"|"Gear"|"Legend"|"Rune"|"Spell"|"Unit";
 type Rarity = "Common"|"Uncommon"|"Rare"|"Epic"|"Showcase";
 
 //'Base ID', 'Name', 'Pre-Type', 'Type', 'Domains', 'Rarity', 'Energy Cost', 'Power Cost', 'Might', 'Rules Text', 'Champion Tag', 'Other Tags', 'Other'
-interface CardDTO {
+export interface CardDTO {
     baseId:	string;
     name: string;
     preType?: CardTypePrefix;

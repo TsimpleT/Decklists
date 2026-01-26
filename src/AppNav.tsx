@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from "./AppNav.module.css";
 
-import { ImageUtil, VERSION_STRING } from './Data';
+import { ALL_METAS, ImageUtil, VERSION_STRING } from './Data';
 
 // enum Game { NONE, RIFTBOUND }
 // interface IState { game: Game }
@@ -33,7 +33,7 @@ export class AppNav extends React.Component/*<{}, IState>*/ {
                 <img className={styles.icon} src={ImageUtil.getImage("Riftbound")} height={26} title={"Riftbound"} alt={"Riftbound"} />
                 <span className={styles.title} title={VERSION_STRING}>Decklists</span>
                 {/* <span className={styles.titleNotes}>alpha build</span> */}
-                <Link to={"/decklists/riftbound/all-archetypes"}>
+                <Link to={`/decklists/riftbound/all-archetypes/${ALL_METAS[ALL_METAS.length-1].toLowerCase()}`}>
                     Archetype Stats
                 </Link>
                 <Link to={"/decklists/riftbound/me"}>

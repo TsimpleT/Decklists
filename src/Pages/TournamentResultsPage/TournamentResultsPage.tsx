@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './TournamentResultsPage.module.css';
 
-import { DEV_STRING_PRE, TOURNAMENT_RESULTS, GET_TOURNAMENT_ID, ARCHETYPE_TO_LEGEND_BASE_ID, ImageUtil, ImageType } from '../../Data';
+import { DEV_STRING_PRE, GET_TOURNAMENT_ID, ARCHETYPE_TO_LEGEND_BASE_ID, ImageUtil, ImageType, TOURNAMENT_RESULTS } from '../../Data';
 import { LegendImage } from '../../Views';
 
 export class TournamentResultsPage extends React.Component {

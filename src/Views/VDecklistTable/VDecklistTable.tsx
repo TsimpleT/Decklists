@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './VDecklistTable.module.css';
 
-import { ALL_CCATEGORIES, Archetype, CCATEGORY, DECK_KEY_TO_UUID, Decklist, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CCATEGORY, ImageUtil, LocalStorageManager, TO_BASE_ID } from '../../Data';
+import { ALL_CCATEGORIES, Archetype, CCATEGORY, DECK_KEY_TO_UUID, Decklist, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CCATEGORY, ImageUtil, LocalStorageManager, Meta, TO_BASE_ID } from '../../Data';
 import { VDecklistCard } from '../VDecklistCard';
 
 interface IProps {
     archetype: Archetype;
+    meta: Meta;
 }
 
 interface IState {
@@ -59,7 +60,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
         this.lsmDecklistIds = LocalStorageManager.getInstance().getArchetypeDecklistIds(props.archetype);
-        this.decklists = (this.lsmDecklistIds.map((id) => LocalStorageManager.getInstance().getDecklist(id)).filter((e) => e !== undefined) as Decklist[]).concat(GET_ARCHETYPE_DECKLISTS(props.archetype));
+        this.decklists = (this.lsmDecklistIds.map((id) => LocalStorageManager.getInstance().getDecklist(id)).filter((e) => e !== undefined) as Decklist[]).concat(GET_ARCHETYPE_DECKLISTS(props.archetype, props.meta));
         this.cardIds = [];
         this.cardAmounts = {};
         this.sideboardAmounts = {};
@@ -94,7 +95,10 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                         this.sideboardAmounts[cardId].push(0);
                     }
                 }
-                this.cardAmounts[cardId].push(listing.count);
+                if(this.cardAmounts[cardId].length === decklistNum) {
+                    this.cardAmounts[cardId].push(0);
+                }
+                this.cardAmounts[cardId][decklistNum] += listing.count;
             }
             for(let listing of decklist.sideboard) {
                 const cardId = TO_BASE_ID(listing.id);
@@ -109,7 +113,10 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                         this.sideboardAmounts[cardId].push(0);
                     }
                 }
-                this.sideboardAmounts[cardId].push(listing.count);
+                if(this.sideboardAmounts[cardId].length === decklistNum) {
+                    this.sideboardAmounts[cardId].push(0);
+                }
+                this.sideboardAmounts[cardId][decklistNum] += listing.count;
             }
             for(let cardId in this.cardAmounts) {
                 if(this.cardAmounts[cardId].length <= decklistNum) {
@@ -188,9 +195,9 @@ export class VDecklistTable extends React.Component<IProps, IState> {
             );
         } else if(this.state.view === "stats") {
             return this.renderStats();
-        } else if(this.state.view === "matchups") {
+        }/* else if(this.state.view === "matchups") {
             return this.renderMatchups();
-        }
+        }*/
     }
 
     private showCard = (cardId: string): void => {
@@ -328,140 +335,6 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                                 )}
                             </tr>
                             {this.cardIds.filter((cardId) => (GET_CCATEGORY(cardId) === cc && !this.state.hideCards.includes(cardId))).map((cardId, cardIdx) => {
-                                return (
-                                    <tr key={cardIdx}>
-                                        {this.cardAmounts[cardId].map((count, deckIdx) => (
-                                            <td className={`${styles.cell} ${GET_COLOR_STYLE(cc, count, this.sideboardAmounts[cardId][deckIdx])}`} key={deckIdx}>
-                                                <span className={styles.mainDeck}>{count}</span>
-                                                {(this.sideboardAmounts[cardId][deckIdx] > 0) &&
-                                                    <span className={styles.sideboard} title={"sideboard"}>
-                                                        {this.sideboardAmounts[cardId][deckIdx]}
-                                                    </span>
-                                                }
-                                            </td>
-                                        ))}
-                                    </tr>
-                                );
-                            })}
-                        </>)))}
-                    </tbody>
-                </table>
-            </div>
-        );
-    }
-
-    private renderMatchups(): React.ReactNode {
-        return (
-            <div className={styles.container}>
-                <table className={styles.stickyColumns}>
-                    <thead>
-                        <tr className={styles.topRow}>
-                            <th className={styles.stickyCol1}>Card</th>
-                            <th className={styles.stickyCol2} title={"Main Deck % Appearance"}>MD%</th>
-                            <th className={styles.stickyCol3}>Avg</th>
-                            <th className={styles.stickyCol4}>Range</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {([...ALL_CCATEGORIES].map((cc) => (<>
-                            <tr>
-                                <th colSpan={2} className={`${styles.categorySectionHeader} ${styles.stickyCol1}`}>{cc}</th>
-                                <th className={`${styles.sectionHeaderRowCell} ${styles.stickyCol3}`}>
-                                    <span className={styles.mainDeck}>
-                                        { this.ccategoryStats[cc].avg.toFixed(2) }
-                                    </span>
-                                    {(this.ccategoryStats[cc].sbAvg > 0) &&
-                                        <span className={styles.sideboard} title={"sideboard"}>{ this.ccategoryStats[cc].sbAvg.toFixed(2) }</span>
-                                    }
-                                </th>
-                                <th className={`${styles.sectionHeaderRowCell} ${styles.stickyCol4}`}>
-                                    <span className={styles.mainDeck}>
-                                        { (this.ccategoryStats[cc].min === this.ccategoryStats[cc].max) ? this.ccategoryStats[cc].min : `${this.ccategoryStats[cc].min}-${this.ccategoryStats[cc].max}` }
-                                    </span>
-                                    {/* {(this.ccategoryStats[cc].sbMin + this.ccategoryStats[cc].sbMax > 0) &&
-                                        <span className={styles.sideboard} title={"sideboard"}>
-                                            { (this.ccategoryStats[cc].sbMin === this.ccategoryStats[cc].sbMax) ? this.ccategoryStats[cc].sbMin : `${this.ccategoryStats[cc].sbMin}-${this.ccategoryStats[cc].sbMax}` }
-                                        </span>
-                                    } */}
-                                </th>
-                            </tr>
-                            {this.cardIds.filter((cardId) => GET_CCATEGORY(cardId) === cc).map((cardId, cardIdx) => {
-                                const stats = this.cardStats[cardId];
-                                return (
-                                    <tr key={cardIdx}>
-                                        <VDecklistCard id={cardId} options={{type: "table"}} fixHover={true} />
-                                        <td className={`${styles.statsCell} ${styles.stickyCol2}`} style={getColorScale(cc, stats.mdApp)}>
-                                            <span className={styles.mainDeck}>
-                                                { stats.mdApp.toLocaleString(undefined,{style:'percent'}) }
-                                            </span>
-                                        </td>
-                                        <td className={`${styles.statsCell} ${styles.stickyCol3}`} style={getColorScale(cc, stats.avg / ((cc === CCATEGORY.BATTLEFIELD) ? 1 : 3))}>
-                                            <span className={styles.mainDeck}>
-                                                { stats.avg.toFixed(2) }
-                                            </span>
-                                            {(stats.sbAvg > 0) &&
-                                                <span className={styles.sideboard} title={"sideboard"}>{ stats.sbAvg.toFixed(2) }</span>
-                                            }
-                                        </td>
-                                        <td className={`${styles.statsCell} ${styles.stickyCol4}`} style={(cc === CCATEGORY.BATTLEFIELD) ? { backgroundColor: "black" } : getColorScale(cc, (stats.min+stats.max) / 6)}>
-                                            <span className={styles.mainDeck}>
-                                                { (stats.min === stats.max) ? stats.min : `${stats.min}-${stats.max}` }
-                                            </span>
-                                        </td>
-                                    </tr>
-                                );
-                            })}
-                        </>)))}
-                    </tbody>
-                </table>
-                <table>
-                    <thead>
-                        <tr className={styles.topRow}>
-                            {this.decklists.map((decklist, deckIdx) => {
-                                let md = 0, sb = 0;
-                                for(let cardId of this.cardIds) {
-                                    md += this.cardAmounts[cardId][deckIdx];
-                                    sb += this.sideboardAmounts[cardId][deckIdx];
-                                }
-                                if(md !== 56 || !(sb === 0 || sb === 8)) {
-                                    console.warn(`Decklist "${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}" has size ${md}+${sb}`);
-                                }
-                                return (
-                                    <th className={styles.headerLinkCell} key={deckIdx} title={((decklist.username === "") ? "" : `${decklist.username}: `) + `${decklist.tournamentName} ${decklist.date} ${decklist.placing}`}>
-                                        {(decklist.username !== "You") ?
-                                            <Link to={`/decklists/riftbound/tournament/${decklist.tournId}/decklist/${decklist.username}`} style={{color: "var(--text-default)"}}>
-                                                <div className={styles.deckLabelCell}>
-                                                    <div>{decklist.tournId.substring(0,decklist.tournId.indexOf("-"))}</div>
-                                                    <div>{decklist.placing}</div>
-                                                </div>
-                                            </Link>
-                                        :
-                                            <Link to={`/decklists/riftbound/me/${DECK_KEY_TO_UUID(this.lsmDecklistIds[deckIdx])}`} style={{color: "var(--text-default)"}}>
-                                                <div className={styles.deckLabelCell}>
-                                                    {decklist.username}
-                                                </div>
-                                            </Link>
-                                        }
-                                    </th>
-                                );
-                            })}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {([...ALL_CCATEGORIES].map((cc) => (<>
-                            <tr>
-                                {this.decklists.map((_, deckIdx) => 
-                                    <th className={styles.sectionHeaderRowCell}>
-                                        <span className={styles.mainDeck}>
-                                            { this.decklistCCategoryStats[deckIdx][cc].total }
-                                        </span>
-                                        {(this.decklistCCategoryStats[deckIdx][cc].sbTotal > 0) &&
-                                            <span className={styles.sideboard} title={"sideboard"}>{ this.decklistCCategoryStats[deckIdx][cc].sbTotal }</span>
-                                        }
-                                    </th>
-                                )}
-                            </tr>
-                            {this.cardIds.filter((cardId) => GET_CCATEGORY(cardId) === cc).map((cardId, cardIdx) => {
                                 return (
                                     <tr key={cardIdx}>
                                         {this.cardAmounts[cardId].map((count, deckIdx) => (

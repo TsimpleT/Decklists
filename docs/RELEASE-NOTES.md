@@ -1,4 +1,3 @@
-[2.2.0] Many Decklists + SFD
-- Many, many decklists
-- Added Spiritforged cards
-- Support for update to CardList sheet
+[2.3.0] Separated stats by set meta
+- Preliminary card categories (unchecked)
+- Bugfix for decklists where to add multiple entries of the same card (rather than overwriting) 

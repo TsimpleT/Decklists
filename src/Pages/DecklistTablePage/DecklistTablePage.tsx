@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Archetype, ARCHETYPE_FROM_STRING, DEV_STRING_PRE } from '../../Data';
+import { Archetype, ARCHETYPE_FROM_STRING, DEV_STRING_PRE, Meta, META_FROM_STRING } from '../../Data';
 import { VDecklistTable } from '../../Views';
 
 interface IProps {}
@@ -11,6 +11,7 @@ export class DecklistTablePage extends React.Component<IProps> {
     }
     
     private archetype: Archetype;
+    private meta: Meta;
 
     public constructor(props: IProps) {
         super(props);
@@ -18,12 +19,14 @@ export class DecklistTablePage extends React.Component<IProps> {
         if(url.length > 0 && url.charAt(url.length-1) !== "/") {
             url += "/";
         }
-        this.archetype = ARCHETYPE_FROM_STRING(url.slice(url.indexOf("archetype/")+10, url.length-1).replaceAll("-", " "));
+        const toParse = url.slice(url.indexOf("archetype/")+10, url.length-1).replaceAll("-", " ");
+        this.archetype = ARCHETYPE_FROM_STRING(toParse.slice(0, toParse.indexOf("/")));
+        this.meta = META_FROM_STRING(toParse.slice(toParse.indexOf("/")+1, toParse.length));
     }
 
     public render(): React.ReactNode {
         return (<>
-            <VDecklistTable archetype={this.archetype} />
+            <VDecklistTable archetype={this.archetype} meta={this.meta} />
         </>);
     }
 }

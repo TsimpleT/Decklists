@@ -23,15 +23,15 @@ csv_handler = [
 ]
 
 def main():
-    file_date = input(f'Enter file date (default "{DEFAULT_DATE}"): ')
-    if not file_date: file_date = DEFAULT_DATE
     set_id = input(f'Enter set ID (default "{DEFAULT_SET_ID}"): ')
     if not set_id: set_id = DEFAULT_SET_ID
-    lastId = ""
+    file_date = input(f'Enter file date (default "{DEFAULT_DATE}"): ')
+    if not file_date: file_date = DEFAULT_DATE
+    last_id = ""
     with open(f"base_card_list_{set_id}_{file_date}.csv", 'r') as rf_raw:
         for row in reversed(rf_raw.readlines()):
             if row[3] == "-":
-                lastId = row[:row.index(",")]
+                last_id = row[:row.index(",")]
                 break
     with open(f"base_card_list_{set_id}_{file_date}.csv", 'r') as rf_raw:
         next(rf_raw)
@@ -46,7 +46,7 @@ def main():
                         if i > 0: wf.write(", ")
                         wf.write(f'"{key}":{handler(row[i])}')
                     i += 1
-                wf.write("}\n" if row[0] == lastId else "},\n")
+                wf.write("}\n" if row[0] == last_id else "},\n")
             wf.write('\t}\n}\n')
     print(f"BaseCardList{set_id.upper()}{file_date}.json written successfully")
     return 0

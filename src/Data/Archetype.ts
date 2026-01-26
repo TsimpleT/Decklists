@@ -1,9 +1,11 @@
 import { TO_BASE_ID } from "./Cards";
 import { Decklist } from "./Decklist";
+import { Meta } from "./TournamentResults";
 
 export const ALL_ARCHETYPES = [
-    "Ahri", "Darius", "Jinx Aggro", "Kai'Sa Midrange", "Kai'Sa Control", "Lee Sin Midrange", "Leona Midrange", "Miss Fortune Aurora", "Miss Fortune Aggro", "Sett Aurora", "Sett Midrange", "Teemo", "Viktor", "Volibear Ramp", "Yasuo Midrange",
-    "Annie Tempo", "Garen Midrange", "Lux Control", "Master Yi Midrange", "Master Yi Aurora", "Garen Aurora",
+    "Ahri", "Darius", "Jinx Aggro", "Kai'Sa Midrange", "Kai'Sa Control", "Lee Sin Midrange", "Leona Midrange", "Miss Fortune Aurora", "Miss Fortune Aggro", "Sett Aurora", "Sett Midrange", "Teemo", "Viktor Midrange", "Viktor Control", "Volibear Ramp", "Yasuo Midrange",
+    "Annie Midrange", "Garen Midrange", "Lux Control", "Master Yi Midrange", "Master Yi Aurora", "Garen Aurora",
+    "Rumble Midrange", "Lucian", "Draven Midrange", "Draven Storm", "Rek'Sai", "Ornn", "Jax", "Irelia", "Azir", "Ezreal", "Renata Glasc", "Sivir", "Fiora Midrange",
     "Unknown"
 ] as const;
 export type Archetype = typeof ALL_ARCHETYPES[number];
@@ -13,7 +15,7 @@ export function ARCHETYPE_FROM_STRING(str: string): Archetype {
 }
 
 const archetypeLegendDict: {[archetype in Archetype]: string} = {
-    "Annie Tempo": "OGS-017",
+    "Annie Midrange": "OGS-017",
     "Master Yi Midrange": "OGS-019",
     "Master Yi Aurora": "OGS-019",
     "Lux Control": "OGS-021",
@@ -29,11 +31,25 @@ const archetypeLegendDict: {[archetype in Archetype]: string} = {
     "Yasuo Midrange": "OGN-259",
     "Leona Midrange": "OGN-261",
     "Teemo": "OGN-263",
-    "Viktor": "OGN-265",
+    "Viktor Midrange": "OGN-265",
+    "Viktor Control": "OGN-265",
     "Miss Fortune Aggro": "OGN-267",
     "Miss Fortune Aurora": "OGN-267",
     "Sett Midrange": "OGN-269",
     "Sett Aurora": "OGN-269",
+    "Rumble Midrange": "SFD-181",
+    "Lucian": "SFD-183",
+    "Draven Midrange": "SFD-185",
+    "Draven Storm": "SFD-185",
+    "Rek'Sai": "SFD-187",
+    "Ornn": "SFD-189",
+    "Jax": "SFD-193",
+    "Irelia": "SFD-195",
+    "Azir": "SFD-197",
+    "Ezreal": "SFD-199",
+    "Renata Glasc": "SFD-201",
+    "Sivir": "SFD-203",
+    "Fiora Midrange": "SFD-205",
     "Unknown": ""
 };
 export function ARCHETYPE_TO_LEGEND_BASE_ID(archetype: Archetype): string {
@@ -71,17 +87,36 @@ export function PREDICT_ARCHETYPE(decklist: Decklist): Archetype {
         return decklist.contains("OGN-160", {exactCount: 3}) ? "Sett Aurora" : "Sett Midrange";
     } else if(baseLegendId === "OGS-023") {
         return decklist.contains("OGN-160", {exactCount: 3}) ? "Garen Aurora" : "Garen Midrange";
+    } else if(baseLegendId === "SFD-185") {
+        return decklist.contains("SFD-012", {exactCount: 3}) ? "Draven Storm" : "Draven Midrange";
+    } else if(baseLegendId === "OGN-265") {
+        return (decklist.numMatchingQuery(((card) => card.type === "Spell"), {includeSideboard: false}) >= 27) ? "Viktor Control" : "Viktor Midrange"; 
     }
     return "Unknown";
 }
 
-export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "Dark Horses", "Memes"];
-export const ARCHETYPE_TIERS: Archetype[][] = [
-    ["Kai'Sa Midrange", "Annie Tempo"],
-    ["Miss Fortune Aurora", "Master Yi Aurora", "Master Yi Midrange"],
-    ["Sett Midrange", "Viktor", "Ahri", "Darius", "Teemo"],
-    ["Kai'Sa Control", "Lee Sin Midrange", "Sett Aurora", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Yasuo Midrange", "Miss Fortune Aggro", "Garen Aurora"],
-    ["Garen Midrange"],
-];
+export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "Dark Horses", "Struggles", "Memes"];
+const META_ARCHETYPE_TIERS: {[meta in Meta]: Archetype[][]} = {
+    "SFD": [
+        ["Draven Midrange"],
+        ["Irelia", "Fiora Midrange", "Kai'Sa Midrange", "Annie Midrange", "Ezreal", "Draven Storm"],
+        ["Viktor Midrange", "Sivir", "Master Yi Midrange", "Rek'Sai", "Ornn", "Lucian", "Azir", "Teemo", "Miss Fortune Aurora"],
+        ["Renata Glasc", "Master Yi Aurora", "Rumble Midrange", "Volibear Ramp", "Lux Control", "Leona Midrange", "Viktor Control", "Jax", "Darius", "Sett Midrange", "Ahri", "Yasuo Midrange"],
+        ["Garen Aurora", "Lee Sin Midrange", "Sett Aurora", "Jinx Aggro", "Miss Fortune Aggro", "Kai'Sa Control"],
+        ["Garen Midrange"],
+    ], "OGN": [
+        ["Kai'Sa Midrange", "Annie Midrange"],
+        ["Miss Fortune Aurora", "Master Yi Aurora", "Master Yi Midrange"],
+        ["Sett Midrange", "Viktor Midrange", "Ahri", "Darius", "Teemo"],
+        ["Kai'Sa Control", "Yasuo Midrange"],
+        ["Lee Sin Midrange", "Sett Aurora", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Miss Fortune Aggro", "Garen Aurora"],
+        ["Garen Midrange"],
+    ]
+};
+export function GET_ARCHETYPE_TIERS(meta: Meta): Archetype[][] {
+    return META_ARCHETYPE_TIERS[meta];
+}
 
-export const MAX_ARCHETYPE_TIER_SIZE = Math.max(...ARCHETYPE_TIERS.map((tier) => tier.length));
+export function GET_MAX_ARCHETYPE_TIER_SIZE(meta: Meta) {
+    return Math.max(...META_ARCHETYPE_TIERS[meta].map((tier) => tier.length))
+};
