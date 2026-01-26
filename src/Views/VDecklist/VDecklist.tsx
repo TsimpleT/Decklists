@@ -46,10 +46,14 @@ export class VDecklist extends React.Component<IProps> {
                     </div>}
                 </div>
                 <div className={styles.decklistContainer}>
-                    {(IS_CARD(dl.legend) ? [{id: dl.legend, count: 1}] : []).concat(dl.mainDeck).concat(dl.battlefields).concat(dl.runeDeck).concat(dl.sideboard).map((listing, i) => (
-                        <div className={styles.row} key={i}>
-                            <span className={`${styles.count} ${GET_COLOR_STYLE(GET_CCATEGORY(listing.id), listing.count, 0)}`}>{listing.count}x</span>
-                            <VDecklistCard id={listing.id} key={i} options={{type: "showType"}} />
+                    {[[{id: dl.legend, count: 1}], [{id: dl.chosenChampion, count: dl.mainDeck.find((dca) => dca.id === dl.chosenChampion)?.count ?? -1}], dl.mainDeck, dl.battlefields, dl.runeDeck, dl.sideboard].map((arr, i) => (
+                        <div className={styles.section} key={i}>
+                            {(arr.filter((listing) => (i !== 2 || listing.id !== dl.chosenChampion)).map((listing, j) => 
+                                <div className={styles.row} key={j}>
+                                    <span className={`${styles.count} ${GET_COLOR_STYLE(GET_CCATEGORY(listing.id), listing.count, 0)}`}>{listing.count}x</span>
+                                    <VDecklistCard id={listing.id} options={{type: "showType"}} />
+                                </div>
+                            ))}
                         </div>
                     ))}
                 </div>

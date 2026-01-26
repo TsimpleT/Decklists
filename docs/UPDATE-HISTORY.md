@@ -1,3 +1,4 @@
+\[2.3.2\] (26Jan26) Testing to enforce chosen champions + fixes
 \[2.3.1\] (26Jan26) Links between set meta
 \[2.3.0\] (26Jan26) Separated stats by set meta
 \[2.2.0\] (25Dec23) Many Decklists + SFD
