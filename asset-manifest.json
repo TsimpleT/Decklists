@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/decklists/static/css/main.053116e9.css",
-    "main.js": "/decklists/static/js/main.afc90f95.js",
+    "main.css": "/decklists/static/css/main.3ccdc7ac.css",
+    "main.js": "/decklists/static/js/main.732bb428.js",
     "static/js/453.0c9396f7.chunk.js": "/decklists/static/js/453.0c9396f7.chunk.js",
     "static/media/RainbowRuneBorder.png": "/decklists/static/media/RainbowRuneBorder.77b0a7671c08b3e00cff.png",
     "static/media/RainbowRune.png": "/decklists/static/media/RainbowRune.7891cef5fa18cebd1b34.png",
@@ -23,7 +23,7 @@
     "static/media/Spell.png": "/decklists/static/media/Spell.63c05a8c440509541a46.png",
     "static/media/CalmBW.png": "/decklists/static/media/CalmBW.571a63efff23f3fd5027.png",
     "static/media/Unit.png": "/decklists/static/media/Unit.418f0638431b9352693c.png",
-    "static/media/Champion Unit.png": "/decklists/static/media/Champion Unit.217fa6209e7b7b229a6e.png",
+    "static/media/ChampionUnit.png": "/decklists/static/media/ChampionUnit.217fa6209e7b7b229a6e.png",
     "static/media/FuryBW.png": "/decklists/static/media/FuryBW.7a29c74523ff3b8fddab.png",
     "static/media/Mind.png": "/decklists/static/media/Mind.75c731fa3f86e5982633.png",
     "static/media/Legend.png": "/decklists/static/media/Legend.61d4e34ec368da4acc6b.png",
@@ -39,12 +39,12 @@
     "static/media/Settings.png": "/decklists/static/media/Settings.f7b1035622557c87aa8e.png",
     "static/media/Battlefy.png": "/decklists/static/media/Battlefy.b15d53dd9826e1a33967.png",
     "index.html": "/decklists/index.html",
-    "main.053116e9.css.map": "/decklists/static/css/main.053116e9.css.map",
-    "main.afc90f95.js.map": "/decklists/static/js/main.afc90f95.js.map",
+    "main.3ccdc7ac.css.map": "/decklists/static/css/main.3ccdc7ac.css.map",
+    "main.732bb428.js.map": "/decklists/static/js/main.732bb428.js.map",
     "453.0c9396f7.chunk.js.map": "/decklists/static/js/453.0c9396f7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.053116e9.css",
-    "static/js/main.afc90f95.js"
+    "static/css/main.3ccdc7ac.css",
+    "static/js/main.732bb428.js"
   ]
 }
