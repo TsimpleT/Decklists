@@ -1,6 +1,6 @@
 import { CardType, Domain } from "./Cards";
 
-export type ImageType = Domain|`${Domain}BW`|LinkType|CardType|OtherType;
+export type ImageType = Domain|`${Domain}BW`|LinkType|CardType|"ChampionUnit"|OtherType;
 type LinkType = "Challonge"|"Start"|"Sheets"|"Battlefy";
 type OtherType = "Riftbound"|"RainbowRune"|"Export"|"Info"|"Settings"|"";
 

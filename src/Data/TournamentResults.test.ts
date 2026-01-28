@@ -15,12 +15,13 @@ test("Each deck's legend matches chosen champion", () => {
     }
 });
 
-test("Each deck's chosen champion is in the main deck", () => {
+test("Each deck's chosen champion is the first entry in the main deck", () => {
     for(let tr of TOURNAMENT_RESULTS) {
         for(let placing of tr.results) {
             for(let dl of placing.decklists) {
                 if(dl.chosenChampion !== "") {
-                    expect(dl.mainDeck.map((dca)=>dca.id)).toContain(dl.chosenChampion);
+                    expect(dl.mainDeck.length).toBeGreaterThan(0);
+                    expect(dl.mainDeck[0].id).toBe(dl.chosenChampion);
                 }
             }
         }

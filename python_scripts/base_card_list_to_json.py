@@ -7,7 +7,7 @@ from script_helpers import *
 csv_handler = [
     ("baseId", process_str),
     ("name", process_str),
-    ("superType", process_str),
+    ("supertype", process_str),
     ("type", process_str),
     ("domains", process_array),
     ("rarity", process_str),

@@ -90,7 +90,7 @@ export function PREDICT_ARCHETYPE(decklist: Decklist): Archetype {
     } else if(baseLegendId === "SFD-185") {
         return decklist.contains("SFD-012", {exactCount: 3}) ? "Draven Storm" : "Draven Midrange";
     } else if(baseLegendId === "OGN-265") {
-        return (decklist.numMatchingQuery(((card) => card.type === "Spell"), {includeSideboard: false}) >= 27) ? "Viktor Control" : "Viktor Midrange"; 
+        return (decklist.numOfCardType("Spell") >= 27) ? "Viktor Control" : "Viktor Midrange"; 
     }
     return "Unknown";
 }
@@ -101,8 +101,8 @@ const META_ARCHETYPE_TIERS: {[meta in Meta]: Archetype[][]} = {
         ["Draven Midrange"],
         ["Irelia", "Fiora Midrange", "Kai'Sa Midrange", "Annie Midrange", "Ezreal", "Draven Storm"],
         ["Viktor Midrange", "Sivir", "Master Yi Midrange", "Rek'Sai", "Ornn", "Lucian", "Azir", "Teemo", "Miss Fortune Aurora"],
-        ["Renata Glasc", "Master Yi Aurora", "Rumble Midrange", "Volibear Ramp", "Lux Control", "Leona Midrange", "Viktor Control", "Jax", "Darius", "Sett Midrange", "Ahri", "Yasuo Midrange"],
-        ["Garen Aurora", "Lee Sin Midrange", "Sett Aurora", "Jinx Aggro", "Miss Fortune Aggro", "Kai'Sa Control"],
+        ["Renata Glasc", "Rumble Midrange", "Volibear Ramp", "Lux Control", "Leona Midrange", "Viktor Control", "Jax", "Darius", "Sett Midrange", "Ahri", "Yasuo Midrange"],
+        ["Garen Aurora", "Lee Sin Midrange", "Jinx Aggro", "Miss Fortune Aggro"],
         ["Garen Midrange"],
     ], "OGN": [
         ["Kai'Sa Midrange", "Annie Midrange"],

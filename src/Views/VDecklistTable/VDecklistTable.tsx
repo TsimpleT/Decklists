@@ -262,7 +262,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                                 const stats = this.cardStats[cardId];
                                 return (
                                     <tr key={cardIdx}>
-                                        <VDecklistCard id={cardId} options={{type: "table"}} fixHover={true} />
+                                        <VDecklistCard id={cardId} options={{type: "table"}} fixHover={-301} />
                                         <td className={`${styles.statsCell} ${styles.stickyCol2}`} style={getColorScale(cc, stats.mdApp)}>
                                             <span className={styles.mainDeck}>
                                                 { stats.mdApp.toLocaleString(undefined,{style:'percent'}) }

@@ -5,15 +5,18 @@ import CardCategories from "./CardCategories.json";
 import IdMappings from "./IdMappings.json";
 
 export type Domain = "Fury"|"Calm"|"Mind"|"Body"|"Chaos"|"Order";
-type CardTypePrefix = "Signature"|"Champion"|"Token";
-export type CardType = "Battlefield"|"Gear"|"Legend"|"Rune"|"Spell"|"Unit";
+type CardSupertype = "Signature"|"Champion"|"Token";
+
+export const ALL_CARD_TYPES = [ "Battlefield", "Gear", "Legend", "Rune", "Spell", "Unit"] as const;
+export type CardType = typeof ALL_CARD_TYPES[number];
+
 type Rarity = "Common"|"Uncommon"|"Rare"|"Epic"|"Showcase";
 
 //'Base ID', 'Name', 'Pre-Type', 'Type', 'Domains', 'Rarity', 'Energy Cost', 'Power Cost', 'Might', 'Rules Text', 'Champion Tag', 'Other Tags', 'Other'
 export interface CardDTO {
     baseId:	string;
     name: string;
-    preType?: CardTypePrefix;
+    supertype?: CardSupertype;
     type: CardType;
     domains: Domain[];
     rarity: Rarity;
@@ -53,6 +56,20 @@ export const CCATEGORY_ORDERING: {[key in CCATEGORY]: number} = {
 };
 
 let cardData: {[cardId: string]: CardDTO} = {...BaseCardListOGN.cards, ...BaseCardListOGS.cards, ...BaseCardListSFD.cards} as any;
+let cardNameToBaseId: {[name: string]: string} = {};
+for(let card in cardData) {
+    if(!(cardData[card].name in cardNameToBaseId)) {
+        cardNameToBaseId[cardData[card].name] = cardData[card].baseId;
+    }
+}
+export function GET_BASE_ID_FROM_CARD_NAME(name: string) {
+    if(!(name in cardNameToBaseId)) {
+        console.warn(`Card "${name}" not found in cardNameToBaseId.`);
+        return "";
+    }
+    return cardNameToBaseId[name];
+}
+
 let cardCategories: {[cardId: string]: CCATEGORY} = CardCategories.cardCategories as any;
 const fullIdMappings: {[id: string]: {baseId: string, ttsId: string, rarity: Rarity}} = IdMappings.mappings as any;
 let ttsIdMappings: {[id: string]: string} = {};
@@ -75,8 +92,12 @@ for(let card in cardData) {
 }
 
 export const SET_LIST = Array.from(setSet.values());
+const SET_NAMES: {[key: string]: string} = { "OGN": "Origins", "SFD": "Spiritforged", "OGS": "Proving Grounds", "ARC": "Arcane Box Set" };
+export function GET_SET_NAME(set: string): string {
+    return (set in SET_NAMES) ? SET_NAMES[set] : "Unknown";
+}
 
-export function IS_CARD(id: string): boolean {
+export function IS_CARD_ID(id: string): boolean {
     return id in cardData;
 }
 

@@ -6,7 +6,7 @@ import { GET_CARD, ImageUtil, GET_CARD_ART } from '../../Data';
 
 type PropsOptions = {type: "table"|"showType"};
 
-interface IProps { id: string; options: PropsOptions; fixHover?: boolean }
+interface IProps { id: string; options: PropsOptions; fixHover?: number }
 interface IState { hover: boolean; }
 
 export class VDecklistCard extends React.Component<IProps, IState> {
@@ -64,8 +64,9 @@ export class VDecklistCard extends React.Component<IProps, IState> {
                                 {(powerIcons.length > 0) && powerIcons}
                             </span>
                         }
-                        {(this.props.options.type !== "table" || card.type === "Legend" || card.type === "Rune" || card.type === "Battlefield") &&
-                            <img src={ImageUtil.getImage(card.type)} height={20} title={card.type} alt={card.type}
+                        {(this.props.options.type !== "table" || card.type === "Legend" || card.type === "Rune" || card.type === "Battlefield") && 
+                            <img src={ImageUtil.getImage(card.supertype === "Champion" ? "ChampionUnit" : card.type)} height={20}
+                                title={card.supertype === "Champion" ? "ChampionUnit" : card.type} alt={card.supertype === "Champion" ? "ChampionUnit" : card.type}
                                 className={`${styles.cardType} ${(card.domains.length > 0 && card.domains[0] === "Order") ? styles.invert : ""}`} />
                         }
                     </div>
@@ -80,7 +81,7 @@ export class VDecklistCard extends React.Component<IProps, IState> {
                 </div>
                 {(this.state.hover) &&
                     <img src={GET_CARD_ART(this.props.id)} className={styles.cardHoverImage}
-                        alt={`${card.name} (${this.props.id})`} style={(this.props.fixHover) ? {right: "-301px"} : {}} />
+                        alt={`${card.name} (${this.props.id})`} style={(this.props.fixHover) ? {right: `${this.props.fixHover}px`} : {}} />
                 }
             </div>
         );

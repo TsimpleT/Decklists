@@ -1,6 +1,15 @@
-import { ALL_ARCHETYPES, GET_ARCHETYPE_TIERS } from './Archetype';
-import { ALL_METAS } from './TournamentResults';
+import { ALL_ARCHETYPES, Archetype, GET_ARCHETYPE_TIERS } from './Archetype';
+import { ALL_METAS, GET_ARCHETYPE_DECKLISTS } from './TournamentResults';
 
-test('each metas ARCHETYPE_TIERS has the same amount of Archetypes as ALL_ARCHETYPES excluding "Unknown"', () => {
-    expect(GET_ARCHETYPE_TIERS(ALL_METAS[ALL_METAS.length-1]).map((tier) => tier.length).reduce((sum, current) => sum + current)).toEqual(ALL_ARCHETYPES.length-1); // remove "Unknown"
+test('each archetype not in the tierlist has zero decks', () => {
+    for(let meta of ALL_METAS) {
+        const tierlistArchetypes: Archetype[] = GET_ARCHETYPE_TIERS(meta).flat();
+        for(let archetype of ALL_ARCHETYPES) {
+            if(archetype !== "Unknown" && !tierlistArchetypes.includes(archetype)) {
+                console.dir(`${meta}: ${archetype}`);
+                const dls = GET_ARCHETYPE_DECKLISTS(archetype, meta);
+                expect(dls.length).toEqual(0);
+            }
+        }
+    }
 });

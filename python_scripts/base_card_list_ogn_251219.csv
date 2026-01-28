@@ -303,7 +303,7 @@ OGN-180,Fading Memories,,Spell,Chaos,Uncommon,4,1,,Give a unit at a battlefield 
 OGN-181,Pack of Wonders,,Gear,Chaos,Uncommon,2,0,,"[E]: Return another friendly gear, unit, or facedown card to its owner's hand.",,,,"""I know I put it in here somewhere...""
 —Teemo",TRUE
 OGN-182,Scrapheap,,Gear,Chaos,Uncommon,2,0,,"When this is played, discarded, or killed, draw 1.",,,,The parts that make it to the heap are the ones that DIDN'T blow up.,FALSE
-OGN-183,Stacked Deck,,Gear,Chaos,Uncommon,1,0,,"[Action]
+OGN-183,Stacked Deck,,Spell,Chaos,Uncommon,1,0,,"[Action]
 Look at the top 3 card of your Main Deck. Put 1 into your hand and recycle the rest.",,,,"""Just lucky, I guess.""",FALSE
 OGN-184,The Syren,,Gear,Chaos,Uncommon,2,0,,"[1], [E]: Move a friendly unit at a battlefield to its base.",,,,"Without a ship, a pirate's just another common criminal.",TRUE
 OGN-185,Traveling Merchant,,Unit,Chaos,Uncommon,2,0,2,"When I move, discard 1, then draw 1.",,,Bilgewater,"Payment first, refund never.",FALSE

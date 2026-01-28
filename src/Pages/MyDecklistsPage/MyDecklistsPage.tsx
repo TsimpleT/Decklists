@@ -26,7 +26,7 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
 
     public add: React.MouseEventHandler<HTMLDivElement> = async (): Promise<void> => {
         const text = await navigator.clipboard.readText();
-        const decklist = Decklist.fromTTSText(text, "You");
+        const decklist = Decklist.fromText(text, "You");
         if(decklist.legend === "") { window.alert("no legend found"); return; }
         if(decklist.chosenChampion === "") { window.alert("no chosen champion found"); return; }
         if(decklist.mainDeck.reduce((sum, current) => sum + current.count, 0) !== 40) {
@@ -51,7 +51,7 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
 
     public devCopy: React.MouseEventHandler<HTMLDivElement> = async (): Promise<void> => {
         const text = await navigator.clipboard.readText();
-        const decklist = Decklist.fromTTSText(text);
+        const decklist = Decklist.fromText(text);
         if(decklist.legend === "") { window.alert("no legend found"); return; }
         if(decklist.chosenChampion === "") { window.alert("no chosen champion found"); return; }
         if(decklist.mainDeck.reduce((sum, current) => sum + current.count, 0) !== 40) {
@@ -72,7 +72,7 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
 
     public replace = async (id: string): Promise<void> => {
         const text = await navigator.clipboard.readText();
-        const decklist = Decklist.fromTTSText(text, "You");
+        const decklist = Decklist.fromText(text, "You");
         if(decklist.legend === "") { window.alert("no legend found"); return; }
         if(decklist.chosenChampion === "") { window.alert("no chosen champion found"); return; }
         if(decklist.mainDeck.reduce((sum, current) => sum + current.count, 0) !== 40) {
@@ -113,7 +113,7 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
         return (<>
             <div className={styles.menu}>
                 <div className={styles.title}>My Decklists</div>
-                <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={this.add}>Add New Deck From Clipboard (TTS Export)</div>
+                <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={this.add}>Add New Deck From Clipboard</div>
                 <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={this.devCopy}>[DEV] Preprocess Deck</div>
             </div>
             <div className={styles.decklistsContainer}>

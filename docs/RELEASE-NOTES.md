@@ -1,3 +1,4 @@
-[2.3.2] Testing to enforce chosen champions + fixes
-- VDecklist spacing + chosen champion right after legend
-- Added Red Kai'Sa's missing champion tag
+[3.0.0] Decklist View Cleaning + CN Data
+- Added decklist breakdown above + fixed exports
+- Top 16 China decklists from first two regional opens
+- Fixed card hover alignment and supertype
