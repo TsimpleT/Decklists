@@ -169,6 +169,10 @@ export class Decklist {
     public static fromText(text: string, username?: string): Decklist {
         const lineList: string[] = text.split(/\r?\n|\r|\n/g);
 
+        if(lineList.length === 1) {
+            return Decklist.fromTTSText(text, username);
+        }
+
         let decklist: IDecklist = { legend: "", chosenChampion: "", mainDeck: [], battlefields: [], runeDeck: [], sideboard: [] };
         if(username) {
             decklist.username = username;
@@ -193,7 +197,7 @@ export class Decklist {
                 continue;
             }
 
-            let id: string = line.substring(2); // may be name and not be id, checking below
+            let id: string = line.substring(line.indexOf(" ")+1); // may be name and not be id, checking below
             // const isId: boolean = (id.length === 7 || id.length === 8) && id[3] === "-" && SET_LIST.includes(id.substring(0,3))
             //     && (!Number.isNaN(id.substring(4)) || (["R","T"].includes(id[4]) && !Number.isNaN(id.substring(5))));
             if(!IS_CARD_ID(id)) {
@@ -221,14 +225,12 @@ export class Decklist {
         return new Decklist(decklist);
     }
 
-    // in order: 1x legend, 40x main deck, 3x battlefield, 12x rune, 8x sideboard (or 0x); 1st card in main deck is chosen champion
-    // but this kinda handles any number (besides 1x legend)
+    // in order: 1x legend, 40x main deck, 3x battlefield, 12x rune, rest sideboard
     public static fromTTSText(text: string, username?: string): Decklist {
         const cardIdList: string[] = text.split(" ").map(ttsId => TTS_ID_TO_ID(ttsId));
 
         let decklist: IDecklist = {
-            legend: (cardIdList.length > 0) ? cardIdList[0] : "",
-            chosenChampion: (cardIdList.length > 1) ? cardIdList[1] : "",
+            legend: (cardIdList.length > 0) ? cardIdList[0] : "", chosenChampion: "",
             mainDeck: [], battlefields: [], runeDeck: [], sideboard: []
         };
         if(username) {
@@ -255,6 +257,20 @@ export class Decklist {
                 (mainDeckDone ? decklist.sideboard : decklist.mainDeck)?.push(dca);
             }
             startI += count-1;
+        }
+
+        const legendChampTag: string|undefined = GET_CARD(cardIdList[0]).championTag;
+        if(legendChampTag !== undefined) {
+            if(cardIdList.length > 1 && GET_CARD(cardIdList[1]).championTag === legendChampTag) {
+                decklist.chosenChampion = cardIdList[1];
+            } else {
+                for(let dca of decklist.mainDeck ?? []) {
+                    if(GET_CARD(dca.id).championTag === legendChampTag) {
+                        decklist.chosenChampion = dca.id;
+                        break;
+                    }
+                }
+            }
         }
 
         return new Decklist(decklist);

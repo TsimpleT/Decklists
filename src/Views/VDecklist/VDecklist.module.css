@@ -55,7 +55,11 @@
     padding: 6px 0 0 1px;
 }
 
-.exportButton {
+.buttonContainer {
+    display: flex;
+}
+
+.button {
     all: unset;
     float: right;
     border-radius: 50%;
@@ -64,27 +68,37 @@
     background-color: var(--bg-default);
 }
 
-.exportButton:hover {
+.button:hover {
     background-color: var(--bg-default-hover);
 }
 
-.exportButton:active {
+.button:active {
     background-color: var(--bg-default-active);
+}
+
+.confirmDeleteContainer {
+    position: fixed;
+    z-index: 25;
+    margin: 32px 0 0 141px;
+    background-color: var(--bg-dark);
+    padding: 4px 8px;
+    border-radius: 8px;
+    border: 1px solid var(--text-default);
 }
 
 .exportContainer {
     position: fixed;
     z-index: 25;
-    margin: 32px 0 0 150px;
+    margin: 32px 0 0 111px;
     background-color: var(--bg-dark);
     padding: 4px 8px;
-    border-radius: 4px;
+    border-radius: 8px;
     border: 1px solid var(--text-default);
 }
 
 .exportOptionContainer {
     display: flex;
-    gap: px;
+    gap: 4px;
 }
 
 .exportOptionButton {
@@ -92,7 +106,7 @@
     float: right;
     border-radius: 8px;
     margin: 4px 4px 4px 0;
-    padding: 0 6px 1px 6px;
+    padding: 1px 10px 2px 10px;
     background-color: var(--bg-default);
 }
 
@@ -116,10 +130,9 @@
 .count {
     width: 20px;
     background-color: #000;
-    border-radius: 8px;
+    border-radius: 8px 0 0 8px;
     text-align: center;
-    padding: 2px 6px;
-    margin-right: 4px;
+    padding: 2px 6px 2px 6px;
     font-weight: 600;
     color: white;
 }

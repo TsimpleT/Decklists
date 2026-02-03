@@ -5,7 +5,7 @@ import { Meta } from "./TournamentResults";
 export const ALL_ARCHETYPES = [
     "Ahri", "Darius", "Jinx Aggro", "Kai'Sa Midrange", "Kai'Sa Control", "Lee Sin Midrange", "Leona Midrange", "Miss Fortune Aurora", "Miss Fortune Aggro", "Sett Aurora", "Sett Midrange", "Teemo", "Viktor Midrange", "Viktor Control", "Volibear Ramp", "Yasuo Midrange",
     "Annie Midrange", "Garen Midrange", "Lux Control", "Master Yi Midrange", "Master Yi Aurora", "Garen Aurora",
-    "Rumble Midrange", "Lucian", "Draven Midrange", "Draven Storm", "Rek'Sai", "Ornn", "Jax", "Irelia", "Azir", "Ezreal", "Renata Glasc", "Sivir", "Fiora Midrange",
+    "Rumble Midrange", "Lucian", "Draven Midrange", "Draven Storm", "Rek'Sai", "Ornn", "Jax Midrange", "Irelia", "Azir", "Ezreal", "Renata Glasc", "Sivir Midrange", "Sivir Aurora", "Fiora Midrange",
     "Unknown"
 ] as const;
 export type Archetype = typeof ALL_ARCHETYPES[number];
@@ -43,12 +43,13 @@ const archetypeLegendDict: {[archetype in Archetype]: string} = {
     "Draven Storm": "SFD-185",
     "Rek'Sai": "SFD-187",
     "Ornn": "SFD-189",
-    "Jax": "SFD-193",
+    "Jax Midrange": "SFD-193",
     "Irelia": "SFD-195",
     "Azir": "SFD-197",
     "Ezreal": "SFD-199",
     "Renata Glasc": "SFD-201",
-    "Sivir": "SFD-203",
+    "Sivir Midrange": "SFD-203",
+    "Sivir Aurora": "SFD-203",
     "Fiora Midrange": "SFD-205",
     "Unknown": ""
 };
@@ -91,6 +92,8 @@ export function PREDICT_ARCHETYPE(decklist: Decklist): Archetype {
         return decklist.contains("SFD-012", {exactCount: 3}) ? "Draven Storm" : "Draven Midrange";
     } else if(baseLegendId === "OGN-265") {
         return (decklist.numOfCardType("Spell") >= 27) ? "Viktor Control" : "Viktor Midrange"; 
+    } else if(baseLegendId === "SFD-203") {
+        return decklist.contains("OGN-160", {exactCount: 3}) ? "Sivir Aurora" : "Sivir Midrange";
     }
     return "Unknown";
 }
@@ -99,10 +102,10 @@ export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "
 const META_ARCHETYPE_TIERS: {[meta in Meta]: Archetype[][]} = {
     "SFD": [
         ["Draven Midrange"],
-        ["Irelia", "Fiora Midrange", "Kai'Sa Midrange", "Annie Midrange", "Ezreal", "Draven Storm"],
-        ["Viktor Midrange", "Sivir", "Master Yi Midrange", "Rek'Sai", "Ornn", "Lucian", "Azir", "Teemo", "Miss Fortune Aurora"],
-        ["Renata Glasc", "Rumble Midrange", "Volibear Ramp", "Lux Control", "Leona Midrange", "Viktor Control", "Jax", "Darius", "Sett Midrange", "Ahri", "Yasuo Midrange"],
-        ["Garen Aurora", "Lee Sin Midrange", "Jinx Aggro", "Miss Fortune Aggro"],
+        ["Irelia", "Fiora Midrange", "Kai'Sa Midrange", "Ezreal", "Draven Storm", "Sivir Midrange"],
+        ["Viktor Midrange", "Annie Midrange", "Lucian", "Master Yi Midrange", "Azir", "Lux Control", "Miss Fortune Aurora", "Sivir Aurora", "Jax Midrange", "Sett Midrange"],
+        ["Teemo", "Rek'Sai", "Ahri", "Ornn", "Rumble Midrange", "Volibear Ramp", "Leona Midrange", "Viktor Control", "Renata Glasc", "Yasuo Midrange"],
+        ["Darius", "Garen Aurora", "Sett Aurora", "Lee Sin Midrange", "Jinx Aggro", "Miss Fortune Aggro"],
         ["Garen Midrange"],
     ], "OGN": [
         ["Kai'Sa Midrange", "Annie Midrange"],

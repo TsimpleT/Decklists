@@ -223,7 +223,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                                             <div className={styles.settingsSubheader} onClick={() => this.setState({hideCards: []})} style={{marginBottom: "2px"}}>show all</div>
                                             {this.state.hideCards.map((id) => (
                                                 <div className={styles.settingsCardWrapper} onClick={() => this.showCard(id)}>
-                                                    <VDecklistCard id={id} options={{type: "showType"}} />
+                                                    <VDecklistCard id={id} options={{type: "allCards"}} />
                                                 </div>
                                             ))}
                                         </>)}

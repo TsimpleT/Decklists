@@ -71,6 +71,7 @@ export function GET_BASE_ID_FROM_CARD_NAME(name: string) {
 }
 
 let cardCategories: {[cardId: string]: CCATEGORY} = CardCategories.cardCategories as any;
+
 const fullIdMappings: {[id: string]: {baseId: string, ttsId: string, rarity: Rarity}} = IdMappings.mappings as any;
 let ttsIdMappings: {[id: string]: string} = {};
 let fromTtsIdMappings: {[ttsId: string]: string} = {};
@@ -78,8 +79,12 @@ for(let id in fullIdMappings) {
     const mapping = fullIdMappings[id];
     cardData[id] = {...cardData[mapping.baseId]};
     cardData[id].rarity = mapping.rarity;
-    ttsIdMappings[id] = mapping.ttsId;
-    fromTtsIdMappings[mapping.ttsId] = id;
+    if(!(id in ttsIdMappings)) {
+        ttsIdMappings[id] = mapping.ttsId;
+    }
+    if(!(mapping.ttsId in fromTtsIdMappings) && id[4] !== "R") {
+        fromTtsIdMappings[mapping.ttsId] = id;
+    }
 }
 
 var sortableArray = Object.entries(cardData);

@@ -1,6 +1,6 @@
 {
   "name": "decklists",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "homepage": "https://tsimplet.github.io/decklists",
   "private": false,
   "dependencies": {

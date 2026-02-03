@@ -4,9 +4,9 @@ import posStyles from './ImagePositioning.module.css';
 
 import { GET_CARD, ImageUtil, GET_CARD_ART } from '../../Data';
 
-type PropsOptions = {type: "table"|"showType"};
+type PropsOptions = {type: "table"|"decklist"|"allCards"};
 
-interface IProps { id: string; options: PropsOptions; fixHover?: number }
+interface IProps { id: string; options: PropsOptions; fixHover?: number; unroundLeft?: boolean; }
 interface IState { hover: boolean; }
 
 export class VDecklistCard extends React.Component<IProps, IState> {
@@ -31,7 +31,7 @@ export class VDecklistCard extends React.Component<IProps, IState> {
         let fadeRStyle: React.CSSProperties = {};
         for(let i = 0; i < ((card.power === undefined) ? 0 : card.power); i++) {
             powerIcons.push(
-                <img src={ImageUtil.getImage((card.domains.length === 1) ? card.domains[0] : "RainbowRune")}
+                <img src={ImageUtil.getImage((card.domains.length === 1) ? card.domains[0] : "RainbowRune")} style={{paddingTop: "2px"}}
                     height={12} title={card.domains.join(",")} alt={card.domains.join(",")} key={i} />
             );
         }
@@ -48,6 +48,9 @@ export class VDecklistCard extends React.Component<IProps, IState> {
             fadeLStyle.background = `linear-gradient(to left, transparent, var(--bg-${card.domains[1].toLowerCase()})`;
             fadeRStyle.background = `linear-gradient(to right, transparent, var(--bg-${card.domains[1].toLowerCase()})`;
         }
+        if(this.props.unroundLeft) {
+            containerStyle.borderRadius = "0 8px 8px 0";
+        }
         
         const content: React.ReactNode = (
             <div className={styles.wrapperForImg} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} title={`${card.name} (${this.props.id})`} >
@@ -57,14 +60,14 @@ export class VDecklistCard extends React.Component<IProps, IState> {
                     </span>
                     <div className={styles.rightContainer}>
                         {(card.energy || card.power) &&
-                            <span className={styles.cost} style={(this.props.options.type !== "table") ? {marginRight: "2px"} : {}}>
+                            <span className={styles.cost} style={(this.props.options.type === "allCards") ? {marginRight: "2px"} : {}}>
                                 <span className={styles.energyCost}>
                                     {card.energy}
                                 </span>
                                 {(powerIcons.length > 0) && powerIcons}
                             </span>
                         }
-                        {(this.props.options.type !== "table" || card.type === "Legend" || card.type === "Rune" || card.type === "Battlefield") && 
+                        {(this.props.options.type === "allCards" || card.type === "Legend" || card.type === "Rune" || card.type === "Battlefield") && 
                             <img src={ImageUtil.getImage(card.supertype === "Champion" ? "ChampionUnit" : card.type)} height={20}
                                 title={card.supertype === "Champion" ? "ChampionUnit" : card.type} alt={card.supertype === "Champion" ? "ChampionUnit" : card.type}
                                 className={`${styles.cardType} ${(card.domains.length > 0 && card.domains[0] === "Order") ? styles.invert : ""}`} />

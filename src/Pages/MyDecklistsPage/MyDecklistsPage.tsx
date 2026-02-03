@@ -120,16 +120,7 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
                 {this.state.ids.map((id, index) => {
                     return (
                         <div key={id}>
-                            <div className={styles.editMenu}>
-                                <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={() => this.toggleEdit(id)}>
-                                    {(this.state.showEditOptions[id]) ? "X" : "Edit"}
-                                </div>
-                                {(this.state.showEditOptions[id]) && (<>
-                                    <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={() => this.replace(id)}>Update From Clipboard</div>
-                                    <div className={`${styles.restyleButton} ${styles.darkButton}`} onClick={() => this.delete(id)}>Delete</div>
-                                </>)}
-                            </div>
-                            <VDecklist decklist={this.state.decklists[index]} title={""} subtitle={""} />
+                            <VDecklist decklist={this.state.decklists[index]} title={""} subtitle={""} editFunctions={{replace: () => this.replace(id), delete: () => this.delete(id)}} />
                         </div>
                     );
                 })}

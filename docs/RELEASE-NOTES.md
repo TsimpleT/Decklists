@@ -1,4 +1,5 @@
-[3.0.0] Decklist View Cleaning + CN Data
-- Added decklist breakdown above + fixed exports
-- Top 16 China decklists from first two regional opens
-- Fixed card hover alignment and supertype
+[3.0.1] Decklist View/Import Improvements
+- Moved decklist edit button into header (from above)
+- Importing can now parse TTS again + properly select chosen champ
+- More decklists, archetype name updates, and tierlist update
+- Added IDMapping support for SFD AA/ON/sig
