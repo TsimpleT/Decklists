@@ -13,7 +13,6 @@ export interface IDecklist {
     battlefields?: DecklistCardAmount[];
     runeDeck?: DecklistCardAmount[];
     sideboard?: DecklistCardAmount[];
-    link?: string;
 }
 
 interface IDecklistContainsOptions {
@@ -48,7 +47,6 @@ export class Decklist {
     readonly battlefields: DecklistCardAmount[];
     readonly runeDeck: DecklistCardAmount[];
     readonly sideboard: DecklistCardAmount[];
-    readonly link: string;
     readonly tournamentName: string;
     readonly tournId: string;
     readonly placing: string;
@@ -64,7 +62,6 @@ export class Decklist {
         this.battlefields = idl.battlefields ?? [];
         this.runeDeck = idl.runeDeck ?? [];
         this.sideboard = idl.sideboard ?? [];
-        this.link = idl.link ?? "";
         this.tournamentName = tournamentName;
         this.tournId = tournId;
         this.placing = placing;
@@ -287,7 +284,6 @@ export class Decklist {
         if(this.battlefields) { obj.battlefields = this.battlefields; }
         if(this.runeDeck) { obj.runeDeck = this.runeDeck; }
         if(this.sideboard) { obj.sideboard = this.sideboard; }
-        if(this.link) { obj.link = this.link; } 
 
         return obj;
     }

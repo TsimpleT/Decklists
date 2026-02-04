@@ -3,10 +3,19 @@
     max-width: 308px;
 }
 
-.title {
+.headerContainer {
     display: flex;
-    margin: 0 0 4px 2px;
+    flex-direction: column;
+    background-color: #000;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    gap: 4px;
+}
+
+.title {
     font-weight: 600;
+    margin-left: 2px;
 }
 
 .deckLinkSpan {
@@ -19,24 +28,18 @@
 }
 
 .subtitle {
-    margin: 0 0 10px 2px;
+    margin: 0 0 4px 2px;
 }
 
-.decklistDetailsContainer {
+.headerBottomRowContainer {
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
-    background-color: #000;
-    border-radius: 8px;
-    margin-bottom: 4px;
 }
 
 .cardTypeContainer {
     display: flex;
     flex-direction: row;
     border-radius: 8px;
-    margin-bottom: 4px;
-    padding: 4px 4px 0 6px;
     gap: 10px;
     font-size: 17px;
 }
@@ -55,41 +58,36 @@
     padding: 6px 0 0 1px;
 }
 
-.buttonContainer {
+.headerButtonContainer {
     display: flex;
+    gap: 4px;
 }
 
-.button {
+.headerButton {
     all: unset;
     float: right;
     border-radius: 50%;
-    margin: 4px 4px 4px 0;
     padding: 0 6px 1px 6px;
     background-color: var(--bg-default);
 }
 
-.button:hover {
+.headerButton:hover {
     background-color: var(--bg-default-hover);
 }
 
-.button:active {
+.headerButton:active {
     background-color: var(--bg-default-active);
 }
 
-.confirmDeleteContainer {
-    position: fixed;
-    z-index: 25;
-    margin: 32px 0 0 141px;
-    background-color: var(--bg-dark);
-    padding: 4px 8px;
-    border-radius: 8px;
-    border: 1px solid var(--text-default);
+.hoverContainer {
+    margin: -8px 0 8px 8px;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.exportContainer {
+.hoverInnerContainer {
     position: fixed;
     z-index: 25;
-    margin: 32px 0 0 111px;
     background-color: var(--bg-dark);
     padding: 4px 8px;
     border-radius: 8px;
@@ -101,7 +99,7 @@
     gap: 4px;
 }
 
-.exportOptionButton {
+.hoverBoxButton {
     all: unset;
     float: right;
     border-radius: 8px;
@@ -110,12 +108,17 @@
     background-color: var(--bg-default);
 }
 
-.exportOptionButton:hover {
+.hoverBoxButton:hover {
     background-color: var(--bg-default-hover);
 }
 
-.exportOptionButton:active {
+.hoverBoxButton:active {
     background-color: var(--bg-default-active);
+}
+
+.editInput {
+    width: 286px;
+    margin: 4px 0;
 }
 
 .section {

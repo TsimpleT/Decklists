@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Decklist, DEV_STRING_PRE, GET_DECK_KEY, LocalStorageManager } from '../../Data';
+import { Decklist, DEV_STRING_PRE, LocalStorageManager } from '../../Data';
 import { VDecklist } from '../../Views';
 
 interface IProps {}
@@ -20,12 +20,12 @@ export class DecklistPage extends React.Component<IProps> {
             url += "/";
         }
         this.uuid = decodeURI(url.slice(url.indexOf("me/")+3, url.length-1));
-        this.decklist = LocalStorageManager.getInstance().getDecklist(GET_DECK_KEY(this.uuid));
+        this.decklist = LocalStorageManager.getInstance().getDecklist(this.uuid);
     }
 
     public render(): React.ReactNode {
         return ((!this.decklist) ? <div style={{marginLeft: "4px"}}>decklist not found</div> : 
-            <VDecklist decklist={this.decklist} title={"Your Decklist"} subtitle={""}  />
+            <VDecklist decklist={this.decklist} initialTitle={LocalStorageManager.getInstance().getDeckName(this.uuid)} subtitle={""}  />
         );
     }
 }

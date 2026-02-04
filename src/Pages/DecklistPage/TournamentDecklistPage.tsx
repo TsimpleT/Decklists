@@ -29,7 +29,7 @@ export class TournamentDecklistPage extends React.Component<IProps> {
 
     public render(): React.ReactNode {
         return ((!this.decklist || !this.placing) ? <div style={{marginLeft: "4px"}}>decklist not found</div> :
-            <VDecklist decklist={this.decklist} title={`${GET_TOURNAMENT_NAME(this.tournId)} ${this.decklist.date}: ${this.placing}`} subtitle={(this.username[0] === "*") ? "" : `by ${this.username}`}  />
+            <VDecklist decklist={this.decklist} initialTitle={`${GET_TOURNAMENT_NAME(this.tournId)} ${this.decklist.date}: ${this.placing}`} subtitle={(this.username[0] === "*") ? "" : `by ${this.username}`}  />
         );
     }
 }

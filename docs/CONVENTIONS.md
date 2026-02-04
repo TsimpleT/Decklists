@@ -1,5 +1,5 @@
 # FILE NAMING
-- PascalCase
+- PascalCase (besides python)
 
 # IMPORT ORDER:
 - react / imported libraries / css

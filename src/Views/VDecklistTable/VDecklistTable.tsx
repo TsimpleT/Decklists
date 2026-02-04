@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './VDecklistTable.module.css';
 
-import { ALL_CCATEGORIES, Archetype, CCATEGORY, DECK_KEY_TO_UUID, Decklist, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CCATEGORY, ImageUtil, LocalStorageManager, Meta, TO_BASE_ID } from '../../Data';
+import { ALL_CCATEGORIES, Archetype, CCATEGORY, Decklist, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CCATEGORY, ImageUtil, LocalStorageManager, Meta, TO_BASE_ID } from '../../Data';
 import { VDecklistCard } from '../VDecklistCard';
 
 interface IProps {
@@ -75,7 +75,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
             showSettings: false, view: "stats",
             hideCards: this.cardIds.filter((id) =>
                 this.cardStats[id].avg + this.cardStats[id].sbAvg <= (["Battlefield","Legend","Rune"].includes(GET_CARD(id).type) ? 0.1/3 : 0.1)
-        )
+            )
         };
     }
 
@@ -309,7 +309,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                                                 </div>
                                             </Link>
                                         :
-                                            <Link to={`/decklists/riftbound/me/${DECK_KEY_TO_UUID(this.lsmDecklistIds[deckIdx])}`} style={{color: "var(--text-default)"}}>
+                                            <Link to={`/decklists/riftbound/me/${this.lsmDecklistIds[deckIdx]}`} style={{color: "var(--text-default)"}}>
                                                 <div className={styles.deckLabelCell}>
                                                     {decklist.username}
                                                 </div>

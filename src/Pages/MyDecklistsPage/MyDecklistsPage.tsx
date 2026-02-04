@@ -10,18 +10,18 @@ const LSM = LocalStorageManager.getInstance();
 interface IState {
     decklists: Decklist[];
     ids: string[];
+    deckNames: string[];
     showEditOptions: {[key: string]: boolean};
 }
 
 export class MyDecklistsPage extends React.Component<{}, IState> {
     constructor(props: {}) {
         super(props);
-        this.state = { decklists: LSM.getAllDecklists(), ids: LSM.getAllDecklistIds(), showEditOptions: {} };
+        this.state = { decklists: LSM.getAllDecklists(), ids: LSM.getAllDecklistIds(), deckNames: LSM.getAllDeckNames(), showEditOptions: {} };
     }
 
     public override componentDidMount(): void {
         document.title = `${DEV_STRING_PRE}My Decklists`;
-        // this.setState({decklist: undefined});
     }
 
     public add: React.MouseEventHandler<HTMLDivElement> = async (): Promise<void> => {
@@ -46,7 +46,9 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
         ids.push(id);
         let decklists = this.state.decklists;
         decklists.push(decklist);
-        this.setState({ ids: ids, decklists: decklists });
+        let deckNames = this.state.deckNames;
+        deckNames.push(decklist.archetype);
+        this.setState({ ids: ids, decklists: decklists, deckNames: deckNames });
     }
 
     public devCopy: React.MouseEventHandler<HTMLDivElement> = async (): Promise<void> => {
@@ -100,7 +102,18 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
         decklists.splice(index, 1);
         let ids = [...this.state.ids];
         ids.splice(index, 1);
-        this.setState({ decklists: decklists, ids: ids });
+        let deckNames = [...this.state.deckNames];
+        deckNames.splice(index, 1);
+        this.setState({ decklists: decklists, ids: ids, deckNames: deckNames });
+    }
+
+    public rename = (id: string): string => {
+        const newName: string = (document.getElementById("editDeckNameInput") as any).value;
+        LSM.renameDecklist(id, ((newName ?? "").length > 0) ? newName : "New Deck Name");
+        const deckNames = [...this.state.deckNames];
+        deckNames[this.state.ids.indexOf(id)] = newName;
+        this.setState({ deckNames: deckNames });
+        return newName;
     }
 
     public toggleEdit = (id: string): void => {
@@ -120,7 +133,9 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
                 {this.state.ids.map((id, index) => {
                     return (
                         <div key={id}>
-                            <VDecklist decklist={this.state.decklists[index]} title={""} subtitle={""} editFunctions={{replace: () => this.replace(id), delete: () => this.delete(id)}} />
+                            <VDecklist decklist={this.state.decklists[index]} initialTitle={this.state.deckNames[index]} subtitle={""} editFunctions={{
+                                replace: () => this.replace(id), delete: () => this.delete(id), rename: () => this.rename(id)
+                            }}/>
                         </div>
                     );
                 })}

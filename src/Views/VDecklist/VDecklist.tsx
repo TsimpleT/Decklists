@@ -8,19 +8,20 @@ import { GET_COLOR_STYLE } from '../VDecklistTable';
 
 interface IProps {
     decklist: Decklist;
-    title: string;
+    initialTitle: string;
     subtitle: string;
-    editFunctions?: {replace: () => Promise<void>, delete: () => void};
+    editFunctions?: {replace: () => Promise<void>, delete: () => void, rename: () => string};
 }
 
 interface IState {
-    hover: ""|"export"|"confirmDelete";
+    hover: ""|"export"|"confirmDelete"|"editName";
+    title: string;
 }
 
 export class VDecklist extends React.Component<IProps, IState> {
     constructor(props: IProps) {
         super(props);
-        this.state = { hover: "" };
+        this.state = { hover: "", title: this.props.initialTitle };
     }
 
     private copyToText: React.MouseEventHandler<HTMLDivElement> = (_) => {
@@ -45,59 +46,78 @@ export class VDecklist extends React.Component<IProps, IState> {
         const dl = this.props.decklist;
         return (
             <div className={styles.container}>
-                <div className={styles.title}>
-                    <span>{this.props.title}</span>
-                    {(this.props.decklist.link) && <span className={styles.deckLinkSpan}>
-                        (<a href={this.props.decklist.link} target="_blank" rel="noreferrer">Link</a>)
-                    </span>}
-                </div>
-                <div className={styles.subtitle}>
-                    {(this.props.subtitle) && <span style={{marginRight: "8px"}}>{this.props.subtitle}</span>}
-                </div>
-                <div className={styles.decklistDetailsContainer}>
-                    <div className={styles.cardTypeContainer}>
-                        {(["Unit", "Spell", "Gear"] as CardType[]).map((cardType) => {
-                            const md = dl.numOfCardType(cardType), sb = dl.numOfCardTypeSideboard(cardType);
-                            return (
-                                <div className={styles.cardTypeInnerContainer}>
-                                    <img src={ImageUtil.getImage(cardType)} height={20} title={cardType} alt={cardType} className={styles.cardType} />
-                                    <div className={styles.cardTypeCount}>{md}</div>
-                                    {(sb > 0) &&
-                                        <div className={styles.sideboard} title='sideboard'>{`+${sb}`}</div>
-                                    }
+                <div className={styles.headerContainer}>
+                    <div className={styles.title}>
+                        <span>{this.state.title}</span>
+                        {(this.props.editFunctions) && (
+                            <div onClick={()=>{this.setState({hover: (this.state.hover !== "editName") ? "editName" : ""}, () => {
+                                document.getElementById("editDeckNameInput")?.focus();
+                            })}} className={styles.headerButton} title={"Edit Name"} style={(this.state.hover === "editName") ? {backgroundColor:"purple"}:{}}>
+                                <img className={styles.icon} src={ImageUtil.getImage("Edit")} height={12} alt={"Edit Name"} />
+                            </div>
+
+                        )}
+                    </div>
+                    {(this.props.subtitle) && (
+                        <div className={styles.subtitle}>
+                            {this.props.subtitle}
+                        </div>
+                    )}
+                    <div className={styles.headerBottomRowContainer}>
+                        <div className={styles.cardTypeContainer}>
+                            {(["Unit", "Spell", "Gear"] as CardType[]).map((cardType) => {
+                                const md = dl.numOfCardType(cardType), sb = dl.numOfCardTypeSideboard(cardType);
+                                return (
+                                    <div className={styles.cardTypeInnerContainer} key={cardType}>
+                                        <img src={ImageUtil.getImage(cardType)} height={20} title={cardType} alt={cardType} className={styles.cardType} />
+                                        <div className={styles.cardTypeCount}>{md}</div>
+                                        {(sb > 0) &&
+                                            <div className={styles.sideboard} title='sideboard'>{`+${sb}`}</div>
+                                        }
+                                    </div>
+                                );
+                            })}
+                        </div>
+                        <div className={styles.headerButtonContainer}>
+                            {(this.props.editFunctions) && (<>
+                                <div onClick={()=>{this.setState({hover: (this.state.hover !== "confirmDelete") ? "confirmDelete" : ""})}} className={styles.headerButton} title={"Delete"} style={(this.state.hover === "confirmDelete") ? {backgroundColor:"purple"}:{}}>
+                                    <img className={styles.icon} src={ImageUtil.getImage("Trash")} height={12} alt={"Delete"} />
                                 </div>
-                            );
-                        })}
-                    </div>
-                    <div className={styles.buttonContainer}>
-                        {(this.props.editFunctions) && (<>
-                            <div onClick={()=>{this.setState({hover: (this.state.hover !== "confirmDelete") ? "confirmDelete" : ""})}} className={styles.button} title={"Delete"}>
-                                <img className={styles.icon} src={ImageUtil.getImage("Trash")} height={12} alt={"Delete"} />
+                                <div onClick={this.props.editFunctions.replace} className={styles.headerButton} title={"Import"}>
+                                    <img className={styles.icon} src={ImageUtil.getImage("Import")} height={12} alt={"Import"} />
+                                </div>
+                            </>)}
+                            <div onClick={()=>{this.setState({hover: (this.state.hover !== "export") ? "export" : ""})}} className={styles.headerButton} title={"Export"} style={(this.state.hover === "export") ? {backgroundColor:"purple"}:{}}>
+                                <img className={styles.icon} src={ImageUtil.getImage("Export")} height={12} alt={"Export"} />
                             </div>
-                            <div onClick={this.props.editFunctions.replace} className={styles.button} title={"Import"}>
-                                <img className={styles.icon} src={ImageUtil.getImage("Import")} height={12} alt={"Import"} />
-                            </div>
-                        </>)}
-                        <div onClick={()=>{this.setState({hover: (this.state.hover !== "export") ? "export" : ""})}} className={styles.button} title={"Export"}>
-                            <img className={styles.icon} src={ImageUtil.getImage("Export")} height={12} alt={"Export"} />
                         </div>
                     </div>
-                    {(this.state.hover === "export") && (
-                        <div className={styles.exportContainer}>
-                            <div style={{fontWeight: "600"}}>Export To</div>
-                            <div className={styles.exportOptionContainer}>
-                                <div className={styles.exportOptionButton} onClick={this.copyToText}>Text</div>
-                                <div className={styles.exportOptionButton} onClick={this.copyToTCGA}>TCGA</div>
-                                <div className={styles.exportOptionButton} onClick={this.copyToTTS}>TTS</div>
-                            </div>
-                        </div>
-                    )}
-                    {(this.state.hover === "confirmDelete") && (
-                        <div className={styles.confirmDeleteContainer}>
-                            <div className={styles.exportOptionButton} onClick={this.props.editFunctions?.delete}>Confirm Deletion</div>
-                        </div>
-                    )}
                 </div>
+                {(this.state.hover === "export" || (this.state.hover !== "" && this.props.editFunctions)) && (
+                    <div className={styles.hoverContainer}>
+                        <div className={styles.hoverInnerContainer}>
+                            {(this.state.hover === "export") && (<>
+                                <div style={{fontWeight: "600"}}>Export To</div>
+                                <div className={styles.exportOptionContainer}>
+                                    <div className={styles.hoverBoxButton} onClick={this.copyToText}>Text</div>
+                                    <div className={styles.hoverBoxButton} onClick={this.copyToTCGA}>TCGA</div>
+                                    <div className={styles.hoverBoxButton} onClick={this.copyToTTS}>TTS</div>
+                                </div>
+                            </>)}
+                            {(this.state.hover === "confirmDelete" && this.props.editFunctions) && (<>
+                                <div className={styles.hoverBoxButton} onClick={this.props.editFunctions?.delete}>Confirm Deletion</div>
+                            </>)}
+                            {(this.state.hover === "editName" && this.props.editFunctions) && (<>
+                                <div className={styles.editInput}>
+                                    <input id={"editDeckNameInput"} style={{width: "calc(100% - 8px)"}} defaultValue={this.state.title}/>
+                                </div>
+                                <div className={styles.hoverBoxButton} onClick={() => {
+                                    this.setState({hover: "", title: this.props.editFunctions?.rename() ?? "Unnamed Decklist"});
+                                }}>Update Deck Name</div>
+                            </>)}
+                        </div>
+                    </div>
+                )}
                 <div className={styles.decklistContainer}>
                     {[[{id: dl.legend, count: 1}], [{id: dl.chosenChampion, count: (dl.mainDeck.length > 0) ? dl.mainDeck[0].count : -1}], dl.mainDeck, dl.battlefields, dl.runeDeck, dl.sideboard].map((arr, i) => (
                         <div className={styles.section} key={i}>
