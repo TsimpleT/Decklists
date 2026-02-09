@@ -6,7 +6,7 @@ import { GET_CARD, ImageUtil, GET_CARD_ART } from '../../Data';
 
 type PropsOptions = {type: "table"|"decklist"|"allCards"};
 
-interface IProps { id: string; options: PropsOptions; fixHover?: number; unroundLeft?: boolean; }
+interface IProps { id: string; options: PropsOptions; fixHover?: number; withCountOnLeft?: boolean; }
 interface IState { hover: boolean; }
 
 export class VDecklistCard extends React.Component<IProps, IState> {
@@ -48,7 +48,7 @@ export class VDecklistCard extends React.Component<IProps, IState> {
             fadeLStyle.background = `linear-gradient(to left, transparent, var(--bg-${card.domains[1].toLowerCase()})`;
             fadeRStyle.background = `linear-gradient(to right, transparent, var(--bg-${card.domains[1].toLowerCase()})`;
         }
-        if(this.props.unroundLeft) {
+        if(this.props.withCountOnLeft) {
             containerStyle.borderRadius = "0 8px 8px 0";
         }
         
@@ -56,7 +56,7 @@ export class VDecklistCard extends React.Component<IProps, IState> {
             <div className={styles.wrapperForImg} onMouseEnter={this.onMouseEnter} onMouseLeave={this.onMouseLeave} title={`${card.name} (${this.props.id})`} >
                 <div className={styles.container} style={containerStyle}>
                     <span className={(card.domains.length > 0 && card.domains[0] === "Order") ? styles.leftContainerOrder : styles.leftContainer}>
-                        <span className={styles.cardName}>{card.name}</span>
+                        <span className={styles.cardName} style={this.props.withCountOnLeft ? {marginLeft: "-1px"} : {}}>{card.name}</span>
                     </span>
                     <div className={styles.rightContainer}>
                         {(card.energy || card.power) &&

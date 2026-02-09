@@ -305,7 +305,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                                             <Link to={`/decklists/riftbound/tournament/${decklist.tournId}/decklist/${decklist.username}`} style={{color: "var(--text-default)"}}>
                                                 <div className={styles.deckLabelCell}>
                                                     <div>{decklist.tournId.substring(0,decklist.tournId.indexOf("-"))}</div>
-                                                    <div>{decklist.placing}</div>
+                                                    <div className={styles.placingLabel}>{decklist.placing}</div>
                                                 </div>
                                             </Link>
                                         :

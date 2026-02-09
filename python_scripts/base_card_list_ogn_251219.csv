@@ -22,7 +22,7 @@ OGN-011,Magma Wurm,,Unit,Fury,Common,8,1,8,Other friendly units enter ready.,,,F
 OGN-012,Noxus Hopeful,,Unit,Fury,Common,4,0,4,[Legion] — I cost [2] less.,,,"Noxus, Trifarian","First to the front, first to glory.",FALSE
 OGN-013,Pouty Poro,,Unit,Fury,Common,2,0,,[Deflect],,,Poro,"""Braum takes medicine too, see?""
 —Braum",FALSE
-OGN-014,Skysplitter,,Spell,Fury,Common,8,1,,"[Action]
+OGN-014,Sky Splitter,,Spell,Fury,Common,8,1,,"[Action]
 This spell's Energy cost is reduced by the highest Might among units you control. Deal 5 to a unit at a battlefield.",,,,"""Puny mortals!"" —Volibear",FALSE
 OGN-015,Captain Farron,,Unit,Fury,Uncommon,4,1,5,Other friendly units here have [Assault].,,,"Noxus, Trifarian","""Forward! Always!""",FALSE
 OGN-016,Dangerous Duo,,Unit,Fury,Uncommon,3,0,3,"[Legion] — When you play me, give a unit +2 [M] this turn.",,,"Bandle City, Mech",,FALSE

@@ -103,7 +103,7 @@ const META_ARCHETYPE_TIERS: {[meta in Meta]: Archetype[][]} = {
     "SFD": [
         ["Draven Midrange"],
         ["Irelia", "Fiora Midrange", "Kai'Sa Midrange", "Ezreal", "Draven Storm", "Sivir Midrange"],
-        ["Viktor Midrange", "Annie Midrange", "Lucian", "Master Yi Midrange", "Azir", "Lux Control", "Miss Fortune Aurora", "Sivir Aurora", "Jax Midrange", "Sett Midrange"],
+        ["Viktor Midrange", "Annie Midrange", "Lucian", "Master Yi Midrange", "Azir", "Lux Control", "Miss Fortune Aurora", "Sivir Aurora", "Master Yi Aurora", "Jax Midrange", "Sett Midrange"],
         ["Teemo", "Rek'Sai", "Ahri", "Ornn", "Rumble Midrange", "Volibear Ramp", "Leona Midrange", "Viktor Control", "Renata Glasc", "Yasuo Midrange"],
         ["Darius", "Garen Aurora", "Sett Aurora", "Lee Sin Midrange", "Jinx Aggro", "Miss Fortune Aggro"],
         ["Garen Midrange"],

@@ -7,7 +7,7 @@ SFD-002,Armed Assailant,,Unit,Fury,Common,6,1,6,"[Accelerate]
 SFD-003,Blood Rush,,Spell,Fury,Common,1,,,"[Action]
 [Repeat] [1]
 Give a unit [Assault 2] this turn.",,,,,TRUE
-SFD-004,Ambush,,Spell,Fury,Common,2,1,,"[Hidden]
+SFD-004,Bushwhack,,Spell,Fury,Common,2,1,,"[Hidden]
 Friendly units enter ready this turn. Play a Gold gear token exhausted.",,,,Always check the brush.,FALSE
 SFD-005,Detonate,,Spell,Fury,Common,1,1,,Kill a gear. Its controller draws 2.,,,,Nobody wants to be left holding the exploding end of the stick.,FALSE
 SFD-006,Eager Drakehound,,Unit,Fury,Common,3,1,3,I enter ready.,,,"Noxus, Dog, Dragon","There are two kinds of drakehound trainer: strict, and dead.",FALSE

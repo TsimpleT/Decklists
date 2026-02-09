@@ -18,7 +18,7 @@ export class LegendImage extends React.Component<IProps> {
         const card = GET_CARD(this.props.id);
         const imgTitle = this.props.imgTitle ?? card.name.substring(0, card.name.search(","));
         return (
-            <div className={styles.imageContainer} style={{width: this.props.size, height: this.props.size, ...(this.props.extraStyles ?? {})}}>
+            <div className={styles.imageContainer} style={{width: this.props.size, height: this.props.size, minWidth: this.props.size, ...(this.props.extraStyles ?? {})}}>
                 <img src={GET_CARD_ART(this.props.id)} className={styles[`position-${this.props.id}`]} title={imgTitle} alt={imgTitle} />
                 <span className={styles.subscript} style={(this.props.subscriptFontSize) ? {fontSize: `${this.props.subscriptFontSize}px`} : {}}>{this.props.subscript}</span>
             </div>

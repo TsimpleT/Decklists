@@ -124,7 +124,7 @@ export class VDecklist extends React.Component<IProps, IState> {
                             {(arr.filter((listing) => (i !== 2 || listing.id !== dl.chosenChampion)).map((listing, j) => 
                                 <div className={styles.row} key={j}>
                                     <span className={`${styles.count} ${GET_COLOR_STYLE(GET_CCATEGORY(listing.id), listing.count, 0)}`}>{listing.count}x</span>
-                                    <VDecklistCard id={listing.id} options={{type: "decklist"}} unroundLeft={true} />
+                                    <VDecklistCard id={listing.id} options={{type: "decklist"}} withCountOnLeft={true} />
                                 </div>
                             ))}
                         </div>

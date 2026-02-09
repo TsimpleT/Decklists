@@ -129,6 +129,11 @@
     overflow: hidden;
 }
 
+.placingLabel {
+    white-space: nowrap;
+    overflow: hidden;
+}
+
 .statsCell {
     text-align: center;
     padding: 0 6px;
