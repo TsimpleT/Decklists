@@ -1,3 +1,4 @@
+\[3.1.2\] (26Feb14) Update Archetype Tierlist + Fix Rename Bug
 \[3.1.1\] (26Feb08) More Data
 \[3.1.0\] (26Feb03) Deck Names
 \[3.0.1\] (26Feb03) Decklist View/Import Improvements

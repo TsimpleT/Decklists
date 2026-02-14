@@ -101,11 +101,11 @@ export function PREDICT_ARCHETYPE(decklist: Decklist): Archetype {
 export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "Dark Horses", "Struggles", "Memes"];
 const META_ARCHETYPE_TIERS: {[meta in Meta]: Archetype[][]} = {
     "SFD": [
-        ["Draven Midrange"],
-        ["Irelia", "Fiora Midrange", "Kai'Sa Midrange", "Ezreal", "Draven Storm", "Sivir Midrange"],
-        ["Viktor Midrange", "Annie Midrange", "Lucian", "Master Yi Midrange", "Azir", "Lux Control", "Miss Fortune Aurora", "Sivir Aurora", "Master Yi Aurora", "Jax Midrange", "Sett Midrange"],
-        ["Teemo", "Rek'Sai", "Ahri", "Ornn", "Rumble Midrange", "Volibear Ramp", "Leona Midrange", "Viktor Control", "Renata Glasc", "Yasuo Midrange"],
-        ["Darius", "Garen Aurora", "Sett Aurora", "Lee Sin Midrange", "Jinx Aggro", "Miss Fortune Aggro"],
+        ["Draven Midrange", "Draven Storm"],
+        ["Irelia", "Kai'Sa Midrange", "Ezreal", "Sivir Midrange", "Fiora Midrange", "Annie Midrange"],
+        ["Lucian", "Viktor Midrange", "Viktor Control", "Master Yi Midrange", "Azir", "Sett Midrange", "Lux Control", "Jax Midrange", "Rek'Sai"],
+        ["Miss Fortune Aurora", "Sivir Aurora", "Master Yi Aurora", "Ahri", "Ornn", "Rumble Midrange", "Volibear Ramp", "Leona Midrange", "Teemo", "Yasuo Midrange"],
+        ["Darius", "Renata Glasc", "Sett Aurora", "Lee Sin Midrange", "Jinx Aggro"],
         ["Garen Midrange"],
     ], "OGN": [
         ["Kai'Sa Midrange", "Annie Midrange"],

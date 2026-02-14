@@ -1,1 +1,1 @@
-[3.1.1] More Data
+[3.1.2] Update Archetype Tierlist + Fix Rename Bug

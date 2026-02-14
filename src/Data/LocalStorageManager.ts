@@ -135,6 +135,7 @@ export class LocalStorageManager {
 
     public renameDecklist(uuid: string, newName: string): void {
         localStorage.setItem(GET_DECK_NAME_KEY(uuid), newName);
+        this.decklistNames[uuid] = newName;
     }
 
     private static _instance?: LocalStorageManager;
