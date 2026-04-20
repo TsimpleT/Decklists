@@ -44,7 +44,7 @@ OGN-025,Blind Fury,,Spell,Fury,Rare,4,2,,"[Action]
 Each opponent reveals the top card of their Main Deck. Choose one and banish it, then play it, ignoring its cost. Then recycle the rest.",,,,,TRUE
 OGN-026,Brynhir Thundersong,,Unit,Fury,Rare,6,0,5,"When you play me, opponents can't play cards this turn.",,,Freljord,"""Silence. The sky speaks.""",FALSE
 OGN-027,"Darius, Trifarian",Champion,Unit,Fury,Rare,5,1,5,"When you play your second card in a turn, give me +2 [M] this turn and ready me.",,Darius,"Noxus, Trifarian","""With overwhelming force.""",FALSE
-OGN-028,"Draven, Showboat",Champion,Unit,Fury,Rare,5,1,3,My Might is increased by your points.,,Darius,Noxus,"""Let's admire me for a bit.""",FALSE
+OGN-028,"Draven, Showboat",Champion,Unit,Fury,Rare,5,1,3,My Might is increased by your points.,,Draven,Noxus,"""Let's admire me for a bit.""",FALSE
 OGN-029,Falling Star,,Spell,Fury,Rare,2,2,,"Do this twice:
 Deal 3 to a unit.",,,,,FALSE
 OGN-030,"Jinx, Demolitionist",Champion,Unit,Fury,Rare,3,1,4,"[Accelerate]

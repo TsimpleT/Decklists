@@ -67,7 +67,7 @@ export class VDecklistCard extends React.Component<IProps, IState> {
                                 {(powerIcons.length > 0) && powerIcons}
                             </span>
                         }
-                        {(this.props.options.type === "allCards" || card.type === "Legend" || card.type === "Rune" || card.type === "Battlefield") && 
+                        {(card.type && (this.props.options.type === "allCards" || card.type === "Legend" || card.type === "Rune" || card.type === "Battlefield")) && 
                             <img src={ImageUtil.getImage(card.supertype === "Champion" ? "ChampionUnit" : card.type)} height={20}
                                 title={card.supertype === "Champion" ? "ChampionUnit" : card.type} alt={card.supertype === "Champion" ? "ChampionUnit" : card.type}
                                 className={`${styles.cardType} ${(card.domains.length > 0 && card.domains[0] === "Order") ? styles.invert : ""}`} />

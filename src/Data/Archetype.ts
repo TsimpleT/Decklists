@@ -3,9 +3,10 @@ import { Decklist } from "./Decklist";
 import { Meta } from "./TournamentResults";
 
 export const ALL_ARCHETYPES = [
-    "Ahri", "Darius", "Jinx Aggro", "Kai'Sa Midrange", "Kai'Sa Control", "Lee Sin Midrange", "Leona Midrange", "Miss Fortune Aurora", "Miss Fortune Aggro", "Sett Aurora", "Sett Midrange", "Teemo", "Viktor Midrange", "Viktor Control", "Volibear Ramp", "Yasuo Midrange",
+    "Ahri", "Darius", "Jinx Aggro", "Jinx Miracle","Kai'Sa Midrange", "Kai'Sa Control", "Lee Sin Midrange", "Leona Midrange", "Miss Fortune Aurora", "Miss Fortune Aggro", "Sett Aurora", "Sett Midrange", "Teemo", "Viktor Midrange", "Viktor Control", "Volibear Ramp", "Yasuo Midrange",
     "Annie Midrange", "Garen Midrange", "Lux Control", "Master Yi Midrange", "Master Yi Aurora", "Garen Aurora",
-    "Rumble Midrange", "Lucian", "Draven Midrange", "Draven Storm", "Rek'Sai", "Ornn", "Jax Midrange", "Irelia", "Azir", "Ezreal", "Renata Glasc", "Sivir Midrange", "Sivir Aurora", "Fiora Midrange",
+    "Rumble Midrange", "Lucian Midrange", "Draven Midrange", "Draven Miracle", "Rek'Sai Midrange", "Ornn", "Jax Midrange", "Irelia Midrange", "Azir Midrange", "Ezreal Control", "Ezreal Rat", "Renata Glasc", "Sivir Midrange", "Sivir Miracle", "Sivir Aurora", "Fiora Midrange",
+    "Jhin Midrange", "Rengar Midrange", "Pyke Midrange", "Vi Midrange", "Lillia Midrange", /* skip yi midrange */ "Vex Midrange", "Ivern Midrange", "Diana Midrange", "LeBlanc Midrange", "Kha'Zix Midrange", "Poppy Midrange",
     "Unknown"
 ] as const;
 export type Archetype = typeof ALL_ARCHETYPES[number];
@@ -25,6 +26,7 @@ const archetypeLegendDict: {[archetype in Archetype]: string} = {
     "Kai'Sa Control": "OGN-247",
     "Volibear Ramp": "OGN-249",
     "Jinx Aggro": "OGN-251",
+    "Jinx Miracle": "OGN-251",
     "Darius": "OGN-253",
     "Ahri": "OGN-255",
     "Lee Sin Midrange": "OGN-257",
@@ -38,21 +40,35 @@ const archetypeLegendDict: {[archetype in Archetype]: string} = {
     "Sett Midrange": "OGN-269",
     "Sett Aurora": "OGN-269",
     "Rumble Midrange": "SFD-181",
-    "Lucian": "SFD-183",
+    "Lucian Midrange": "SFD-183",
     "Draven Midrange": "SFD-185",
-    "Draven Storm": "SFD-185",
-    "Rek'Sai": "SFD-187",
+    "Draven Miracle": "SFD-185",
+    "Rek'Sai Midrange": "SFD-187",
     "Ornn": "SFD-189",
     "Jax Midrange": "SFD-193",
-    "Irelia": "SFD-195",
-    "Azir": "SFD-197",
-    "Ezreal": "SFD-199",
+    "Irelia Midrange": "SFD-195",
+    "Azir Midrange": "SFD-197",
+    "Ezreal Control": "SFD-199",
+    "Ezreal Rat": "SFD-199",
     "Renata Glasc": "SFD-201",
     "Sivir Midrange": "SFD-203",
+    "Sivir Miracle": "SFD-203",
     "Sivir Aurora": "SFD-203",
     "Fiora Midrange": "SFD-205",
+    "Jhin Midrange": "UNL-181",
+    "Rengar Midrange": "UNL-183",
+    "Pyke Midrange": "UNL-185",
+    "Vi Midrange": "UNL-187",
+    "Lillia Midrange": "UNL-189",
+    "Vex Midrange": "UNL-193",
+    "Ivern Midrange": "UNL-195",
+    "Diana Midrange": "UNL-197",
+    "LeBlanc Midrange": "UNL-199",
+    "Kha'Zix Midrange": "UNL-201",
+    "Poppy Midrange": "UNL-203",
     "Unknown": ""
 };
+
 export function ARCHETYPE_TO_LEGEND_BASE_ID(archetype: Archetype): string {
     return (archetype in archetypeLegendDict) ? archetypeLegendDict[archetype] : "";
 }
@@ -65,6 +81,8 @@ for(let archetypeStr in archetypeLegendDict) {
     }
     legendArchetypesDict[id].push(archetype);
 }
+// dupes
+legendArchetypesDict["UNL-191"] = ["Master Yi Midrange", "Master Yi Aurora"];
 
 function LEGEND_BASE_ID_TO_ARCHETYPE(baseId: string): Archetype {
     return !(baseId in legendArchetypesDict) ? "Unknown" : (legendArchetypesDict[baseId].length === 1) ? legendArchetypesDict[baseId][0] : "Unknown";
@@ -78,7 +96,7 @@ export function PREDICT_ARCHETYPE(decklist: Decklist): Archetype {
     const potentialArchetype = LEGEND_BASE_ID_TO_ARCHETYPE(baseLegendId);
     if(potentialArchetype !== "Unknown") {
         return potentialArchetype;
-    } else if(baseLegendId === "OGS-019") {
+    } else if(baseLegendId === "OGS-019" || baseLegendId === "UNL-191") {
         return decklist.contains("OGN-160", {exactCount: 3}) ? "Master Yi Aurora" : "Master Yi Midrange";
     } else if(baseLegendId === "OGN-247") {
         return decklist.contains("OGN-098") && decklist.contains("OGN-099") ? "Kai'Sa Control" : "Kai'Sa Midrange"; // energy conduit + garbage grabber
@@ -89,23 +107,40 @@ export function PREDICT_ARCHETYPE(decklist: Decklist): Archetype {
     } else if(baseLegendId === "OGS-023") {
         return decklist.contains("OGN-160", {exactCount: 3}) ? "Garen Aurora" : "Garen Midrange";
     } else if(baseLegendId === "SFD-185") {
-        return decklist.contains("SFD-012", {exactCount: 3}) ? "Draven Storm" : "Draven Midrange";
+        return decklist.contains("SFD-012", {exactCount: 3}) ? "Draven Miracle" : "Draven Midrange";
     } else if(baseLegendId === "OGN-265") {
         return (decklist.numOfCardType("Spell") >= 27) ? "Viktor Control" : "Viktor Midrange"; 
     } else if(baseLegendId === "SFD-203") {
-        return decklist.contains("OGN-160", {exactCount: 3}) ? "Sivir Aurora" : "Sivir Midrange";
+        return decklist.contains("OGN-160", {exactCount: 3}) ? "Sivir Aurora" : decklist.contains("SFD-122", {exactCount: 3}) ? "Sivir Miracle" : "Sett Midrange";
+    } else if(baseLegendId === "OGN-251") {
+        return decklist.contains("SFD-012", {exactCount: 3}) ? "Jinx Miracle" : "Jinx Aggro";
+    } else if(baseLegendId === "SFD-199") {
+        return decklist.contains("OGN-091") && decklist.contains("SFD-134") ? "Ezreal Rat" : "Ezreal Control";
     }
     return "Unknown";
 }
 
-export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "Dark Horses", "Struggles", "Memes"];
+export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "Dark Horses", "Struggling", "Memes"];
 const META_ARCHETYPE_TIERS: {[meta in Meta]: Archetype[][]} = {
+    "UNL": [
+        [], [],
+        ["Jhin Midrange", "Rengar Midrange", "Pyke Midrange", "Vi Midrange", "Lillia Midrange", "Master Yi Midrange", "Vex Midrange", "Ivern Midrange", "Diana Midrange", "LeBlanc Midrange", "Kha'Zix Midrange", "Poppy Midrange"],
+        ["Rek'Sai Midrange", "Draven Midrange", "Fiora Midrange", "Darius", "Teemo"],
+        [], []
+    ],
+    "SFD2": [
+        ["Irelia Midrange", "Draven Midrange", "Azir Midrange", "Master Yi Midrange"],
+        ["Annie Midrange", "Viktor Midrange", "Kai'Sa Midrange", "Lucian Midrange"],
+        ["Ezreal Control", "Rek'Sai Midrange", "Darius", "Sett Midrange", "Fiora Midrange"],
+        ["Master Yi Aurora", "Ahri", "Volibear Ramp", "Leona Midrange", "Lux Control", "Sivir Midrange", "Miss Fortune Aurora", "Sivir Aurora", "Lee Sin Midrange", "Rumble Midrange"],
+        ["Jax Midrange", "Teemo", "Yasuo Midrange", "Ornn", "Jinx Aggro", "Renata Glasc", "Garen Aurora"],
+    ],
     "SFD": [
-        ["Draven Midrange", "Draven Storm"],
-        ["Irelia", "Kai'Sa Midrange", "Ezreal", "Sivir Midrange", "Fiora Midrange", "Annie Midrange"],
-        ["Lucian", "Viktor Midrange", "Viktor Control", "Master Yi Midrange", "Azir", "Sett Midrange", "Lux Control", "Jax Midrange", "Rek'Sai"],
-        ["Miss Fortune Aurora", "Sivir Aurora", "Master Yi Aurora", "Ahri", "Ornn", "Rumble Midrange", "Volibear Ramp", "Leona Midrange", "Teemo", "Yasuo Midrange"],
-        ["Darius", "Renata Glasc", "Sett Aurora", "Lee Sin Midrange", "Jinx Aggro"],
+        ["Draven Miracle", "Draven Midrange"],
+        ["Ezreal Control", "Irelia Midrange", "Kai'Sa Midrange", "Miss Fortune Aurora", "Sivir Aurora", "Sivir Miracle"],
+        ["Fiora Midrange", "Viktor Midrange", "Annie Midrange", "Lucian Midrange", "Master Yi Midrange", "Ezreal Rat", "Viktor Control", "Azir Midrange", "Sett Midrange", "Lux Control", "Jinx Miracle", "Jax Midrange", "Rek'Sai Midrange"],
+        ["Master Yi Aurora", "Ahri", "Rumble Midrange", "Volibear Ramp", "Teemo", "Yasuo Midrange", "Darius", "Renata Glasc"],
+        ["Leona Midrange", "Sett Aurora", "Lee Sin Midrange", "Ornn", "Garen Aurora"],
         ["Garen Midrange"],
     ], "OGN": [
         ["Kai'Sa Midrange", "Annie Midrange"],

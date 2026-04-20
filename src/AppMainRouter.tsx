@@ -15,8 +15,8 @@ export class AppMainRouter extends React.Component {
             <BrowserRouter>
                 <AppNav />
                 <Routes>
-                    <Route path="/decklists/" element={ <span style={{color: "var(--text-default)", marginLeft: "8px"}}> home page "under construction"; click something above </span> } />
-                    <Route path="/decklists/riftbound" element={ <span style={{color: "var(--text-default)", marginLeft: "8px"}}> home page "under construction"; click something above </span>} />
+                    <Route path="/decklists/" element={<AllArchetypesPage />} />
+                    <Route path="/decklists/riftbound" element={<AllArchetypesPage />} />
                     <Route path="/decklists/riftbound/me" element={<MyDecklistsPage />} />
                     <Route path="/decklists/riftbound/me/:deckid" element={<DecklistPage />} />
                     <Route path="/decklists/riftbound/all-archetypes/:meta" element={<AllArchetypesPage />} />

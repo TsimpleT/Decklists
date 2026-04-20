@@ -15,6 +15,8 @@ BIG_INTERACTION = "BIG REMOVAL/INTERACTION"
 LATE = "LATEGAME/CLOSERS"
 
 def get_category(data):
+    if "type" not in data:
+        return "SIDE"
     if data["type"] == "Legend":
         return LEGEND
     elif data["type"] == "Battlefield":

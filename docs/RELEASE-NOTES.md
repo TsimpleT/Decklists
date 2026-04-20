@@ -1,1 +1,4 @@
-[3.1.2] Update Archetype Tierlist + Fix Rename Bug
+[4.0.0] Data + UNL
+- Added lots of tourney data
+- Added UNL cards
+- Updated card errata

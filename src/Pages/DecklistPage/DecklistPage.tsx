@@ -7,7 +7,7 @@ interface IProps {}
 
 export class DecklistPage extends React.Component<IProps> {
     public override componentDidMount(): void {
-        document.title = `${DEV_STRING_PRE}Decklist ${this.uuid}`;
+        document.title = `${DEV_STRING_PRE}Decklist ${LocalStorageManager.getInstance().getDeckName(this.uuid)}`;
     }
     
     private uuid: string;

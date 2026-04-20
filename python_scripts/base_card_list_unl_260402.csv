@@ -1,0 +1,429 @@
+ID,Name,Supertype,Type,Domains,Rarity,Energy Cost,Power Cost,Might,Rules Text,Effect Text,Champion Tag,Other Tags,Flavor Text,Has Errata
+UNL-001,Arena Kingpin,,Unit,Fury,Common,5,,3,"I enter ready.
+[E]: Give a unit +3[M] this turn.",,,"Noxus, Yordle",Don't you dare suggest it's a hairpiece.,FALSE
+UNL-002,Inferna,,Unit,Fury,Common,2,,1,"[Ambush]
+[Assault 2]",,,Bilgewater,"""Ironic, isn't it? Water all around us, but your boat's still gonna burn.""",FALSE
+UNL-003,Mischievous Marai,,Unit,Fury,Common,2,,2,"[Hidden]
+When you play me to a battlefield, deal 2 to an enemy unit here.",,,Bilgewater,"As fickle as the sea, and almost as destructive.",FALSE
+UNL-004,Prepared Neophyte,,Unit,Fury,Common,3,,1,"If you've spent [4] or more to play a spell this turn, I have +4[M].",,,Shadow Isles,Power begets power.,FALSE
+UNL-005,Revna the Lorekeeper,,Unit,Fury,Common,7,1,7,"[Ganking]
+When you play a spell, if you spent [4] or more, ready me.",,,Freljord,"""Nothing stops us! Not cold, not death!""",FALSE
+UNL-006,Sharkling,,Unit,Fury,Common,3,,1,"[Accelerate]
+[Assault 4].",,,Bilgewater,"""Don't worry, it's only a little one.""
+—Common last words",FALSE
+UNL-007,Smite,,Spell,Fury,Common,2,1,,"[Action]
+Deal 3 to a unit at a battlefield. If it would die this turn, banish it instead.",,,,Timing is everything.,FALSE
+UNL-008,Towering Pairofant,,Unit,Fury,Common,6,,6,"[Assault]
+If a unit died this turn, I enter ready.",,,Shurima,A pairofant never forgives.,FALSE
+UNL-009,Upstage Comedy,,Spell,Fury,Common,2,,,"[Repeat] [2]
+Ready a unit.",,,,Art is not always appreciated in its critic's lifetime.,FALSE
+UNL-010,Vault Breaker,,Spell,Fury,Common,1,1,,"[Action]
+Give a unit [Assault 2] and [Ganking] this turn.",,,,"""If you hit a wall, hit it hard!""
+—Vi",FALSE
+UNL-011,Fresh Beans,,Gear,Fury,Uncommon,2,,,"When you play a unit during a showdown, you may exhaust this to draw 1.",,,,The freshest.,FALSE
+UNL-012,Lord Broadmane,,Unit,Fury,Uncommon,5,1,5,"[Ambush]
+When you play me, give your other units here [Assault] this turn.",,,Noxus,,FALSE
+UNL-013,Lotus Trap,,Spell,Fury,Uncommon,2,,,"[Hidden]
+[Reaction]
+Choose a unit. Double all damage that would be done to it this turn.",,,,"""Art shall blossom from your fear."" —Jhin",FALSE
+UNL-014,Monster Harpoon,,Spell,Fury,Uncommon,1,1,,"[Action]
+Deal 2 to a unit at a battlefield. If you control a facedown card, deal 4 to it instead.",,,,"""Ready"" and ""fire"" are easy. Aiming, now that's the hard part.",FALSE
+UNL-015,Right to Conquest,,Spell,Fury,Uncommon,3,1,,"Draw 1, then draw 1 for each battlefield you or allies control.",,,,You get what you can take.,FALSE
+UNL-016,Scorchclaw,,Unit,Fury,Uncommon,3,1,3,"[Hunt 2]
+[Level 3][>] I have +1[M] and enter ready.",,,"Noxus, Dog","""Sit. Stay. Burn.""",FALSE
+UNL-017,Square Up,,Spell,Fury,Uncommon,4,,,"[Repeat] — Discard 1
+Give a unit [Assault 4] this turn.",,,,Nothing like a good roar to work up an appetite for violence.,FALSE
+UNL-018,Yeti Brawler,,Unit,Fury,Uncommon,6,,6,"When I conquer, if you assigned 3 or more excess damage, play two Gold gear tokens exhausted.",,,Noxus,"If you love your job, it's hardly work.",FALSE
+UNL-019,Blighted Battleaxe,,Gear,Fury,Rare,4,,,[Equip] [1][R],"At the end of your turn, if I didn't conquer this turn, unattach this and deal 4 to me. [M]+4",,Equipment,,FALSE
+UNL-020,Dancing Grenade,,Spell,Fury,Rare,2,1,,"Deal 2 to a unit. Its controller may play this spell again for [A]. If they do, this deals 1 addtional Bonus Damage for each time this spell has dealt damage this turn.",,,,"""They're puppets. I pull their strings, and then they dance.""
+—Jhin",FALSE
+UNL-021,Grim Apothecary,,Unit,Fury,Rare,3,,3,"[Ambush]
+When you play me, you may return a friendly unit at a battlefield to its owner's hand.",,,Noxus,"The cure is better than the disease, but not by much.",FALSE
+UNL-022,"Jhin, Murderous Artist",Champion,Unit,Fury,Rare,4,1,4,"[Deflect]
+[Ganking]
+When I move, [Add] [1][A].",,Jhin,Ionia,"""And now, the curtain rises.""",FALSE
+UNL-023,"Katarina, Reckless",Champion,Unit,Fury,Rare,5,1,5,"When you hide a card, ready me.
+When you play a card from face down, deal 2 to an enemy unit.",,Katarina,Noxus,"""Keep friends close and enemies guessing.""",FALSE
+UNL-024,"Rengar, Unseen",Champion,Unit,Fury,Rare,4,1,4,"[Accelerate]
+[Assault 2]
+[Deflect]
+[Ganking]",,Rengar,"Ixtal, Cat",,FALSE
+UNL-025,Undying Legion,,Unit,Fury,Rare,3,,3,[Legion][>] You may play me from your trash for [3][R].,,,"Shadow Isles,Spirit","""Choose carefully your oath, lest duty bind you even in death.""",FALSE
+UNL-026,"Xerath, Freed",Champion,Unit,Fury,Rare,5,,5,"[R], [E]: Deal 3 to a unit. Use this ability only while I'm at a battlefield.",,Xerath,Shurima,"""I stand at the brink of infinity.""",FALSE
+UNL-027,Inviolus Vox,,Unit,Fury,Epic,8,2,8,"When I conquer, give a friendly unit +8[M] this turn.",,,"Mount Targon, Dragon","""Flee him, fight him, or worship him—it matters not! We are but ashes in his flame.""
+—Herald of Dragons",FALSE
+UNL-028,"Pyke, Dockside Butcher",Champion,Unit,Fury,Epic,3,,2,"[Hidden]
+[Ganking]
+You may pay [R] as an additional cost to play me.
+When you play me, if you paid the additional cost, ready me and give me +2[M] this turn.",,Pyke,Bilgewater,"""Hard day's killin' ahead.""",FALSE
+UNL-029,Red Brambleback,,Unit,Fury,Epic,4,1,4,"[Accelerate]
+Your conquer effects for conquering here trigger an additional time.
+When I conquer, [Buff] a friendly unit.",,,Ionia,,FALSE
+UNL-030,"Vi, Hotheaded",Champion,Unit,Fury,Epic,4,,3,"[Deflect]
+[2][R]: Double my Might this turn.",,Vi,Zaun,"""Plan? I don't need a plan.""",FALSE
+UNL-031,Combat Experience,,Unit,Calm,Common,1,,,"[Reaction]
+Give a unit +1[M] this turn.
+[Level 6][>] Give it +3[M] this turn instead.",,,,,FALSE
+UNL-032,Double Trouble,,Spell,Calm,Common,2,,,"[Repeat] [2]
+Look at the top 3 cards of your Main Deck. You may reveal a unit from among them and draw it. Recycle the rest.",,,,Two heads pay better than one.,FALSE
+UNL-033,Frisky Hunter,,Unit,Calm,Common,4,,3,"When you play me, play a 1[M] Bird unit token with [Deflect] here.",,,"Zaun, Cat",Always following the scent of prey.,FALSE
+UNL-034,Herald of Spring,,Unit,Calm,Common,4,1,4,"[Hunt]
+When you play me, gain 2 XP.",,,Ionia,"""I have a crown, but no throne; many followers, but no subjects. Who am I?""
+—Ionian riddle",FALSE
+UNL-035,Monch,,Unit,Calm,Common,6,,6,"If an opponent controls a stunned unit, I cost [2] less and enter ready.",,,Bandle City,Just because it doesn't exist doesn't mean it can't hurt you.,FALSE
+UNL-036,Mutated Mouser,,Unit,Calm,Common,2,,1,"[Shield 2]
+[Tank]",,,"Bilgewater, Cat",One of the few cats that can scratch its own belly.,FALSE
+UNL-037,Shadow Watcher,,Unit,Calm,Common,4,1,5,"If a friendly unit died during your Beginning Phase this turn, I enter ready.",,,Ionia,It follows in memory's wake.,FALSE
+UNL-038,Skyward Strike,,Spell,Calm,Common,2,1,,"Move an enemy unit.
+[Level 6][>] [Stun] an enemy unit.",,,,Take a moment to heel up.,FALSE
+UNL-039,Soul Sword,,Gear,Calm,Common,1,,,[Equip] [G],[Level 3][>] I have an additional +1[M]. [M]+1,,Equipment,,FALSE
+UNL-040,Wuju Apprentice,,Unit,Calm,Common,2,,2,"[Hunt]
+[Level 6][>] When you play me, draw 1.",,,Ionia,"""I've learned a great deal during my apprenticeship. Allow me to demonstrate.""",FALSE
+UNL-041,"Allay, Eager Apprentice",,Unit,Calm,Uncommon,3,,3,"[Deflect]
+While I'm at a battlefield, your other units here have [Deflect].",,,"Bandle City, Yordle","""Hey, Vex! Look what I've got! It's a surprise! For you! Aren't you excited?!""",FALSE
+UNL-042,Back Off,,Spell,Calm,Uncommon,3,,,"[Hidden]
+[Action]
+[Stun] a unit.
+If you played this from your hand, draw 1.",,,,"""Ew."" —Vex",FALSE
+UNL-043,Enthusiastic Promoter,,Unit,Calm,Uncommon,3,,2,"[Backline]
+When I hold, [Buff] all units here.",,,"Bandle City, Yordle","""Step right up and see the Mechanized Menace versus the Midtown Mauler! Mmmm, it's gonna be good!""",FALSE
+UNL-044,Flurry of Feathers,,Spell,Calm,Uncommon,4,2,,"[Reaction]
+Choose one —
+• Counter a spell.
+• Play four 1[M] Bird unit tokens with [Deflect].",,,,,FALSE
+UNL-045,Forgotten Signpost,,Gear,Calm,Uncommon,2,,,"[Action][>] Exhaust a unit you control, [E]: Move a different unit you control to the location of the unit you exhausted to pay for this ability.",,,,"Great City of Demacia — 470
+Immortal Bastion — 2,105
+Bandle City — ????",FALSE
+UNL-046,Friendship,,Spell,Calm,Uncommon,1,,,"[Reaction]
+Choose a unit. Give it +1[M] this turn for each of the following tags among your units — Bird, Cat, Dog, and Poro.",,,,There's always time for scritches.,FALSE
+UNL-047,Mosstomper,,Unit,Calm,Uncommon,3,1,3,"[Hunt 2]
+[Level 3][>] I have +1[M] and [Deflect].",,,"Ixtal, Dog",Sometimes you gotta stomp some moss.,FALSE
+UNL-048,Trevor Snoozebottom,,Unit,Calm,Uncommon,3,,3,"[Shield]
+When I hold, play a ready 3[M] Sprite unit token with [Temporary] here.",,,"Ionia, Yordle",He's raised sleepwalking to an art form.,FALSE
+UNL-049,Honeyfruit,,Gear,Calm,Rare,2,,,"This enters exhausted.
+[Reaction][>]: [Add] [A].
+[Level 6][>][Reaction][>] [E]: [Add] [1][A].",,,,,FALSE
+UNL-050,Iascylla,,Unit,Calm,Rare,7,1,6,"When I hold, at the start of your next Main Phase, you may move an enemy unit to this battlefield.",,,Bilgewater,"Irresistible as a whirlpool, and even more deadly.",FALSE
+UNL-051,"Ivern, Nurturer",Champion,Unit,Calm,Rare,5,1,4,"When you play me or when I hold, look at the top 3 cards of your Main Deck. You may reveal a unit from among them and draw it. Recycle the rest. Then if you revealed a Bird, Cat, Dog, or Poro, do this: [Buff] a friendly unit.",,Ivern,Ionia,,FALSE
+UNL-052,"Nami, Headstrong",Champion,Unit,Calm,Rare,3,,3,"You may pay [G] as an additional cost to play me.
+When you play me, if you paid the additional cost, [Stun] an enemy unit.
+When I hold, the next time you play a unit this turn, ready it and [Buff] it.",,Nami,Mount Targon,,FALSE
+UNL-053,Scuttle Crab,,Unit,Calm,Rare,2,,0,"When you play me, draw 1.
+[Deathknell][>] Choose an opponent. They reveal their hand. You can look at their facedown cards this turn. Gain 1 XP.",,,Bilgewater,As harmless as it is delicious.,FALSE
+UNL-054,Tricksy Tentacles,,Spell,Calm,Rare,4,1,,Move any number of enemy units with the same controller and a total Might of 8 or less to a single location.,,,,Not exactly charming.,FALSE
+UNL-055,"Vex, Mocking",Champion,Unit,Calm,Rare,5,1,5,"[Shield]
+[Tank]
+When you [Stun] an enemy unit at a battlefield, you may move me to that battlefield.",,Vex,"Shadow Isles, Yordle","""Let's turn these smiles upside down.""",FALSE
+UNL-056,"Yuumi, Magical Cat",Champion,Unit,Calm,Rare,3,1,1,"When I attack or defend, give one of your other units here +3[M] and [Tank] this turn.",,Yuumi,"Bandle City, Fae, Cat","""Who's ready to risk our lives, defeat our foes, and maybe knock over some cups?""",FALSE
+UNL-057,Alpha Wildclaw,,Unit,Calm,Rare,6,2,7,"[Tank]
+Units here with less Might than me cannot be chosen by enemy spells and abilities.",,,"Freljord, Cat","Best take care of the big one, before it takes care of you.",FALSE
+UNL-058,"Lillia, Protector of Dreams",Champion,Unit,Calm,Epic,5,,4,"When you play a token unit, give me +1[M] this turn.
+Your token units have [Tank].",,Lillia,"Ionia, Fae","""Nothing cries louder than loneliness.""",FALSE
+UNL-059,"Master Yi, Unstoppable",Champion,Unit,Calm,Epic,12,3,12,"[Level 3][>] I cost [2][G] less.
+[Level 6][>] I cost [4][G][G] less instead.
+[Level 11][>] I cost [6][G][G][G] less instead.
+[Level 16][>] I can't be chosen by enemy spells and abilities.",,Master Yi,Ionia,,FALSE
+UNL-060,Vilemaw,,Unit,Calm,Epic,8,2,8,"[Ambush]
+Enemy units here with less Might than me don't deal combat damage.",,,"Shadow Isles, Spider",Its lair lies beyond a twisted treeline.,FALSE
+UNL-061,Downstage Dramatics,,Spell,Mind,Common,2,,,"[Reaction]
+[Repeat] [2]
+Draw 1.",,,,,FALSE
+UNL-062,Dramatic Visionary,,Unit,Mind,Common,4,,4,[Deathknell][>] [Predict 2].,,,Ionia,Truth rarely comes without sacrifice.,FALSE
+UNL-063,Eclipse,,Spell,Mind,Common,3,,,"[Reaction]
+Give a unit -4[M] this turn.
+[Predict]",,,,"When sun and moon meet, darkness triumphs.",FALSE
+UNL-064,Fate Weaver,,Unit,Mind,Common,5,,4,"When you play me, look at the top 4 card of your Main Deck. You may reveal a spell with Energy cost [4] or more from among them and draw it. Recycle the rest.",,,Ionia,"""Long or short, every thread must meet the shears in the end.""",FALSE
+UNL-065,Icevale Archer,,Unit,Mind,Common,2,,2,"When I attack, you may pay [1] to give a unit here -1[M] this turn.",,,Freljord,"He doesn't bother to shout ""Freeze!""",FALSE
+UNL-066,Moonlight Affliction,,Spell,Mind,Common,7,,,"[Reaction]
+Give a unit -10[M] this turn.",,,,"Light can illuminate, or it can blind.",FALSE
+UNL-067,Ruined Rex,,Unit,Mind,Common,6,1,6,[Deathknell][>] Deal 4 to an enemy unit.,,,Bilgewater,"It's back, and worse than ever.",FALSE
+UNL-068,Spectral Centaur,,Unit,Mind,Common,6,,5,"When another friendly unit dies, give me +2[M] this turn.",,,"Shadow Isles, Spirit",Death provides him with an ever-growing herd.,FALSE
+UNL-069,Sprite Burst,,Spell,Mind,Common,5,,,Play two ready 3[M] Sprite unit tokens with [Temporary].,,,,"They're lovely, while they last.",FALSE
+UNL-070,Turn to Dust,,Spell,Mind,Common,2,,,Give a gear [Temporary].,,,,Nothing lasts forever.,FALSE
+UNL-071,Chakram Dancer,,Unit,Mind,Common,3,,3,"[Ambush]
+When you play me, give your other units here [Shield] this turn.",,,Bilgewater,Elegant. Effortless. Deadly.,FALSE
+UNL-072,Crescent Strike,,Spell,Mind,Uncommon,3,1,,"[Action]
+Choose a battlefield and an enemy unit there. Deal 4 to that unit and 1 to each other enemy unit there.",,,,"The light of the moon is cold, yet burns.",FALSE
+UNL-073,Deadly Flourish,,Spell,Mind,Uncommon,4,,,"Deal 3 to an enemy unit. When it dies this turn, play a Gold gear token exhausted.",,,,"""The world is cruel. It does not have to be ugly.""
+—Jhin",FALSE
+UNL-074,Frigid Jewel,,Gear,Mind,Uncommon,2,,,"When you draw your second card each turn, give a friendly unit +2[M] this turn.",,,,The power of the Freljord shines from every facet.,FALSE
+UNL-075,Gustwalker,,Unit,Mind,Uncommon,3,1,3,"[Hunt 2]
+[Level 3][>] I havve +1[M] and [Ganking].",,,"Ionia, Dog",An unconventional choice of pet.,FALSE
+UNL-076,Petal Pixie,,Unit,Mind,Uncommon,2,,2,I have +1[M] for each of your units with [Temporary] at my battlefield.,,,"Ionia,Fae","She savors fleeting moments of beauty, knowing none but herself will ever see them.",FALSE
+UNL-077,Soul Shepherd,,Unit,Mind,Uncommon,5,,3,Your token units have +1[M].,,,Shadow Isles,A strange guardian for a stranger flock.,FALSE
+UNL-078,Sprite Fountain,,Gear,Mind,Uncommon,2,1,,"[Temporary]
+When you play this, play a ready 3[M] Sprite unit token with [Temporary] to your base.
+[Deathknell][>] Repeat this gear's play effect.",,,,,FALSE
+UNL-079,"Diana, Lunari",Champion,Unit,Mind,Rare,3,,3,"When a showdown begins here, you may pay [1]. If you do, [Predict], then reveal the top ccard of your Main Deck. If it's a spell, draw it.",,Diana,Mount Targon,"""Follow no false light.""",FALSE
+UNL-080,"Hwei, Brooding Painter",Champion,Unit,Mind,Rare,5,1,5,"When I move, draw 1, then discard 1. Then, do the following based on the discarded card's type:
+• Spell — Draw 1.
+• Gear — Ready up to 2 runes.
+• Unit — Give me +3[M] this turn.",,Hwei,Ionia,,FALSE
+UNL-081,Keeper of Masks,,Unit,Mind,Rare,2,,1,"[Hidden]
+[Temporary]
+When you play me, play two Reflection unit tokens here. Then do this: They become copies of me.",,,Ionia,,TRUE
+UNL-082,"Lillia, Fae Fawn",Champion,Unit,Mind,Rare,3,,3,"[Accelerate]
+When I move from a location, play a 3[M] Sprite unit token with [Temporary] there.",,Lillia,"Ionia, Fae",,FALSE
+UNL-083,Smoke and Mirrors,,Spell,Mind,Rare,2,,,"[Hidden]
+[Action]
+Choose a unit you control and another unit you control at another location. If at least one of them has [Temporary], move each to the other's location. Draw 1.",,,,,FALSE
+UNL-084,Sprite Queen,,Unit,Mind,Rare,7,1,6,"When you play me or at the start of your Beginning Phase, play a ready 3[M] Sprite unit token with [Temporary] to your base.",,,"Ionia, Fae",,FALSE
+UNL-085,Sumpworks Map,,Gear,Mind,Rare,2,,,"[Reaction]
+[Temporary]
+When an opponent scores, draw 1.",,,,"""Hang on, it's upside down.""",FALSE
+UNL-086,"Zilean, Time Mage",Champion,Unit,Mind,Rare,5,1,5,"Once each turn, if you would play a token unit while I'm at a battlefield, you may play that token and an additional copy of it instead.",,Zilean,Icathia,"""I feel like I've done this before.""",FALSE
+UNL-087,Blue Sentinel,,Unit,Mind,Epic,4,1,4,"[Shield 2]
+Your hold effects for holding here trigger an additional time.
+When I hold, [Add] [A] at the start of your next Main Phase.",,,Mount Targon,,FALSE
+UNL-088,Gutter Palace,,Gear,Mind,Epic,4,,,"At the start of your Beginning Phase, if you have exactly 4 cards in hand and exactly 4 units at battlefields, you win the game.
+Discard 1, [E]: Play a 1[M] Bird unit token with [Deflect].",,,,,FALSE
+UNL-089,"Jhin, Meticulous Killer",Champion,Unit,Mind,Epic,4,,4,"[Vision]
+If you've spent [4] or more to play a spell this turn, you may play me for [B].",,Jhin,Ionia,"""One, two, three, four. Two, two, three, four ...""",FALSE
+UNL-090,"LeBlanc, Everywhere at Once",Champion,Unit,Mind,Epic,4,,4,"[Backline]
+Your [Temporary] effects at my battlefield don't trigger.",,LeBlanc,Noxus,"""Vision. Might. Guile. It's almost comical how history repeats itself.""",FALSE
+UNL-091,Concentrate,,Spell,Body,Common,5,,,"Draw 2.
+[Level 6][>] This costs [2] less.
+[Level 11][>] This costs [4] less instead.",,,,"""Peace within, peace without""
+—Master Yi",FALSE
+UNL-092,Demacian Diplomat,,Unit,Body,Common,2,,2,"When you play me, gain 1 XP.",,,Demacia,"After decades in the Demacian diplomatic corps, he's found dozens of polite ways to say ""leave us alone.""",FALSE
+UNL-093,Dragonsoul Sage,,Unit,Body,Common,2,,1,[Reaction][>] [E]: [Add][1].,,,Ionia,"""The Dragon's secrets aren't mine to share. I can only share the gifts that it has given me.""",FALSE
+UNL-094,Gemhand Hunter,,Unit,Body,Common,2,,2,"[Hunt]
+[Level 6][>] I have +1[M].",,,"Mount Targon, Yordle",He's a yordle of many facets.,FALSE
+UNL-095,Grim Resolve,,Spell,Body,Common,2,,,"[Action]
+Give a friendly unit +3[M] this turn. When it wins a combat this turn, gain 2 XP.",,,,"""If you think losing is the best teacher, you should really give winning a try.""",FALSE
+UNL-096,Hunter's Machete,,Gear,Body,Common,3,,,[Equip] [O],[Hunt] [M]+2,,Equipment,,FALSE
+UNL-097,Kinkou Initiate,,Unit,Body,Common,3,,3,"When you play me, draw 1 if your other units have total Might 5 or more.",,,Ionia,True strength lifts up others.,FALSE
+UNL-098,Targonian Visionary,,Unit,Body,Common,6,,6,[Level 11][>] I have +4[M].,,,Mount Targon,She has seen the world before. She will see that world again.,FALSE
+UNL-099,Towering Combatant,,Unit,Body,Common,4,,3,"[Shield 2]
+[Tank]",,,Shurima,"""Was this really your plan, pal?""",FALSE
+UNL-100,Voracious Gromp,,Unit,Body,Common,5,,5,[Hunt 3],,,Freljord,"""Oh no! It's real! The Gromp is real!""",FALSE
+UNL-101,Call to Battle,,Spell,Body,Common,3,,,"Move a unit you control to a battlefield you control. Then, choose an opponent. They move a unit they control to the same battlefield.",,,,"""I said, what're you gonna do about it?!""",FALSE
+UNL-102,Crowd Favorite,,Unit,Body,Uncommon,3,,3,"[Hunt]
+Spend 2 XP: [Buff] me.",,,Noxus,"""The crowd is a beast like any other. Hear it roar?""",FALSE
+UNL-103,Disposal Order,,Spell,Body,Uncommon,2,,,"[Reaction]
+Choose one —
+• Choose up to 3 cards from opponents' trashes. Their owners recycle them.
+• Draw 1.",,,,"""Get it cleaned up by sunrise. No questions.""",FALSE
+UNL-104,Gentle Gemdragon,,Unit,Body,Uncommon,8,,8,"When you play me or another Dragon, ready up to 2 runes.",,,"Mount Targon, Dragon","""Gentle"" is not the same as ""harmless.""",FALSE
+UNL-105,Imposing Challenger,,Unit,Body,Uncommon,5,,5,"When I move, you may move an enemy unit here with less Might than me to a different battlefield.",,,Ionia,"""Are there truly none with the courage to face our new champion?""",FALSE
+UNL-106,Repulse,,Spell,Body,Uncommon,1,1,,"[Reaction]
+Choose a friendly unit at a battlefield. Counter an enemy spell or ability that chooses it and no other friendly unit.",,,,,FALSE
+UNL-107,Stare Down,,Spell,Body,Uncommon,2,,,Choose a friendly unit and a battlefield. Move all enemy units at that battlefield with less Might than the chosen unit to their base. Gain 1 XP.,,,,The eyes have it.,FALSE
+UNL-108,Wily Newtfish,,Unit,Body,Uncommon,4,,4,"If you've gained XP this turn, I have +1[M] and [Ganking].",,,Bilgewater,"Half newt, half fish. All nuisance.",FALSE
+UNL-109,Blood Rose,,Gear,Body,Rare,1,,,"When you play a unit, you may pay [1] to gain 1 XP.
+Spend 3 XP, [E]: Ready a unit.",,,,Anything to get the blood pumping.,FALSE
+UNL-110,Clash of Giants,,Spell,Body,Rare,6,2,,Choose two units. They deal damage equal to their Mights to each other.,,,,"""The land slumbers, but it is not dead. With my roar, I wake it. With my thunder, I call it.""
+—Volibear",FALSE
+UNL-111,Determined Sentry,,Unit,Body,Rare,1,,1,I can't move to base.,,,"Bandle City, Yordle",Discretion has nothing on valor.,FALSE
+UNL-112,Irresistible Faefolk,,Unit,Body,Rare,2,,1,"When I move to a battlefield, you may move an enemy unit to that battlefield.",,,"Ionia, Fae","Cute, yes. Cuddly, no.",FALSE
+UNL-113,"Master Yi, Tempered",Champion,Unit,Body,Rare,4,,4,"[Hunt 2]
+[Level 6][>] I have [Deflect] and [Ganking].",,Master Yi,Ionia,"""Watch, and learn.""",FALSE
+UNL-114,"Nidalee, Cat Form",Champion,Unit,Body,Rare,3,1,4,"[Ambush]
+When I win a combat, draw 1.",,Nidalee,"Ixtal, Cat","""Meow! Ahem ... Anyway.""",FALSE
+UNL-115,"Nilah, Joyful Ascetic",Champion,Unit,Body,Rare,3,1,4,"[Accelerate]
+[Ganking]
+When I move, gain 1 XP.",,Nilah,"Kathkan, Demon","""All I feel is joy! It is ... difficult.""",FALSE
+UNL-116,"Poppy, Paragon",Champion,Unit,Body,Rare,5,,5,"[Deflect]
+When you play me, if an opponent's score is within 3 points of the Victory Score, ready me and gain 3 XP.",,Poppy,"Demacia, Yordle","""Me? The hero? Nah, that's ridiculous.""",FALSE
+UNL-117,Arachnoid Horror,,Unit,Body,Epic,6,1,6,"[Hunt 2]
+I can be played to an occupied battlefield if an enemy unit is alone there.
+Friendly units can be played to an occupied battlefield if an enemy unit is alone there.",,,"Shadow Isles, Spider",Don't go alone.,FALSE
+UNL-118,Elder Dragon,,Unit,Body,Epic,12,4,10,"Any amount of your damage is enough to kill enemy units.
+When you play me, choose up to one enemy unit at each location. Deal 1 to them.",,,"Demacia, Dragon",Clearing the dragons out of the mountains just made room for a bigger dragon.,FALSE
+UNL-119,"Kha'Zix, Evolving Hunter",Champion,Unit,Body,Epic,5,1,5,"[Hunt]
+When I attack, you may spend 3 XP to deal damage equal to my Might to an enemy unit here.",,Kha'Zix,The Void,"""Consume and adapt.""",FALSE
+UNL-120,"Rengar, Trophy Hunter",Champion,Unit,Body,Epic,5,1,6,"[Ambush]
+I can [Ambush] to a battlefield where there are enemy units, even if you don't have units there.",,Rengar,"Ixtal, Cat","""Let's see what they're made of.""",TRUE
+UNL-121,Bewitching Spirit,,Unit,Chaos,Common,3,,2,"When you play me, choose a player. They discard 1.",,,"Shadow Isles,Spirit","Bandle Scout Rule 43: When a mysterious voice in the woods whispers for you to follow it, don't go alone. Your friends might want to see too!",FALSE
+UNL-122,Cresent Guardian,,Unit,Chaos,Common,4,,4,"If you've played a spell this turn, you may pay [P] as an additional cost to play me. If you do, I enter ready.",,,Mount Targon,"The Lunari have few allies among Targon's mortal denizens, but that doesn't mean they're alone.",FALSE
+UNL-123,Evershade Stalker,,Unit,Chaos,Common,3,,3,"When you play me, discard 1, then draw 1.",,,Shadow Isles,"""That's a LOT of eyes.""
+—Common last words",FALSE
+UNL-124,Isolate,,Spell,Chaos,Common,2,,,"Move an enemy unit from a battlefield to its base. Then, if there's an enemy unit alone at the battlefield, draw 1.",,,,"""Hey, where is everyone?""
+—Common last words",FALSE
+UNL-125,Lunar Boon,,Spell,Chaos,Common,3,,,"[Reaction]
+Discard 1, then draw 2.",,,,"""A new moon is rising.""
+—Diana",FALSE
+UNL-126,Megatusk,,Unit,Chaos,Common,6,,6,Spend 3 XP: Give your units here [Ganking] this turn.,,,Bilgewater,"Q: What do you do if there's a megatusk in your boat?
+A: Buy a new boat.",FALSE
+UNL-127,Mister Root,,Unit,Chaos,Common,2,,1,"[Accelerate]
+When I move to a battlefield, gain 2 XP.",,,"Ionia,Fae",Dreams themselves can dream as well.,FALSE
+UNL-128,Star-Crossed,,Spell,Chaos,Common,3,1,,"[Reaction]
+Return a friendly unit and an enemy unit to their owners' hands.",,,,"""I've made my preparations. Meet me on the ridge at midnight, and we'll go."" —Unsigned note",FALSE
+UNL-129,Vicious Snapjaws,,Unit,Chaos,Common,5,,5,"When another friendly unit dies, gain 1 XP.",,,Bilgewater,"They don't know friend or foe, only food.",FALSE
+UNL-130,Walking Roost,,Unit,Chaos,Common,5,,6,"[Deflect]
+When you play me, choose an opponent. They play a 1[M] Bird unit token with [Deflect].",,,Shadow Isles,They have to leave the nest eventually.,FALSE
+UNL-131,Abandon,,Spell,Chaos,Uncommon,2,,,"[Reaction]
+Counter a spell. Return it to its owner's hand instead of putting it in their trash.
+[Predict]",,,,,FALSE
+UNL-132,Angler Beast,,Unit,Chaos,Uncommon,5,1,5,"When you play me, return all units with 2[M] or less to their owners' chands.",,,Bilgewater,"""There's plenty of room for everyone at the bottom of the sea.""
+—Pyke",FALSE
+UNL-133,Blast Cone,,Gear,Chaos,Uncommon,4,1,,"When you play this, you may move an enemy unit.
+When you move an enemy unit, you may exhaust this to [Stun] it.",,,,Seeds of destruction.,FALSE
+UNL-134,Existential Dread,,Spell,Chaos,Uncommon,1,1,,"[Action]
+[Repeat] [2]
+[Stun] an attacking enemy unit, If it's already stunned, return it to its owner's hand instead.",,,,,FALSE
+UNL-135,Insightful Investigator,,Unit,Chaos,Uncommon,3,,3,"When you play me, choose an opponent. They reveal their hand. You may pay 2 XP to choose a card from their hand. If you do, they discard that card and draw 1.",,,Piltover,,FALSE
+UNL-136,Scryer's Bloom,,Gear,Chaos,Uncommon,1,,,"This enters exhausted.
+Kill this, [1], [E]: [Predict 2], then draw 1. Gain 1 XP.",,,,Not all foliage conceals.,FALSE
+UNL-137,Sinister Poro,,Unit,Chaos,Uncommon,2,1,1,"When I attack, you may pay [1] to move an enemy unit here to its base.",,,"Shadow Isles, Poro",Are you going to be the one to tell him he's not scary?,FALSE
+UNL-138,The List,,Gear,Chaos,Uncommon,1,,,"As you play this, name a tag.
+[E]: Give a unit with the named tag -2[M] this turn.",,,,There are some lists you don't want to be on.,FALSE
+UNL-139,Bone Skewer,,Spell,Chaos,Rare,2,1,,"[Hidden]
+Choose a battlefield. An opponent reveals their hand. You may choose a unit from it. They play that unit to that battlefield, ignoring any and all costs. If they do, then do this: [Stun] it.",,,,,TRUE
+UNL-140,Conscription,,Spell,Chaos,Rare,5,2,,"You may spend 5 XP as an additional cost to play this.
+Choose an enemy unit at a battlefield with 3[M] or less. If you paid the additional cost, choose any enemy unit at a battlefield instead. Take control of it, exhaust it, and recall it.",,,,,FALSE
+UNL-141,"Evelynn, Entrancing",Champion,Unit,Chaos,Rare,2,,2,"[Hidden]
+[Backline]
+When you play me from facedown on your turn, you may move an enemy unit at a different location to my battlefield.",,Evelynn,Demon,"""Girls just wanna tear your throat out with their teeth.""",FALSE
+UNL-142,Heedless Resurrection,,Spell,Chaos,Rare,2,1,,"[Reaction]
+As an additional cost to play this, kill a friendly unit.
+Play a unit from your trash that costs no more Energy and no more Power than the killed unit, ignoring its cost.",,,,,FALSE
+UNL-143,"Kha'Zix, Mutating Horror",Champion,Unit,Chaos,Rare,4,1,4,"[Ambush]
+When I attack or defend, if an enemy unit is alone here, give me +2[M] this turn and gain 2 XP.",,Kha'Zix,The Void,"""I sense worthy prey.""",FALSE
+UNL-144,Maduli the Gatekeeper,,Unit,Chaos,Rare,7,1,8,"I can't be readied.
+[P]: Move me to an occupied enemy battlefield if my Might is greater than the total Might of enemy units there.",,,Bandle City,"""... Made a song so eerie, thought I'd die.""
+—Old Gaff's tale",FALSE
+UNL-145,"Pyke, Returned",Champion,Unit,Chaos,Rare,3,,3,"[Hidden]
+[Backline]
+Once each turn, when an enemy unit dies while I'm at a battlefield, play a Gold gear token exhausted.",,Pyke,Bilgewater,,FALSE
+UNL-146,"Syndra, Transcendent",Champion,Unit,Chaos,Rare,6,1,6,"While I'm in a showdown, your spells have [Repeat] [2][P].",,Syndra,Ionia,"""This power is mine to command.""",FALSE
+UNL-147,Baron Nashor,,Unit,Chaos,Epic,10,3,12,"As you play me, add the Baron Pit battlefield token to the board if it's not there already. If you do, I enter there.
+I can't be chosen by enemy spells and abilities.
+Other friendly units have +2[M].",,,The Void,,
+UNL-148,Cursed Sarcophagus,,Gear,Chaos,Epic,4,1,,"When you play this, banish all units from your trash.
+[E]: Play a unit banished with this.",,,,"""Do not disturb.""
+—Sarcophagus inscription",FALSE
+UNL-149,"Diana, No Longer Human",Champion,Unit,Chaos,Epic,4,1,3,"[Ambush]
+When you play a spell, give me +2[M] this turn.",,Diana,Mount Targon,"""I cannot turn back.""",FALSE
+UNL-150,"Vex, Apathetic",Champion,Unit,Chaos,Epic,4,,4,"[Deflect]
+When an opponent plays a unit while I'm at a battlefield, [Stun] it. They can't move it this turn.",,Vex,"Shadow Isles, Yordle","""I'll show them the meaning of apathy. Or not.""",FALSE
+UNL-151,Bandle Solider,,Unit,Order,Common,4,1,5,[Level 3][>] I enter ready.,,,"Bandle City, Yordle",Bandle Scout Rule 170: Everything makes you better at everything.,FALSE
+UNL-152,Black Rose Dignitary,,Unit,Order,Common,3,,2,"[Assault]
+[Deathknell][>] Channel 1 rune exhausted.",,,Noxus,The beauty of the petals hides the sting of the thorns.,FALSE
+UNL-153,Carrion Dredger,,Unit,Order,Common,2,,1,[Deathknell][>] Play a 1[M] Bird unit token with [Deflect] to your base.,,,"Zaun, Mech",The automaton paused and stared in wonder. Amidst the detritus sat a single unbroken egg.,FALSE
+UNL-154,Crimson Pigeons,,Unit,Order,Common,3,,3,I have +2[M] while I'm attacking with another unit.,,,"Noxus, Bird",They deliver a message.,FALSE
+UNL-155,Heroic Charge,,Spell,Order,Common,3,,,"[Action]
+Give a friendly unit +1[M] this turn and [Stun] and enemy unit at its location.",,,,"""Sometimes you just gotta do it yourself.""
+—Poppy",FALSE
+UNL-156,Loyal Poro,,Unit,Order,Common,3,,3,"[Deathknell][>] If I didn't die alone, draw 1.",,,"Freljord, Poro",A head full of bravery and not much else.,FALSE
+UNL-157,Scrutinizing Sergeant,,Unit,Order,Common,6,,6,"When you play me, gain 1 XP for each friendly unit.",,,"Demacia, Elite","""Hmmmm ...""",FALSE
+UNL-158,Shepherd's Heirloom,,Gear,Order,Common,2,,,"When you play this, gain 1 XP.
+[Equip] — Spend 1 XP",[M]+2,,Equipment,"""Even the sheep can tell it's special. And sheep aren't very smart.""",FALSE
+UNL-159,Soul Harvest,,Spell,Order,Common,2,1,,Kill a unit at a battlefield with 3[M] or less.,,,,It won't hurt a bit—it'll hurt a LOT.,FALSE
+UNL-160,Ultrasoft Poro,,Unit,Order,Common,5,,5,[E]: play two 1[M] Bird unit tokens with [Deflect]. Use this ability only while I'm at a battlefield.,,,"Freljord, Poro",How? Magic. And conditioner.,FALSE
+UNL-161,Diving Shells,,Gear,Order,Uncommon,2,,,"[Vision]
+[Action][>] Kill this, [E]: Give a unit +2[M] this turn.",,,,Today's treasure is tomorrow's trash.,FALSE
+UNL-162,Enthralling Protector,,Unit,Order,Uncommon,2,,2,"[Hunt]
+Spend 2 XP: [Buff] me.",,,"Ionia, Fae",Irrestible force indeed.,FALSE
+UNL-163,Mageseeker Investigator,,Unit,Order,Uncommon,4,,4,Opponents must pay [A] for each unit beyond the first to move multiple units to my battlefield at the same time.,,,Demacia,"""State your name and business.""",FALSE
+UNL-164,Safety Inspector,,Unit,Order,Uncommon,5,1,3,"You may spend 3 XP as an additional cost to play me.
+When you play me, each player must kill one of their units. If you paid my additional cost, you don't kill a unit this way.",,,"Bandle City, Yordle","""Looks fine to me!""",FALSE
+UNL-165,Shadow's Call,,Spell,Order,Uncommon,2,,,Choose a friendly unit without [Temporary]. Give it [Temporary]. Draw 2.,,,,"""You're a disappointment. A failure. Why fight it?""",FALSE
+UNL-166,Stalking Wolf,,Unit,Order,Uncommon,4,1,6,"[Ambush]
+As an additional cost to play me, kill a Bird, Cat, Dog, or Poro you control. You may play me its battlefield.",,,"Freljord, Dog",Nature does not seek forgiveness.,FALSE
+UNL-167,Starhound,,Unit,Order,Uncommon,5,1,6,"When you play me, return a Bird, Cat, Dog, or Poro from your trash to your hand.",,,"Mount Targon, Dog","It guards the flock, no matter where they stray.",FALSE
+UNL-168,Undying Loyalty,,Spell,Order,Uncommon,2,1,,"This costs [2] less if you choose a Bird, Cat, Dog, or Poro.
+Play a unit with cost no more than [2] and no more than [A] from your trash, ignoring its cost.",,,,"""We would call them all back, if we could.""",FALSE
+UNL-169,"Ashe, Focused",Champion,Unit,Order,Rare,5,1,4,"When you play me, choose an opponent. They reveal their hand. Choose a card revealed this way and banish it. When they hold, return it to their hand.",,Ashe,Freljord,"""No fate is written, except by us.""",FALSE
+UNL-170,Atakhan,,Unit,Order,Rare,10,3,7,"You may kill a friendly unit as an addtional cost to play me. If you do, I cost [1] less for each Energy it costs and [Y] less for each Power it costs.
+[Ganking]
+When I attack, the defender must kill one of their units here.",,,"Noxus, Demon",,FALSE
+UNL-171,"Galio, Indefatigable",Champion,Unit,Order,Rare,3,1,6,"[Deflect]
+[Tank]
+I don't deal combat damage.",,Galio,Demacia,"""Hahahaha! Did we win yet?""",FALSE
+UNL-172,"LeBlanc, Fragmented",Champion,Unit,Order,Rare,3,1,3,"[Assault]
+[Deathknell][>] Draw 1. If it's your Beginning Phase, draw 2 instead.",,LeBlanc,Noxus,"""My greatest strength is that there are so many of us ...""",FALSE
+UNL-173,Sacrifice,,Spell,Order,Rare,1,,,"[Reaction]
+As an additional cost to play this, kill a friendly [Mighty] unit.
+Draw 2 and channel 1 rune exhausted.",,,,,FALSE
+UNL-174,Shard of Undoing,,Gear,Order,Rare,6,,,"The first time a friendly unit dies during your Beginning Phase each turn, each opponent must kill one of their units.",,,,Treasure is eternal. It's life that's fleeting.,FALSE
+UNL-175,Tactical Retreat,,Spell,Order,Rare,2,,,"[Reaction]
+Choose a friendly unit. The next time it would die this turn, heal it, exhaust it, and recall it instead.",,,,Valor has nothing on discretion.,FALSE
+UNL-176,"Vi, Peacekeeper",Champion,Unit,Order,Rare,5,1,5,"[Ambush]
+When I attack, stun an enemy unit here.",,Vi,Piltover,"""I'm my own backup.""",FALSE
+UNL-177,"Ivern, Friend to All",Champion,Unit,Order,Epic,6,,6,"As you play me, choose Bird, Cat, Dog, or Poro. I gain that tag.
+When I conquer or hold, score 1 point if your units have all of the following tags among them — Bird, Cat, Dog, and Poro.",,Ivern,Ionia,"""Life is such a strange miracle.""",FALSE
+UNL-178,"Poppy, Defender of the Meek",Champion,Unit,Order,Epic,6,1,5,"You may spend 3 XP as an additional cost to play me. If you do, I cost [3] less.
+[Ambush]
+[Tank]",,Poppy,"Demacia,Yordle","""I'm in, 100%! That's everything, right?""",FALSE
+UNL-179,Rift Herald,,Unit,Order,Epic,8,1,7,"When I move to a battlefield, look at the top 3 cards of your Main Deck. You may reveal a unit from among them and draw it. Recycle the rest.
+[Deathknell][>] Play a unit from your hand to your base, ignoring its Energy cost.",,,The Void,,FALSE
+UNL-180,The Ruination,,Spell,Order,Epic,9,3,,Kill all units.,,,,"""No price is too great. No atrocity beyond my reach. For her, I will do anything.""
+—Viego",FALSE
+UNL-181,"Jhin, Virtuoso",,Legend,"Fury, Mind",Rare,,,,"When you play a spell, if you spent [4] or more, you may banish it. Then, if there are four spells banished with me, put each in its trash, channel 4 runes, and draw 1.",,Jhin,,,FALSE
+UNL-182,Curtain Call,Signature,Spell,"Fury, Mind",Epic,4,,,"[Repeat] — [1] / [A] / [1][A]
+Choose one you haven't already chosen —
+• Draw 1.
+• Deal 2 to a unit at a battlefield.
+• Deal 3 to a unit at a base.
+• Give a unit at a battlefield -4[M] this turn.",,Jhin,,,FALSE
+UNL-183,"Rengar, Pridestalker",,Legend,"Fury, Body",Rare,,,,"When you play a unit, give a unit +1[M] this turn.",,Rengar,,,FALSE
+UNL-184,Thrill of the Hunt,Signature,Spell,"Fury, Body",Epic,2,1,,"[Reaction]
+Banish a friendly unit, then its owner plays it to any battlefield, ignoring its cost.",,Rengar,,"""What a glorious hunt!""
+—Rengar",FALSE
+UNL-185,"Pyke, Bloodharbor Ripper",,Legend,"Fury, Chaos",Rare,,,,"[1], [E]: Return a friendly unit at a battlefield to its owner's hand. Play a Gold gear token exhausted.",,Pyke,,,FALSE
+UNL-186,Death from Below,Signature,Spell,"Fury, Chaos",Epic,4,1,,"Kill a unit at a battlefield. If the unit had 3[M] or less, do this: You may play this from your trash for [A].",,Pyke,,"""Keep a man down long enough, and the gutter becomes his kingdom.""
+—Pyke",TRUE
+UNL-187,"Vi, Piltover Enforcer",,Legend,"Fury, Order",Rare,,,,"When you conquer, if you assigned 3 or more excess damage, you may exhaust me to ready a unit.",,Vi,,,FALSE
+UNL-188,Hextech Gauntlet,Signature,Gear,"Fury, Order",Epic,3,,,[Equip] [3][A]. This ability's Energy cost is reduced by the Might of the unit you choose.,"When I conquer, if you assigned 3 or more excess damage, draw 1. [M]+3",Vi,Equipment,,FALSE
+UNL-189,"Lillia, Bashful Bloom",,Legend,"Calm, Mind",Rare,,,,"[4], [E]: Play a ready 3[M] Sprite unit token with [Temporary]. This ability costs [1] less for each friendly unit with [Temporary].",,Lillia,,,FALSE
+UNL-190,Lilting Lullaby,Signature,Spell,"Calm, Mind",Epic,2,2,,"[Reaction]
+Counter a spell. Its controller can't play spells this turn.",,Lillia,,"""Sleepy time!""
+—Lillia",FALSE
+UNL-191,"Master Yi, Wuju Master",,Legend,"Calm, Body",Rare,,,,"[Level 6][>] Your units have +1[M].
+[Level 11][>] Your units enter ready.",,Master Yi,,,FALSE
+UNL-192,Alpha Strike,Signature,Spell,"Calm, Body",Epic,3,1,,"[Action]
+Choose a friendly unit. It deals damage equal to its Might split among enemy units at battlefields. Then for each unit this kills, do this: Gain 1 XP.",,Master Yi,,"""Many foes, one strike!""
+—Master Yi",FALSE
+UNL-193,"Vex, Gloomist",,Legend,"Calm, Chaos",Rare,,,,"When you or an ally hold, you may exhaust me to draw 1.",,Vex,,,FALSE
+UNL-194,Shadow,Signature,Unit,"Calm, Chaos",Epic,3,,3,"If you play me to a battlefield, I enter ready.
+[Action][>] [1][A], [E]: [Stun] an enemy unit attacking here.",,Vex,Shadow Isles,"""Another person to kill. Shadow, can you handle it?""
+—Vex",FALSE
+UNL-195,"Ivern, Green Father",,Legend,"Calm, Order",Rare,,,,"When you conquer or hold, you may exhaust me to replace that battlefield with a Brush battlefield token.",,Ivern,,,FALSE
+UNL-196,Daisy!,Signature,Unit,"Calm, Order",Epic,9,2,8,"I enter ready.
+Reduce my cost by [1] for each of the following tags among your units — Bird, Cat, Dog, and Poro.
+When I attack while your units have all 4 tags, [Stun] an enemy unit here.",,Ivern,Ionia,,FALSE
+UNL-197,"Diana, Scorn of the Moon",,Legend,"Mind, Chaos",Rare,,,,[Reaction][>] [E]: [Add] [1]. Spend this Energy only during showdowns.,,Diana,,,FALSE
+UNL-198,Moonfall,Signature,Spell,"Mind, Chaos",Epic,3,1,,"[Action]
+Choose a battlefield where you have units. You may move up to one enemy unit to that battlefield. Then give enemy units there -2[M] this turn.",,Diana,,"""Night approaches!""
+—Diana",FALSE
+UNL-199,"LeBlanc, Deceiver",,Legend,"Mind, Order",Rare,,,,"When you conquer or hold, you may discard 1 and exhaust me to play a ready Reflection unit token there. Then do this: It becomes a copy of another unit there. Give it [Temporary].",,LeBlanc,,,TRUE
+UNL-200,Mirror Image,Signature,Spell,"Mind, Order",Epic,3,2,,Choose a unit. Play a ready Reflection unit token to your base. Then do this: It becomes a copy of that unit. Give it [Temporary].,,LeBlanc,,"""The best lies are beautiful.""
+—LeBlanc",TRUE
+UNL-201,"Kha'Zix, Voidreaver",,Legend,"Body, Chaos",Rare,,,,"When you win a combat, gain 1 XP.
+Spend 1 XP, [E]: [Buff] a unit.
+Spend 2 XP, [E]: Move an exhausted friendly unit from a battlefield to its base.",,Kha'Zix,,,FALSE
+UNL-202,Void Assault,Signature,Spell,"Body, Chaos",Epic,2,1,,"Move a friendly unit, then move an enemy unit.",,Kha'Zix,,"""If I eat you, will I learn how to die?""
+—Kha'Zix",FALSE
+UNL-203,"Poppy, Keeper of the Hammer",,Legend,"Body, Order",Rare,,,,"When you hold, gain 1 XP.
+Spend 3 XP, [E]: Draw 1.",,Poppy,,,FALSE
+UNL-204,Keeper's Verdict,Signature,Spell,"Body, Order",Epic,2,2,,"[Action]
+Choose an enemy unit at a battlefield. Its owner places it on the top or bottom of their Main Deck.",,Poppy,,"""And don't come back!""
+—Poppy",FALSE
+UNL-205,Abandoned Hall,,Battlefield,,Uncommon,,,,"When a player plays a spell, they may give a unit they control here +1[M] this turn.",,,,,FALSE
+UNL-206,Altar of Blood,,Battlefield,,Uncommon,,,,"If a unit here would die during combat, its controller may pay [A][A][A] to heal it, exhaust it, and recall it instead.",,,,,FALSE
+UNL-207,Amateur Recital,,Battlefield,,Uncommon,,,,"When you hold here, you may move a unit at a battlefield to its base.",,,,,FALSE
+UNL-208,Black Flame Altar,,Battlefield,,Uncommon,,,,Units here with [Temporary] have [Shield].,,,,,FALSE
+UNL-209,Dusk Rose Lab,,Battlefield,,Uncommon,,,,"At the start of your Beginning Phase, you may kill a unit you control here to draw 1.",,,,,FALSE
+UNL-210,Forbidding Waste,,Battlefield,,Uncommon,,,,"While a unit here is defending alone, it has -2[M].",,,,,FALSE
+UNL-211,Forgotten Library,,Battlefield,,Uncommon,,,,"While you control this battlefield, when you play a spell, if you spent [4] or more, [Predict].",,,,,FALSE
+UNL-212,Frozen Fortress,,Battlefield,,Uncommon,,,,"At the start of each player's Beginning Phase, deal 1 to each unit here.",,,,,FALSE
+UNL-213,Gardens of Becoming,,Battlefield,,Uncommon,,,,"Units here have ""[E]: Gain 1 XP.""",,,,,FALSE
+UNL-214,Ripper's Bay,,Battlefield,,Uncommon,,,,"When a unit here is returned to a player's hand, that player may pay [1] to channel 1 rune exhausted.",,,,,FALSE
+UNL-215,Star Spring,,Battlefield,,Uncommon,,,,"The first time a player plays a non-token unit here each turn, they may move another unit they control here to their base.",,,,,FALSE
+UNL-216,The Academy,,Battlefield,,Uncommon,,,,"When you hold here, give your next spell this turn [Repeat] equal to its base cost.",,,,,FALSE
+UNL-217,Trapping Grounds,,Battlefield,,Uncommon,,,,"When you conquer here, if you assigned 3 or more excess damage, play a 1[M] Bird unit token with [Deflect].",,,,,FALSE
+UNL-218,Valley of Souls,,Battlefield,,Uncommon,,,,"When a player plays a unit here, they may pay [1] to [Buff] it.",,,,,FALSE
+UNL-219,Vaults of Helia,,Battlefield,,Uncommon,,,,"When you hold here, your non-token units cost [1] more to play this turn.",,,,,FALSE
+UNL-T01,Baron Pit,Token,Battlefield,,Common,,,,Units can move here from anywhere.,,,,,FALSE
+UNL-T02,Bird,Token,Unit,,Common,,,1,[Deflect],,,Bird,,FALSE
+UNL-T03,Brush,Token,Battlefield,,Common,,,,"Bird, Cat, Dog, and Ivern units here have +1[M].
+When you score here, you may replace this with the battlefield it replacced.",,,,,FALSE
+UNL-T04,Buff,,,,Common,,,,"[M]+1
+A unit may have no more than one buff at a time.",,,,,FALSE
+UNL-T05,Gold,Token,Gear,,Common,,,,"[Reaction][>] Kill this, [E]: [Add] [A].",,,,,FALSE
+UNL-T06,Reflection,Token,Unit,,Common,,,0,,,,,,FALSE
+UNL-T07,Sprite,Token,Unit,,Common,,,3,[Temporary],,,Fae,,FALSE
+UNL-T08,XP Tracker,,,,Common,,,,"Track gained XP here.
+Some cards get bonuses based on your [Level].
+Some cards can spend XP for powerful effects.",,,,,FALSE

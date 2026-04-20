@@ -1,6 +1,6 @@
 import { ITournamentResults } from "../TournamentResults";
 
-export const AEGIS_20250817: ITournamentResults = {
+export const AEG_20250817: ITournamentResults = {
     tournamentName: "Aegis Test Tournament", abbrName: "AEG", date: "2025/08/17", meta: "OGN", host: "Aegis", tier: 4,
     links: ["https://challonge.com/AegisRBTest", "https://docs.google.com/spreadsheets/d/1p8sBQAizh16DrX_PP7eAKkHpEcJ1GybZ9Wj7UyHhvlQ/edit?gid=1179065216#gid=1179065216"],
     results: [

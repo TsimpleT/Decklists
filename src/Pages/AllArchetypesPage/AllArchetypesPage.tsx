@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './AllArchetypesPage.module.css';
 
-import { DEV_STRING_PRE, GET_ARCHETYPE_DECKLISTS, ARCHETYPE_TO_LEGEND_BASE_ID, ImageUtil, ARCHETYPE_TIER_NAMES, GET_CARD, Meta, ALL_METAS, GET_SET_NAME, GET_ARCHETYPE_TIERS, GET_MAX_ARCHETYPE_TIER_SIZE } from '../../Data';
+import { DEV_STRING_PRE, GET_ARCHETYPE_DECKLISTS, ARCHETYPE_TO_LEGEND_BASE_ID, ImageUtil, ARCHETYPE_TIER_NAMES, GET_CARD, Meta, ALL_METAS, GET_ARCHETYPE_TIERS, GET_MAX_ARCHETYPE_TIER_SIZE, GET_META_NAME } from '../../Data';
 import { LegendImage } from '../../Views';
 
 const BOTTOM_ARCHETYPE_STYLE = {borderBottom: "none", borderRadius: "0 0 8px 8px"};
@@ -19,7 +19,7 @@ export class AllArchetypesPage extends React.Component<{}, IState> {
             url += "/";
         }
         const metaParsed = url.slice(url.indexOf("all-archetypes/")+15, url.length-1).toUpperCase();
-        this.state = { meta: ALL_METAS.includes(metaParsed as Meta) ? metaParsed as Meta : ALL_METAS[ALL_METAS.length-1] };
+        this.state = { meta: ALL_METAS.includes(metaParsed as Meta) ? metaParsed as Meta : "SFD2" };
     }
 
     public override componentDidMount(): void {
@@ -30,7 +30,7 @@ export class AllArchetypesPage extends React.Component<{}, IState> {
         return (
             <div className={styles.container}>
                 <div className={styles.headerContainer}>
-                    <div className={styles.headerLabel} style={{borderLeft: "none"}}>{`${GET_SET_NAME(this.state.meta)} Meta`}</div>
+                    <div className={styles.headerLabel} style={{borderLeft: "none"}}>{`${GET_META_NAME(this.state.meta)} Meta`}</div>
                     {ALL_METAS.filter((meta) => meta !== this.state.meta).map((meta) =>
                         <div className={`${styles.headerLabel} ${styles.headerLabelLink}`} onClick={() => {
                             window.history.pushState("", "", `/decklists/riftbound/all-archetypes/${meta}`);

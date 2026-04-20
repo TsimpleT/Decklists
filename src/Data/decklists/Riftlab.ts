@@ -111,7 +111,7 @@ export const RLL_20250823: ITournamentResults = {
             {"username":"XoFF"}, //6-4
             {"username":"TurtleOfDOOM"}, //4-3
 
-            {"username":"Dziden"}, //7-3
+            {"username":"Daniel Zidenberg"}, //7-3
             {"username":"Batsu","archetype":"Darius","legend":"OGN-253","chosenChampion":"OGN-027","mainDeck":[{"id":"OGN-027","count":1},{"id":"OGN-245","count":3},{"id":"OGN-004","count":3},{"id":"OGN-213","count":2},{"id":"OGN-029","count":2},{"id":"OGN-210","count":3},{"id":"OGN-217","count":3},{"id":"OGN-211","count":3},{"id":"OGN-242","count":3},{"id":"OGN-016","count":1},{"id":"OGN-218","count":3},{"id":"OGN-226","count":3},{"id":"OGN-012","count":1},{"id":"OGN-035","count":2},{"id":"OGN-039a","count":2},{"id":"OGN-028","count":3},{"id":"OGN-233","count":2}],"battlefields":[{"id":"OGN-298","count":1},{"id":"OGN-294","count":1},{"id":"OGN-291","count":1}],"runeDeck":[{"id":"OGN-214a","count":7},{"id":"OGN-007a","count":5}],"sideboard":[{"id":"OGN-224","count":2},{"id":"OGN-222","count":1},{"id":"OGN-016","count":1},{"id":"OGN-207","count":1},{"id":"OGN-012","count":1},{"id":"OGN-238","count":2}]}, //6-3
             {"username":"Levilaon"}, //6-3
             {"username":"Dogma"}, //6-3

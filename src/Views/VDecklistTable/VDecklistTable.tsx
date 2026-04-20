@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './VDecklistTable.module.css';
 
-import { ALL_CCATEGORIES, Archetype, CCATEGORY, Decklist, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CCATEGORY, ImageUtil, LocalStorageManager, Meta, TO_BASE_ID } from '../../Data';
+import { ALL_CCATEGORIES, Archetype, CCATEGORY, Decklist, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CCATEGORY, GET_META_NAME, ImageUtil, LocalStorageManager, Meta, TO_BASE_ID } from '../../Data';
 import { VDecklistCard } from '../VDecklistCard';
 
 interface IProps {
@@ -26,7 +26,10 @@ const maxStyleStr: string = `rgb(${colors[colors.length-1][0]},${colors[colors.l
 function getColorScale(cc: CCATEGORY, n: number): React.CSSProperties {
     if(cc === CCATEGORY.RUNE) { return { backgroundColor: "#000" }; }
     if(cc === CCATEGORY.LEGEND) { return { backgroundColor: (n === 0) ? "#000" : maxStyleStr }; }
-    if(n < 0 || n > 1) { throw Error(`getColorScale n=${n} not in [0,1]`); }
+    if(n < 0 || n > 1) {
+        console.warn(`getColorScale n=${n} not in [0,1]`);
+        n = Math.max(0, Math.min(1, n));
+    }
     if(n === 1) { return { backgroundColor: maxStyleStr }; }
     const nSections = colors.length-1;
     
@@ -190,7 +193,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
         if(this.decklists.length === 0) {
             return (
                 <div className={styles.container}>
-                    {`No top tournament decklists found for ${this.props.archetype}`}
+                    {`No top tournament decklists found for ${this.props.archetype} in ${GET_META_NAME(this.props.meta)} meta`}
                 </div>
             );
         } else if(this.state.view === "stats") {

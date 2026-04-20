@@ -1,6 +1,7 @@
 import BaseCardListOGN from "./BaseCardListOGN251219.json";
 import BaseCardListOGS from "./BaseCardListOGS251219.json";
-import BaseCardListSFD from "./BaseCardListSFD251219.json";
+import BaseCardListSFD from "./BaseCardListSFD260402.json";
+import BaseCardListUNL from "./BaseCardListUNL260402.json";
 import CardCategories from "./CardCategories.json";
 import IdMappings from "./IdMappings.json";
 
@@ -10,7 +11,7 @@ type CardSupertype = "Signature"|"Champion"|"Token";
 export const ALL_CARD_TYPES = [ "Battlefield", "Gear", "Legend", "Rune", "Spell", "Unit"] as const;
 export type CardType = typeof ALL_CARD_TYPES[number];
 
-type Rarity = "Common"|"Uncommon"|"Rare"|"Epic"|"Showcase";
+type Rarity = "Common"|"Uncommon"|"Rare"|"Epic"|"Showcase"|"Ultimate";
 
 //'Base ID', 'Name', 'Pre-Type', 'Type', 'Domains', 'Rarity', 'Energy Cost', 'Power Cost', 'Might', 'Rules Text', 'Champion Tag', 'Other Tags', 'Other'
 export interface CardDTO {
@@ -55,7 +56,7 @@ export const CCATEGORY_ORDERING: {[key in CCATEGORY]: number} = {
     [CCATEGORY.RUNE]: 10,
 };
 
-let cardData: {[cardId: string]: CardDTO} = {...BaseCardListOGN.cards, ...BaseCardListOGS.cards, ...BaseCardListSFD.cards} as any;
+let cardData: {[cardId: string]: CardDTO} = {...BaseCardListOGN.cards, ...BaseCardListOGS.cards, ...BaseCardListSFD.cards, ...BaseCardListUNL.cards} as any;
 let cardNameToBaseId: {[name: string]: string} = {};
 for(let card in cardData) {
     if(!(cardData[card].name in cardNameToBaseId)) {
