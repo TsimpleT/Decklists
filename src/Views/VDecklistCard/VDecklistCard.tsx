@@ -77,14 +77,14 @@ export class VDecklistCard extends React.Component<IProps, IState> {
                 <div className={styles.cardImageFullContainer}>
                     <div className={`${styles.cardImageSmallContainer} ${posStyles[`${this.props.id.replaceAll("*","")}-div`]}`}>
                         <img src={GET_CARD_ART(this.props.id)} alt={`${card.name} (${this.props.id})`}
-                            className={`${styles.cardSmallImage} ${posStyles[this.props.id.replaceAll("*","")]}`}/>
+                            className={`${(card.type === "Battlefield") ? styles.cardSmallImageBF : styles.cardSmallImage} ${posStyles[this.props.id.replaceAll("*","")]}`}/>
                         <div className={styles.leftImageFade} style={fadeLStyle}/>
                         <div className={styles.rightImageFade} style={fadeRStyle} />
                     </div>
                 </div>
                 {(this.state.hover) &&
-                    <img src={GET_CARD_ART(this.props.id)} className={styles.cardHoverImage}
-                        alt={`${card.name} (${this.props.id})`} style={(this.props.fixHover) ? {right: `${this.props.fixHover}px`} : {}} />
+                    <img src={GET_CARD_ART(this.props.id)} className={`${styles.cardHoverImage} ${(card.type === "Battlefield") && styles.cardHoverImageBF}`}
+                        alt={`${card.name} (${this.props.id})`} style={(this.props.fixHover) ? {right: `${this.props.fixHover - (card.type === "Battlefield" ? 59 : 0)}px`} : {}} />
                 }
             </div>
         );

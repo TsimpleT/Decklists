@@ -13,7 +13,7 @@ export class CardListPage extends React.Component {
         return (
             <div className={styles.container}>
                 {ALL_CARD_IDS.map((id) => 
-                    <VDecklistCard id={id} options={{type: "allCards"}} key={id} fixHover={-285} />
+                    <VDecklistCard id={id} options={{type: "allCards"}} key={id} fixHover={-288} />
                 )}
             </div>
         );

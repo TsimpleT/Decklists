@@ -96,8 +96,8 @@
 		"SFD-223*": {"baseId":"OGN-035", "ttsId":"OGN-035-3", "rarity":"Showcase", "alteredFlavorText":"\"Goodbye... for now.\"", "baseCardName":"Vayne, Hunter", "notes":"ON Signed"},
 		"SFD-224": {"baseId":"SFD-049", "ttsId":"SFD-049-2", "rarity":"Showcase", "baseCardName":"Aphelios, Exalted", "notes":"Overnumbered"},
 		"SFD-224*": {"baseId":"SFD-049", "ttsId":"SFD-049-3", "rarity":"Showcase", "baseCardName":"Aphelios, Exalted", "notes":"ON Signed"},
-		"SFD-225": {"baseId":"SFD-057", "ttsId":"SFD-057-2", "rarity":"Showcase", "alteredFlavorText":"\"Everyone has a purpose.\"", "baseCardName":"Irelia, Fervent", "notes":"Overnumbered"},
-		"SFD-225*": {"baseId":"SFD-057", "ttsId":"SFD-057-3", "rarity":"Showcase", "alteredFlavorText":"\"Everyone has a purpose.\"", "baseCardName":"Irelia, Fervent", "notes":"ON Signed"},
+		"SFD-225": {"baseId":"SFD-057", "ttsId":"SFD-057-3", "rarity":"Showcase", "alteredFlavorText":"\"Everyone has a purpose.\"", "baseCardName":"Irelia, Fervent", "notes":"Overnumbered"},
+		"SFD-225*": {"baseId":"SFD-057", "ttsId":"SFD-057-4", "rarity":"Showcase", "alteredFlavorText":"\"Everyone has a purpose.\"", "baseCardName":"Irelia, Fervent", "notes":"ON Signed"},
 		"SFD-226": {"baseId":"OGN-081", "ttsId":"OGN-081-2", "rarity":"Showcase", "baseCardName":"Seal of Focus", "notes":"Overnumbered"},
 		"SFD-227": {"baseId":"OGN-119", "ttsId":"OGN-119-3", "rarity":"Showcase", "alteredFlavorText":"\"Just remember... to follow the fox.\"", "baseCardName":"Ahri, Inquisitive", "notes":"Overnumbered"},
 		"SFD-227*": {"baseId":"OGN-119", "ttsId":"OGN-119-4", "rarity":"Showcase", "alteredFlavorText":"\"Just remember... to follow the fox.\"", "baseCardName":"Ahri, Inquisitive", "notes":"ON Signed"},
@@ -211,7 +211,7 @@
 		"UNL-236*": {"baseId":"UNL-201", "ttsId":"UNL-201-3", "rarity":"Showcase", "baseCardName":"Kha'Zix, Voidreaver", "notes":"ON Signed"},
 		"UNL-237": {"baseId":"UNL-203", "ttsId":"UNL-203-2", "rarity":"Showcase", "baseCardName":"Poppy, Keeper of the Hammer", "notes":"Overnumbered"},
 		"UNL-237*": {"baseId":"UNL-203", "ttsId":"UNL-203-3", "rarity":"Showcase", "baseCardName":"Poppy, Keeper of the Hammer", "notes":"ON Signed"},
-		"UNL-238": {"baseId":"UNL-118", "ttsId":"UNL-118-2", "rarity":"Ultimate", "baseCardName":"Elder Dragon", "notes":"Ultimate"},
+		"UNL-238": {"baseId":"UNL-147", "ttsId":"UNL-147-3", "rarity":"Ultimate", "baseCardName":"Baron Nashor", "notes":"Ultimate"},
 		"UNL-R01": {"baseId":"OGN-007", "ttsId":"UNL-R01", "rarity":"Common", "baseCardName":"Fury Rune", "notes":"Base"},
 		"UNL-R02": {"baseId":"OGN-042", "ttsId":"UNL-R02", "rarity":"Common", "baseCardName":"Calm Rune", "notes":"Base"},
 		"UNL-R03": {"baseId":"OGN-089", "ttsId":"UNL-R03", "rarity":"Common", "baseCardName":"Mind Rune", "notes":"Base"},
@@ -223,10 +223,6 @@
 		"UNL-R03a": {"baseId":"OGN-089", "ttsId":"UNL-R03a", "rarity":"Showcase", "baseCardName":"Mind Rune", "notes":"Alt Art"},
 		"UNL-R04a": {"baseId":"OGN-126", "ttsId":"UNL-R04a", "rarity":"Showcase", "baseCardName":"Body Rune", "notes":"Alt Art"},
 		"UNL-R05a": {"baseId":"OGN-166", "ttsId":"UNL-R05a", "rarity":"Showcase", "baseCardName":"Chaos Rune", "notes":"Alt Art"},
-		"UNL-R06a": {"baseId":"OGN-214", "ttsId":"UNL-R06a", "rarity":"Showcase", "baseCardName":"Order Rune", "notes":"Alt Art"},
-		"VEN-167": {"baseId":"OGN-036", "ttsId":"OGN-036-2", "rarity":"Showcase", "baseCardName":"Vi, Destructive", "notes":"Overnumbered"},
-		"VEN-168": {"baseId":"OGN-030", "ttsId":"OGN-030-3", "rarity":"Showcase", "baseCardName":"Jinx, Demolitionist", "notes":"Overnumbered"},
-		"VEN-175": {"baseId":"SFD-084", "ttsId":"SFD-084-2", "rarity":"Showcase", "baseCardName":"Jayce, Man of Progress", "notes":"Overnumbered"},
-		"VEN-176": {"baseId":"OGN-117", "ttsId":"OGN-117-3", "rarity":"Showcase", "baseCardName":"Viktor, Innovator", "notes":"Overnumbered"}
+		"UNL-R06a": {"baseId":"OGN-214", "ttsId":"UNL-R06a", "rarity":"Showcase", "baseCardName":"Order Rune", "notes":"Alt Art"}
 	}
 }

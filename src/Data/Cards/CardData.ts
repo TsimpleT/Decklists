@@ -140,7 +140,33 @@ export function TTS_ID_TO_ID(ttsId: string): string {
     return fromTtsIdMappings[ttsId];
 }
 
+const CARD_ART_EXCEPTIONS: {[id: string]: string} = {
+    "ARC-001": "https://cdn.piltoverarchive.com/temporary/1760416626325-f3zxpz5s8g7.webp",
+    "ARC-002": "https://cdn.piltoverarchive.com/temporary/1760416743034-mjx1r8rnhhi.webp",
+    "ARC-003": "https://cdn.piltoverarchive.com/temporary/1760416827138-ytd8qmfc3v.webp",
+    "ARC-004": "https://cdn.piltoverarchive.com/temporary/1760416787235-exutfmhlgxf.webp",
+    "ARC-005": "https://cdn.piltoverarchive.com/temporary/1760416716990-we9v5u8rbb.webp",
+    "ARC-006": "https://cdn.piltoverarchive.com/temporary/1760416556879-01whuib9pmfi.webp",
+    "SFD-R01a": "https://russeus.github.io/RB-TCG-Arena/Images/SFD-avif/R01b.avif",
+    "SFD-R02a": "https://russeus.github.io/RB-TCG-Arena/Images/SFD-avif/R02b.avif",
+    "SFD-R03a": "https://russeus.github.io/RB-TCG-Arena/Images/SFD-avif/R03b.avif",
+    "SFD-R04a": "https://russeus.github.io/RB-TCG-Arena/Images/SFD-avif/R04b.avif",
+    "SFD-R05a": "https://russeus.github.io/RB-TCG-Arena/Images/SFD-avif/R05b.avif",
+    "SFD-R06a": "https://russeus.github.io/RB-TCG-Arena/Images/SFD-avif/R06b.avif",
+    "UNL-R01a": "https://cdn.piltoverarchive.com/temporary/1772489366582-j850d8b51vc.png",
+    "UNL-R02a": "https://cdn.piltoverarchive.com/temporary/1772489327958-x4rjerafcx.png",
+    "UNL-R03a": "https://cdn.piltoverarchive.com/temporary/1772489382491-gffpct65jgb.png",
+    "UNL-R04a": "https://cdn.piltoverarchive.com/temporary/1772489304316-2thnys211eo.png",
+    "UNL-R05a": "https://cdn.piltoverarchive.com/temporary/1772489349570-60fm8rfv2nl.png",
+    "UNL-R06a": "https://cdn.piltoverarchive.com/temporary/1772489400276-1xifka38ob4.png",
+};
+
 export function GET_CARD_ART(id: string): string {
-    return `https://static.dotgg.gg/riftbound/cards/${id.replaceAll("*","s")}.webp`;
-    // https://cdn.rgpub.io/public/live/map/riftbound/latest/OGN/cards/OGN-001/full-desktop-2x.jpg // high quality
+    if(id in CARD_ART_EXCEPTIONS) {
+        return CARD_ART_EXCEPTIONS[id];
+    }
+    const cleanId = (id.startsWith("OGN") || id.startsWith("SFD")) ? id.replaceAll("*","s") : id;
+    return `https://cdn.piltoverarchive.com/cards/${cleanId}.webp`;
+    // return `https://static.dotgg.gg/riftbound/cards/${id.replaceAll("*","s")}.webp`; // original but some missing
+    // return `https://cdn.rgpub.io/public/live/map/riftbound/latest/OGN/cards/OGN-001/full-desktop-2x.jpg` // high quality
 }

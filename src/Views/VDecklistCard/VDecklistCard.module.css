@@ -88,6 +88,12 @@
     margin-top: -24px;
 }
 
+.cardSmallImageBF {
+    width: 100px;
+    margin-top: -48px;
+    rotate: 90deg;
+}
+
 .leftImageFade {
     position: absolute;
     left: 0px;
@@ -110,5 +116,15 @@
     right: -303px;
     width: 300px;
     border-radius: 16px;
+    z-index: 100;
+}
+
+.cardHoverImageBF {
+    position: absolute;
+    top: -60px;
+    right: -362px;
+    width: 300px;
+    border-radius: 16px;
+    rotate: 90deg;
     z-index: 100;
 }
