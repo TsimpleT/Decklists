@@ -33,7 +33,7 @@ export class AppNav extends React.Component/*<{}, IState>*/ {
                 <img className={styles.icon} src={ImageUtil.getImage("Riftbound")} height={26} title={"Riftbound"} alt={"Riftbound"} />
                 <span className={styles.title} title={VERSION_STRING}>Decklists</span>
                 {IS_DEV && <span className={styles.titleNotes}>test build</span>}
-                <Link to={`/decklists/riftbound/all-archetypes/${"SFD2"/*ALL_METAS[ALL_METAS.length-1]*/}`}>
+                <Link to={`/decklists/riftbound/all-archetypes/${ALL_METAS[ALL_METAS.length-1]}`}>
                     Archetype Stats
                 </Link>
                 <Link to={"/decklists/riftbound/me"}>

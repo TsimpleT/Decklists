@@ -123,17 +123,18 @@ export function PREDICT_ARCHETYPE(decklist: Decklist): Archetype {
 export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "Dark Horses", "Struggling", "Memes"];
 const META_ARCHETYPE_TIERS: {[meta in Meta]: Archetype[][]} = {
     "UNL": [
-        [], [],
-        ["Jhin Midrange", "Rengar Midrange", "Pyke Midrange", "Vi Midrange", "Lillia Midrange", "Master Yi Midrange", "Vex Midrange", "Ivern Midrange", "Diana Midrange", "LeBlanc Midrange", "Kha'Zix Midrange", "Poppy Midrange"],
-        ["Rek'Sai Midrange", "Draven Midrange", "Fiora Midrange", "Darius", "Teemo"],
-        [], []
+        ["Irelia Midrange", "Sivir Aurora", "Master Yi Midrange", "Diana Midrange", "LeBlanc Midrange", "Vex Midrange"],
+        ["Miss Fortune Aurora", "Azir Midrange", "Sett Midrange", "Annie Midrange", "Draven Midrange", "Ezreal Control"],
+        ["Rengar Midrange", "Master Yi Aurora", "Kai'Sa Midrange", "Lucian Midrange", "Fiora Midrange", "Darius", "Kha'Zix Midrange", "Viktor Control", "Viktor Midrange", "Rek'Sai Midrange", "Teemo", "Lillia Midrange", "Poppy Midrange", "Leona Midrange", "Pyke Midrange", "Yasuo Midrange"],
+        ["Ahri", "Lux Control", "Ornn", "Volibear Ramp", "Jinx Aggro", "Lee Sin Midrange", "Jax Midrange", "Vi Midrange"],
+        ["Rumble Midrange", "Ivern Midrange", "Renata Glasc", "Garen Aurora", "Jhin Midrange"]
     ],
     "SFD2": [
-        ["Irelia Midrange", "Draven Midrange", "Azir Midrange", "Master Yi Midrange"],
-        ["Annie Midrange", "Viktor Midrange", "Kai'Sa Midrange", "Lucian Midrange"],
-        ["Ezreal Control", "Rek'Sai Midrange", "Darius", "Sett Midrange", "Fiora Midrange"],
-        ["Master Yi Aurora", "Ahri", "Volibear Ramp", "Leona Midrange", "Lux Control", "Sivir Midrange", "Miss Fortune Aurora", "Sivir Aurora", "Lee Sin Midrange", "Rumble Midrange"],
-        ["Jax Midrange", "Teemo", "Yasuo Midrange", "Ornn", "Jinx Aggro", "Renata Glasc", "Garen Aurora"],
+        ["Draven Midrange", "Irelia Midrange"],
+        ["Annie Midrange", "Master Yi Midrange", "Azir Midrange"],
+        ["Viktor Midrange", "Kai'Sa Midrange", "Ezreal Control", "Lucian Midrange", "Darius"],
+        ["Sett Midrange", "Fiora Midrange", "Rek'Sai Midrange", "Ahri", "Yasuo Midrange", "Volibear Ramp", "Leona Midrange", "Lux Control", "Sivir Midrange", "Miss Fortune Aurora", "Sivir Aurora", "Lee Sin Midrange", "Rumble Midrange"],
+        ["Jax Midrange", "Teemo", "Ornn", "Jinx Aggro", "Renata Glasc", "Garen Aurora"],
     ],
     "SFD": [
         ["Draven Miracle", "Draven Midrange"],

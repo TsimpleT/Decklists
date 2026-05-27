@@ -19,7 +19,7 @@ export class AllArchetypesPage extends React.Component<{}, IState> {
             url += "/";
         }
         const metaParsed = url.slice(url.indexOf("all-archetypes/")+15, url.length-1).toUpperCase();
-        this.state = { meta: ALL_METAS.includes(metaParsed as Meta) ? metaParsed as Meta : "SFD2" };
+        this.state = { meta: ALL_METAS.includes(metaParsed as Meta) ? metaParsed as Meta : ALL_METAS[ALL_METAS.length-1] };
     }
 
     public override componentDidMount(): void {

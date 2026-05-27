@@ -6,8 +6,8 @@ test('each archetype not in the tierlist has zero decks', () => {
         const tierlistArchetypes: Archetype[] = GET_ARCHETYPE_TIERS(meta).flat();
         for(let archetype of ALL_ARCHETYPES) {
             if(archetype !== "Unknown" && !tierlistArchetypes.includes(archetype)) {
-                console.dir(`${meta}: ${archetype}`);
                 const dls = GET_ARCHETYPE_DECKLISTS(archetype, meta);
+                console.dir(`${meta} ${archetype} ${dls.length}`);
                 expect(dls.length).toEqual(0);
             }
         }

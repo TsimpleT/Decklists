@@ -268,7 +268,7 @@ SFD-153,Eye of the Herald,,Gear,Order,Common,1,,,[Equip] [Y],"When I move, play 
 SFD-154,Guards!,,Spell,Order,Common,3,,,"[Hidden]
 Play a 2[M] Sand Soldier unit token. Then do this: you may pay [Y] to ready it.",,,,"""My empire lives in every grain of sand.""
 —Azir",TRUE
-SFD-155,Honest Broker,,Unit,Order,Common,2,2,,[Deathknell] — Play a Gold gear token exhausted.,,,Ionia,,FALSE
+SFD-155,Honest Broker,,Unit,Order,Common,2,,2,[Deathknell] — Play a Gold gear token exhausted.,,,Ionia,,FALSE
 SFD-156,Laurent Duelist,,Unit,Order,Common,4,,3,[Assault 2],,,Demacia,"""No, my old foil, this isn't revenge—it's épéeback.""",FALSE
 SFD-157,Royal Guard,,Unit,Order,Common,4,2,,"When you play me, play a 2[M] Sand Solider unit token here.",,,Shurima,A ruler's true power is in the loyalty they inspire.,FALSE
 SFD-158,Sandshifter,,Unit,Order,Common,5,2,6,"When you play me, kill an enemy unit with 3[M] or less.",,,Shurima,"""Recognize your emperor... or the sands will make you.""",FALSE
@@ -310,7 +310,7 @@ SFD-178,Blade of the Ruined King,,Gear,Order,Epic,3,1,,"[Equip] - [Y], Kill a fr
 —Viego",FALSE
 SFD-179,Corina Veraza,,Unit,Order,Epic,7,1,6,"[Accelerate]
 When I move to a battlefield, play three 1[M] Recruit unit tokens here.",,,Zaun,"""I told them that every achievement had its cost. I didn't tell them who would pay it.""",FALSE
-SFD-180,"Fiora, Worthy",Champion,Unit,Order,Epic,3,3,,"Whenever a unit you control becomes [Mighty], you may pay [Y] to ready it.",,Fiora,Demacia,"""Strike quickly. Strike deftly.""",FALSE
+SFD-180,"Fiora, Worthy",Champion,Unit,Order,Epic,3,,3,"Whenever a unit you control becomes [Mighty], you may pay [Y] to ready it.",,Fiora,Demacia,"""Strike quickly. Strike deftly.""",FALSE
 SFD-181,"Rumble, Mechanized Menace",,Legend,"Fury, Mind",Rare,,,,Your Mechs have [Shield].,,Rumble,,,FALSE
 SFD-182,Danger Zone,Signature,Spell,"Fury, Mind",Epic,1,1,,"[Reaction]
 [Repeat] [1][C]

@@ -28,9 +28,9 @@ def get_category(data):
             return INTERACTION
         return BIG_INTERACTION
     elif data["type"] == "Unit" or data["type"] == "Gear":
-        if "energy" in data and data["energy"] <= 2 and "power" in data and data["power"] == 0:
+        if "energy" in data and data["energy"] <= 2 and ("power" not in data or ("power" in data and data["power"] == 0)):
             return EARLY
-        elif "energy" in data and data["energy"] == 3 and "power" in data and data["power"] == 0:
+        elif "energy" in data and data["energy"] == 3 and ("power" not in data or ("power" in data and data["power"] == 0)):
             return EARLY2ND
         elif "energy" in data and data["energy"] >= 7:
             return LATE

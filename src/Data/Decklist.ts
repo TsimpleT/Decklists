@@ -144,7 +144,12 @@ export class Decklist {
         return ([
             [[{id: this.legend, count: 1}], "Legend"],
             [[{id: this.chosenChampion, count: 1}], "ChosenChampion"],
-            [(this.mainDeck.length === 0) ? [] : [{id: this.mainDeck[0].id, count: this.mainDeck[0].count-1}].concat(this.mainDeck.slice(1)), "MainDeck"],
+            [(this.mainDeck.length === 0)
+                ? []
+                : ((this.mainDeck[0].count > 1)
+                    ? [{id: this.mainDeck[0].id, count: this.mainDeck[0].count-1}]
+                    : []
+                ).concat(this.mainDeck.slice(1)), "MainDeck"],
             [this.battlefields, "Battlefields"],
             [this.runeDeck, "Runes"],
             [this.sideboard, "Sideboard"]
@@ -178,18 +183,19 @@ export class Decklist {
         let mode: "LG"|"CC"|"MD"|"BF"|"RU"|"SB"|"" = "";
 
         for(let line of lineList) {
+            line = line.trim();
             if(line.length === 0) {
                 continue;
             }
             const num = parseInt(line, 10);
             if(Number.isNaN(num)) {
                 const lineLower = line.toLowerCase();
-                if(lineLower.startsWith("legend")) { mode = "LG"; }
+                if(lineLower.includes("legend")) { mode = "LG"; }
                 else if(lineLower.includes("champion")) { mode = "CC"; }
-                else if(lineLower.startsWith("main")) { mode = "MD"; }
-                else if(lineLower.startsWith("battlefield")) { mode = "BF"; }
-                else if(lineLower.startsWith("rune")) { mode = "RU"; }
-                else if(lineLower.startsWith("side")) { mode = "SB"; }
+                else if(lineLower.includes("main")) { mode = "MD"; }
+                else if(lineLower.includes("battlefield")) { mode = "BF"; }
+                else if(lineLower.includes("rune")) { mode = "RU"; }
+                else if(lineLower.includes("side")) { mode = "SB"; }
                 else { console.log(`cant process line ${line}`); }
                 continue;
             }

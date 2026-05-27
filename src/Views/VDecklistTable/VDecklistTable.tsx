@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './VDecklistTable.module.css';
 
-import { ALL_CCATEGORIES, Archetype, CCATEGORY, Decklist, GET_ARCHETYPE_DECKLISTS, GET_CARD, GET_CCATEGORY, GET_META_NAME, ImageUtil, LocalStorageManager, Meta, TO_BASE_ID } from '../../Data';
+import { ALL_CCATEGORIES, Archetype, CCATEGORY, Decklist, GET_ARCHETYPE_DECKLISTS, GET_CCATEGORY, GET_META_NAME, LocalStorageManager, Meta, TO_BASE_ID } from '../../Data';
 import { VDecklistCard } from '../VDecklistCard';
 
 interface IProps {
@@ -25,7 +25,7 @@ const colors: [number, number, number][] = [ [0,0,0], [180,95,6], [100,100,100],
 const maxStyleStr: string = `rgb(${colors[colors.length-1][0]},${colors[colors.length-1][1]},${colors[colors.length-1][2]})`;
 function getColorScale(cc: CCATEGORY, n: number): React.CSSProperties {
     if(cc === CCATEGORY.RUNE) { return { backgroundColor: "#000" }; }
-    if(cc === CCATEGORY.LEGEND) { return { backgroundColor: (n === 0) ? "#000" : maxStyleStr }; }
+    // if(cc === CCATEGORY.LEGEND) { return { backgroundColor: (n === 0) ? "#000" : maxStyleStr }; }
     if(n < 0 || n > 1) {
         console.warn(`getColorScale n=${n} not in [0,1]`);
         n = Math.max(0, Math.min(1, n));
@@ -76,9 +76,10 @@ export class VDecklistTable extends React.Component<IProps, IState> {
         this.sortCardIds();
         this.state = {
             showSettings: false, view: "stats",
-            hideCards: this.cardIds.filter((id) =>
-                this.cardStats[id].avg + this.cardStats[id].sbAvg <= (["Battlefield","Legend","Rune"].includes(GET_CARD(id).type) ? 0.1/3 : 0.1)
-            )
+            hideCards: []
+            // hideCards: this.cardIds.filter((id) =>
+            //     this.cardStats[id].avg + this.cardStats[id].sbAvg <= (["Battlefield","Legend","Rune"].includes(GET_CARD(id).type) ? 0.1/3 : 0.1)
+            // )
         };
     }
 
@@ -215,7 +216,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                         <tr className={styles.topRow}>
                             <th className={styles.stickyCol1}>
                                 <span>Card</span>
-                                <img className={styles.settingsButton} src={ImageUtil.getImage("Settings")} height={18} title={"Riftbound"} alt={"Riftbound"} 
+                                {/* <img className={styles.settingsButton} src={ImageUtil.getImage("Settings")} height={18} title={"Riftbound"} alt={"Riftbound"} 
                                     onClick={() => this.setState({showSettings: !this.state.showSettings})}/>
                                 {(this.state.showSettings) && (
                                     <div className={styles.settingsContainer}>
@@ -231,7 +232,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                                             ))}
                                         </>)}
                                     </div>
-                                )}
+                                )} */}
                             </th>
                             <th className={styles.stickyCol2} title={"Main Deck % Appearance"}>MD%</th>
                             <th className={styles.stickyCol3}>Avg</th>
@@ -271,7 +272,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                                                 { stats.mdApp.toLocaleString(undefined,{style:'percent'}) }
                                             </span>
                                         </td>
-                                        <td className={`${styles.statsCell} ${styles.stickyCol3}`} style={getColorScale(cc, stats.avg / ((cc === CCATEGORY.BATTLEFIELD) ? 1 : 3))}>
+                                        <td className={`${styles.statsCell} ${styles.stickyCol3}`} style={getColorScale(cc, stats.avg / ((cc === CCATEGORY.BATTLEFIELD || cc === CCATEGORY.LEGEND) ? 1 : 3))}>
                                             <span className={styles.mainDeck}>
                                                 { stats.avg.toFixed(2) }
                                             </span>
@@ -279,7 +280,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                                                 <span className={styles.sideboard} title={"sideboard"}>{ stats.sbAvg.toFixed(2) }</span>
                                             }
                                         </td>
-                                        <td className={`${styles.statsCell} ${styles.stickyCol4}`} style={(cc === CCATEGORY.BATTLEFIELD) ? { backgroundColor: "black" } : getColorScale(cc, (stats.min+stats.max) / 6)}>
+                                        <td className={`${styles.statsCell} ${styles.stickyCol4}`} style={(cc === CCATEGORY.BATTLEFIELD || cc === CCATEGORY.LEGEND) ? { backgroundColor: "black" } : getColorScale(cc, (stats.min+stats.max) / 6)}>
                                             <span className={styles.mainDeck}>
                                                 { (stats.min === stats.max) ? stats.min : `${stats.min}-${stats.max}` }
                                             </span>

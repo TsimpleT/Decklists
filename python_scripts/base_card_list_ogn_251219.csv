@@ -401,7 +401,7 @@ OGN-241,"Shen, Kinkou",Champion,Unit,Order,Rare,3,1,3,"[Reaction]
 OGN-242,Baited Hook,,Gear,Order,Epic,3,0,,"[1][C], [E]: Kill a friendly unit. Look at the top 5 cards of your Main Deck. You may banish a unit from among them that has Might up to 1 more than the killed unit and play it, ignoring its cost. Then recycle the rest.",,,,There's always a bigger fish—sometimes a MUCH bigger fish.,TRUE
 OGN-243,"Darius, Executioner",Champion,Unit,Order,Epic,6,1,6,"[Legion] — When you play me, ready me.
 Other friendly units have +1 [M] here.",,Darius,"Noxus, Trifarian","""They will regret opposing me.""",FALSE
-OGN-244,Divine Judgement,,Spell,Order,Epic,7,2,,"Each player chooses 2 units, 2 gear, 2 runes, and 2 cards in their hands. Recycle the rest.",,,,Equality isn't always equal.,FALSE
+OGN-244,Divine Judgment,,Spell,Order,Epic,7,2,,"Each player chooses 2 units, 2 gear, 2 runes, and 2 cards in their hands. Recycle the rest.",,,,Equality isn't always equal.,FALSE
 OGN-245,Seal of Unity,,Gear,Order,Epic,0,1,,[E]: [Reaction] — [Add] [C].,,,,,FALSE
 OGN-246,"Viktor, Leader",Champion,Unit,Order,Epic,4,1,4,"When another non-Recruit unit you control dies, play a 1 [M] Recruit unit token into your base.",,Viktor,Zaun,"""I am the first of many.""",FALSE
 OGN-247,"Kai'Sa, Daughter of the Void",,Legend,"Fury, Mind",Rare,,,,[E]: [Reaction] — [Add] [A]. Use only to play spells.,,Kai'Sa,,,FALSE
