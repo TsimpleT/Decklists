@@ -15,19 +15,20 @@ BIG_INTERACTION = "BIG REMOVAL/INTERACTION"
 LATE = "LATEGAME/CLOSERS"
 
 def get_category(data):
-    if "type" not in data:
+    if "type" not in data or len(data["type"]) == 0:
         return "SIDE"
-    if data["type"] == "Legend":
+    first_card_type = data["type"][0]
+    if first_card_type == "Legend":
         return LEGEND
-    elif data["type"] == "Battlefield":
+    elif first_card_type == "Battlefield":
         return BATTLEFIELD
-    elif data["type"] == "Rune":
+    elif first_card_type == "Rune":
         return RUNE
     elif "rulesText" in data and ("Reaction" in data["rulesText"] or "Action" in data["rulesText"] or "Quick-Draw" in data["rulesText"] or "Hidden" in data["rulesText"]):
         if "energy" in data and data["energy"] <= 3:
             return INTERACTION
         return BIG_INTERACTION
-    elif data["type"] == "Unit" or data["type"] == "Gear":
+    elif first_card_type == "Unit" or first_card_type == "Gear":
         if "energy" in data and data["energy"] <= 2 and ("power" not in data or ("power" in data and data["power"] == 0)):
             return EARLY
         elif "energy" in data and data["energy"] == 3 and ("power" not in data or ("power" in data and data["power"] == 0)):

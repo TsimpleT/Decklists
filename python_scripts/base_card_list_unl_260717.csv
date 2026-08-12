@@ -79,7 +79,7 @@ UNL-038,Skyward Strike,,Spell,Calm,Common,2,1,,"Move an enemy unit.
 UNL-039,Soul Sword,,Gear,Calm,Common,1,,,[Equip] [G],[Level 3][>] I have an additional +1[M]. [M]+1,,Equipment,,FALSE
 UNL-040,Wuju Apprentice,,Unit,Calm,Common,2,,2,"[Hunt]
 [Level 6][>] When you play me, draw 1.",,,Ionia,"""I've learned a great deal during my apprenticeship. Allow me to demonstrate.""",FALSE
-UNL-041,"Allay, Eager Admirer",,Unit,Calm,Uncommon,3,,3,"[Deflect]
+UNL-041,"Allay, Eager Apprentice",,Unit,Calm,Uncommon,3,,3,"[Deflect]
 While I'm at a battlefield, your other units here have [Deflect].",,,"Bandle City, Yordle","""Hey, Vex! Look what I've got! It's a surprise! For you! Aren't you excited?!""",FALSE
 UNL-042,Back Off,,Spell,Calm,Uncommon,3,,,"[Hidden]
 [Action]
@@ -127,7 +127,7 @@ UNL-060,Vilemaw,,Unit,Calm,Epic,8,2,8,"[Ambush]
 Enemy units here with less Might than me don't deal combat damage.",,,"Shadow Isles, Spider",Its lair lies beyond a twisted treeline.,FALSE
 UNL-061,Downstage Dramatics,,Spell,Mind,Common,2,,,"[Reaction]
 [Repeat] [2]
-Draw 1.",,,,,FALSE
+Draw 1.",,,,A true artist reveres both canvas and brush.,FALSE
 UNL-062,Dramatic Visionary,,Unit,Mind,Common,4,,4,[Deathknell][>] [Predict 2].,,,Ionia,Truth rarely comes without sacrifice.,FALSE
 UNL-063,Eclipse,,Spell,Mind,Common,3,,,"[Reaction]
 Give a unit -4[M] this turn.
@@ -154,7 +154,7 @@ UNL-077,Soul Shepherd,,Unit,Mind,Uncommon,5,,3,Your token units have +1[M].,,,Sh
 UNL-078,Sprite Fountain,,Gear,Mind,Uncommon,2,1,,"[Temporary]
 When you play this, play a ready 3[M] Sprite unit token with [Temporary] to your base.
 [Deathknell][>] Repeat this gear's play effect.",,,,,FALSE
-UNL-079,"Diana, Lunari",Champion,Unit,Mind,Rare,3,,3,"When a showdown begins here, you may pay [1]. If you do, [Predict], then reveal the top ccard of your Main Deck. If it's a spell, draw it.",,Diana,Mount Targon,"""Follow no false light.""",FALSE
+UNL-079,"Diana, Lunari",Champion,Unit,Mind,Rare,3,,3,"When a showdown begins here, you may pay [1] to [Predict], then reveal the top card of your Main Deck. If it's a spell, draw it.",,Diana,Mount Targon,"""Follow no false light.""",TRUE
 UNL-080,"Hwei, Brooding Painter",Champion,Unit,Mind,Rare,5,1,5,"When I move, draw 1, then discard 1. Then, do the following based on the discarded card's type:
 • Spell — Draw 1.
 • Gear — Ready up to 2 runes.
@@ -320,7 +320,7 @@ UNL-164,Safety Inspector,,Unit,Order,Uncommon,5,1,3,"You may spend 3 XP as an ad
 When you play me, each player must kill one of their units. If you paid my additional cost, you don't kill a unit this way.",,,"Bandle City, Yordle","""Looks fine to me!""",FALSE
 UNL-165,Shadow's Call,,Spell,Order,Uncommon,2,,,Choose a friendly unit without [Temporary]. Give it [Temporary]. Draw 2.,,,,"""You're a disappointment. A failure. Why fight it?""",FALSE
 UNL-166,Stalking Wolf,,Unit,Order,Uncommon,4,1,6,"[Ambush]
-As an additional cost to play me, kill a Bird, Cat, Dog, or Poro you control. You may play me its battlefield.",,,"Freljord, Dog",Nature does not seek forgiveness.,FALSE
+As an additional cost to play me, kill a Bird, Cat, Dog, or Poro you control. You may [Ambush] me to its battlefield, even if you don't have other units there.",,,"Freljord, Dog",Nature does not seek forgiveness.,TRUE
 UNL-167,Starhound,,Unit,Order,Uncommon,5,1,6,"When you play me, return a Bird, Cat, Dog, or Poro from your trash to your hand.",,,"Mount Targon, Dog","It guards the flock, no matter where they stray.",FALSE
 UNL-168,Undying Loyalty,,Spell,Order,Uncommon,2,1,,"This costs [2] less if you choose a Bird, Cat, Dog, or Poro.
 Play a unit with cost no more than [2] and no more than [A] from your trash, ignoring its cost.",,,,"""We would call them all back, if we could.""",FALSE
@@ -345,7 +345,7 @@ UNL-177,"Ivern, Friend to All",Champion,Unit,Order,Epic,6,,6,"As you play me, ch
 When I conquer or hold, score 1 point if your units have all of the following tags among them — Bird, Cat, Dog, and Poro.",,Ivern,Ionia,"""Life is such a strange miracle.""",FALSE
 UNL-178,"Poppy, Defender of the Meek",Champion,Unit,Order,Epic,6,1,5,"You may spend 3 XP as an additional cost to play me. If you do, I cost [3] less.
 [Ambush]
-[Tank]",,Poppy,"Demacia,Yordle","""I'm in, 100%! That's everything, right?""",FALSE
+[Tank]",,Poppy,"Demacia,Yordle",,FALSE
 UNL-179,Rift Herald,,Unit,Order,Epic,8,1,7,"When I move to a battlefield, look at the top 3 cards of your Main Deck. You may reveal a unit from among them and draw it. Recycle the rest.
 [Deathknell][>] Play a unit from your hand to your base, ignoring its Energy cost.",,,The Void,,FALSE
 UNL-180,The Ruination,,Spell,Order,Epic,9,3,,Kill all units.,,,,"""No price is too great. No atrocity beyond my reach. For her, I will do anything.""

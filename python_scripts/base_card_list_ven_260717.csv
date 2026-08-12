@@ -1,0 +1,320 @@
+ID,Name,Supertype,Type,Domains,Rarity,Energy Cost,Power Cost,Might,Rules Text,Effect Text,Champion Tag,Other Tags,Flavor Text,Has Errata
+VEN-001,Baccai Sandspinner,,Unit,Fury,Common,6,,6,"[Empower] [5]. This ability costs [3] less if you control 4 or fewer runes.
+[Empowered][>] I have [Deflect] and [Assault 2].",,,Shurima,,FALSE
+VEN-002,Blade Twirler,,Unit,Fury,Common,4,,4,"The first time I move each turn, choose a player. They [Burn 1].",,,"Ionia, Yordle","""Tails. I win. Heads you lose.""",FALSE
+VEN-003,Brittle Steel,,Spell,Fury,Common,2,1,,"Kill a gear.
+[Flow] [4][R]",,,,"Cold is older than stone, older than steel. And when these are gone, the cold will remain.",FALSE
+VEN-004,Dune Surfer,,Unit,Fury,Common,3,,3,You ignore [Tank] while assigning combat damage here.,,,Shurima,"""Look at this rug! How can one child track this much sand?!""",FALSE
+VEN-005,Forsaken Baccai,,Unit,Fury,Common,2,,2,"If you control fewer runes than an opponent at the start of your Beginning Phase, give me +1[M] this turn.",,,Shurima,"Baccai lurk in the shadow of the failed Sun Disc at Nerimazeth, plotting their return to glory.",FALSE
+VEN-006,Oasis Raider,,Unit,Fury,Common,4,,4,"If you control fewer runes than an opponent at the start of your Beginning Phase, give me +2[M] and [Ganking] this turn.",,,Shurima,"""A simple mistake! It's actually more closely related to a gharial—AUGH!"" —Surprisingly common last words",FALSE
+VEN-007,Punching Poro,,Unit,Fury,Common,2,,2,"[Empower] — Discard 1
+[Empowered][>] I have +1[M].",,,"Ionia, Poro",Soft fur. Hard fists.,FALSE
+VEN-008,Ruthless Strike,,Spell,Fury,Common,3,,,"[Action]
+As an additional cost to play this, you may discard 1.
+Deal 3 to a unit at a battlefield. If you paid the additional cost, deal 5 to it instead.",,,,"If you choose to destroy, hold nothing back.",FALSE
+VEN-009,Baccai Reaper,,Unit,Fury,Uncommon,3,1,4,"When I attack, you may pay [R] to give me [Assault 2] this turn.",,,Shurima,The Ascended god-warriors of Shurima pity their lesser cousins.,FALSE
+VEN-010,Consuming Curse,,Spell,Fury,Uncommon,2,,,"[Action]
+Deal 2 to a unit at a battlefield. This deals 1 Bonus Damage for each card with this name in your trash.",,,,"""WHAT WAS THAT?!""
+—Common last words",FALSE
+VEN-011,Pendulum Blade,,Gear,Fury,Uncommon,3,,,[Equip] [R],"When I move to a battlefield, give me +2[M] this turn. [M]+1",,Equipment,,FALSE
+VEN-012,Perfect Execution,,Spell,Fury,Uncommon,3,1,,"Ready a unit and give it [Assault 3] this turn.
+[Flow] [3][R]",,,,Anything less is just killing.,FALSE
+VEN-013,Shadow Assassin,,Unit,Fury,Uncommon,5,,5,I enter ready if you have a card with my name in your trash.,,,Ionia,"When the sun rises, all memories of her will fade.",FALSE
+VEN-014,Shadow Fiend,,Unit,Fury,Uncommon,2,,2,"[Empower] [2][R]
+[Empowered][>] I have [Assault 3].",,,Ionia,It justifies every fear of the dark.,FALSE
+VEN-015,Decree of Rage,,Spell,Fury,Rare,1,1,,"[Action]
+This can't be countered.
+Deal 4 to an enemy Calm unit.",,,,Peace is paralysis. Get moving.,FALSE
+VEN-016,Eclipse Dragon,,Unit,Fury,Rare,8,,8,"[Accelerate]
+When I move, if you control 4 or fewer runes, draw 1.",,,"Mount Targon, Dragon",Power enough to command the sun to wait.,FALSE
+VEN-017,"Morgana, Vindictive",Champion,Unit,Fury,Rare,5,1,5,"[Ambush]
+When you play me, deal damage to a unit equal to the damage marked on it.",,Morgana,Demacia,"""Some call me evil. Shall I prove them right?""",FALSE
+VEN-018,Rage Amplifier,,Gear,Fury,Rare,4,1,,"[Empower] [6][R]
+Your units have +1[M]. If I'm [Empowered], they have +2[M] instead.",,,,Irritation and incitement are a decibel apart.,FALSE
+VEN-019,"Renekton, Rage Fueled",Champion,Unit,Fury,Rare,6,,6,"[Accelerate]
+When I attack, if you control 4 or fewer runes, deal 2 to all enemy units here.",,Renekton,Shurima,"""There is no retreat.""",FALSE
+VEN-020,Twilight Reveler,,Unit,Fury,Rare,3,,3,"When I attack, ready another friendly unit.",,,Ionia,There's always time for one last dance.,FALSE
+VEN-021,"Akali, Deadly Weapon",Champion,Unit,Fury,Epic,3,,3,"[Empower] [2][R]
+When I move, you may deal 1 to a unit at a battlefield I moved to or from. If I'm [Empowered], deal 2 instead.
+[Empowered][>] I have +1[M].",,Akali,Ionia,,FALSE
+VEN-022,Endless Riches,,Gear,Fury,Epic,5,1,,"When you play this, banish your hand and trash, then [Burn 7].
+Skip your Draw Phase.
+You may play cards from your trash.
+If a card would go to your trash from anywhere other than your Main Deck, banish it instead.",,,,,FALSE
+VEN-023,"Zed, From the Shadows",Champion,Unit,Fury,Epic,4,1,4,"You may discard 1 as an additional cost to play me.
+When you play me, if you paid the additional cost, play a 0[M] Shadow Clone unit token.",,Zed,Ionia,"""No technique is forbidden.""",FALSE
+VEN-024,Affectionate Poro,,Unit,Calm,Common,3,,3,"When a combat that I was in ends, if I haven't been dealt damage this turn, draw 1.",,,"Noxus, Poro",Cuteness is a survival skill.,FALSE
+VEN-025,Esteemed Hierophant,,Unit,Calm,Common,5,,5,"While you control 7 or more runes, prevent all damage that enemy spells and abilities would deal to me.",,,Shurima,Reputation and community impart great strength.,FALSE
+VEN-026,Field Musicians,,Unit,Calm,Common,4,,3,"When you play me, give a unit +3[M] this turn.",,,Ionia,"""Let's pick up the tempo!""",FALSE
+VEN-027,Hand Hammer,,Gear,Calm,Common,2,,,[Equip] [G],I have +2[M] while I'm at a battlefield with exactly one other unit you control. [M]+1,,Equipment,,FALSE
+VEN-028,Mournful Witness,,Unit,Calm,Common,2,,2,"When a combat that I was in ends, empower me.
+[Empowered][>] I have +2[M].",,,"Ionia, Fae","Nature's way is to remember, but not to resent.",FALSE
+VEN-029,Ol' Poro,,Unit,Calm,Common,2,,4,"I can't be played on your first, second, or third turns.",,,"Bandle City, Poro",They have long awaited the ol' poro's wisdom. Any day now...,FALSE
+VEN-030,Serene Ascetic,,Unit,Calm,Common,3,,3,"[Empower] [3]
+[Empowered][>] I have [Deflect] and [Shield 3].",,,,,FALSE
+VEN-031,Twilight Shroud,,Spell,Calm,Common,1,,,"Give a friendly unit +1[M] this turn. It can't be chosen by enemy spells and abilities this turn.
+[Flow] [2].",,,,"""I make problems ... disappear."" —Akali",FALSE
+VEN-032,Frostcoat Mother,,Unit,Calm,Common,3,,3,"[Empower] [12]. This ability costs [1] less for each rune you control.
+[Empowered][>] I have +3[M].",,,"Freljord, Dog","Few step between a mother and her pack.
+None do it twice.",FALSE
+VEN-033,Pakaa Protector,,Unit,Calm,Uncommon,5,,4,"When I move, reveal the top card of your Main Deck. If it's a unit, draw it. Otherwise, put it in your trash and give me +2[M] this turn.",,,"Shurima, Cat","""There's no such thing as a pakaa cub on its own.""
+—Wilderness survival tip",FALSE
+VEN-034,Resonating Strike,,Spell,Calm,Uncommon,2,1,,"[Hidden]
+[Reaction]
+Choose a battlefield you control and a unit you control at a different location. Move that unit to that battlefield and give it +2[M] this turn.",,,,,FALSE
+VEN-035,Sanction,,Spell,Calm,Uncommon,3,1,,"[Reaction]
+Choose one —
+• Empower a unit. Disempower it at end of turn.
+• Disempower a unit that's [Empowered]. Empower it at end of turn.",,,,,FALSE
+VEN-036,Sandstone Chimera,,Unit,Calm,Uncommon,7,2,8,"While I'm at a battlefield, players only channel 1 rune at the start of their Channel Phase.",,,Shurima,"Past timeless winds and storms, she wills the tides of sand to still.",FALSE
+VEN-037,Tomb-Raider Barbara,,Unit,Calm,Uncommon,4,,4,"When you play me, if you control 7 or more runes, choose an enemy gear. If it's [Empowered], disempower it. Otherwise, kill it.",,,Shurima,"Wait for her signal. Don't worry, you'll know.",FALSE
+VEN-038,"Akali, Silent",Champion,Unit,Calm,Rare,4,1,4,"I can't be chosen by enemy spells and abilities unless I'm in combat.
+When I move to a battlefield, give me +2[M] this turn.",,Akali,Ionia,"""Skill and steel will get the job done.""",FALSE
+VEN-039,Crumbling Sands,,Spell,Calm,Rare,1,1,,"[Reaction]
+Counter a spell if an opponent has played another spell this turn.",,,,Time will reduce all greed to gust.,FALSE
+VEN-040,Decree of Focus,,Spell,Calm,Rare,1,,,Choose a friendly unit that's in combat with an enemy Fury unit or that's being chosen by an enemy Fury spell. Give it +4[M] this turn.,,,,Rage is a quagmire. Tread lightly.,FALSE
+VEN-041,"Riven, Shattered",Champion,Unit,Calm,Rare,3,1,3,"[Weaponmaster]
+When I attack, choose an enemy unit here. Deal 2 to it for each Equipment attached to me.",,Riven,Noxus,"""A sword mirrors its owner.""",FALSE
+VEN-042,"Shen, Scourge of Shadows",Champion,Unit,Calm,Rare,5,1,6,"When I hold, if there is exactly one other unit you control here, draw 1.",,Shen,Ionia,"""Our wills align.""",FALSE
+VEN-043,Steel Paws,,Unit,Calm,Rare,1,,0,"[Deflect]
+[Empower] [7]
+[Empowered][>] I have +7[M].",,,"Piltover, Cat","When the rats get too big, it's time to innovate.",FALSE
+VEN-044,Astral Heron,,Unit,Calm,Epic,7,,7,"When you play your first card each turn, if I'm at a battlefield, your next card you play this turn costs [2][A][A] less.",,,"Mount Targon, Bird","With its flight, the night falls.",TRUE
+VEN-045,Helm of Suppression,,Gear,Calm,Epic,4,1,,"[Empower] [4][G]
+Opponents' spells cost [1] more. If this is [Empowered], they cost [1][A] more instead.",,,,"""Are we having fun yet?""",FALSE
+VEN-046,"Nasus, Ascended",Champion,Unit,Calm,Epic,8,1,8,"[Deflect 2]
+[Empower] [8]
+[Empowered][>] When I conquer, you score 1 point.",,Nasus,"Shurima, Dog","""Eternity is beyond your reach.""",FALSE
+VEN-047,Apprentice Mage,,Unit,Mind,Common,3,,3,"[Empower] [2]
+When I become [Empowered], [Predict 2].
+[Empowered][>] I have +1[M].",,,Bilgewater,,FALSE
+VEN-048,Cloud Drake,,Unit,Mind,Common,6,,5,"When you play me, draw 1.",,,"Demacia, Dragon",These things are a cirrus problem.,FALSE
+VEN-049,Dredge Up,,Spell,Mind,Common,2,,,"Draw 1.
+[Flow] [2]",,,,By hook and crook.,FALSE
+VEN-050,Grumpy Rockbear,,Unit,Mind,Common,4,,4,"[Empower] [12]. This ability costs [1] less for each rune you control.
+[Empowered][>] I have [Deflect] and [Shield 3].",,,Shurima,,FALSE
+VEN-051,Iterative Design,,Spell,Mind,Common,4,,,"Play a 3[M] Mech unit token.
+[Flow] [2][B]",,,,It's not always a bad thing to reinvent the wheel.,FALSE
+VEN-052,Mesmerize,,Spell,Mind,Common,1,1,,"[Reaction]
+Choose one —
+• Return a friendly unit to its owner's hand.
+• Give an enemy unit -2[M] this turn.",,,,"""Inaction invites regret."" —Mel",FALSE
+VEN-053,Otterpus,,Unit,Mind,Common,2,,2,"If a player would score 1 point from conquering or holding during their first or second turn, they draw 1 instead.",,,Bandle City,Bandle Scout Rule 99: Make sure to keep all food out in the open. You never know who might want a snack!,FALSE
+VEN-054,Questionable Tome,,Gear,Mind,Common,3,,,"[Empower] — [E]
+Disempower this, [1], [E]: Draw 1.",,,,Or is it?,FALSE
+VEN-055,Applied Researchers,,Unit,Mind,Uncommon,4,,4,"[Empower] [3]
+[Empowered][>] Your spells cost [1][A] less, to a minimum of [1].",,,Shurima,"""Prognostication Test 11: Successful, but Tests 149 and 19 will fail. What happens if we skip them?""",FALSE
+VEN-056,Clairvoyance,,Spell,Mind,Uncommon,7,,,"[Reaction]
+[Predict 5].
+Draw 2.",,,,,FALSE
+VEN-057,Covert Informant,,Unit,Mind,Uncommon,3,1,4,"[Empower] [3]
+[Empowered][>] When I move, draw 1.",,,Noxus,"When one person knows, it's a secret. When two know, it's a deal.",FALSE
+VEN-058,Patched Porobot,,"Unit, Gear",Mind,Uncommon,2,,2,"When you play me, if you control 3 or more other gear, draw 1.",,,"Piltover, Mech, Poro",Attempts to synthetically replicate a poro's whimsy and pure adorable nature have yielded mixed results.,FALSE
+VEN-059,Shock Blast,,Spell,Mind,Uncommon,3,1,,"[Action]
+This costs [2] less if you control something that's [Empowered].
+Deal 4 to a unit at a battlefield.",,,,"""Feel the thunder!""
+—Jayce",FALSE
+VEN-060,Sky Cruiser,,Unit,Mind,Uncommon,4,1,3,"Discard a gear, [1], [E]: Deal 4 to a unit at a battlefield.",,,Piltover,Look out below.,FALSE
+VEN-061,Decree of Insight,,Spell,Mind,Rare,1,,,"[Reaction]
+Ignore [Deflect] while paying this spell's cost.
+Give an enemy Body unit -5[M] this turn.",,,,Force is artless. Be inspired.,FALSE
+VEN-062,Hextech Formula,,Spell,Mind,Rare,2,,,"This enters exhausted.
+[E]: Empower another gear.",,,,Such an innocuous thing.,FALSE
+VEN-063,"Nasus, Guardian of Knowledge",Champion,Unit,Mind,Rare,5,1,6,"Once each turn, when an enemy unit here dies, channel 1 rune exhausted.",,Nasus,"Shurima, Dog","""Life is part of a cycle. Yours is over.""",FALSE
+VEN-064,Plaza Guardian,,Unit,Mind,Rare,10,,8,"I cost [1] less for each gear your control.
+[Deflect]",,,"Piltover, Mech","There was uproar at first, but the community learned to ignore it soon enough.",FALSE
+VEN-065,"Swain, Visionary",Champion,Unit,Mind,Rare,6,1,6,"[Vision]
+When I conquer, if you've played a non-token unit, a non-token gear, and a spell this turn, you score 1 point.",,Swain,"Noxus, Demon","""They are five steps from realizing I am ten steps ahead.""",FALSE
+VEN-066,Temporal Breach,,Spell,Mind,Rare,2,1,,"[Hidden]
+Banish a unit, then its owner plays it to the same location, ignoring its cost.",,,,"For the important things, you can always make time.",FALSE
+VEN-067,Bottled Constellation,,Gear,Mind,Epic,10,2,,"At the start of your Main Phase, you may kill 3 other friendly units and/or gear to score 1 point.",,,,Infinite possibilities in finite volume.,FALSE
+VEN-068,"Jayce, Brilliant Inventor",Champion,Unit,Mind,Epic,6,1,6,"When you play me or the first time you play a non-token gear each turn, you may ready something besides me that's exhausted.",,Jayce,Piltover,"""I will light our path.""",FALSE
+VEN-069,"Mel, Newly Awakened",Champion,Unit,Mind,Epic,4,1,4,"When you play me, draw 1.
+[Empower] [3]
+[Empowered][>] Your spells and abilities can't be countered. If a spell or ability you control would give -[M] to a unit it chooses, it gives an additional -1[M].",,Mel,Noxus,,FALSE
+VEN-070,Brutal Hunter,,Unit,Body,Common,3,1,4,"[Empower] [3]
+[Empowered][>] I have +2[M] and [Ganking].",,,Noxus,Proof of her success was often a mess to sort through.,FALSE
+VEN-071,Fretful Feline,,Unit,Body,Common,6,,5,"When I become ready, give me +2[M] this turn.",,,"Piltover, Cat",He'd be less eager to escape if he knew what was out there.,FALSE
+VEN-072,Guttural Roar,,Spell,Body,Common,2,,,"[Action]
+Give a unit +2[M] this turn. If it's [Empowered], give it +4[M] this turn instead.",,,,The Butcher of the Sands is not known for his patience.,FALSE
+VEN-073,Jagged Cutlass,,Gear,Body,Common,3,,,[Equip] [O],I can't be moved by enemy spells and abilities. [M]+2,,Equipment,,FALSE
+VEN-074,Legion Marauder,,Unit,Body,Common,2,,2,"Empower] — [1] or [O]
+[Empowered][>] I have +1[M].",,,"Noxus, Trifarian","The Trifarian Legion always has strength in numbers, even when that number is one.",FALSE
+VEN-075,Platewyrm Egg,,Gear,Body,Common,3,,,"This enters exhausted.
+[Empower] — [1], [E]
+[Reaction][>] [E]: [Add] [1]. If this is [Empowered], [Add] [2] instead.",,,,,FALSE
+VEN-076,Repair Specialist,,Unit,Body,Common,3,,3,I have [Assault] equal to the number of gear you control.,,,Zaun,What is discarded by Piltover gets a second chance in Zaun.,FALSE
+VEN-077,Tools of Empire,,Gear,Body,Common,4,,,"[Empower] [2]
+[E]: Give a unit +2[M] this turn. If this is [Empowered], give that unit +4[M] this turn instead.",,,,"""We will unearth what has been lost.""
+—Azir",FALSE
+VEN-078,Baccai Witherclaw,,Unit,Body,Uncommon,4,,4,"[Empower] [1][A][A]
+[Empowered][>] I have +2[M].
+[Empowered][>][Deathknell][>] Channel 2 runes exhausted.",,,Shurima,,FALSE
+VEN-079,Dame the Despoiler,,Unit,Body,Uncommon,5,,5,"[Empower] [5][O]
+[Empowered][>] When I attack or defend, choose a unit here. Increase my Might to its Might this turn, then give me +1[M] this turn.",,,Noxus,"""Wanna see a show?!""",FALSE
+VEN-080,Noxian Demolitionist,,Unit,Body,Uncommon,2,,1,"When I conquer, you may kill a gear with Energy cost no more than my Might.",,,Noxus,"She lives for the sound, for the wave of heat and pressure, for pushing herself past her limit.",FALSE
+VEN-081,Onslaught,,Spell,Body,Uncommon,4,,,"Give a unit +6[M] this turn.
+[Flow] [4]",,,,"When hitting them hard isn't enough, try hitting them again.",FALSE
+VEN-082,Profiteer,,Unit,Body,Uncommon,4,,4,"When you play me, you may disempower something you control to empower a legend, unit, or gear.",,,Shurima,"""Let's make a deal, shall we?""",FALSE
+VEN-083,Rampage,,Spell,Body,Uncommon,3,,,"As you play this, you may pay [O] as an additional cost.
+Choose a friendly unit and an enemy unit. If you paid the additional cost, give the friendly unit +2[M] this turn. They deal damage equal to their Mights to each other.",,,,,FALSE
+VEN-084,"Ambessa, The Wolf",Champion,Unit,Body,Rare,4,,4,"[Empower] [3][O]
+[Empowered][>] I have +3[M] and can't be dealt damage unless I'm in combat.",,Ambessa,Noxus,"""I will never stumble, never break.""",FALSE
+VEN-085,Decree of Strength,,Spell,Body,Rare,1,,,Choose an opponent. They reveal their hand and you choose a Mind card from it. They recycle that card.,,,,Caution is a labyrinth. Smash through.,FALSE
+VEN-086,"Gangplank, Naval",Champion,Unit,Body,Rare,6,,6,"[Empower] [O][O]
+[Empowered][>] If a spell or ability that chooses me would stun me, give me -[M], or return me to hand, give me +3[M] this turn instead.",,Gangplank,"Bilgewater, Pirate","""Death spit me out.""",TRUE
+VEN-087,Hextech Disc,,Gear,Body,Rare,4,1,,"[Empower] — [E]
+Disempower this, [1], [E]: Play a 3[M] Mech unit token to your base.",,,,Excellence at scale.,FALSE
+VEN-088,"Jayce, Hammer in Hand",Champion,Unit,Body,Rare,4,1,5,"When I become ready, choose one to give me this turn —
+• [Assault 2]
+• [Deflect 2]
+• [Ganking]",,Jayce,Piltover,,FALSE
+VEN-089,Wild Claw,,Spell,Body,Rare,7,1,,"Look at the top 5 cards of your Main Deck. You may banish a unit or gear from among them and play it, reducing its Energy cost by [5]. Recycle the rest. Then you may do this: Empower it.",,,,,FALSE
+VEN-090,Cataclysmic Duel,,Spell,Body,Epic,8,3,,Each player chooses a unit they control. Kill the rest.,,,,,FALSE
+VEN-091,Corrupted Dragon,,Unit,Body,Epic,10,2,10,"If your score is not within 3 points of the Victory Score, I enter read.
+When I attack, you may move any number of enemy units here each with 5[M] or less to its base.",,,"Shadow Isles, Dragon",Noble souls fall the furthest,FALSE
+VEN-092,"Renekton, Brute",Champion,Unit,Body,Epic,5,,4,"[1]: Give me +1[M] this turn.
+When my Might becomes 10 or more, empower me.
+[Empowered][>] I havve [Deflect] and [Ganking].",,Renekton,Shurima,,FALSE
+VEN-093,Kinkou Lifeblade,,Unit,Chaos,Common,4,,4,"[Empower] [2]
+[Empowered][>] I have +1[M] and [Ganking].",,,Ionia,His life is the blade. His blade is his life.,FALSE
+VEN-094,Mask Mother,,Unit,Chaos,Common,3,,3,"When you discard me, you may pay [1] to give a friendly unit +2[M] this turn.",,,"Shadow Isles, Spirit",She is mother to all who fall.,FALSE
+VEN-095,Shadow Order Disciple,,Unit,Chaos,Common,2,,2,"When I move, you may [Burn 1] to give me +1[M] this turn.",,,Ionia,Recipients of a terrifying education.,FALSE
+VEN-096,Shadowcloaked Lurker,,Unit,Chaos,Common,5,,5,I cost [2] less for each card with my name in your trash.,,,Ionia,You'll never see the second one coming.,FALSE
+VEN-097,Spiderling,,Unit,Chaos,Common,3,,1,"[Hidden]
+I have +1[M] for each other unit you control here with my name.
+Your deck can have any number of cards named Spiderling.",,,"Shadow Isles, Spider","Well, at least there's only one.",FALSE
+VEN-098,Stargazer,,Unit,Chaos,Common,5,,4,"Spells with [Flow] you play from your trash cost [2] less, to a minimum of [1].",,,Mount Targon,"""I think that one looks like a dragon!""",FALSE
+VEN-099,Tornado Warrior,,Unit,Chaos,Common,3,,3,"[Hidden]
+When you play me from face down, you may empower something here. Disempower it at end of turn.",,,"Bandle City, Yordle","There is a safe spot in every whirlwind, but it's easy enough to hit your enemies with the other parts.",FALSE
+VEN-100,Up from the Deep,,Spell,Chaos,Common,3,,,"Play two 1[M] Tentacle unit tokens from Bilgewater.
+[Flow] [3]",,,,"""The waves will drag you down, unless you fight to shore.""
+—Illaoi",FALSE
+VEN-101,Gust Monk,,Unit,Chaos,Uncommon,2,,2,"You may pay [1] as an additional cost to play me.
+When you play me, if you paid the additional cost, banish a card from any trash to give a unit [Assault 2] this turn.",,,"Bandle City, Yordle","An odd technique, but quite effective.",FALSE
+VEN-102,Ravenbloom Prefect,,Unit,Chaos,Uncommon,3,,3,"When an opponent plays a gear, you may banish me to banish it.",,,Noxus,"""Do you have a permit for that?""",FALSE
+VEN-103,Shadows of the Past,,Spell,Chaos,Uncommon,3,1,,Return up to 2 units from trashes to their owners' hands.,,,,"""None escapes their shadow.""
+—Zed",FALSE
+VEN-104,Tail-Cloaked Matriarch,,Unit,Chaos,Uncommon,4,,4,"[Empower] [2][P]
+When I become [Empowered], you may choose a unit in your trash with Energy cost not more than [3] and Power cost no more than [A]. Play it to your base, ignoring its cost.",,,Ionia,,FALSE
+VEN-105,Twilight Step,,Spell,Chaos,Uncommon,2,1,,"Move a unit with 3[M] or less.
+[Flow] [4][P]",,,,All motion is deception,FALSE
+VEN-106,Wind and Ghosts,,Spell,Chaos,Uncommon,3,1,,"[Action]
+Choose a unit at a battlefield. If it has 3[M] of less, banish it. Otherwise, return it to its owner's hand.",,,,The best strategy is to not have an enemy.,FALSE
+VEN-107,Decree of Discord,,Spell,Chaos,Rare,1,1,,Return any number of enemy Order units with total Might 5 or less to their owners' hands.,,,,Tradition is a prison. Break free.,FALSE
+VEN-108,Forgotten Relic,,Gear,Chaos,Rare,5,,,"When you play this or at the start of your Beginning Phase, [Burn 1]. When you burn a unit this way, do this: Give a friendly unit +[M] equal to the burned card's Might this turn.",,,,,FALSE
+VEN-109,"Illaoi, Prophet of the Great Kraken",Champion,Unit,Chaos,Rare,6,,4,"When you play me or when I score, play a 1[M] Tentacle unit token from Bilgewater.
+I have +1[M] for each token unit you control.",,Illaoi,Bilgewater,"""We are not one soul. We are many.""",FALSE
+VEN-110,Mel. Defiant Soul,Champion,Unit,Chaos,Rare,5,,4,"[Empower] — Discard a spell
+When I become [Empowered], banish an enemy unit at a battlefield with 3[M] or less.",,Mel,Noxus,"""Medardas are known for our strategy and strength.""",FALSE
+VEN-111,Minah Swiftfoot,,Unit,Chaos,Rare,6,1,6,"When I move to a battlefield, choose one —
+• Each player discards 1.
+• Each player draws 1.",,,Ionia,"She's mastered ten styles of combat, but she's still working on a good catchphrase.",FALSE
+VEN-112,"Zed, Without a Sound",Champion,Unit,Chaos,Rare,5,,5,"When I conquer, play a 0[M] Shadow Clone unit token to your base.
+[Action][>] [1][P]: Move me and a Shadow Clone you control to each other's locations.",,Zed,Ionia,,FALSE
+VEN-113,"Kennen, Storm of Shuriken",Champion,Unit,Chaos,Epic,3,1,4,"When you play me, [Burn 2].
+When I conquer, give a spell in your trash [Flow] equal to its cost this turn.",,Kennen,"Ionia, Yordle","""Time to strike!""",FALSE
+VEN-114,Kharox,,Unit,Chaos,Epic,6,,5,"[Empower] [6][P][P]
+When I become [Empowered], choose an opponent. They [Burn 3]. Then you may do this: Choose a unit in their trash and play it, ignoring its cost.",,,"Shadow Isles, Spirit",,FALSE
+VEN-115,Ocean Drake,,Unit,Chaos,Epic,8,2,7,"You may play me to an open battlefield.
+When you play me, you may return a non-Dragon unit to its owner's hand.",,,"Ionia, Dragon",The pale glint of blue on blue is all the warning you'll get.,FALSE
+VEN-116,Dragon Form,,Spell,Order,Common,3,,,"Choose a unit. Its base Might becomes 5 this turn.
+[Flow] [3]",,,,"""The Dragon spirit is not magic. It is life, more anicent than ours."" —Lee Sin",FALSE
+VEN-117,Disciple of Shen,,Unit,Order,Common,2,,1,"[Hidden]
+I have [Shield 3] while I'm at a battlefield with exactly one other unit you control.",,,Ionia,Even twilight itself takes on an apprentice or two.,FALSE
+VEN-118,Horns of the Dragon,,Unit,Order,Common,6,,6,[Tank],,,Ionia,Don't mess with them. You know what you'll get.,FALSE
+VEN-119,Keeper of Law,,Unit,Order,Common,5,1,5,I cost [2][Y] less if ypou control a battlefield with exactly two units there.,,,Shurima,Order will be preserved. Unity will be maintained.,FALSE
+VEN-120,"Masa, Crashing Thunder",,Unit,Order,Common,4,,4,"You may pay [Y] as an additional cost to play me.
+When you play me, if you paid the additional cost, [Stun] an enemy unit at a battlefield.",,,"Bandle City, Yordle","He's louder than he looks, which is saying quite a bit.",FALSE
+VEN-121,Reluctant Leader,,Unit,Order,Common,4,1,3,"When you play another unit, give me +2[M] this turn.",,,Ionia,Sometimes there's no one else who will do the job.,FALSE
+VEN-122,Solari Sunhawk,,Unit,Order,Common,3,,3,"[Empower] [2]
+[Empowered][>] I have +1[M] and [Deflect 2].",,,"Mount Targon, Bird",,FALSE
+VEN-123,Soulspinner,,Unit,Order,Common,3,,3,[Ambush],,,"Shadow Isles, Spider",There are worse fates than being eaten.,FALSE
+VEN-124,Escaped Grayback,,Unit,Order,Uncommon,3,,3,"[Empower] — Kill a friendly unit
+[Empowered][>] I havve +2[M].",,,Noxus,"""Strength comes from the will to be free.""",FALSE
+VEN-125,Hungry Wolf,,Unit,Order,Uncommon,4,,4,[Y]: Ready me and give me +1[M] this turn. Use only if you've chosen an enemy unit this turn and only once each turn.,,,"Freljord, Dog","""A wolf has no mercy.""
+—Ambessa",FALSE
+VEN-126,Ki Barrier,,Spell,Order,Uncommon,2,1,,"[Reaction]
+Choose a unit. Prevent the next 7 damage that would be dealt to it this turn.",,,,,FALSE
+VEN-127,Lacerate,,Spell,Order,Uncommon,2,1,,"Choose a unit. If it's [Empowered], disempower it. Then kill it if it has 3[M] or less.
+[Flow] [4][Y][Y]",,,,"""Look at you. Such wasted potential.""
+—Ambessa",FALSE
+VEN-128,Noxian Emissary,,Unit,Order,Uncommon,2,,2,"[Empower] [1][Y]
+[Empowered][>][Deathknell][>] Play two 1[M] Recruit unit tokens to your base.",,,Noxus,He speaks with the full might of Noxus behind him.,FALSE
+VEN-129,Sacred Protector,,Unit,Order,Uncommon,4,1,6,I don't deal combat damage unless I'm at a battlefield with exactly one other unit you control.,,,"Ionia, Fae",It is single-mindedly dedicated to its charge.,FALSE
+VEN-130,Aurok General,,Unit,Order,Rare,5,,5,"[Empower] [3][Y]
+[Empowered][>] Your units that are [Empowered] have +2[M].",,,"Noxus, Trifarian","""Heed my command.""",FALSE
+VEN-131,Decree of Unity,,Spell,Order,Rare,2,1,,Kill an enemy Chaos unit or gear.,,,,Disorder is isolation. Reach out.,FALSE
+VEN-132,Fallen Feline,,Unit,Order,Rare,2,1,3,"When you play me, name a spell.
+While I'm at a battlefield, opponents can't play spells with that name.",,,"Piltover, Cat",Cat got your tongue?,FALSE
+VEN-133,Glowstone,,Gear,Order,Rare,2,,,"[Empower] [A][A]
+Disempower this, [E]: Choose a player. They gain control of this and recall it.
+At the end of your turn, kill this and deal 5 to all units you control.",,,,,FALSE
+VEN-134,"Kayle, Justified",Champion,Unit,Order,Rare,3,,3,"[Empower] [3]
+I can be [Empowered] up to 3 times.
+I have +2[M] for each time I'm [Empowered].
+While I'm [Empowered] three times, I have [Deflect 3] and [Ganking].",,Kayle,Mount Targon,,FALSE
+VEN-135,"Kennen, Keeper of Balance",Champion,Unit,Order,Rare,3,,2,"[Hidden]
+When you play me or I attack, you may pay [2] to stun a unit.
+While there's a stunned enemy unit here, I have +2[M].",,Kennen,"Ionia, Yordle",,FALSE
+VEN-136,"Ambessa, Respected and Feared",Champion,Unit,Order,Epic,5,,5,"[Empower] [1][Y][Y]
+[Empowered][>] I have [Assault 2].
+[Empowered][>] When I attack, kill an enemy unit here with less Might than me.",,Ambessa,Noxus,,FALSE
+VEN-137,Shady Spectacles,,Gear,Order,Epic,4,,,"[Equip] [1][Y]
+As this is attached to a unit, choose another friendly unit. The equipped unit becomes a copy of that unit for as long as this is attached to it.",[M]+0,,Equipment,,FALSE
+VEN-138,"Shen, Leader of the Kinkou Order",Champion,Unit,Order,Epic,6,2,7,"[Shield]
+When I hold, if there is exactly one other unit you control here, you score 1 point.",,Shen,Ionia,"""There is no dispute.""",FALSE
+VEN-139,"Akali, Rogue Assassin",,Legend,"Fury, Calm",Rare,,,,"[Empower] [3][A]
+[Action][>] [E]: If it's your turn, move a friendly unit in a showdown to base and if I'm [Empowered] ready it.",,Akali,,,FALSE
+VEN-140,Shuriken Flip,Signature,Spell,"Fury, Calm",Epic,1,1,,"Deal 2 to up to one enemy unit at a battlefield, the move a friendly unit.
+[Flow] [3][A]",,Akali,,"""They can't stop me. I mean, they can try.""
+—Akali",FALSE
+VEN-141,"Renekton, Butcher of the Sands",,Legend,"Fury, Body",Rare,,,,"[Reaction][>] [A][A], [E]: [Add] [2]. Spend this Energy only to play units or activated abilities of units.",,Renekton,,,FALSE
+VEN-142,Dominus,Signature,Spell,"Fury, Body",Epic,4,,,"[Action]
+This turn, double a unit's Might and give it ""[A][A]: Ready me.""",,Renekton,,"""Now you will know agony!""
+—Renekton",FALSE
+VEN-143,"Zed, Master of Shadows",,Legend,"Fury, Chaos",Rare,,,,"When you banish a card you own, empower me.
+[Action][>] Disempower me, [E]: Discard 1, then draw 1.",,Zed,,,
+VEN-144,Death Mark,Signature,Spell,"Fury, Chaos",Epic,2,1,,"[Burn 3].
+Play a 0[M] Shadow Clone unit token.
+[Flow] [1][A][A]",,Zed,,,FALSE
+VEN-145,"Nasus, Curator of the Sands",,Legend,"Calm, Mind",Rare,,,,"When you play a unit, gear, or activated ability with Energy cost [7] or more, you may exhaust me to ready up to 2 runes.",,Nasus,,,FALSE
+VEN-146,Siphoning Strike,Signature,Spell,"Calm, Mind",Epic,4,,,"Deal 4 to a unit at a battlefield. If you control 7 or more runes, deal 7 to it instead. When it dies this turn, channel 1 rune exhausted.",,Nasus,,"""Your spirit is hollow.""
+—Nasus",FALSE
+VEN-147,"Shen, Eye of Twilight",,Legend,"Calm, Order",Rare,,,,[Action][>] [E]: Give a friendly unit [Tank] this turn.,,Shen,,,FALSE
+VEN-148,Shadow Dash,Signature,Spell,"Calm, Order",Epic,2,1,,"Move an enemy unit to a battlefield where you have units. If you have exactly two units there, they each get +1[M] this turn.
+[Flow] [5][A][A]",,Shen,,"""Tread carefully.""
+—Shen",FALSE
+VEN-149,"Jayce, Defender of Tomorrow",,Legend,"Mind, Body",Rare,,,,"[Empower] [2][A][A]
+[1], [E]: Ready a gear.
+[Empowered][>]: [1], [E]: Ready 2 gear.",,Jayce,,,FALSE
+VEN-150,Acceleration Gate,Signature,Spell,"Mind, Body",Epic,3,1,,"Ready up to 4 units, gear, and/or runes.",,Jayce,,"""Energize!""
+—Jayce",FALSE
+VEN-151,"Mel, Soul's Reflection",,Legend,"Mind, Chaos",Rare,,,,"When you empower something else, empower me.
+Disempower me, [E]: Give a unit at a battlefield -2[M] this turn.",,Mel,,,FALSE
+VEN-152,Rebuttal,Signature,Spell,"Mind, Chaos",Epic,1,1,,"[Reaction]
+Choose a spell with Energy cost no more than [4]. You may pay [A]. If you do, gain control of it and you may make new choices for it. Otherwise, counter it.",,Mel,,"""A paradigm shift!"" — Mel",FALSE
+VEN-153,"Ambessa, Matriarch of War",,Legend,"Body, Order",Rare,,,,"When you empower something else, empower me.
+Disempower me, [A], [E]: Ready a unit.",,Ambessa,,,FALSE
+VEN-154,Public Execution,Signature,Spell,"Body, Order",Epic,2,1,,"Choose a friendly unit. Kill an enemy unit with lower might than it.
+[Flow] [5][A][A]",,Ambessa,,"""This ends in ruin!""
+—Ambessa",FALSE
+VEN-155,"Kennen, Heart of the Tempest",,Legend,"Chaos, Order",Rare,,,,"When you play a card from anywhere other than your hand, empower me.
+[Action][>] Disempower me, [E]: Give a unit [Assault 2] this turn.",,Kennen,,,FALSE
+VEN-156,Lightning Rush,Signature,Spell,"Chaos, Order",Epic,1,,,"Look at the top 3 cards of your deck. You may choose a card from among them and draw it. Put the rest into your trash.
+[Flow] [2][A]",,Kennen,,"""I am the wind!"" —Kennen",FALSE
+VEN-157,Dragon Roost,,Battlefield,,Uncommon,,,,"Any player may pay [A][A] as an additional cost to play a Dragon. If they do, they play it to this battlefield.",,,,,FALSE
+VEN-158,"Heisho, Shell of the World",,Battlefield,,Uncommon,,,,Players ignore [Deflect] while paying for spells and abilities choosing something here.,,,,,FALSE
+VEN-159,Kinkou Temple,,Battlefield,,Uncommon,,,,Units here with [Tank] have +1[M].,,,,,FALSE
+VEN-160,Mystic Vortex,,Battlefield,,Uncommon,,,,"During showdowns here, [Reaction] cards cost [A] more to play.",,,,,FALSE
+VEN-161,Piltovan Forge,,Battlefield,,Uncommon,,,,"While you control this battlefield, the first friendly gear activated ability played each turn costs [1] less.",,,,,FALSE
+VEN-162,Protective Sands,,Battlefield,,Uncommon,,,,"When you conquer here, if you control 4 or fewer runes, you may pay [1] to draw 1.",,,,,FALSE
+VEN-163,Risen Altar,,Battlefield,,Uncommon,,,,[Empower] costs of your units here cost [1] or [A] less.,,,,,FALSE
+VEN-164,Sandswept Tomb,,Battlefield,,Uncommon,,,,Each spell that chooses one or more units here that are friendly to it costs [A] less.,,,,,FALSE
+VEN-165,Shadow Temple,,Battlefield,,Uncommon,,,,"When you hold here, [Burn 3].",,,,,FALSE
+VEN-166,Threshold of the Gray,,Battlefield,,Uncommon,,,,"When combat starts here, the attacker and defender each [Add] [1].",,,,,FALSE
+VEN-T01,Empowered,,,,,,,,"Use to mark legends, units, and gear that are [Empowered].",,,,,FALSE
+VEN-T02,temp,,,,,,,,,,,,,FALSE
+VEN-T04,Recruit,Token,Unit,,Common,,,1,,,,Recruit,"""Few earn the right to call themselves Trifarian.""",FALSE
+VEN-T05,Shadow Clone,Token,Unit,,,,,0,"When I attack, you may banish a unit from your trash. If you do, give me [Assault 4] this turn.",,,,,FALSE
+VEN-T06,Tentacle,Token,Unit,,,,,1,,,,Bilgewater,An extension of the will of Nagakabouros.,FALSE

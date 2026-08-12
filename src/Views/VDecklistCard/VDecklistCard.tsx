@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './VDecklistCard.module.css';
 import posStyles from './ImagePositioning.module.css';
 
-import { GET_CARD, ImageUtil, GET_CARD_ART } from '../../Data';
+import { GET_CARD, ImageUtil, GET_CARD_ART, CardType } from '../../Data';
 
 type PropsOptions = {type: "table"|"decklist"|"allCards"};
 
@@ -25,6 +25,8 @@ export class VDecklistCard extends React.Component<IProps, IState> {
 
     public render(): React.ReactNode {
         const card = GET_CARD(this.props.id);
+        const numCardTypes = card.type.length;
+        const cardType: CardType = (numCardTypes > 0) ? card.type[0] : "Legend";
         let powerIcons = [];
         let containerStyle: React.CSSProperties = {};
         let fadeLStyle: React.CSSProperties = {};
@@ -67,24 +69,26 @@ export class VDecklistCard extends React.Component<IProps, IState> {
                                 {(powerIcons.length > 0) && powerIcons}
                             </span>
                         }
-                        {(card.type && (this.props.options.type === "allCards" || card.type === "Legend" || card.type === "Rune" || card.type === "Battlefield")) && 
-                            <img src={ImageUtil.getImage(card.supertype === "Champion" ? "ChampionUnit" : card.type)} height={20}
-                                title={card.supertype === "Champion" ? "ChampionUnit" : card.type} alt={card.supertype === "Champion" ? "ChampionUnit" : card.type}
-                                className={`${styles.cardType} ${(card.domains.length > 0 && card.domains[0] === "Order") ? styles.invert : ""}`} />
+                        {(card.type && (this.props.options.type === "allCards" || cardType === "Legend" || cardType === "Rune" || cardType === "Battlefield")) && 
+                            (card.type.map(cardTypeIter => (
+                                <img src={ImageUtil.getImage(card.supertype === "Champion" ? "ChampionUnit" : cardTypeIter)} height={20}
+                                    title={card.supertype === "Champion" ? "ChampionUnit" : cardTypeIter} alt={card.supertype === "Champion" ? "ChampionUnit" : cardTypeIter}
+                                    className={`${styles.cardType} ${(card.domains.length > 0 && card.domains[0] === "Order") ? styles.invert : ""}`} />
+                            )))
                         }
                     </div>
                 </div>
                 <div className={styles.cardImageFullContainer}>
                     <div className={`${styles.cardImageSmallContainer} ${posStyles[`${this.props.id.replaceAll("*","")}-div`]}`}>
                         <img src={GET_CARD_ART(this.props.id)} alt={`${card.name} (${this.props.id})`}
-                            className={`${(card.type === "Battlefield") ? styles.cardSmallImageBF : styles.cardSmallImage} ${posStyles[this.props.id.replaceAll("*","")]}`}/>
+                            className={`${(cardType === "Battlefield") ? styles.cardSmallImageBF : styles.cardSmallImage} ${posStyles[this.props.id.replaceAll("*","")]}`}/>
                         <div className={styles.leftImageFade} style={fadeLStyle}/>
                         <div className={styles.rightImageFade} style={fadeRStyle} />
                     </div>
                 </div>
                 {(this.state.hover) &&
-                    <img src={GET_CARD_ART(this.props.id)} className={`${styles.cardHoverImage} ${(card.type === "Battlefield") && styles.cardHoverImageBF}`}
-                        alt={`${card.name} (${this.props.id})`} style={(this.props.fixHover) ? {right: `${this.props.fixHover - (card.type === "Battlefield" ? 59 : 0)}px`} : {}} />
+                    <img src={GET_CARD_ART(this.props.id)} className={`${styles.cardHoverImage} ${(cardType === "Battlefield") && styles.cardHoverImageBF}`}
+                        alt={`${card.name} (${this.props.id})`} style={(this.props.fixHover) ? {right: `${this.props.fixHover - (cardType === "Battlefield" ? 59 : 0)}px`} : {}} />
                 }
             </div>
         );

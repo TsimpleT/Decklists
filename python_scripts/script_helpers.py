@@ -1,5 +1,5 @@
-DEFAULT_DATE = "260402"
-DEFAULT_SET_ID = "unl"
+DEFAULT_DATE = "260717"
+DEFAULT_SET_ID = "ven"
 
 def process_str(s):
     return '"' + s.replace("\"","\\\"") + '"'

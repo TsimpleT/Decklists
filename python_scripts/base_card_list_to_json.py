@@ -8,7 +8,7 @@ csv_handler = [
     ("baseId", process_str),
     ("name", process_str),
     ("supertype", process_str),
-    ("type", process_str),
+    ("type", process_array),
     ("domains", process_array),
     ("rarity", process_str),
     ("energy", process_num),

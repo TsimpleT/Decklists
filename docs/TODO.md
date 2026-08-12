@@ -17,3 +17,4 @@ clicking archetype stats in header doesnt change meta if already on a prev meta 
 decklisttable toprow backgroundcolor to hide under sticky; left sticky scrolls if you go really far
 for card hover make img move up so its not cut off at bottom; fixes empty bottom for decklist/decklisttable
 appnav color for selected page + remember to remove hover
+multi type cards prettier with half-icons

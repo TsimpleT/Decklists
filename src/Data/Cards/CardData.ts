@@ -1,7 +1,8 @@
-import BaseCardListOGN from "./BaseCardListOGN251219.json";
-import BaseCardListOGS from "./BaseCardListOGS251219.json";
-import BaseCardListSFD from "./BaseCardListSFD260402.json";
-import BaseCardListUNL from "./BaseCardListUNL260402.json";
+import BaseCardListOGN from "./BaseCardListOGN260717.json";
+import BaseCardListOGS from "./BaseCardListOGS260717.json";
+import BaseCardListSFD from "./BaseCardListSFD260717.json";
+import BaseCardListUNL from "./BaseCardListUNL260717.json";
+import BaseCardListVEN from "./BaseCardListVEN260717.json";
 import CardCategories from "./CardCategories.json";
 import IdMappings from "./IdMappings.json";
 
@@ -18,7 +19,7 @@ export interface CardDTO {
     baseId:	string;
     name: string;
     supertype?: CardSupertype;
-    type: CardType;
+    type: CardType[];
     domains: Domain[];
     rarity: Rarity;
     energy?: number;
@@ -56,7 +57,9 @@ export const CCATEGORY_ORDERING: {[key in CCATEGORY]: number} = {
     [CCATEGORY.RUNE]: 10,
 };
 
-let cardData: {[cardId: string]: CardDTO} = {...BaseCardListOGN.cards, ...BaseCardListOGS.cards, ...BaseCardListSFD.cards, ...BaseCardListUNL.cards} as any;
+let cardData: {[cardId: string]: CardDTO} = {
+    ...BaseCardListOGN.cards, ...BaseCardListOGS.cards, ...BaseCardListSFD.cards, ...BaseCardListUNL.cards, ...BaseCardListVEN.cards
+} as any;
 let cardNameToBaseId: {[name: string]: string} = {};
 for(let card in cardData) {
     if(!(cardData[card].name in cardNameToBaseId)) {
@@ -110,7 +113,7 @@ export function IS_CARD_ID(id: string): boolean {
 export function GET_CARD(id: string): CardDTO {
     if(!(id in cardData)) {
         console.warn(`Card "${id}" not found in cardData.`);
-        return { baseId: id, name: id, type: "Legend", domains: [], rarity: "Common", rulesText: "", otherTags: [] };
+        return { baseId: id, name: id, type: ["Legend"], domains: [], rarity: "Common", rulesText: "", otherTags: [] };
         // cardData[id] = { baseId: id, name: id, type: TYPE.LEGEND, domains: [], rarity: "Common", rulesText: "", otherTags: [] };
     }
     return cardData[id];

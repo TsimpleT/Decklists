@@ -300,7 +300,7 @@ export class VDecklistTable extends React.Component<IProps, IState> {
                                     md += this.cardAmounts[cardId][deckIdx];
                                     sb += this.sideboardAmounts[cardId][deckIdx];
                                 }
-                                if(md !== 56 || !(sb === 0 || sb === 8)) {
+                                if(md !== 56 || sb < 0 || sb > 10) {
                                     console.warn(`Decklist "${decklist.username}: ${decklist.tournamentName} ${decklist.date} ${decklist.placing}" has size ${md}+${sb}`);
                                 }
                                 return (

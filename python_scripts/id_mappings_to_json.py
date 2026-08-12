@@ -9,9 +9,10 @@ csv_handler = [
     ("baseId", process_str),
     ("ttsId", process_str),
     ("rarity", process_str),
-    ("alteredFlavorText", process_multi_line_str),
     ("baseCardName", process_str),
     ("notes", process_str),
+    ("alterFlavor", process_boolean),
+    ("alteredFlavorText", process_multi_line_str),
 ]
 
 def main():

@@ -60,10 +60,6 @@ export class MyDecklistsPage extends React.Component<{}, IState> {
             window.alert(`${decklist.mainDeck.reduce((sum, current) => sum + current.count, 0)} cards in main deck (need 40)`);
             return;
         }
-        if(decklist.battlefields.reduce((sum, current) => sum + current.count, 0) !== 3) {
-            window.alert(`${decklist.battlefields.reduce((sum, current) => sum + current.count, 0)} battlefields (need 3)`);
-            return;
-        }
         if(decklist.runeDeck.reduce((sum, current) => sum + current.count, 0) !== 12) {
             window.alert(`${decklist.runeDeck.reduce((sum, current) => sum + current.count, 0)} cards in rune deck (need 12)`);
             return;

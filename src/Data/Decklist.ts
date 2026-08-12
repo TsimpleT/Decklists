@@ -29,9 +29,10 @@ interface IDecklistNumOptions {
 const typeOrder: {[t in CardType]: number} = {"Battlefield": 0, "Gear": 3, "Legend": 0, "Rune": 0, "Spell": 2, "Unit": 1}
 function cardSortComparator(aDCA: DecklistCardAmount, bDCA: DecklistCardAmount): number {
     const a = GET_CARD(aDCA.id), b = GET_CARD(bDCA.id);
+    const aType = (a.type.length > 0) ? a.type[0] : "Legend", bType = (b.type.length > 0) ? b.type[0] : "Legend";
     const aEnergy = a.energy??0, bEnergy = b.energy??0
     const aPower = a.power??0, bPower = b.power??0;
-    return (a.type !== b.type) ? typeOrder[a.type] - typeOrder[b.type]
+    return (aType !== bType) ? typeOrder[aType] - typeOrder[bType]
         : (aEnergy !== bEnergy) ? aEnergy - bEnergy
         : (aPower !== bPower) ? aPower - bPower
         : a.name.localeCompare(b.name);
@@ -97,13 +98,13 @@ export class Decklist {
     }
 
     public numOfCardType(c: CardType, options?: IDecklistNumOptions): number {
-        return this.numMatchingQuery((card: CardDTO) => card.type === c, options);
+        return this.numMatchingQuery((card: CardDTO) => card.type.includes(c), options);
     }
 
     public numOfCardTypeSideboard(c: CardType): number {
         let n = 0;
         for(let listing of this.sideboard) {
-            if(GET_CARD(listing.id).type === c) {
+            if(GET_CARD(listing.id).type.includes(c)) {
                 n += listing.count;
             }
         }
@@ -196,6 +197,21 @@ export class Decklist {
                 else if(lineLower.includes("battlefield")) { mode = "BF"; }
                 else if(lineLower.includes("rune")) { mode = "RU"; }
                 else if(lineLower.includes("side")) { mode = "SB"; }
+                else if(mode === "LG" || mode === "CC") {
+                    if(!IS_CARD_ID(line)) {
+                        line = GET_BASE_ID_FROM_CARD_NAME(line);
+                    }
+                    if(line.length > 0) {
+                        if(mode === "LG") {
+                            decklist.legend = line;
+                        }
+                        if(mode === "CC") {
+                            decklist.chosenChampion = line;
+                        }
+                    } else {
+                        console.log(`cant process legend without number ${line}`);
+                    }  
+                }
                 else { console.log(`cant process line ${line}`); }
                 continue;
             }
@@ -208,7 +224,7 @@ export class Decklist {
             }
             if(id !== "") {
                 if(mode === "") {
-                    console.log(`line "${line} without mode"`);
+                    console.log(`line "${line}" without mode`);
                 } else if(mode === "LG") {
                     decklist.legend = id;
                 } else if(mode === "CC") {
@@ -248,7 +264,9 @@ export class Decklist {
                 count++;
             }
             const dca: DecklistCardAmount = {id: cardIdList[startI], count: count};
-            const cardType = GET_CARD(cardIdList[startI]).type;
+            const cardTypeList = GET_CARD(cardIdList[startI]).type;
+            const numCardTypes = cardTypeList.length;
+            const cardType: CardType = (numCardTypes > 0) ? cardTypeList[0] : "Legend";
             if(!mainDeckDone && (cardType === "Battlefield" || cardType === "Rune")) {
                 mainDeckDone = true;
             }

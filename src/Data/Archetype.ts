@@ -3,10 +3,11 @@ import { Decklist } from "./Decklist";
 import { Meta } from "./TournamentResults";
 
 export const ALL_ARCHETYPES = [
-    "Ahri", "Darius", "Jinx Aggro", "Jinx Miracle","Kai'Sa Midrange", "Kai'Sa Control", "Lee Sin Midrange", "Leona Midrange", "Miss Fortune Aurora", "Miss Fortune Aggro", "Sett Aurora", "Sett Midrange", "Teemo", "Viktor Midrange", "Viktor Control", "Volibear Ramp", "Yasuo Midrange",
-    "Annie Midrange", "Garen Midrange", "Lux Control", "Master Yi Midrange", "Master Yi Aurora", "Garen Aurora",
-    "Rumble Midrange", "Lucian Midrange", "Draven Midrange", "Draven Miracle", "Rek'Sai Midrange", "Ornn", "Jax Midrange", "Irelia Midrange", "Azir Midrange", "Ezreal Control", "Ezreal Rat", "Renata Glasc", "Sivir Midrange", "Sivir Miracle", "Sivir Aurora", "Fiora Midrange",
-    "Jhin Midrange", "Rengar Midrange", "Pyke Midrange", "Vi Midrange", "Lillia Midrange", /* skip yi midrange */ "Vex Midrange", "Ivern Midrange", "Diana Midrange", "LeBlanc Midrange", "Kha'Zix Midrange", "Poppy Midrange",
+    "Ahri", "Darius", "Jinx", "Jinx Miracle", "Kai'Sa", "Kai'Sa Control", "Lee Sin", "Leona", "Miss Fortune Aurora", "Miss Fortune Aggro", "Sett Aurora", "Sett", "Teemo", "Viktor", "Viktor Control", "Volibear", "Yasuo",
+    "Annie", "Garen", "Lux Control", "Yi (OGS)", "Yi (OGS) Aurora", "Garen Aurora",
+    "Rumble", "Lucian", "Draven", "Draven Miracle", "Rek'Sai", "Ornn", "Jax", "Irelia", "Azir", "Ezreal Control", "Ezreal Rat", "Renata Glasc", "Sivir", "Sivir Miracle", "Sivir Aurora", "Fiora",
+    "Jhin", "Rengar", "Pyke", "Vi", "Lillia", "Yi (UNL)", "Vex", "Ivern", "Diana", "LeBlanc", "Kha'Zix", "Poppy Aurora",
+    "Akali", "Renekton", "Zed", "Nasus", "Shen", "Jayce", "Mel", "Ambessa", "Kennen Control", "Kennen Hook", "Kennen Miracle",
     "Unknown"
 ] as const;
 export type Archetype = typeof ALL_ARCHETYPES[number];
@@ -16,56 +17,68 @@ export function ARCHETYPE_FROM_STRING(str: string): Archetype {
 }
 
 const archetypeLegendDict: {[archetype in Archetype]: string} = {
-    "Annie Midrange": "OGS-017",
-    "Master Yi Midrange": "OGS-019",
-    "Master Yi Aurora": "OGS-019",
+    "Annie": "OGS-017",
+    "Yi (OGS)": "OGS-019",
+    "Yi (OGS) Aurora": "OGS-019",
     "Lux Control": "OGS-021",
-    "Garen Midrange": "OGS-023",
+    "Garen": "OGS-023",
     "Garen Aurora": "OGS-023",
-    "Kai'Sa Midrange": "OGN-247",
+    "Kai'Sa": "OGN-247",
     "Kai'Sa Control": "OGN-247",
-    "Volibear Ramp": "OGN-249",
-    "Jinx Aggro": "OGN-251",
+    "Volibear": "OGN-249",
+    "Jinx": "OGN-251",
     "Jinx Miracle": "OGN-251",
     "Darius": "OGN-253",
     "Ahri": "OGN-255",
-    "Lee Sin Midrange": "OGN-257",
-    "Yasuo Midrange": "OGN-259",
-    "Leona Midrange": "OGN-261",
+    "Lee Sin": "OGN-257",
+    "Yasuo": "OGN-259",
+    "Leona": "OGN-261",
     "Teemo": "OGN-263",
-    "Viktor Midrange": "OGN-265",
+    "Viktor": "OGN-265",
     "Viktor Control": "OGN-265",
     "Miss Fortune Aggro": "OGN-267",
     "Miss Fortune Aurora": "OGN-267",
-    "Sett Midrange": "OGN-269",
+    "Sett": "OGN-269",
     "Sett Aurora": "OGN-269",
-    "Rumble Midrange": "SFD-181",
-    "Lucian Midrange": "SFD-183",
-    "Draven Midrange": "SFD-185",
+    "Rumble": "SFD-181",
+    "Lucian": "SFD-183",
+    "Draven": "SFD-185",
     "Draven Miracle": "SFD-185",
-    "Rek'Sai Midrange": "SFD-187",
+    "Rek'Sai": "SFD-187",
     "Ornn": "SFD-189",
-    "Jax Midrange": "SFD-193",
-    "Irelia Midrange": "SFD-195",
-    "Azir Midrange": "SFD-197",
+    "Jax": "SFD-193",
+    "Irelia": "SFD-195",
+    "Azir": "SFD-197",
     "Ezreal Control": "SFD-199",
     "Ezreal Rat": "SFD-199",
     "Renata Glasc": "SFD-201",
-    "Sivir Midrange": "SFD-203",
+    "Sivir": "SFD-203",
     "Sivir Miracle": "SFD-203",
     "Sivir Aurora": "SFD-203",
-    "Fiora Midrange": "SFD-205",
-    "Jhin Midrange": "UNL-181",
-    "Rengar Midrange": "UNL-183",
-    "Pyke Midrange": "UNL-185",
-    "Vi Midrange": "UNL-187",
-    "Lillia Midrange": "UNL-189",
-    "Vex Midrange": "UNL-193",
-    "Ivern Midrange": "UNL-195",
-    "Diana Midrange": "UNL-197",
-    "LeBlanc Midrange": "UNL-199",
-    "Kha'Zix Midrange": "UNL-201",
-    "Poppy Midrange": "UNL-203",
+    "Fiora": "SFD-205",
+    "Jhin": "UNL-181",
+    "Rengar": "UNL-183",
+    "Pyke": "UNL-185",
+    "Vi": "UNL-187",
+    "Lillia": "UNL-189",
+    "Yi (UNL)": "UNL-191",
+    "Vex": "UNL-193",
+    "Ivern": "UNL-195",
+    "Diana": "UNL-197",
+    "LeBlanc": "UNL-199",
+    "Kha'Zix": "UNL-201",
+    "Poppy Aurora": "UNL-203",
+    "Akali": "VEN-139",
+    "Renekton": "VEN-141",
+    "Zed": "VEN-143",
+    "Nasus": "VEN-145",
+    "Shen": "VEN-147",
+    "Jayce": "VEN-149",
+    "Mel": "VEN-151",
+    "Ambessa": "VEN-153",
+    "Kennen Control": "VEN-155",
+    "Kennen Hook": "VEN-155",
+    "Kennen Miracle": "VEN-155",
     "Unknown": ""
 };
 
@@ -82,7 +95,7 @@ for(let archetypeStr in archetypeLegendDict) {
     legendArchetypesDict[id].push(archetype);
 }
 // dupes
-legendArchetypesDict["UNL-191"] = ["Master Yi Midrange", "Master Yi Aurora"];
+// legendArchetypesDict["UNL-191"] = ["Yi (OGS)", "Yi (OGS) Aurora"];
 
 function LEGEND_BASE_ID_TO_ARCHETYPE(baseId: string): Archetype {
     return !(baseId in legendArchetypesDict) ? "Unknown" : (legendArchetypesDict[baseId].length === 1) ? legendArchetypesDict[baseId][0] : "Unknown";
@@ -96,60 +109,72 @@ export function PREDICT_ARCHETYPE(decklist: Decklist): Archetype {
     const potentialArchetype = LEGEND_BASE_ID_TO_ARCHETYPE(baseLegendId);
     if(potentialArchetype !== "Unknown") {
         return potentialArchetype;
-    } else if(baseLegendId === "OGS-019" || baseLegendId === "UNL-191") {
-        return decklist.contains("OGN-160", {exactCount: 3}) ? "Master Yi Aurora" : "Master Yi Midrange";
+    } else if(baseLegendId === "OGS-019") {
+        return decklist.contains("OGN-160", {exactCount: 3}) ? "Yi (OGS) Aurora" : "Yi (OGS)";
     } else if(baseLegendId === "OGN-247") {
-        return decklist.contains("OGN-098") && decklist.contains("OGN-099") ? "Kai'Sa Control" : "Kai'Sa Midrange"; // energy conduit + garbage grabber
+        return decklist.contains("OGN-098") && decklist.contains("OGN-099") ? "Kai'Sa Control" : "Kai'Sa"; // energy conduit + garbage grabber
     } else if(baseLegendId === "OGN-267") {
         return decklist.contains("OGN-160", {exactCount: 3}) ? "Miss Fortune Aurora" : "Miss Fortune Aggro";
     } else if(baseLegendId === "OGN-269") {
-        return decklist.contains("OGN-160", {exactCount: 3}) ? "Sett Aurora" : "Sett Midrange";
+        return decklist.contains("OGN-160", {exactCount: 3}) ? "Sett Aurora" : "Sett";
     } else if(baseLegendId === "OGS-023") {
-        return decklist.contains("OGN-160", {exactCount: 3}) ? "Garen Aurora" : "Garen Midrange";
+        return decklist.contains("OGN-160", {exactCount: 3}) ? "Garen Aurora" : "Garen";
     } else if(baseLegendId === "SFD-185") {
-        return decklist.contains("SFD-012", {exactCount: 3}) ? "Draven Miracle" : "Draven Midrange";
+        return decklist.contains("SFD-012", {exactCount: 3}) ? "Draven Miracle" : "Draven";
     } else if(baseLegendId === "OGN-265") {
-        return (decklist.numOfCardType("Spell") >= 27) ? "Viktor Control" : "Viktor Midrange"; 
+        return (decklist.numOfCardType("Spell") >= 27) ? "Viktor Control" : "Viktor"; 
     } else if(baseLegendId === "SFD-203") {
-        return decklist.contains("OGN-160", {exactCount: 3}) ? "Sivir Aurora" : decklist.contains("SFD-122", {exactCount: 3}) ? "Sivir Miracle" : "Sett Midrange";
+        return decklist.contains("OGN-160", {exactCount: 3}) ? "Sivir Aurora" : decklist.contains("SFD-122", {exactCount: 3}) ? "Sivir Miracle" : "Sivir";
     } else if(baseLegendId === "OGN-251") {
-        return decklist.contains("SFD-012", {exactCount: 3}) ? "Jinx Miracle" : "Jinx Aggro";
+        return decklist.contains("SFD-012", {exactCount: 3}) ? "Jinx Miracle" : "Jinx";
     } else if(baseLegendId === "SFD-199") {
         return decklist.contains("OGN-091") && decklist.contains("SFD-134") ? "Ezreal Rat" : "Ezreal Control";
+    } else if(baseLegendId === "VEN-155") {
+        return decklist.contains("OGN-242", {exactCount: 3}) ? "Kennen Hook" : decklist.contains("OGN-195", {exactCount: 3}) ? "Kennen Miracle" : "Kennen Control";
     }
     return "Unknown";
 }
 
-export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Challengers", "Dark Horses", "Struggling", "Memes"];
+export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Real Challengers", "Potential Challengers", "Struggling", "Memes"];
 const META_ARCHETYPE_TIERS: {[meta in Meta]: Archetype[][]} = {
+    "VEN": [
+        ["Yi (OGS)", "Irelia", "Kennen Miracle"],
+        ["Rek'Sai", "Azir", "Draven", "Ezreal Control", "Lux Control", "Diana", "Rengar", "Annie"],
+        ["LeBlanc", "Jayce", "Mel", "Kha'Zix", "Nasus", "Kennen Hook", "Sivir Aurora", "Viktor", "Viktor Control", "Kai'Sa", "Kennen Control", "Vex", "Miss Fortune Aurora"],
+        ["Fiora", "Ambessa", "Lillia", "Pyke", "Zed", "Akali", "Sivir", "Darius", "Poppy Aurora", "Jhin", "Lucian", "Yi (UNL)", "Ornn"],
+        ["Teemo", "Volibear", "Jinx", "Lee Sin", "Jax", "Vi", "Renekton", "Ahri", "Rumble", "Ivern"],
+        ["Yasuo", "Leona", "Renata Glasc", "Shen"],
+    ],
     "UNL": [
-        ["Irelia Midrange", "Sivir Aurora", "Master Yi Midrange", "Diana Midrange", "LeBlanc Midrange", "Vex Midrange"],
-        ["Miss Fortune Aurora", "Azir Midrange", "Sett Midrange", "Annie Midrange", "Draven Midrange", "Ezreal Control"],
-        ["Rengar Midrange", "Master Yi Aurora", "Kai'Sa Midrange", "Lucian Midrange", "Fiora Midrange", "Darius", "Kha'Zix Midrange", "Viktor Control", "Viktor Midrange", "Rek'Sai Midrange", "Teemo", "Lillia Midrange", "Poppy Midrange", "Leona Midrange", "Pyke Midrange", "Yasuo Midrange"],
-        ["Ahri", "Lux Control", "Ornn", "Volibear Ramp", "Jinx Aggro", "Lee Sin Midrange", "Jax Midrange", "Vi Midrange"],
-        ["Rumble Midrange", "Ivern Midrange", "Renata Glasc", "Garen Aurora", "Jhin Midrange"]
+        ["Yi (OGS)", "Diana", "Sivir Aurora"],
+        ["Irelia", "Ezreal Control", "LeBlanc", "Annie", "Azir", "Rek'Sai"],
+        ["Draven", "Viktor", "Vex", "Sett", "Darius", "Viktor Control", "Kai'Sa", "Fiora", "Miss Fortune Aurora", "Kha'Zix", "Rengar", "Lillia", "Yi (OGS) Aurora", "Lux Control"],
+        ["Poppy Aurora", "Teemo", "Pyke", "Lucian", "Yi (UNL)", "Ornn", "Volibear", "Jinx", "Lee Sin", "Jax", "Vi"],
+        ["Ahri", "Rumble", "Ivern", "Garen Aurora", "Jhin"],
+        ["Yasuo", "Leona", "Renata Glasc"],
     ],
     "SFD2": [
-        ["Draven Midrange", "Irelia Midrange"],
-        ["Annie Midrange", "Master Yi Midrange", "Azir Midrange"],
-        ["Viktor Midrange", "Kai'Sa Midrange", "Ezreal Control", "Lucian Midrange", "Darius"],
-        ["Sett Midrange", "Fiora Midrange", "Rek'Sai Midrange", "Ahri", "Yasuo Midrange", "Volibear Ramp", "Leona Midrange", "Lux Control", "Sivir Midrange", "Miss Fortune Aurora", "Sivir Aurora", "Lee Sin Midrange", "Rumble Midrange"],
-        ["Jax Midrange", "Teemo", "Ornn", "Jinx Aggro", "Renata Glasc", "Garen Aurora"],
+        ["Draven", "Irelia"],
+        ["Annie", "Yi (OGS)", "Azir"],
+        ["Viktor", "Kai'Sa", "Ezreal Control", "Lucian", "Darius"],
+        ["Sett", "Fiora", "Rek'Sai", "Ahri", "Yasuo", "Volibear", "Leona", "Lux Control", "Sivir", "Miss Fortune Aurora", "Sivir Aurora", "Lee Sin", "Rumble"],
+        ["Jax", "Teemo", "Ornn", "Jinx", "Renata Glasc", "Garen Aurora"],
     ],
     "SFD": [
-        ["Draven Miracle", "Draven Midrange"],
-        ["Ezreal Control", "Irelia Midrange", "Kai'Sa Midrange", "Miss Fortune Aurora", "Sivir Aurora", "Sivir Miracle"],
-        ["Fiora Midrange", "Viktor Midrange", "Annie Midrange", "Lucian Midrange", "Master Yi Midrange", "Ezreal Rat", "Viktor Control", "Azir Midrange", "Sett Midrange", "Lux Control", "Jinx Miracle", "Jax Midrange", "Rek'Sai Midrange"],
-        ["Master Yi Aurora", "Ahri", "Rumble Midrange", "Volibear Ramp", "Teemo", "Yasuo Midrange", "Darius", "Renata Glasc"],
-        ["Leona Midrange", "Sett Aurora", "Lee Sin Midrange", "Ornn", "Garen Aurora"],
-        ["Garen Midrange"],
-    ], "OGN": [
-        ["Kai'Sa Midrange", "Annie Midrange"],
-        ["Miss Fortune Aurora", "Master Yi Aurora", "Master Yi Midrange"],
-        ["Sett Midrange", "Viktor Midrange", "Ahri", "Darius", "Teemo"],
-        ["Kai'Sa Control", "Yasuo Midrange"],
-        ["Lee Sin Midrange", "Sett Aurora", "Volibear Ramp", "Lux Control", "Jinx Aggro", "Leona Midrange", "Miss Fortune Aggro", "Garen Aurora"],
-        ["Garen Midrange"],
+        ["Draven Miracle", "Draven"],
+        ["Ezreal Control", "Irelia", "Kai'Sa", "Miss Fortune Aurora", "Sivir Aurora", "Sivir Miracle"],
+        ["Fiora", "Viktor", "Annie", "Lucian", "Yi (OGS)", "Ezreal Rat", "Viktor Control", "Azir", "Sett", "Lux Control", "Jinx Miracle", "Jax", "Rek'Sai"],
+        ["Yi (OGS) Aurora", "Ahri", "Rumble", "Volibear", "Teemo", "Yasuo", "Darius", "Renata Glasc"],
+        ["Leona", "Sett Aurora", "Lee Sin", "Ornn", "Garen Aurora"],
+        ["Garen"],
+    ],
+    "OGN": [
+        ["Kai'Sa", "Annie"],
+        ["Miss Fortune Aurora", "Yi (OGS) Aurora", "Yi (OGS)"],
+        ["Sett", "Viktor", "Ahri", "Darius", "Teemo"],
+        ["Kai'Sa Control", "Yasuo"],
+        ["Lee Sin", "Sett Aurora", "Volibear", "Lux Control", "Jinx", "Leona", "Miss Fortune Aggro", "Garen Aurora"],
+        ["Garen"],
     ]
 };
 export function GET_ARCHETYPE_TIERS(meta: Meta): Archetype[][] {
