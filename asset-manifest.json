@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/decklists/static/css/main.60a973e6.css",
-    "main.js": "/decklists/static/js/main.e4106bc3.js",
+    "main.css": "/decklists/static/css/main.799f28cd.css",
+    "main.js": "/decklists/static/js/main.206504b8.js",
     "static/js/453.0c9396f7.chunk.js": "/decklists/static/js/453.0c9396f7.chunk.js",
     "static/media/RainbowRuneBorder.png": "/decklists/static/media/RainbowRuneBorder.77b0a7671c08b3e00cff.png",
     "static/media/RainbowRune.png": "/decklists/static/media/RainbowRune.7891cef5fa18cebd1b34.png",
@@ -13,6 +13,7 @@
     "static/media/BodyDetail.png": "/decklists/static/media/BodyDetail.2e662fc909185e8a418a.png",
     "static/media/Body.png": "/decklists/static/media/Body.8491898912555a8c2792.png",
     "static/media/Chaos.png": "/decklists/static/media/Chaos.da1a66834cb228d4ead5.png",
+    "static/media/Incomplete.png": "/decklists/static/media/Incomplete.6a23ac4bab14d540dcc2.png",
     "static/media/Calm.png": "/decklists/static/media/Calm.100fc353606cf4081336.png",
     "static/media/Gear.png": "/decklists/static/media/Gear.18ed9facf714956b68c7.png",
     "static/media/BodyBW.png": "/decklists/static/media/BodyBW.631424b7f85e825a25de.png",
@@ -39,12 +40,12 @@
     "static/media/Settings.png": "/decklists/static/media/Settings.f7b1035622557c87aa8e.png",
     "static/media/Battlefy.png": "/decklists/static/media/Battlefy.b15d53dd9826e1a33967.png",
     "index.html": "/decklists/index.html",
-    "main.60a973e6.css.map": "/decklists/static/css/main.60a973e6.css.map",
-    "main.e4106bc3.js.map": "/decklists/static/js/main.e4106bc3.js.map",
+    "main.799f28cd.css.map": "/decklists/static/css/main.799f28cd.css.map",
+    "main.206504b8.js.map": "/decklists/static/js/main.206504b8.js.map",
     "453.0c9396f7.chunk.js.map": "/decklists/static/js/453.0c9396f7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.60a973e6.css",
-    "static/js/main.e4106bc3.js"
+    "static/css/main.799f28cd.css",
+    "static/js/main.206504b8.js"
   ]
 }
