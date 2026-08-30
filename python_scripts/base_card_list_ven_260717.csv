@@ -205,7 +205,7 @@ VEN-107,Decree of Discord,,Spell,Chaos,Rare,1,1,,Return any number of enemy Orde
 VEN-108,Forgotten Relic,,Gear,Chaos,Rare,5,,,"When you play this or at the start of your Beginning Phase, [Burn 1]. When you burn a unit this way, do this: Give a friendly unit +[M] equal to the burned card's Might this turn.",,,,,FALSE
 VEN-109,"Illaoi, Prophet of the Great Kraken",Champion,Unit,Chaos,Rare,6,,4,"When you play me or when I score, play a 1[M] Tentacle unit token from Bilgewater.
 I have +1[M] for each token unit you control.",,Illaoi,Bilgewater,"""We are not one soul. We are many.""",FALSE
-VEN-110,Mel. Defiant Soul,Champion,Unit,Chaos,Rare,5,,4,"[Empower] — Discard a spell
+VEN-110,Mel, Defiant Soul,Champion,Unit,Chaos,Rare,5,,4,"[Empower] — Discard a spell
 When I become [Empowered], banish an enemy unit at a battlefield with 3[M] or less.",,Mel,Noxus,"""Medardas are known for our strategy and strength.""",FALSE
 VEN-111,Minah Swiftfoot,,Unit,Chaos,Rare,6,1,6,"When I move to a battlefield, choose one —
 • Each player discards 1.

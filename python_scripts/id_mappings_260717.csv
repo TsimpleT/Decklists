@@ -31,7 +31,7 @@ VEN-069a,VEN-069,VEN-069-2,Showcase,"Mel, Newly Awakened",Alt Art,FALSE,
 VEN-084a,VEN-084,VEN-084-2,Showcase,"Ambessa, The Wolf",Alt Art,FALSE,
 VEN-088a,VEN-088,VEN-088-2,Showcase,"Jayce, Hammer in Hand",Alt Art,FALSE,
 VEN-092a,VEN-092,VEN-092-2,Showcase,"Renekton, Brute",Alt Art,TRUE,"""Embrace the jaws of death."""
-VEN-110a,VEN-110,VEN-110-2,Showcase,Mel. Defiant Soul,Alt Art,FALSE,
+VEN-110a,VEN-110,VEN-110-2,Showcase,"Mel, Defiant Soul",Alt Art,FALSE,
 VEN-112a,VEN-112,VEN-112-2,Showcase,"Zed, Without a Sound",Alt Art,TRUE,"""The truth lies in darkness."""
 VEN-113a,VEN-113,VEN-113-2,Showcase,"Kennen, Storm of Shuriken",Alt Art,FALSE,
 VEN-135a,VEN-135,VEN-135-2,Showcase,"Kennen, Keeper of Balance",Alt Art,FALSE,
@@ -64,7 +64,7 @@ Or watch the other depart
 VEN-185,VEN-134,VEN-134-2,Showcase,"Kayle, Justified",Overnumbered,TRUE,"""Not murder. Justice."""
 VEN-186,VEN-017,VEN-017-2,Showcase,"Morgana, Vindictive",Overnumbered,TRUE,"""Mother must be so proud of all your murders, Kayle."""
 VEN-187,VEN-136,VEN-136-3,Showcase,"Ambessa, Respected and Feared",Overnumbered,TRUE,"""Have you finally realized your potential, Mel?"""
-VEN-188,VEN-110,VEN-110-3,Showcase,Mel. Defiant Soul,Overnumbered,TRUE,"""I deserve everything I've attained; I know that now."""
+VEN-188,VEN-110,VEN-110-3,Showcase,"Mel, Defiant Soul",Overnumbered,TRUE,"""I deserve everything I've attained; I know that now."""
 VEN-189,VEN-139,VEN-139-2,Showcase,"Akali, Rogue Assassin",Overnumbered,FALSE,
 VEN-189*,VEN-139,VEN-139-3,Showcase,"Akali, Rogue Assassin",ON Signed,FALSE,
 VEN-190,VEN-141,VEN-141-2,Showcase,"Renekton, Butcher of the Sands",Overnumbered,FALSE,

@@ -21,6 +21,7 @@ export class TournamentResultsPage extends React.Component {
                                 {(tournament.links.map((link, i) => {
                                     const s = link.toLowerCase();
                                     const imgType: ImageType = (
+                                        (s.includes("locator.riftbound.uvsgames.com")) ? "UVS" :
                                         (s.includes("challonge")) ? "Challonge" :
                                         (s.includes("start")) ? "Start" :
                                         (s.includes("docs.google.com/spreadsheets")) ? "Sheets" :
@@ -45,6 +46,11 @@ export class TournamentResultsPage extends React.Component {
                                                 <span className={styles.rowText} title={decklist.username} style={(decklist.username[0] === "*") ? {fontStyle: "italic"} : {}}>
                                                     {decklist.username}
                                                 </span>
+                                                {decklist.isIncomplete() && (
+                                                    <div className={styles.incompleteContainer}>
+                                                        <img src={ImageUtil.getImage("Incomplete")} height={16} alt={"Incomplete"}/>
+                                                    </div>
+                                                )}
                                             </span>
                                         );
                                         return ((decklist.mainDeck.length > 0)

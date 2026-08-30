@@ -311,4 +311,8 @@ export class Decklist {
 
         return obj;
     }
+
+    public isIncomplete(): boolean {
+        return this.legend === "" || this.mainDeck.length === 0 || this.battlefields.length === 0 || this.runeDeck.length === 0 || this.sideboard.length === 0;
+    }
 }

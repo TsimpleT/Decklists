@@ -63,6 +63,13 @@
     border-bottom: 1px #E0E0CD solid;
 }
 
+.incompleteContainer {
+    display: flex;
+    align-items: center;
+    margin-left: 6px;
+    margin-bottom: 2px;
+}
+
 .resultsContainer > *:last-child {
     border-bottom: none;
 }

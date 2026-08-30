@@ -138,10 +138,10 @@ export function PREDICT_ARCHETYPE(decklist: Decklist): Archetype {
 export const ARCHETYPE_TIER_NAMES = ["Favorites", "Contenders", "Real Challengers", "Potential Challengers", "Struggling", "Memes"];
 const META_ARCHETYPE_TIERS: {[meta in Meta]: Archetype[][]} = {
     "VEN": [
-        ["Yi (OGS)", "Irelia", "Kennen Miracle"],
-        ["Rek'Sai", "Azir", "Draven", "Ezreal Control", "Lux Control", "Diana", "Rengar", "Annie"],
-        ["LeBlanc", "Jayce", "Mel", "Kha'Zix", "Nasus", "Kennen Hook", "Sivir Aurora", "Viktor", "Viktor Control", "Kai'Sa", "Kennen Control", "Vex", "Miss Fortune Aurora"],
-        ["Fiora", "Ambessa", "Lillia", "Pyke", "Zed", "Akali", "Sivir", "Darius", "Poppy Aurora", "Jhin", "Lucian", "Yi (UNL)", "Ornn"],
+        ["Rengar", "Kennen Miracle", "Yi (OGS)", "Azir"],
+        ["Ezreal Control", "Irelia", "Diana", "Lux Control", "Rek'Sai", "Ornn", "Kha'Zix", "Jayce"],
+        ["Draven", "LeBlanc", "Annie", "Mel", "Nasus", "Kennen Hook", "Sivir Aurora", "Viktor", "Viktor Control", "Akali", "Fiora"],
+        ["Kai'Sa", "Kennen Control", "Vex", "Miss Fortune Aurora", "Ambessa", "Lillia", "Pyke", "Zed", "Sivir", "Darius", "Poppy Aurora", "Jhin", "Lucian", "Yi (UNL)"],
         ["Teemo", "Volibear", "Jinx", "Lee Sin", "Jax", "Vi", "Renekton", "Ahri", "Rumble", "Ivern"],
         ["Yasuo", "Leona", "Renata Glasc", "Shen"],
     ],
